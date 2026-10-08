@@ -5,8 +5,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-12 11:17+0200\n"
 "PO-Revision-Date: 2026-07-03 01:18+0000\n"
-"Last-Translator: Hampus <hampus@fluxer.com>\n"
-"Language-Team: Hindi <https://weblate.fluxer.tools/projects/fluxer/app/hi/>\n"
+"Last-Translator: Hampus <hampus@YChat.com>\n"
+"Language-Team: Hindi <https://weblate.YChat.tools/projects/YChat/app/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -917,17 +917,17 @@ msgstr "{altText} — लाइट थीम में पूर्वावल�
 msgid "{appCount, plural, one {# app selected for access revocation} other {# apps selected for access revocation}}"
 msgstr "{appCount, plural, one {एक्सेस रद्द करने के लिए # ऐप चुना गया} other {एक्सेस रद्द करने के लिए # ऐप्स चुने गए}}"
 
-#. Body of the native dialog shown when the desktop app has repeatedly failed to load. {appName} is the desktop app name (typically Fluxer). The app keeps retrying on its own while the dialog is open.
+#. Body of the native dialog shown when the desktop app has repeatedly failed to load. {appName} is the desktop app name (typically YChat). The app keeps retrying on its own while the dialog is open.
 #: src/features/platform/utils/DesktopLocaleBridge.ts:348
 msgid "{appName} can't reach its servers. It will keep trying in the background."
 msgstr "{appName} अपने सर्वर तक नहीं पहुँच पा रहा है। यह बैकग्राउंड में कोशिश करता रहेगा।"
 
-#. Title of the native error dialog shown when the desktop app cannot open the local data store it used before. {appName} is the desktop app name (typically Fluxer).
+#. Title of the native error dialog shown when the desktop app cannot open the local data store it used before. {appName} is the desktop app name (typically YChat).
 #: src/features/platform/utils/DesktopLocaleBridge.ts:290
 msgid "{appName} cannot open its local data"
 msgstr "{appName} अपना स्थानीय डेटा नहीं खोल सकता"
 
-#. Main message of the native error dialog shown when the desktop app cannot open its local data store. {appName} is the desktop app name (typically Fluxer).
+#. Main message of the native error dialog shown when the desktop app cannot open its local data store. {appName} is the desktop app name (typically YChat).
 #: src/features/platform/utils/DesktopLocaleBridge.ts:295
 msgid "{appName} cannot open the local data it saved on this computer."
 msgstr "{appName} इस कंप्यूटर पर सहेजा गया स्थानीय डेटा नहीं खोल सकता।"
@@ -942,7 +942,7 @@ msgstr "{appName} अपनी ऐप फ़ाइलें लोड नही�
 msgid "{appName} could not read one of its app files. Quit and open it again."
 msgstr "{appName} अपनी एक ऐप फ़ाइल नहीं पढ़ सका। इसे बंद करें और फिर से खोलें।"
 
-#. Title of the native error dialog shown when the desktop app cannot boot. {appName} is the desktop app name (typically Fluxer).
+#. Title of the native error dialog shown when the desktop app cannot boot. {appName} is the desktop app name (typically YChat).
 #: src/features/platform/utils/DesktopLocaleBridge.ts:338
 msgid "{appName} failed to start"
 msgstr "{appName} शुरू नहीं हो सका"
@@ -1007,7 +1007,7 @@ msgstr "{clientLabel} कनेक्ट करना चाहता है"
 msgid "{clientName} will use this account for this authorization."
 msgstr "{clientName} इस अनुमति के लिए इस अकाउंट का इस्तेमाल करेगा।"
 
-#. Guild nagbar body shown for staff-only communities. {communityName} is the community name and {productName} is Fluxer.
+#. Guild nagbar body shown for staff-only communities. {communityName} is the community name and {productName} is YChat.
 #: src/features/app/components/layout/GuildLayout.tsx:84
 msgid "{communityName} is currently only accessible to {productName} staff members"
 msgstr "{communityName} अभी केवल {productName} स्टाफ़ सदस्यों के लिए ही उपलब्ध है"
@@ -1373,13 +1373,13 @@ msgstr "{desktopChannel} डेस्कटॉप {desktopVersion}"
 msgid "{deviceCount, plural, one {# device selected for sign-out} other {# devices selected for sign-out}}"
 msgstr "{deviceCount, plural, one {# डिवाइस साइन आउट के लिए चयनित} other {# डिवाइस साइन आउट के लिए चयनित}}"
 
-#. Sidebar Fluxer-home button tooltip showing how many incoming friend requests are pending. Count is interpolated.
-#: src/features/app/components/layout/sidebar_nav/FluxerButton.tsx:41
+#. Sidebar YChat-home button tooltip showing how many incoming friend requests are pending. Count is interpolated.
+#: src/features/app/components/layout/sidebar_nav/YChatButton.tsx:41
 msgid "{displayedIncomingFriendRequestCount, plural, one {# friend request} other {# friend requests}}"
 msgstr "{displayedIncomingFriendRequestCount, plural, one {# फ्रेंड रिक्वेस्ट} other {# फ्रेंड रिक्वेस्ट}}"
 
-#. Short label in the sidebar navigation fluxer button. Preserve {displayedUnreadDmCount}; it is inserted by code.
-#: src/features/app/components/layout/sidebar_nav/FluxerButton.tsx:36
+#. Short label in the sidebar navigation YChat button. Preserve {displayedUnreadDmCount}; it is inserted by code.
+#: src/features/app/components/layout/sidebar_nav/YChatButton.tsx:36
 msgid "{displayedUnreadDmCount, plural, one {# unread DM} other {# unread DMs}}"
 msgstr "{displayedUnreadDmCount, plural, one {# अपठित DM} other {# अपठित DM}}"
 
@@ -1395,7 +1395,7 @@ msgstr "{displayName} ने आपको एक फ्रेंड रिक्
 
 #. Instance selector error shown when the instance speaks a protocol generation this client does not know. Domain is interpolated.
 #: src/features/auth/flow/instance_selector/InstanceDiscoveryFailure.ts:24
-msgid "{domain} runs a newer version of Fluxer than this app. Update Fluxer, then try again."
+msgid "{domain} runs a newer version of YChat than this app. Update YChat, then try again."
 msgstr "{domain} फ़्लक्सर का एक नया संस्करण चलाता है जो इस ऐप से पुराना है। फ़्लक्सर को अपडेट करें, फिर पुनः प्रयास करें।"
 
 #. Profile timezone difference text. duration is a localized hours/minutes phrase for how far ahead the target user's local time is.
@@ -1810,13 +1810,13 @@ msgstr "टाइटल बार का बदलाव लागू होन�
 msgid "{PRODUCT_NAME} needs to restart to disable Chromium's hardware acceleration. Use this only if you're troubleshooting graphics glitches or high GPU usage."
 msgstr "क्रोमियम का हार्डवेयर एक्सीलरेशन बंद करने के लिए {PRODUCT_NAME} को रीस्टार्ट करना होगा। इसे तभी इस्तेमाल करें जब आप ग्राफ़िक्स की गड़बड़ियों या ज़्यादा GPU इस्तेमाल की समस्या सुलझा रहे हों।"
 
-#. Accessible label for the Fluxer application icon.
-#: src/features/ui/components/icons/FluxerIconMark.tsx:6
+#. Accessible label for the YChat application icon.
+#: src/features/ui/components/icons/YChatIconMark.tsx:6
 msgid "{productName} application icon"
 msgstr "{productName} ऐप्लिकेशन आइकॉन"
 
 #. Accessible label for the application logo.
-#: src/features/ui/components/icons/FluxerLogo.tsx:11
+#: src/features/ui/components/icons/YChatLogo.tsx:11
 msgid "{productName} application logo"
 msgstr "{productName} ऐप्लिकेशन लोगो"
 
@@ -1894,12 +1894,12 @@ msgstr "{productName} बंद हो जाएगा, अपडेट इं�
 msgid "{productName} could not reach the update service. Check your connection and try again."
 msgstr "{productName} अपडेट सेवा तक नहीं पहुँच सका। अपना कनेक्शन जाँचें और फिर से कोशिश करें।"
 
-#. Invite page notice shown when automated raid protection pauses invites. productName is the Fluxer product name.
+#. Invite page notice shown when automated raid protection pauses invites. productName is the YChat product name.
 #: src/features/invite/utils/InviteMessageDescriptors.ts:17
 msgid "{productName} detected a potential raid in this community, so invites are paused."
 msgstr "{productName} ने इस कम्युनिटी में संभावित रेड का पता लगाया है, इसलिए इनवाइट रोक दिए गए हैं।"
 
-#. Invite modal notice shown when automated raid protection pauses invites. productName is the Fluxer product name.
+#. Invite modal notice shown when automated raid protection pauses invites. productName is the YChat product name.
 #: src/features/invite/utils/InviteMessageDescriptors.ts:22
 msgid "{productName} detected a potential raid in this community. Invites are paused, so new users cannot join right now."
 msgstr "{productName} ने इस कम्युनिटी में संभावित रेड का पता लगाया है। इनवाइट रोक दिए गए हैं, इसलिए नए यूज़र अभी शामिल नहीं हो सकते हैं।"
@@ -1909,22 +1909,22 @@ msgstr "{productName} ने इस कम्युनिटी में सं
 msgid "{productName} detected a potential raid, so new users can't join right now."
 msgstr "{productName} ने संभावित रेड का पता लगाया है, इसलिए नए यूज़र अभी शामिल नहीं हो सकते।"
 
-#. Banner in a web app installed on iPhone, iPad or Mac. productName is the app name. host is the new domain, for example fluxer.com. Home Screen and Dock are Apple names.
+#. Banner in a web app installed on iPhone, iPad or Mac. productName is the app name. host is the new domain, for example YChat.com. Home Screen and Dock are Apple names.
 #: src/features/app/components/layout/app_layout/nagbars/DomainMovedNagbar.tsx:38
 msgid "{productName} has moved to {host}. Add it to your Home Screen or Dock, then sign in with this app."
 msgstr "{productName} {host} पर चला गया है। इसे अपनी होम स्क्रीन या Dock में जोड़ें, फिर इस ऐप से साइन इन करें।"
 
-#. Banner in an installed web app on other browsers. productName is the app name. host is the new domain, for example fluxer.com.
+#. Banner in an installed web app on other browsers. productName is the app name. host is the new domain, for example YChat.com.
 #: src/features/app/components/layout/app_layout/nagbars/DomainMovedNagbar.tsx:43
 msgid "{productName} has moved to {host}. Install it from your browser, then sign in with this app."
 msgstr "{productName} {host} पर चला गया है। इसे अपने ब्राउज़र से इंस्टॉल करें, फिर इस ऐप से साइन इन करें।"
 
-#. Banner in an installed desktop web app after the account moved to the new domain. productName is the app name. host is the new domain, for example fluxer.com.
+#. Banner in an installed desktop web app after the account moved to the new domain. productName is the app name. host is the new domain, for example YChat.com.
 #: src/features/app/components/layout/app_layout/nagbars/DomainMovedNagbar.tsx:28
 msgid "{productName} has moved to {host}. Install the new app and you will already be signed in."
 msgstr "{productName} {host} पर चला गया है। नया ऐप इंस्टॉल करें और आप पहले से ही साइन इन होंगे।"
 
-#. Banner in an installed Android web app. productName is the app name. host is the new domain, for example fluxer.com.
+#. Banner in an installed Android web app. productName is the app name. host is the new domain, for example YChat.com.
 #: src/features/app/components/layout/app_layout/nagbars/DomainMovedNagbar.tsx:33
 msgid "{productName} has moved to {host}. Open it in your browser to install the new app."
 msgstr "{productName} {host} पर चला गया है। नया ऐप इंस्टॉल करने के लिए इसे अपने ब्राउज़र में खोलें।"
@@ -1934,22 +1934,22 @@ msgstr "{productName} {host} पर चला गया है। नया ऐ�
 msgid "{productName} member since"
 msgstr "{productName} पर सदस्य बने"
 
-#. Body of the camera-permission-denied modal on web. {productName} is Fluxer.
+#. Body of the camera-permission-denied modal on web. {productName} is YChat.
 #: src/features/permissions/system/components/MediaPermissionBlockedModal.tsx:39
 msgid "{productName} needs access to your camera to enable video chat. Grant camera permission in your browser settings and try again."
 msgstr "{productName} को वीडियो चैट चालू करने के लिए आपके कैमरे का एक्सेस चाहिए। अपने ब्राउज़र की सेटिंग्स में कैमरे की अनुमति दें और फिर से कोशिश करें।"
 
-#. Body of the camera-permission-denied modal on Windows and Linux. {productName} is Fluxer.
+#. Body of the camera-permission-denied modal on Windows and Linux. {productName} is YChat.
 #: src/features/permissions/system/components/MediaPermissionBlockedModal.tsx:34
 msgid "{productName} needs access to your camera. Allow camera access in your operating system privacy settings and restart the app."
 msgstr "{productName} को आपके कैमरे का एक्सेस चाहिए। अपने ऑपरेटिंग सिस्टम की गोपनीयता सेटिंग्स में कैमरे का एक्सेस दें और ऐप को रीस्टार्ट करें।"
 
-#. Body of the microphone-permission-denied modal on web. {productName} is Fluxer.
+#. Body of the microphone-permission-denied modal on web. {productName} is YChat.
 #: src/features/permissions/system/components/MediaPermissionBlockedModal.tsx:29
 msgid "{productName} needs access to your microphone to enable voice chat. Grant microphone permission in your browser settings and try again."
 msgstr "{productName} को वॉइस चैट चालू करने के लिए आपके माइक्रोफ़ोन का एक्सेस चाहिए। अपने ब्राउज़र की सेटिंग्स में माइक्रोफ़ोन की अनुमति दें और फिर से कोशिश करें।"
 
-#. Body of the microphone-permission-denied modal on Windows and Linux. {productName} is Fluxer.
+#. Body of the microphone-permission-denied modal on Windows and Linux. {productName} is YChat.
 #: src/features/permissions/system/components/MediaPermissionBlockedModal.tsx:24
 msgid "{productName} needs access to your microphone. Allow microphone access in your operating system privacy settings and restart the app."
 msgstr "{productName} को आपके माइक्रोफ़ोन का एक्सेस चाहिए। अपने ऑपरेटिंग सिस्टम की गोपनीयता सेटिंग्स में माइक्रोफ़ोन का एक्सेस दें और ऐप को रीस्टार्ट करें।"
@@ -1964,17 +1964,17 @@ msgstr "{productName} को आपके डिवाइस दिखाने 
 msgid "{productName} needs microphone access to list your devices."
 msgstr "{productName} को आपके डिवाइस दिखाने के लिए माइक्रोफ़ोन का एक्सेस चाहिए।"
 
-#. Body of the screen-permission-denied modal on non-mac desktop platforms. {productName} is Fluxer.
+#. Body of the screen-permission-denied modal on non-mac desktop platforms. {productName} is YChat.
 #: src/features/permissions/system/components/MediaPermissionBlockedModal.tsx:44
 msgid "{productName} needs screen recording access. Allow screen recording in your operating system privacy settings and restart the app."
 msgstr "{productName} को स्क्रीन रिकॉर्डिंग का एक्सेस चाहिए। अपने ऑपरेटिंग सिस्टम की गोपनीयता सेटिंग्स में स्क्रीन रिकॉर्डिंग की अनुमति दें और ऐप को रीस्टार्ट करें।"
 
-#. Intro in the modal that explains how to install the app from its new domain. productName is the app name. host is the new domain, for example fluxer.com.
+#. Intro in the modal that explains how to install the app from its new domain. productName is the app name. host is the new domain, for example YChat.com.
 #: src/features/app/domain_migration/DomainMovedStepsModal.tsx:22
 msgid "{productName} now lives at {host}. Install it from there, then sign in with this app."
 msgstr "{productName} अब {host} पर उपलब्ध है। वहां से इसे इंस्टॉल करें, फिर इस ऐप से साइन इन करें।"
 
-#. Intro in the modal that explains how to install the app from its new domain when the account already moved. productName is the app name. host is the new domain, for example fluxer.com.
+#. Intro in the modal that explains how to install the app from its new domain when the account already moved. productName is the app name. host is the new domain, for example YChat.com.
 #: src/features/app/domain_migration/DomainMovedStepsModal.tsx:27
 msgid "{productName} now lives at {host}. Install it from there."
 msgstr "{productName} अब {host} पर उपलब्ध है। वहां से इसे इंस्टॉल करें।"
@@ -1994,12 +1994,12 @@ msgstr "{productName} रिकवरी किट"
 msgid "{productName} registered its shortcuts with Hyprland. Bind them in your Hyprland config to use them while {productName} is not focused."
 msgstr "{productName} ने अपने शॉर्टकट Hyprland के साथ रजिस्टर कर दिए हैं। {productName} के फ़ोकस में न होने पर इनका उपयोग करने के लिए इन्हें अपने Hyprland कॉन्फ़िगरेशन में बाइंड करें।"
 
-#. Nagbar shown after the app restarts while the user was connected to a community voice channel. {productName} is Fluxer, {channelName} is the voice channel name, and {communityName} is the community name.
+#. Nagbar shown after the app restarts while the user was connected to a community voice channel. {productName} is YChat, {channelName} is the voice channel name, and {communityName} is the community name.
 #: src/features/app/components/layout/app_layout/nagbars/VoiceSessionRestoreNagbar.tsx:24
 msgid "{productName} restarted while you were connected to the {channelName} channel in the {communityName} community."
 msgstr "जब आप {communityName} कम्युनिटी के {channelName} चैनल से कनेक्ट थे, तब {productName} रीस्टार्ट हो गया।"
 
-#. Nagbar shown after the app restarts while the user can reconnect to an active DM or group DM call. {productName} is Fluxer and {directCallName} is the DM or group DM display name.
+#. Nagbar shown after the app restarts while the user can reconnect to an active DM or group DM call. {productName} is YChat and {directCallName} is the DM or group DM display name.
 #: src/features/app/components/layout/app_layout/nagbars/VoiceSessionRestoreNagbar.tsx:30
 msgid "{productName} restarted while you were connected to the call in {directCallName}."
 msgstr "जब आप {directCallName} में कॉल से कनेक्ट थे, तब {productName} रीस्टार्ट हो गया।"
@@ -2035,7 +2035,7 @@ msgid "{productName} Visionary since {premiumSinceFormatted}"
 msgstr "{productName} विजनरी, {premiumSinceFormatted} से"
 
 #. Accessible label for the application wordmark.
-#: src/features/ui/components/icons/FluxerWordmark.tsx:13
+#: src/features/ui/components/icons/YChatWordmark.tsx:13
 msgid "{productName} wordmark"
 msgstr "{productName} वर्डमार्क"
 
@@ -2338,7 +2338,7 @@ msgstr "<0/> ने चैनल का नाम बदलकर {nameComponent
 msgid "<0/> changed the channel name."
 msgstr "<0/> ने चैनल का नाम बदला।"
 
-#. System message shown in a channel after someone makes it follow an announcement channel. The source is the follower webhook name, usually the source community and channel, for example 'Fluxer News #announcements'.
+#. System message shown in a channel after someone makes it follow an announcement channel. The source is the follower webhook name, usually the source community and channel, for example 'YChat News #announcements'.
 #: src/features/channel/components/ChannelFollowAddMessage.tsx:39
 msgid "<0/> followed {sourceComponent} into this channel. Messages published there will appear here."
 msgstr "<0/> ने इस चैनल में {sourceComponent} को फ़ॉलो किया। वहां प्रकाशित संदेश यहां दिखाई देंगे।"
@@ -2668,7 +2668,7 @@ msgstr "एक चैनल"
 msgid "A community that is either invite-only or unavailable."
 msgstr "एक ऐसी कम्युनिटी जो या तो इनवाइट-ओनली है या अनुपलब्ध है।"
 
-#. Description of a custom emoji in the emoji info card when the viewer can use it outside the community. productName is the Fluxer product name.
+#. Description of a custom emoji in the emoji info card when the viewer can use it outside the community. productName is the YChat product name.
 #: src/features/expressions/components/ExpressionInfoCard.tsx:37
 msgid "A custom emoji from this community. You can use it anywhere on {productName}."
 msgstr "इस समुदाय का एक कस्टम इमोजी। आप इसे {productName} पर कहीं भी इस्तेमाल कर सकते हैं।"
@@ -2678,7 +2678,7 @@ msgstr "इस समुदाय का एक कस्टम इमोजी�
 msgid "A custom emoji from this community. You can use it in this community."
 msgstr "इस समुदाय का एक कस्टम इमोजी। आप इसे इस समुदाय में इस्तेमाल कर सकते हैं।"
 
-#. Description of a custom sticker in the sticker info card when the viewer can use it outside the community. productName is the Fluxer product name.
+#. Description of a custom sticker in the sticker info card when the viewer can use it outside the community. productName is the YChat product name.
 #: src/features/expressions/components/ExpressionInfoCard.tsx:42
 msgid "A custom sticker from this community. You can use it anywhere on {productName}."
 msgstr "इस समुदाय का एक कस्टम स्टिकर। आप इसे {productName} पर कहीं भी इस्तेमाल कर सकते हैं।"
@@ -2693,7 +2693,7 @@ msgstr "इस समुदाय का एक कस्टम स्टिक�
 msgid "a date or date range"
 msgstr "कोई तारीख या तारीखों की रेंज"
 
-#. Description of a built-in unicode emoji in the emoji info card. productName is the Fluxer product name.
+#. Description of a built-in unicode emoji in the emoji info card. productName is the YChat product name.
 #: src/features/expressions/components/ExpressionInfoCard.tsx:32
 msgid "A default emoji. You can use it anywhere on {productName}."
 msgstr "एक डिफ़ॉल्ट इमोजी। आप इसे {productName} पर कहीं भी इस्तेमाल कर सकते हैं।"
@@ -2802,7 +2802,7 @@ msgstr "A11y"
 msgid "About"
 msgstr "बारे में"
 
-#. Desktop app menu item. Opens the About panel. {appName} is the desktop app name (typically Fluxer).
+#. Desktop app menu item. Opens the About panel. {appName} is the desktop app name (typically YChat).
 #: src/features/platform/utils/DesktopLocaleBridge.ts:17
 msgid "About {appName}"
 msgstr "{appName} के बारे में"
@@ -4181,7 +4181,7 @@ msgstr "पहले ही रिडीम किया गया"
 msgid "Already set to cancel"
 msgstr "पहले से रद्द करने के लिए सेट है"
 
-#. Toggle-switch label in the moderator delete-message confirmation dialog. When enabled, the message is reported (category: other) before being deleted. {productName} is the product name (e.g., Fluxer).
+#. Toggle-switch label in the moderator delete-message confirmation dialog. When enabled, the message is reported (category: other) before being deleted. {productName} is the product name (e.g., YChat).
 #: src/features/messaging/commands/MessageCommands.tsx:94
 msgid "Also report this message to the {productName} Safety Team"
 msgstr "इस मैसेज को {productName} सुरक्षा टीम को भी रिपोर्ट करें"
@@ -4803,7 +4803,7 @@ msgstr "सभी कम्युनिटी पर लागू करें"
 msgid "Approval required"
 msgstr "मंज़ूरी ज़रूरी"
 
-#. Hint under the sign-in option on fluxer.com that pairs a newly installed app with the old installed app. productName is the app name.
+#. Hint under the sign-in option on YChat.com that pairs a newly installed app with the old installed app. productName is the app name.
 #: src/features/auth/flow/AuthLoginLayout.tsx:101
 msgid "Approve this app from the {productName} app you already use. No password needed."
 msgstr "जिस {productName} ऐप का आप पहले से इस्तेमाल करते हैं, उससे इस ऐप को मंज़ूरी दें। पासवर्ड की ज़रूरत नहीं है।"
@@ -5412,8 +5412,8 @@ msgstr "ऑटो-कम्प्लीट सुझाव: {label}, {resultCoun
 #. Option label for an SVC mode select.
 #. Option label for an encoder path select.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#. Voice region option label in the voice settings menu meaning let Fluxer pick the best region automatically.
-#. Voice region picker option label meaning 'let Fluxer pick the best region automatically'.
+#. Voice region option label in the voice settings menu meaning let YChat pick the best region automatically.
+#. Voice region picker option label meaning 'let YChat pick the best region automatically'.
 #: src/features/channel/components/modals/channel_tabs/channel_overview_tab/RtcRegionSelect.tsx:19
 #: src/features/user/components/modals/tabs/advanced_settings_tab/AdvancedVideoControls.tsx:56
 #: src/features/user/components/modals/tabs/advanced_settings_tab/AdvancedVideoControls.tsx:76
@@ -6439,12 +6439,12 @@ msgstr "ब्राउज़र: लोड करना रोकें"
 msgid "Browser time format"
 msgstr "ब्राउज़र समय फ़ॉर्मैट"
 
-#. Empty-state explanation in the screen-share picker apps tab on web. {productName} is Fluxer.
+#. Empty-state explanation in the screen-share picker apps tab on web. {productName} is YChat.
 #: src/features/voice/components/modals/screen_share_picker_modal/useNativePickerCopy.ts:15
 msgid "Browsers do not let {productName} list app windows ahead of time. Press \"Open browser picker\", then choose the tab or window there."
 msgstr "ब्राउज़र {productName} को पहले से ऐप विंडो की सूची बनाने की अनुमति नहीं देते हैं। \"ब्राउज़र पिकर खोलें\" दबाएँ, फिर वहाँ टैब या विंडो चुनें।"
 
-#. Empty-state explanation in the screen-share picker displays tab on web. {productName} is Fluxer.
+#. Empty-state explanation in the screen-share picker displays tab on web. {productName} is YChat.
 #: src/features/voice/components/modals/screen_share_picker_modal/useNativePickerCopy.ts:24
 msgid "Browsers do not let {productName} list displays ahead of time. Press \"Open browser picker\", then choose the screen there."
 msgstr "ब्राउज़र {productName} को पहले से डिस्प्ले की सूची बनाने की अनुमति नहीं देते हैं। \"ब्राउज़र पिकर खोलें\" दबाएँ, फिर वहाँ स्क्रीन चुनें।"
@@ -6592,7 +6592,7 @@ msgstr "खरीदकर, आप हमारी <0>गोपनीयता �
 msgid "By purchasing, you agreed to our <0>Terms of service</0>."
 msgstr "खरीदकर, आप हमारी <0>सेवा की शर्तों</0> से सहमत हुए।"
 
-#. Legal notice in the updated policies modal. productName is the Fluxer product name.
+#. Legal notice in the updated policies modal. productName is the YChat product name.
 #: src/features/auth/components/modals/TermsAcceptanceModal.tsx:35
 msgid "By using {productName}, you agree to the updated policies."
 msgstr "{productName} का उपयोग करके, आप अपडेट की गई नीतियों से सहमत होते हैं।"
@@ -6770,7 +6770,7 @@ msgstr "कैमरा सेटिंग्स"
 msgid "Camera test"
 msgstr "कैमरा टेस्ट"
 
-#. Empty-state explanation in the screen-share picker devices tab on Linux/Wayland. {productName} is Fluxer.
+#. Empty-state explanation in the screen-share picker devices tab on Linux/Wayland. {productName} is YChat.
 #: src/features/voice/components/modals/screen_share_picker_modal/useDeviceEmptyStateCopy.ts:18
 msgid "Cameras and virtual capture devices are selected here in {productName}, not in the Wayland system picker. If nothing appears here, check permissions or connect a device."
 msgstr "कैमरे और वर्चुअल कैप्चर डिवाइस {productName} में यहीं चुने जाते हैं, न कि Wayland सिस्टम पिकर में। अगर यहां कुछ भी दिखाई नहीं देता है, तो अनुमतियाँ जांचें या कोई डिवाइस कनेक्ट करें।"
@@ -6861,7 +6861,7 @@ msgstr "यहां फ़ाइलें अपलोड नहीं की �
 #: src/features/user/components/modals/EmailChangeModal.tsx:289
 #: src/features/user/components/modals/EmailChangeModal.tsx:311
 #: src/features/user/components/modals/EmailChangeModal.tsx:326
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:410
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:410
 #: src/features/user/components/modals/PasswordChangeModal.tsx:236
 #: src/features/user/components/modals/PasswordChangeModal.tsx:247
 #: src/features/user/components/modals/PasswordChangeModal.tsx:265
@@ -6882,7 +6882,7 @@ msgstr "मैसेज एडिट करना रद्द करें"
 msgid "Cancel friend request"
 msgstr "फ्रेंड रिक्वेस्ट रद्द करें"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:154
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:154
 msgid "Cancel if you want to choose a different username instead."
 msgstr "अगर आप कोई दूसरा यूज़रनेम चुनना चाहते हैं, तो रद्द करें।"
 
@@ -7249,8 +7249,8 @@ msgstr "अपनी ग्लोबल प्रोफ़ाइल पर द�
 msgid "Change username"
 msgstr "यूज़रनेम बदलें"
 
-#. Short label in the FluxerTag change modal. Keep it concise.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:49
+#. Short label in the YChatTag change modal. Keep it concise.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:49
 msgid "Change username form"
 msgstr "यूज़रनेम बदलने का फ़ॉर्म"
 
@@ -7309,8 +7309,8 @@ msgid "Change your profile picture"
 msgstr "अपनी प्रोफ़ाइल फ़ोटो बदलें"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls.
-#. Short label in the FluxerTag change modal. Keep it concise.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:53
+#. Short label in the YChatTag change modal. Keep it concise.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:53
 #: src/features/user/components/settings_utils/search_index/MyProfileIndex.ts:77
 msgid "Change your username"
 msgstr "अपना यूज़रनेम बदलें"
@@ -7809,8 +7809,8 @@ msgid "Check for updates"
 msgstr "अपडेट देखें"
 
 #: src/features/app/components/BootstrapErrorScreen.tsx:98
-msgid "Check our <0>{BLUESKY_PROVIDER_NAME} ({FLUXER_BLUESKY_HANDLE})</0> for status updates."
-msgstr "स्टेटस अपडेट के लिए हमारा <0>{BLUESKY_PROVIDER_NAME} ({FLUXER_BLUESKY_HANDLE})</0> देखें।"
+msgid "Check our <0>{BLUESKY_PROVIDER_NAME} ({YChat_BLUESKY_HANDLE})</0> for status updates."
+msgstr "स्टेटस अपडेट के लिए हमारा <0>{BLUESKY_PROVIDER_NAME} ({YChat_BLUESKY_HANDLE})</0> देखें।"
 
 #. Description text in the share theme modal.
 #: src/features/theme/components/modals/ShareThemeModal.tsx:36
@@ -8840,7 +8840,7 @@ msgstr "कोड ब्लॉक"
 msgid "Code expired"
 msgstr "कोड की समय-सीमा समाप्त हो गई"
 
-#. Label of the field in the browser where the user types the 12-character code shown in the desktop or mobile app. productName is the app name, such as Fluxer.
+#. Label of the field in the browser where the user types the 12-character code shown in the desktop or mobile app. productName is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:28
 msgid "Code from the {productName} app"
 msgstr "{productName} ऐप से कोड"
@@ -8907,7 +8907,7 @@ msgid "Collapse devices"
 msgstr "डिवाइसों को छोटा करें"
 
 #. Setting label that collapses the inline DM list.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:31
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:31
 msgid "Collapse inline DM list"
 msgstr "इनलाइन DM सूची को छोटा करें"
 
@@ -9781,7 +9781,7 @@ msgstr "कॉन्टेक्स्ट मेन्यू को लेफ्
 #: src/features/auth/components/pages/oauth_authorize_page/OAuthAccountStep.tsx:36
 #: src/features/connection/components/modals/AddConnectionModal.tsx:384
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:726
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:413
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:413
 #: src/features/user/components/modals/tabs/AuthorizedAppsTab.tsx:182
 msgid "Continue"
 msgstr "जारी रखें"
@@ -10680,10 +10680,10 @@ msgstr "इमेज प्रोसेस नहीं की जा सकी"
 msgid "Couldn't publish this message"
 msgstr "यह संदेश प्रकाशित नहीं हो सका"
 
-#. Instance selector error shown when no Fluxer instance answered at the address. Domain is interpolated.
+#. Instance selector error shown when no YChat instance answered at the address. Domain is interpolated.
 #: src/features/auth/flow/instance_selector/InstanceDiscoveryFailure.ts:20
-msgid "Couldn't reach a Fluxer instance at {domain}. Check the address and that the instance is online."
-msgstr "{domain} पर कोई Fluxer इंस्टेंस नहीं मिला। पता जांचें और सुनिश्चित करें कि इंस्टेंस ऑनलाइन है।"
+msgid "Couldn't reach a YChat instance at {domain}. Check the address and that the instance is online."
+msgstr "{domain} पर कोई YChat इंस्टेंस नहीं मिला। पता जांचें और सुनिश्चित करें कि इंस्टेंस ऑनलाइन है।"
 
 #. Title of the generic fallback error modal shown when reactivating a Plutonium subscription fails.
 #: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts:50
@@ -11457,8 +11457,8 @@ msgstr "बैन की कस्टम अवधि (सेकंड)"
 msgid "Custom date range"
 msgstr "कस्टम तारीख रेंज"
 
-#. Error message in the FluxerTag change modal.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:66
+#. Error message in the YChatTag change modal.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:66
 msgid "Custom discriminators are not available on this instance"
 msgstr "इस इंस्टेंस पर कस्टम डिस्क्रिमिनेटर उपलब्ध नहीं हैं"
 
@@ -11685,7 +11685,7 @@ msgstr "अपने प्रोफ़ाइल बैनर को कस्�
 msgid "Customize your tag ({discriminatorLabel}) to your liking with {premiumProductName}"
 msgstr "{premiumProductName} के साथ अपना टैग ({discriminatorLabel}) अपनी पसंद के मुताबिक बनाएँ"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:402
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:402
 msgid "Customize your tag or keep it when changing your username"
 msgstr "अपना टैग कस्टमाइज़ करें या यूज़रनेम बदलते समय इसे रखें"
 
@@ -12597,12 +12597,12 @@ msgstr "डेस्कटॉप ऐप अप-टू-डेट है"
 msgid "Desktop audio isn't available right now on Linux."
 msgstr "डेस्कटॉप ऑडियो अभी लिनक्स पर उपलब्ध नहीं है।"
 
-#. Inline notice on macOS when desktop/system audio capture is not supported because Fluxer cannot exclude call audio.
+#. Inline notice on macOS when desktop/system audio capture is not supported because YChat cannot exclude call audio.
 #: src/features/voice/components/modals/screen_share_picker_modal/PerWindowAudioNotice.tsx:37
 msgid "Desktop audio isn't available right now on macOS."
 msgstr "डेस्कटॉप ऑडियो अभी macOS पर उपलब्ध नहीं है।"
 
-#. Inline notice on Windows when desktop/system audio capture is not supported because Fluxer cannot exclude call audio.
+#. Inline notice on Windows when desktop/system audio capture is not supported because YChat cannot exclude call audio.
 #: src/features/voice/components/modals/screen_share_picker_modal/PerWindowAudioNotice.tsx:18
 msgid "Desktop audio isn't available right now on Windows."
 msgstr "डेस्कटॉप ऑडियो अभी विंडोज पर उपलब्ध नहीं है।"
@@ -13566,8 +13566,8 @@ msgid "Download {productName}"
 msgstr "{productName} डाउनलोड करें"
 
 #: src/features/connection/components/modals/AddConnectionModal.tsx:330
-msgid "Download <0>fluxer-verification</0> and place it in your <1>.well-known</1> folder so we can validate the domain."
-msgstr "डोमेन को वैलिडेट करने के लिए <0>fluxer-verification</0> डाउनलोड करें और इसे अपने <1>.well-known</1> फ़ोल्डर में रखें।"
+msgid "Download <0>YChat-verification</0> and place it in your <1>.well-known</1> folder so we can validate the domain."
+msgstr "डोमेन को वैलिडेट करने के लिए <0>YChat-verification</0> डाउनलोड करें और इसे अपने <1>.well-known</1> फ़ोल्डर में रखें।"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #: src/features/user/components/settings_utils/search_index/AppearanceIndex.ts:98
@@ -13604,8 +13604,8 @@ msgid "Download file"
 msgstr "फ़ाइल डाउनलोड करें"
 
 #: src/features/connection/components/modals/AddConnectionModal.tsx:352
-msgid "Download fluxer-verification"
-msgstr "fluxer-verification डाउनलोड करें"
+msgid "Download YChat-verification"
+msgstr "YChat-verification डाउनलोड करें"
 
 #. Media context menu action that downloads a GIF attachment.
 #: src/features/ui/action_menu/items/MediaMenuData.tsx:119
@@ -14851,10 +14851,10 @@ msgstr "एक मान्य ईमेल पता डालें।"
 msgid "Enter a valid message link."
 msgstr "एक वैध मैसेज लिंक डालें।"
 
-#. Description text in the channel and chat add friend form. Preserve {exampleFluxerTagFull}; it is inserted by code.
+#. Description text in the channel and chat add friend form. Preserve {exampleYChatTagFull}; it is inserted by code.
 #: src/features/channel/components/direct_message/AddFriendForm.tsx:33
-msgid "Enter a valid username ({exampleFluxerTagFull})."
-msgstr "मान्य यूज़रनेम डालें ({exampleFluxerTagFull})।"
+msgid "Enter a valid username ({exampleYChatTagFull})."
+msgstr "मान्य यूज़रनेम डालें ({exampleYChatTagFull})।"
 
 #. Error text in the add friend form on instances where people sign in with a username and have no tag.
 #: src/features/channel/components/direct_message/AddFriendForm.tsx:38
@@ -14925,7 +14925,7 @@ msgstr "अपने ऑथेंटिकेटर ऐप से {digitCount} �
 msgid "Enter the code before continuing."
 msgstr "जारी रखने से पहले कोड डालें।"
 
-#. Title of the browser page where the user types the 12-character code the app shows under Signing in on another device. PRODUCT_NAME is the app name, such as Fluxer.
+#. Title of the browser page where the user types the 12-character code the app shows under Signing in on another device. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:182
 msgid "Enter the code from the {PRODUCT_NAME} app"
 msgstr "{PRODUCT_NAME} ऐप से कोड दर्ज करें"
@@ -16173,13 +16173,13 @@ msgstr "फ़्लोरिडा"
 
 #. Placeholder for the product name input in the setup wizard.
 #: src/features/app/components/setup/SetupWizardSteps.tsx:178
-msgid "Fluxer"
-msgstr "Fluxer"
+msgid "YChat"
+msgstr "YChat"
 
 #. Status shown when browser sign-in status polling gives up after repeated failures.
 #: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:57
-msgid "Fluxer stopped checking whether the browser approved this sign-in. It didn't lose your code."
-msgstr "Fluxer ने यह जांचना बंद कर दिया कि ब्राउज़र ने इस साइन-इन को मंजूरी दी है या नहीं। इसने आपका कोड नहीं खोया है।"
+msgid "YChat stopped checking whether the browser approved this sign-in. It didn't lose your code."
+msgstr "YChat ने यह जांचना बंद कर दिया कि ब्राउज़र ने इस साइन-इन को मंजूरी दी है या नहीं। इसने आपका कोड नहीं खोया है।"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #: src/features/user/components/settings_utils/section_registry/AccessibilitySections.ts:179
@@ -16755,8 +16755,8 @@ msgstr "सिर्फ़ दोस्तों से कॉल"
 msgid "From"
 msgstr "भेजने वाला"
 
-#. Attribution label on a gift, showing the sender FluxerTag.
-#. Sender label on a gift code embed. creatorTag is the FluxerTag of the gift creator.
+#. Attribution label on a gift, showing the sender YChatTag.
+#. Sender label on a gift code embed. creatorTag is the YChatTag of the gift creator.
 #: src/features/channel/components/GiftEmbed.tsx:29
 #: src/features/expressions/components/modals/GiftAcceptModal.tsx:33
 msgid "From {creatorTag}"
@@ -17013,8 +17013,8 @@ msgstr "अपने लिए {premiumProductName} पाएँ, ज़्य�
 msgid "Get {premiumProductName} to customize your tag"
 msgstr "अपना टैग कस्टमाइज़ करने के लिए {premiumProductName} पाएँ"
 
-#. Description text in the FluxerTag change modal. Preserve {premiumProductName}; it is inserted by code. Keep the tone plain and specific.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:57
+#. Description text in the YChatTag change modal. Preserve {premiumProductName}; it is inserted by code. Keep the tone plain and specific.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:57
 msgid "Get {premiumProductName} to customize your tag or keep it when changing your username"
 msgstr "अपना टैग कस्टमाइज़ करने या यूज़रनेम बदलते समय उसे बनाए रखने के लिए {premiumProductName} पाएँ"
 
@@ -17337,7 +17337,7 @@ msgstr "ग्लोबल नाम"
 msgid "Global profile"
 msgstr "ग्लोबल प्रोफ़ाइल"
 
-#. Toggle in the keybinds tab. When on, the shortcut works even when Fluxer is not focused. Keep it concise.
+#. Toggle in the keybinds tab. When on, the shortcut works even when YChat is not focused. Keep it concise.
 #: src/features/user/components/modals/tabs/keybinds_tab/CustomKeybindRow.tsx:85
 #: src/features/user/components/modals/tabs/keybinds_tab/DefaultShortcutRow.tsx:65
 msgid "Global shortcut"
@@ -17358,12 +17358,12 @@ msgstr "वापस जाएं और मान्य ईमेल पता 
 msgid "Go back to {productName} to continue."
 msgstr "जारी रखने के लिए {productName} पर वापस जाएँ।"
 
-#. Shown after approving a sign-in for an app on another device, which signs in by itself shortly. PRODUCT_NAME is the app name, such as Fluxer.
+#. Shown after approving a sign-in for an app on another device, which signs in by itself shortly. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:292
 msgid "Go back to the {PRODUCT_NAME} app. It finishes signing in on its own."
 msgstr "{PRODUCT_NAME} ऐप पर वापस जाएं। यह अपने आप साइन इन हो जाएगा।"
 
-#. Shown after approving, when the browser has already handed the sign-in back to the desktop app. PRODUCT_NAME is the app name, such as Fluxer.
+#. Shown after approving, when the browser has already handed the sign-in back to the desktop app. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:288
 msgid "Go back to the {PRODUCT_NAME} app. You can close this tab."
 msgstr "{PRODUCT_NAME} ऐप पर वापस जाएं। आप इस टैब को बंद कर सकते हैं।"
@@ -17789,7 +17789,7 @@ msgstr "गिफ्ट कोड है? {PREMIUM_PRODUCT_NAME} को अन�
 msgid "Have a gift code? Redeem it to unlock {premiumProductName}."
 msgstr "गिफ्ट कोड है? {premiumProductName} को अनलॉक करने के लिए इसे रिडीम करें।"
 
-#. Friendly tagline shown on a Fluxer-branded button or upsell.
+#. Friendly tagline shown on a YChat-branded button or upsell.
 #: src/features/ui/state/Modal.ts:13
 msgid "Having fun?"
 msgstr "मज़े कर रहे हैं?"
@@ -18506,11 +18506,11 @@ msgstr "अगर आप अपना पासवर्ड भूल जात�
 msgid "If you forget your password, this kit is the only way back into your account. Store it somewhere safe, like a password manager or a printed copy."
 msgstr "अगर आप अपना पासवर्ड भूल जाते हैं, तो यह किट आपके खाते में वापस आने का एकमात्र तरीका है। इसे सुरक्षित जगह पर रखें, जैसे पासवर्ड मैनेजर या प्रिंट की हुई कॉपी।"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:370
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:370
 msgid "If you save this username, your tag will reroll randomly when your {PREMIUM_PRODUCT_NAME} expires on <0>{premiumExpiresAtLabel}</0>, unless it renews."
 msgstr "अगर आप यह यूज़रनेम सेव करते हैं, तो <0>{premiumExpiresAtLabel}</0> को आपके {PREMIUM_PRODUCT_NAME} की अवधि खत्म होने पर आपका टैग रैंडमली रीरोल हो जाएगा, बशर्ते कि यह रिन्यू न हो।"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:377
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:377
 msgid "If you save this username, your tag will reroll randomly when your {PREMIUM_PRODUCT_NAME} expires, unless it renews."
 msgstr "अगर आप यह यूज़रनेम सेव करते हैं, तो आपके {PREMIUM_PRODUCT_NAME} की अवधि खत्म होने पर आपका टैग रैंडमली रीरोल हो जाएगा, बशर्ते कि यह रिन्यू न हो।"
 
@@ -19162,7 +19162,7 @@ msgstr "इन्सर्ट"
 msgid "Insert emoji"
 msgstr "इमोजी डालें"
 
-#. CTA card body in the screen-share picker promoting the desktop app. {productName} is Fluxer.
+#. CTA card body in the screen-share picker promoting the desktop app. {productName} is YChat.
 #: src/features/voice/components/modals/screen_share_picker_modal/DesktopDownloadCta.tsx:16
 msgid "Install {productName} for the full source picker and smoother screen-sharing controls."
 msgstr "पूरे सोर्स पिकर और ज़्यादा स्मूद स्क्रीन-शेयरिंग कंट्रोल के लिए {productName} इंस्टॉल करें।"
@@ -19390,7 +19390,7 @@ msgstr "इनवाइट बनाया गया"
 msgid "Invite deleted"
 msgstr "इनवाइट हटाया गया"
 
-#. Fallback header on the invite modal when no community context is available. Refers to inviting friends to Fluxer.
+#. Fallback header on the invite modal when no community context is available. Refers to inviting friends to YChat.
 #: src/features/invite/components/modals/InviteModal.tsx:87
 msgid "Invite friends"
 msgstr "दोस्तों को आमंत्रित करें"
@@ -19558,7 +19558,7 @@ msgstr "इस कम्युनिटी में इनवाइट अभ�
 msgid "Invites are paused after a suspected raid"
 msgstr "संदिग्ध रेड के बाद इनवाइट रोक दिए गए हैं"
 
-#. Invite settings notice shown when automated raid protection pauses invites. productName is the Fluxer product name.
+#. Invite settings notice shown when automated raid protection pauses invites. productName is the YChat product name.
 #: src/features/invite/utils/InviteMessageDescriptors.ts:28
 msgid "Invites are paused because {productName} detected a potential raid. New users can't join right now."
 msgstr "{productName} द्वारा संभावित रेड का पता लगने के कारण इनवाइट रोक दिए गए हैं। नए यूज़र अभी शामिल नहीं हो सकते हैं।"
@@ -19596,7 +19596,7 @@ msgstr "इनवाइट रोके गए"
 msgid "Invites to {communityName} are currently disabled"
 msgstr "{communityName} के लिए इनवाइट फ़िलहाल बंद हैं"
 
-#. Guild nagbar body shown when invite links are paused because raid detection is active. {communityName} is the community name and {productName} is Fluxer.
+#. Guild nagbar body shown when invite links are paused because raid detection is active. {communityName} is the community name and {productName} is YChat.
 #: src/features/app/components/layout/GuildLayout.tsx:64
 msgid "Invites to {communityName} are currently disabled because {productName} detected a potential raid. New people cannot join right now."
 msgstr "{communityName} के लिए इनवाइट फ़िलहाल बंद हैं क्योंकि {productName} ने संभावित रेड का पता लगाया है। नए लोग अभी शामिल नहीं हो सकते।"
@@ -19812,7 +19812,7 @@ msgstr "वॉइस चैनल से जुड़ें और दूसर�
 msgid "Joined"
 msgstr "जुड़े"
 
-#. Community members table column header for the date the account joined Fluxer.
+#. Community members table column header for the date the account joined YChat.
 #: src/features/channel/components/guild_members_page/MembersTableHeaderRow.tsx:29
 msgid "Joined {productName}"
 msgstr "{productName} से जुड़े"
@@ -21059,7 +21059,7 @@ msgstr "क्या आप {userName} को ग्रुप का माल�
 msgid "Make group owner"
 msgstr "ग्रुप का मालिक बनाएं"
 
-#. Shown above the code on the browser approval page when the app cannot be signed in automatically. PRODUCT_NAME is the app name, such as Fluxer.
+#. Shown above the code on the browser approval page when the app cannot be signed in automatically. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:253
 msgid "Make sure this code matches the one in the {PRODUCT_NAME} app."
 msgstr "सुनिश्चित करें कि यह कोड {PRODUCT_NAME} ऐप में मौजूद कोड से मेल खाता है।"
@@ -21229,12 +21229,12 @@ msgid "Mark all as read"
 msgstr "सभी को पढ़ा गया मार्क करें"
 
 #. Action that marks every community as read.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:43
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:43
 msgid "Mark all communities as read"
 msgstr "सभी कम्युनिटी को पढ़ा गया मार्क करें"
 
 #. Action that marks every direct message conversation as read.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:23
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:23
 msgid "Mark all DMs as read"
 msgstr "सभी DM को पढ़ा गया मार्क करें"
 
@@ -24630,7 +24630,7 @@ msgstr "वस्तुएँ"
 msgid "Off"
 msgstr "बंद"
 
-#. Accessible label for identifying the official Fluxer instance.
+#. Accessible label for identifying the official YChat instance.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:854
 msgid "Official instance"
 msgstr "आधिकारिक इंस्टेंस"
@@ -24698,7 +24698,7 @@ msgstr "<0>{listPriceEffectiveDate}</0> को आपकी सदस्यत�
 msgid "On click"
 msgstr "क्लिक करने पर"
 
-#. One line explanation in the desktop app above the code. signInAddress is the web address of the sign-in page, such as web.fluxer.app/login?handoff=1.
+#. One line explanation in the desktop app above the code. signInAddress is the web address of the sign-in page, such as web.YChat.app/login?handoff=1.
 #: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:243
 msgid "On your other device, sign in at {signInAddress} and enter this code when asked."
 msgstr "अपने दूसरे डिवाइस पर, {signInAddress} पर साइन इन करें और पूछे जाने पर यह कोड दर्ज करें।"
@@ -24931,12 +24931,12 @@ msgstr "{contextName} खोलें"
 msgid "Open {displayName}"
 msgstr "{displayName} खोलें"
 
-#. First install step on Apple devices. host is the new domain, for example fluxer.com. Safari is the browser.
+#. First install step on Apple devices. host is the new domain, for example YChat.com. Safari is the browser.
 #: src/features/app/domain_migration/DomainMovedStepsModal.tsx:32
 msgid "Open {host} in Safari."
 msgstr "Safari में {host} खोलें।"
 
-#. First install step on other devices. host is the new domain, for example fluxer.com.
+#. First install step on other devices. host is the new domain, for example YChat.com.
 #: src/features/app/domain_migration/DomainMovedStepsModal.tsx:37
 msgid "Open {host} in your browser."
 msgstr "अपने ब्राउज़र में {host} खोलें।"
@@ -24961,7 +24961,7 @@ msgstr "{landmarkName} खोलें"
 msgid "Open {premiumProductFullName}"
 msgstr "{premiumProductFullName} खोलें"
 
-#. Button on the browser page after approving that opens the desktop app again if it did not come to the front. PRODUCT_NAME is the app name, such as Fluxer.
+#. Button on the browser page after approving that opens the desktop app again if it did not come to the front. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:304
 msgid "Open {PRODUCT_NAME}"
 msgstr "{PRODUCT_NAME} खोलें"
@@ -25113,7 +25113,7 @@ msgstr "{guildName} के लिए कम्युनिटी मेन्य
 msgid "Open date picker"
 msgstr "डेट पिकर खोलें"
 
-#. Button label that opens the Fluxer desktop downloads page in a browser.
+#. Button label that opens the YChat desktop downloads page in a browser.
 #: src/features/updater/commands/UpdaterModalCommands.tsx:92
 msgid "Open desktop downloads"
 msgstr "डेस्कटॉप डाउनलोड खोलें"
@@ -25980,8 +25980,8 @@ msgstr "सूचनाएं रोकें"
 
 #. Voice screen share menu preference that pauses the local stream preview while the app is unfocused.
 #: src/features/ui/action_menu/items/voice_participant_menu_data/shared.ts:28
-msgid "Pause preview when Fluxer isn’t focused"
-msgstr "जब Fluxer फ़ोकस में न हो तो प्रीव्यू रोकें"
+msgid "Pause preview when YChat isn’t focused"
+msgstr "जब YChat फ़ोकस में न हो तो प्रीव्यू रोकें"
 
 #. Description shown for the emoji toggle while reduced motion is active.
 #: src/features/user/components/modals/tabs/accessibility_tab/AnimationTab.tsx:81
@@ -27282,7 +27282,7 @@ msgstr "सर्वनाम"
 msgid "Pronouns: "
 msgstr "सर्वनाम: "
 
-#. Nagbar body shown to Visionary premium users who have not enabled two-factor authentication. {productName} is Fluxer.
+#. Nagbar body shown to Visionary premium users who have not enabled two-factor authentication. {productName} is YChat.
 #: src/features/app/components/layout/app_layout/nagbars/VisionaryMfaNagbar.tsx:18
 msgid "Protect your Visionary account by enabling two-factor authentication. Thanks for supporting {productName}!"
 msgstr "दो-कारक प्रमाणीकरण सक्षम करके अपने विजनरी अकाउंट को सुरक्षित रखें। {productName} को सपोर्ट करने के लिए धन्यवाद!"
@@ -27642,7 +27642,7 @@ msgstr "बंद करें"
 msgid "Quit {appName}"
 msgstr "{appName} से बाहर निकलें"
 
-#. Detail line in the native dialog shown when the desktop app cannot open its local data store. {appName} is the desktop app name (typically Fluxer).
+#. Detail line in the native dialog shown when the desktop app cannot open its local data store. {appName} is the desktop app name (typically YChat).
 #: src/features/platform/utils/DesktopLocaleBridge.ts:304
 msgid "Quit {appName}, make sure no other copy is running, and open it again."
 msgstr "{appName} से बाहर निकलें, सुनिश्चित करें कि कोई अन्य कॉपी नहीं चल रही है, और इसे फिर से खोलें।"
@@ -28930,7 +28930,7 @@ msgstr "रिपोर्ट का प्रकार"
 msgid "Report user"
 msgstr "यूज़र को रिपोर्ट करें"
 
-#. Field label on the details step of the DSA report form (message report). Optional FluxerTag of the user who sent the message.
+#. Field label on the details step of the DSA report form (message report). Optional YChatTag of the user who sent the message.
 #: src/features/moderation/components/report/ReportStepDetails.tsx:28
 msgid "Reported user tag (optional)"
 msgstr "रिपोर्ट किए गए यूज़र का टैग (वैकल्पिक)"
@@ -30240,8 +30240,8 @@ msgstr "स्क्रीन शेयरिंग विफल रही"
 
 #. Body shown when a failed screen share could not be fully stopped.
 #: src/features/voice/components/alerts/ScreenShareRollbackIncompleteModal.tsx:12
-msgid "Screen sharing failed, but Fluxer could not confirm that every capture path stopped. Stop sharing or disconnect from the call before continuing."
-msgstr "स्क्रीन शेयरिंग विफल रही, लेकिन Fluxer यह पुष्टि नहीं कर सका कि हर कैप्चर पाथ बंद हो गया है। जारी रखने से पहले शेयरिंग रोकें या कॉल से डिस्कनेक्ट करें।"
+msgid "Screen sharing failed, but YChat could not confirm that every capture path stopped. Stop sharing or disconnect from the call before continuing."
+msgstr "स्क्रीन शेयरिंग विफल रही, लेकिन YChat यह पुष्टि नहीं कर सका कि हर कैप्चर पाथ बंद हो गया है। जारी रखने से पहले शेयरिंग रोकें या कॉल से डिस्कनेक्ट करें।"
 
 #. Body of the screen-share-unsupported modal. Mentions specific browsers and OSes; keep all proper nouns intact.
 #: src/features/voice/components/alerts/ScreenShareUnsupportedModal.tsx:12
@@ -31032,7 +31032,7 @@ msgstr "भेजें ({selectedCount}/{selectionLimit})"
 msgid "Send a direct message to a user."
 msgstr "किसी यूज़र को डायरेक्ट मैसेज भेजें।"
 
-#. Body of the staff-only add-friend confirmation modal. The staff override is a Fluxer-staff-only feature that bypasses the normal request flow. {userName} is the target user.
+#. Body of the staff-only add-friend confirmation modal. The staff override is a YChat-staff-only feature that bypasses the normal request flow. {userName} is the target user.
 #: src/features/relationship/utils/RelationshipActionUtils.tsx:67
 msgid "Send a friend request to {userName}, or use the staff override to add them immediately."
 msgstr "{userName} को फ्रेंड रिक्वेस्ट भेजें या उन्हें तुरंत जोड़ने के लिए स्टाफ़ ओवरराइड का उपयोग करें।"
@@ -31563,7 +31563,7 @@ msgstr "हर ध्वनि प्रभाव के लिए लेवल 
 msgid "Settings"
 msgstr "सेटिंग्स"
 
-#. Type chip suffix in tooltips for inline rendered fluxer://settings/user deep links. Lowercase.
+#. Type chip suffix in tooltips for inline rendered YChat://settings/user deep links. Lowercase.
 #: src/features/messaging/components/markdown/renderers/LinkRenderer.tsx:138
 msgid "settings link"
 msgstr "सेटिंग्स लिंक"
@@ -32038,12 +32038,12 @@ msgid "Show in all communities"
 msgstr "सभी कम्युनिटी में दिखाएं"
 
 #. Setting label that shows a badge for incoming friend requests.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:39
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:39
 msgid "Show incoming friend request count"
 msgstr "आने वाली फ्रेंड रिक्वेस्ट की संख्या दिखाएं"
 
 #. Setting label that shows the inline DM list in the sidebar.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:27
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:27
 msgid "Show inline DM list"
 msgstr "इनलाइन DM सूची दिखाएं"
 
@@ -32281,7 +32281,7 @@ msgid "Show typing indicator with user avatars in the channel list"
 msgstr "चैनल सूची में यूज़र अवतार के साथ टाइपिंग इंडिकेटर दिखाएं"
 
 #. Setting label that shows an unread badge while the inline DM list is collapsed.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:35
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:35
 msgid "Show unread DM count when collapsed"
 msgstr "छोटा करने पर न पढ़े गए DM की संख्या दिखाएं"
 
@@ -32362,12 +32362,12 @@ msgstr "फिर से साइन इन करें"
 msgid "Sign in again as {accountLabel}"
 msgstr "{accountLabel} के तौर पर फिर से साइन इन करें"
 
-#. Shown in the desktop app while it waits for the browser. instanceName is the server name, such as Fluxer.
+#. Shown in the desktop app while it waits for the browser. instanceName is the server name, such as YChat.
 #: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:200
 msgid "Sign in to {instanceName} in your browser and confirm. This app finishes signing in on its own."
 msgstr "अपने ब्राउज़र में {instanceName} में साइन इन करें और पुष्टि करें। यह ऐप अपने आप साइन इन पूरा कर लेगा।"
 
-#. Shown in the desktop app above the code when the browser cannot return the sign-in automatically. instanceName is the server name, such as Fluxer.
+#. Shown in the desktop app above the code when the browser cannot return the sign-in automatically. instanceName is the server name, such as YChat.
 #: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:196
 msgid "Sign in to {instanceName} in your browser, and check that it shows this code:"
 msgstr "अपने ब्राउज़र में {instanceName} में साइन इन करें, और जांचें कि यह कोड दिखाता है:"
@@ -32376,17 +32376,17 @@ msgstr "अपने ब्राउज़र में {instanceName} में
 msgid "Sign in to claim your gift"
 msgstr "अपना उपहार पाने के लिए साइन इन करें"
 
-#. Title of the browser page where the user approves signing in to an app that asked for it. PRODUCT_NAME is the app name, such as Fluxer.
+#. Title of the browser page where the user approves signing in to an app that asked for it. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:71
 msgid "Sign in to the {PRODUCT_NAME} app"
 msgstr "{PRODUCT_NAME} ऐप में साइन इन करें"
 
-#. Title of the browser page where the user approves signing in to the desktop app that opened it. PRODUCT_NAME is the app name, such as Fluxer.
+#. Title of the browser page where the user approves signing in to the desktop app that opened it. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:58
 msgid "Sign in to the {PRODUCT_NAME} desktop app"
 msgstr "{PRODUCT_NAME} डेस्कटॉप ऐप में साइन इन करें"
 
-#. Title of the browser page where the user approves signing in to the mobile app that asked for it. PRODUCT_NAME is the app name, such as Fluxer.
+#. Title of the browser page where the user approves signing in to the mobile app that asked for it. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:65
 msgid "Sign in to the {PRODUCT_NAME} mobile app"
 msgstr "{PRODUCT_NAME} मोबाइल ऐप में साइन इन करें"
@@ -32411,7 +32411,7 @@ msgstr "उपयोगकर्ता नाम से साइन इन क�
 msgid "Sign in with your browser"
 msgstr "अपने ब्राउज़र से साइन इन करें"
 
-#. Sign-in option and modal title on fluxer.com that pairs a newly installed app with the old installed app still signed in on the previous domain. productName is the app name.
+#. Sign-in option and modal title on YChat.com that pairs a newly installed app with the old installed app still signed in on the previous domain. productName is the app name.
 #: src/features/auth/flow/BrowserLoginHandoffModal.tsx:28
 msgid "Sign in with your old {productName} app"
 msgstr "अपने पुराने {productName} ऐप से साइन इन करें"
@@ -34556,7 +34556,7 @@ msgstr "सिस्टम"
 msgid "System & welcome"
 msgstr "सिस्टम और स्वागत"
 
-#. Read-only system DM barrier message. productName is the Fluxer product name.
+#. Read-only system DM barrier message. productName is the YChat product name.
 #: src/features/channel/components/barriers/BarrierComponents.tsx:51
 msgid "System announcements from {productName} staff. You can't reply here."
 msgstr "{productName} स्टाफ़ की सिस्टम घोषणाएँ। आप यहाँ जवाब नहीं दे सकते।"
@@ -34583,7 +34583,7 @@ msgstr "सिस्टम DM पर वीडियो कॉल नहीं �
 msgid "System DMs cannot host voice calls"
 msgstr "सिस्टम DM पर वॉइस कॉल नहीं हो सकतीं"
 
-#. Tooltip body on the disabled voice call button in a system DM. System DMs are official Fluxer system accounts.
+#. Tooltip body on the disabled voice call button in a system DM. System DMs are official YChat system accounts.
 #: src/features/channel/components/channel_header_components/CallButtons.tsx:28
 msgid "System DMs cannot host voice calls."
 msgstr "सिस्टम DM पर वॉइस कॉल नहीं हो सकतीं।"
@@ -34675,8 +34675,8 @@ msgid "Tables"
 msgstr "टेबल"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#. Short label in the FluxerTag change modal. Keep it concise.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:62
+#. Short label in the YChatTag change modal. Keep it concise.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:62
 #: src/features/user/components/settings_utils/search_index/MyProfileIndex.ts:73
 msgid "Tag"
 msgstr "टैग"
@@ -34985,7 +34985,7 @@ msgstr "थाई"
 msgid "Thank you for helping keep {productName} safe. We'll review your report as soon as possible."
 msgstr "{productName} को सुरक्षित रखने में मदद करने के लिए धन्यवाद। हम जल्द से जल्द आपकी रिपोर्ट की समीक्षा करेंगे।"
 
-#. Error in the browser when a code typed from the app is not found. instanceHost is the server the browser checked, such as api.fluxer.app. productName is the app name, such as Fluxer.
+#. Error in the browser when a code typed from the app is not found. instanceHost is the server the browser checked, such as api.YChat.app. productName is the app name, such as YChat.
 #: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:25
 msgid "That code is not valid on {instanceHost}. Check the code in the {productName} app and try again."
 msgstr "वह कोड {instanceHost} पर मान्य नहीं है। कृपया कोड को {productName} ऐप में देखें और पुनः प्रयास करें।"
@@ -35045,18 +35045,18 @@ msgstr "बस इतना ही था।"
 msgid "The {PRODUCT_NAME} app asked to sign in as {requestedIdentifier}, but you chose {name}."
 msgstr "{PRODUCT_NAME} ऐप ने {requestedIdentifier} के रूप में साइन इन करने के लिए कहा, लेकिन आपने {name} को चुना।"
 
-#. Explains where the code comes from, under the title of the browser page where it is typed. Signing in on another device is the label of a button in the app and must match its translation. PRODUCT_NAME is the app name, such as Fluxer.
+#. Explains where the code comes from, under the title of the browser page where it is typed. Signing in on another device is the label of a button in the app and must match its translation. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:187
 msgid "The {PRODUCT_NAME} app on your other device shows it under Signing in on another device. Only enter a code from a device you control."
 msgstr "आपके दूसरे डिवाइस पर {PRODUCT_NAME} ऐप इसे \"किसी दूसरे डिवाइस पर साइन इन करना\" के तहत दिखाता है। केवल उसी डिवाइस से कोड दर्ज करें जिसे आप नियंत्रित करते हैं।"
 
-#. Shown after the user cancelled the sign-in request in the browser. PRODUCT_NAME is the app name, such as Fluxer.
+#. Shown after the user cancelled the sign-in request in the browser. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:327
 msgid "The {PRODUCT_NAME} app was not signed in. You can close this tab."
 msgstr "{PRODUCT_NAME} ऐप में साइन इन नहीं किया गया था। आप इस टैब को बंद कर सकते हैं।"
 
-#. Description text in the FluxerTag change modal.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:70
+#. Description text in the YChatTag change modal.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:70
 msgid "The #0000 tag is reserved for Visionary subscribers. Visionary is no longer available for purchase."
 msgstr "#0000 टैग विजनरी सब्सक्राइबर के लिए रिज़र्व है। विजनरी अब खरीदने के लिए उपलब्ध नहीं है।"
 
@@ -35232,8 +35232,8 @@ msgstr "नया वॉइस चैनल <0>{channelLabel}</0> से अन�
 
 #. Setup wizard push relay consent step body.
 #: src/features/app/components/setup/SetupWizardSteps.tsx:355
-msgid "The official Fluxer mobile apps receive notifications through Fluxer's push relay, which hands them to Apple and Google. Self-hosted UnifiedPush and ntfy endpoints never reach the relay and need no agreement."
-msgstr "Fluxer के आधिकारिक मोबाइल ऐप, Fluxer के पुश रिले के ज़रिए सूचनाएं प्राप्त करते हैं, जो उन्हें Apple और Google को सौंपता है। सेल्फ-होस्टेड UnifiedPush और ntfy एंडपॉइंट कभी भी रिले तक नहीं पहुँचते और उन्हें किसी समझौते की आवश्यकता नहीं होती।"
+msgid "The official YChat mobile apps receive notifications through YChat's push relay, which hands them to Apple and Google. Self-hosted UnifiedPush and ntfy endpoints never reach the relay and need no agreement."
+msgstr "YChat के आधिकारिक मोबाइल ऐप, YChat के पुश रिले के ज़रिए सूचनाएं प्राप्त करते हैं, जो उन्हें Apple और Google को सौंपता है। सेल्फ-होस्टेड UnifiedPush और ntfy एंडपॉइंट कभी भी रिले तक नहीं पहुँचते और उन्हें किसी समझौते की आवश्यकता नहीं होती।"
 
 #. Activity log detail row under a removed channel permission override, listing the permissions it explicitly allowed before it was removed. It describes the removed override. It does not mean these permissions are allowed now. A permission override is a channel-level exception to the permissions of a role or member. It allows or denies chosen permissions in one channel or category only. Use the same word for override as the channel permissions settings, such as Add override. {permissions} is a list of permission names joined into one phrase, for example "View channel and Send messages". A long list ends with a count, for example "View channel, Send messages, and 3 more permissions".
 #: src/features/guild/utils/guild_tabs/audit_log/AuditLogChannelMessages.ts:418
@@ -35300,9 +35300,9 @@ msgstr "सिस्टम ने {role} रोल {target} से हटा द
 msgid "The upload service rejected this sticker as larger than {maxSize}. Try a smaller file, a simpler image, or a shorter animation."
 msgstr "अपलोड सेवा ने इस स्टिकर को {maxSize} से बड़ा होने के कारण अस्वीकार कर दिया है। कोई छोटी फ़ाइल, कोई सरल इमेज या कोई छोटा एनिमेशन आज़माएँ।"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:144
-msgid "The username <0>{fluxerTag}</0> is already taken. Continuing will reroll your tag automatically."
-msgstr "यूज़रनेम <0>{fluxerTag}</0> पहले से मौजूद है। जारी रखने पर आपका टैग अपने आप रीरोल हो जाएगा।"
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:144
+msgid "The username <0>{YChatTag}</0> is already taken. Continuing will reroll your tag automatically."
+msgstr "यूज़रनेम <0>{YChatTag}</0> पहले से मौजूद है। जारी रखने पर आपका टैग अपने आप रीरोल हो जाएगा।"
 
 #. Setup wizard error when the username style was already fixed because an account exists.
 #: src/features/app/components/setup/SelfHostedSetupWizardGate.tsx:117
@@ -35504,7 +35504,7 @@ msgstr "थर्ड पार्टी"
 msgid "This account can't be blocked."
 msgstr "इस अकाउंट को ब्लॉक नहीं किया जा सकता।"
 
-#. Error in the browser when the chosen account belongs to a different server than the app that asked to sign in. accountHost and requestHost are server addresses. productName is the app name, such as Fluxer.
+#. Error in the browser when the chosen account belongs to a different server than the app that asked to sign in. accountHost and requestHost are server addresses. productName is the app name, such as YChat.
 #: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:38
 msgid "This account is on {accountHost}, but the {productName} app is signing in to {requestHost}. Choose an account on {requestHost}."
 msgstr "यह खाता {accountHost} पर है, लेकिन {productName} ऐप {requestHost} में साइन इन कर रहा है। {requestHost} पर एक खाता चुनें।"
@@ -36171,7 +36171,7 @@ msgstr "यह रीसेट लिंक समाप्त हो गया 
 msgid "This shows how links appear: {linkPreviewExampleUrl}"
 msgstr "यह दिखाता है कि लिंक कैसे दिखते हैं: {linkPreviewExampleUrl}"
 
-#. Error in the browser when the sign-in request from the desktop app no longer exists, because it expired or the app cancelled it. productName is the app name, such as Fluxer.
+#. Error in the browser when the sign-in request from the desktop app no longer exists, because it expired or the app cancelled it. productName is the app name, such as YChat.
 #: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:20
 msgid "This sign-in request expired or was cancelled in the {productName} app. Start again from the app."
 msgstr "यह साइन-इन अनुरोध {productName} ऐप में समाप्त हो गया या रद्द कर दिया गया। ऐप से पुनः आरंभ करें।"
@@ -38733,7 +38733,7 @@ msgstr "डिफ़ॉल्ट इस्तेमाल करें"
 msgid "Use direct input device access"
 msgstr "इनपुट डिवाइस के सीधे एक्सेस का उपयोग करें"
 
-#. Permission description in the channel-scoped permissions editor for the Use External Emoji permission. "Other communities" means custom emoji uploaded in a different Fluxer community.
+#. Permission description in the channel-scoped permissions editor for the Use External Emoji permission. "Other communities" means custom emoji uploaded in a different YChat community.
 #: src/features/permissions/utils/PermissionLabelDescriptors.ts:261
 msgid "Use emoji from other communities in this channel."
 msgstr "इस चैनल में अन्य कम्युनिटी के इमोजी इस्तेमाल करें।"
@@ -38743,7 +38743,7 @@ msgstr "इस चैनल में अन्य कम्युनिटी �
 msgid "Use emoji from other communities with {premiumProductName}"
 msgstr "{premiumProductName} के साथ अन्य कम्युनिटी से इमोजी का उपयोग करें"
 
-#. Permission description in the role/permission editor for the Use External Emoji permission. "Other communities" means custom emoji uploaded in a different Fluxer community.
+#. Permission description in the role/permission editor for the Use External Emoji permission. "Other communities" means custom emoji uploaded in a different YChat community.
 #: src/features/permissions/utils/PermissionLabelDescriptors.ts:79
 msgid "Use emoji from other communities."
 msgstr "अन्य कम्युनिटी से इमोजी इस्तेमाल करें।"
@@ -38812,7 +38812,7 @@ msgstr "पासवर्ड के बिना साइन इन करन�
 msgid "Use selection"
 msgstr "चुना गया हिस्सा इस्तेमाल करें"
 
-#. Permission description in the channel-scoped permissions editor for the Use External Stickers permission. "Other communities" means stickers uploaded in a different Fluxer community.
+#. Permission description in the channel-scoped permissions editor for the Use External Stickers permission. "Other communities" means stickers uploaded in a different YChat community.
 #: src/features/permissions/utils/PermissionLabelDescriptors.ts:266
 msgid "Use stickers from other communities in this channel."
 msgstr "इस चैनल में अन्य कम्युनिटी के स्टिकर इस्तेमाल करें।"
@@ -38822,7 +38822,7 @@ msgstr "इस चैनल में अन्य कम्युनिटी �
 msgid "Use stickers from other communities with {premiumProductName}"
 msgstr "{premiumProductName} के साथ अन्य कम्युनिटी से स्टिकर इस्तेमाल करें"
 
-#. Permission description in the role/permission editor for the Use External Stickers permission. "Other communities" means stickers uploaded in a different Fluxer community.
+#. Permission description in the role/permission editor for the Use External Stickers permission. "Other communities" means stickers uploaded in a different YChat community.
 #: src/features/permissions/utils/PermissionLabelDescriptors.ts:158
 msgid "Use stickers from other communities."
 msgstr "अन्य कम्युनिटी के स्टिकर इस्तेमाल करें।"
@@ -38832,10 +38832,10 @@ msgstr "अन्य कम्युनिटी के स्टिकर इ�
 msgid "Use system locale for time format"
 msgstr "समय फ़ॉर्मैट के लिए सिस्टम का लोकेल इस्तेमाल करें"
 
-#. Accessible label for the official Fluxer instance option.
+#. Accessible label for the official YChat instance option.
 #: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:27
-msgid "Use the official Fluxer instance"
-msgstr "आधिकारिक Fluxer इंस्टेंस का उपयोग करें"
+msgid "Use the official YChat instance"
+msgstr "आधिकारिक YChat इंस्टेंस का उपयोग करें"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls.
 #: src/features/user/components/settings_utils/search_index/DesktopSettingsIndex.ts:175
@@ -38971,7 +38971,7 @@ msgstr "यूज़र कंट्रोल"
 msgid "User debug"
 msgstr "यूज़र डीबग"
 
-#. Field label on the details step of the DSA report form (user report). Optional Fluxer user snowflake ID. "ID" is conventional.
+#. Field label on the details step of the DSA report form (user report). Optional YChat user snowflake ID. "ID" is conventional.
 #: src/features/moderation/components/report/ReportStepDetails.tsx:33
 msgid "User ID (optional)"
 msgstr "यूज़र आईडी (वैकल्पिक)"
@@ -39031,7 +39031,7 @@ msgstr "यूज़र रिकॉर्ड"
 msgid "User settings"
 msgstr "यूज़र सेटिंग्स"
 
-#. Field label on the details step of the DSA report form (user report). Optional FluxerTag of the reported user.
+#. Field label on the details step of the DSA report form (user report). Optional YChatTag of the reported user.
 #: src/features/moderation/components/report/ReportStepDetails.tsx:38
 msgid "User tag (optional)"
 msgstr "यूज़र टैग (वैकल्पिक)"
@@ -39046,7 +39046,7 @@ msgstr "यूज़र का वॉल्यूम"
 #. Settings search entry label. Also used as a search synonym in the settings search bar.
 #: src/features/app/components/setup/SetupWizardSteps.tsx:1119
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:581
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:227
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:227
 #: src/features/user/components/modals/tabs/my_profile_tab/MyProfileTabUsernameSection.tsx:56
 #: src/features/user/components/settings_utils/search_index/MyProfileIndex.ts:53
 msgid "Username"
@@ -39057,8 +39057,8 @@ msgstr "यूज़रनेम"
 msgid "Username (optional)"
 msgstr "यूज़रनेम (वैकल्पिक)"
 
-#. Short label in the FluxerTag change modal. Keep it concise.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:41
+#. Short label in the YChatTag change modal. Keep it concise.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:41
 msgid "Username already taken"
 msgstr "यूज़रनेम पहले से मौजूद है"
 
@@ -39097,8 +39097,8 @@ msgstr "यूज़रनेम साइन-इन अभी भी मोब�
 msgid "Username tags"
 msgstr "उपयोगकर्ता नाम टैग"
 
-#. Short label in the FluxerTag change modal. Keep it concise.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:45
+#. Short label in the YChatTag change modal. Keep it concise.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:45
 msgid "Username updated"
 msgstr "यूज़रनेम अपडेट किया गया"
 
@@ -39112,7 +39112,7 @@ msgstr "उपयोगकर्ता नाम"
 msgid "Usernames (recommended)"
 msgstr "उपयोगकर्ता नाम (अनुशंसित)"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:220
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:220
 msgid "Usernames can only contain letters (a-z, A-Z), numbers (0-9), and underscores. Usernames are case-insensitive."
 msgstr "यूज़रनेम में सिर्फ़ अक्षर (a-z, A-Z), नंबर (0-9) और अंडरस्कोर हो सकते हैं। यूज़रनेम केस-इनसेंसिटिव होते हैं।"
 
@@ -40562,7 +40562,7 @@ msgstr "वेबहुक"
 msgid "Webhooks updated"
 msgstr "वेबहुक अपडेट किए गए"
 
-#. Native Help submenu item that opens the Fluxer marketing website.
+#. Native Help submenu item that opens the YChat marketing website.
 #: src/features/platform/utils/DesktopLocaleBridge.ts:147
 msgid "Website"
 msgstr "वेबसाइट"
@@ -40586,7 +40586,7 @@ msgstr "आपका स्वागत है, {username}!"
 msgid "Welcome to {channelDisplayName}"
 msgstr "{channelDisplayName} में आपका स्वागत है"
 
-#. Premium onboarding nagbar body. {premiumProductFullName} is the full premium product name, such as Fluxer Plutonium. {premiumProductName} is the short product name.
+#. Premium onboarding nagbar body. {premiumProductFullName} is the full premium product name, such as YChat Plutonium. {premiumProductName} is the short product name.
 #: src/features/app/components/layout/app_layout/nagbars/PremiumOnboardingNagbar.tsx:29
 msgid "Welcome to {premiumProductFullName}. Explore your {premiumProductName} perks and manage your subscription."
 msgstr "{premiumProductFullName} में आपका स्वागत है। अपने {premiumProductName} पर्क देखें और अपनी सदस्यता प्रबंधित करें।"
@@ -41058,7 +41058,7 @@ msgstr "आपके पास पहले से ही आजीवन {premi
 msgid "You already have this connection."
 msgstr "यह कनेक्शन आपके पास पहले से है।"
 
-#. External link warning title. productName is the Fluxer product name.
+#. External link warning title. productName is the YChat product name.
 #: src/features/messaging/components/modals/ExternalLinkWarningModal.tsx:22
 msgid "You are about to leave {productName}"
 msgstr "आप {productName} छोड़ने वाले हैं"
@@ -41394,11 +41394,11 @@ msgstr "आप यह अनुमति नहीं हटा सकते क
 msgid "You changed your nickname in this community from **{previousNickname}** to **{newNickname}**."
 msgstr "आपने इस कम्युनिटी में अपना उपनाम **{previousNickname}** से बदलकर **{newNickname}** कर लिया है।"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:383
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:383
 msgid "You changed your tag while on {PREMIUM_PRODUCT_NAME}. It will reroll randomly when your {PREMIUM_PRODUCT_NAME} expires on <0>{premiumExpiresAtLabel}</0>, unless it renews."
 msgstr "आपने {PREMIUM_PRODUCT_NAME} पर रहते हुए अपना टैग बदला है। अगर इसका रिन्यूअल नहीं होता है, तो {PREMIUM_PRODUCT_NAME} के <0>{premiumExpiresAtLabel}</0> को खत्म होने पर यह रैंडमली रीरोल हो जाएगा।"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:390
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:390
 msgid "You changed your tag while on {PREMIUM_PRODUCT_NAME}. It will reroll randomly when your {PREMIUM_PRODUCT_NAME} expires, unless it renews."
 msgstr "आपने {PREMIUM_PRODUCT_NAME} पर रहते हुए अपना टैग बदल दिया है। जब आपकी {PREMIUM_PRODUCT_NAME} की अवधि खत्म हो जाएगी, तो यह अपने आप बदल जाएगा, बशर्ते कि इसका रिन्यूअल न हो।"
 
@@ -42400,7 +42400,7 @@ msgstr "आपकी सदस्यता अगले रिन्यूअल
 msgid "Your theme CSS is too large to share. Trim it down and try again."
 msgstr "आपकी थीम CSS शेयर करने के लिए बहुत बड़ी है। इसे छोटा करें और फिर से कोशिश करें।"
 
-#. Field label on the details step of the DSA report form. Optional Fluxer username of the reporter so staff can follow up.
+#. Field label on the details step of the DSA report form. Optional YChat username of the reporter so staff can follow up.
 #: src/features/moderation/components/report/ReportStepDetails.tsx:67
 msgid "Your username (optional)"
 msgstr "आपका यूज़रनेम (वैकल्पिक)"

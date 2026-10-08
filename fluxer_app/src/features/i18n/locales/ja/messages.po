@@ -5,8 +5,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-12 11:17+0200\n"
 "PO-Revision-Date: 2026-07-07 23:18+0000\n"
-"Last-Translator: Hampus <hampus@fluxer.com>\n"
-"Language-Team: Japanese <https://weblate.fluxer.tools/projects/fluxer/app/ja/>\n"
+"Last-Translator: Hampus <hampus@YChat.com>\n"
+"Language-Team: Japanese <https://weblate.YChat.tools/projects/YChat/app/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -917,17 +917,17 @@ msgstr "{altText}（ライトテーマのプレビュー）"
 msgid "{appCount, plural, one {# app selected for access revocation} other {# apps selected for access revocation}}"
 msgstr "{appCount, plural, one {アクセスを取り消すアプリを#件選択中} other {アクセスを取り消すアプリを#件選択中}}"
 
-#. Body of the native dialog shown when the desktop app has repeatedly failed to load. {appName} is the desktop app name (typically Fluxer). The app keeps retrying on its own while the dialog is open.
+#. Body of the native dialog shown when the desktop app has repeatedly failed to load. {appName} is the desktop app name (typically YChat). The app keeps retrying on its own while the dialog is open.
 #: src/features/platform/utils/DesktopLocaleBridge.ts:348
 msgid "{appName} can't reach its servers. It will keep trying in the background."
 msgstr "{appName} はサーバーに接続できません。バックグラウンドで接続を試み続けます。"
 
-#. Title of the native error dialog shown when the desktop app cannot open the local data store it used before. {appName} is the desktop app name (typically Fluxer).
+#. Title of the native error dialog shown when the desktop app cannot open the local data store it used before. {appName} is the desktop app name (typically YChat).
 #: src/features/platform/utils/DesktopLocaleBridge.ts:290
 msgid "{appName} cannot open its local data"
 msgstr "{appName} はローカルデータを開けません"
 
-#. Main message of the native error dialog shown when the desktop app cannot open its local data store. {appName} is the desktop app name (typically Fluxer).
+#. Main message of the native error dialog shown when the desktop app cannot open its local data store. {appName} is the desktop app name (typically YChat).
 #: src/features/platform/utils/DesktopLocaleBridge.ts:295
 msgid "{appName} cannot open the local data it saved on this computer."
 msgstr "{appName} は、このコンピューターに保存されたローカルデータを開けませんでした。"
@@ -942,7 +942,7 @@ msgstr "{appName}がアプリファイルを読み込めませんでした。ア
 msgid "{appName} could not read one of its app files. Quit and open it again."
 msgstr "{appName}がアプリファイルの一部を読み込めませんでした。アプリを終了して、もう一度開いてください。"
 
-#. Title of the native error dialog shown when the desktop app cannot boot. {appName} is the desktop app name (typically Fluxer).
+#. Title of the native error dialog shown when the desktop app cannot boot. {appName} is the desktop app name (typically YChat).
 #: src/features/platform/utils/DesktopLocaleBridge.ts:338
 msgid "{appName} failed to start"
 msgstr "{appName}を起動できませんでした"
@@ -1007,7 +1007,7 @@ msgstr "{clientLabel}が連携をリクエストしています"
 msgid "{clientName} will use this account for this authorization."
 msgstr "{clientName}は、この認証にこのアカウントを使用します。"
 
-#. Guild nagbar body shown for staff-only communities. {communityName} is the community name and {productName} is Fluxer.
+#. Guild nagbar body shown for staff-only communities. {communityName} is the community name and {productName} is YChat.
 #: src/features/app/components/layout/GuildLayout.tsx:84
 msgid "{communityName} is currently only accessible to {productName} staff members"
 msgstr "{communityName}は現在、{productName}のスタッフメンバーのみがアクセスできます"
@@ -1373,13 +1373,13 @@ msgstr "{desktopChannel} デスクトップ {desktopVersion}"
 msgid "{deviceCount, plural, one {# device selected for sign-out} other {# devices selected for sign-out}}"
 msgstr "{deviceCount, plural, one {サインアウトするデバイスを#台選択中} other {サインアウトするデバイスを#台選択中}}"
 
-#. Sidebar Fluxer-home button tooltip showing how many incoming friend requests are pending. Count is interpolated.
-#: src/features/app/components/layout/sidebar_nav/FluxerButton.tsx:41
+#. Sidebar YChat-home button tooltip showing how many incoming friend requests are pending. Count is interpolated.
+#: src/features/app/components/layout/sidebar_nav/YChatButton.tsx:41
 msgid "{displayedIncomingFriendRequestCount, plural, one {# friend request} other {# friend requests}}"
 msgstr "{displayedIncomingFriendRequestCount, plural, other {友達リクエスト#件}}"
 
-#. Short label in the sidebar navigation fluxer button. Preserve {displayedUnreadDmCount}; it is inserted by code.
-#: src/features/app/components/layout/sidebar_nav/FluxerButton.tsx:36
+#. Short label in the sidebar navigation YChat button. Preserve {displayedUnreadDmCount}; it is inserted by code.
+#: src/features/app/components/layout/sidebar_nav/YChatButton.tsx:36
 msgid "{displayedUnreadDmCount, plural, one {# unread DM} other {# unread DMs}}"
 msgstr "{displayedUnreadDmCount, plural, other {未読DM #件}}"
 
@@ -1395,8 +1395,8 @@ msgstr "{displayName}さんから友達リクエストが届きました"
 
 #. Instance selector error shown when the instance speaks a protocol generation this client does not know. Domain is interpolated.
 #: src/features/auth/flow/instance_selector/InstanceDiscoveryFailure.ts:24
-msgid "{domain} runs a newer version of Fluxer than this app. Update Fluxer, then try again."
-msgstr "{domain} はこのアプリより新しいバージョンの Fluxer を実行しています。Fluxer をアップデートしてから、もう一度お試しください。"
+msgid "{domain} runs a newer version of YChat than this app. Update YChat, then try again."
+msgstr "{domain} はこのアプリより新しいバージョンの YChat を実行しています。YChat をアップデートしてから、もう一度お試しください。"
 
 #. Profile timezone difference text. duration is a localized hours/minutes phrase for how far ahead the target user's local time is.
 #: src/features/user/components/popouts/UserProfileShared.tsx:65
@@ -1810,13 +1810,13 @@ msgstr "タイトルバーの変更を反映するには、{PRODUCT_NAME}を再�
 msgid "{PRODUCT_NAME} needs to restart to disable Chromium's hardware acceleration. Use this only if you're troubleshooting graphics glitches or high GPU usage."
 msgstr "Chromiumのハードウェアアクセラレーションを無効にするには、{PRODUCT_NAME}を再起動する必要があります。この設定は、グラフィックの不具合やGPU使用率の高さをトラブルシューティングする場合にのみ使用してください。"
 
-#. Accessible label for the Fluxer application icon.
-#: src/features/ui/components/icons/FluxerIconMark.tsx:6
+#. Accessible label for the YChat application icon.
+#: src/features/ui/components/icons/YChatIconMark.tsx:6
 msgid "{productName} application icon"
 msgstr "{productName}アプリのアイコン"
 
 #. Accessible label for the application logo.
-#: src/features/ui/components/icons/FluxerLogo.tsx:11
+#: src/features/ui/components/icons/YChatLogo.tsx:11
 msgid "{productName} application logo"
 msgstr "{productName}アプリのロゴ"
 
@@ -1894,12 +1894,12 @@ msgstr "{productName}を終了し、アップデートをインストールし�
 msgid "{productName} could not reach the update service. Check your connection and try again."
 msgstr "{productName}はアップデートサービスに接続できませんでした。接続を確認して、もう一度お試しください。"
 
-#. Invite page notice shown when automated raid protection pauses invites. productName is the Fluxer product name.
+#. Invite page notice shown when automated raid protection pauses invites. productName is the YChat product name.
 #: src/features/invite/utils/InviteMessageDescriptors.ts:17
 msgid "{productName} detected a potential raid in this community, so invites are paused."
 msgstr "{productName}がこのコミュニティで潜在的なレイドを検出したため、招待を一時停止しています。"
 
-#. Invite modal notice shown when automated raid protection pauses invites. productName is the Fluxer product name.
+#. Invite modal notice shown when automated raid protection pauses invites. productName is the YChat product name.
 #: src/features/invite/utils/InviteMessageDescriptors.ts:22
 msgid "{productName} detected a potential raid in this community. Invites are paused, so new users cannot join right now."
 msgstr "{productName}がこのコミュニティで潜在的なレイドを検出しました。招待は一時停止されているため、現在新しいユーザーは参加できません。"
@@ -1909,22 +1909,22 @@ msgstr "{productName}がこのコミュニティで潜在的なレイドを検�
 msgid "{productName} detected a potential raid, so new users can't join right now."
 msgstr "{productName}がレイドの可能性を検出したため、現在新しいユーザーは参加できません。"
 
-#. Banner in a web app installed on iPhone, iPad or Mac. productName is the app name. host is the new domain, for example fluxer.com. Home Screen and Dock are Apple names.
+#. Banner in a web app installed on iPhone, iPad or Mac. productName is the app name. host is the new domain, for example YChat.com. Home Screen and Dock are Apple names.
 #: src/features/app/components/layout/app_layout/nagbars/DomainMovedNagbar.tsx:38
 msgid "{productName} has moved to {host}. Add it to your Home Screen or Dock, then sign in with this app."
 msgstr "{productName}は{host}に移動しました。ホーム画面またはDockに追加してから、このアプリでサインインしてください。"
 
-#. Banner in an installed web app on other browsers. productName is the app name. host is the new domain, for example fluxer.com.
+#. Banner in an installed web app on other browsers. productName is the app name. host is the new domain, for example YChat.com.
 #: src/features/app/components/layout/app_layout/nagbars/DomainMovedNagbar.tsx:43
 msgid "{productName} has moved to {host}. Install it from your browser, then sign in with this app."
 msgstr "{productName}は{host}に移動しました。ブラウザからインストールし、このアプリでサインインしてください。"
 
-#. Banner in an installed desktop web app after the account moved to the new domain. productName is the app name. host is the new domain, for example fluxer.com.
+#. Banner in an installed desktop web app after the account moved to the new domain. productName is the app name. host is the new domain, for example YChat.com.
 #: src/features/app/components/layout/app_layout/nagbars/DomainMovedNagbar.tsx:28
 msgid "{productName} has moved to {host}. Install the new app and you will already be signed in."
 msgstr "{productName}は{host}に移動しました。新しいアプリをインストールすると、すでにサインインした状態になります。"
 
-#. Banner in an installed Android web app. productName is the app name. host is the new domain, for example fluxer.com.
+#. Banner in an installed Android web app. productName is the app name. host is the new domain, for example YChat.com.
 #: src/features/app/components/layout/app_layout/nagbars/DomainMovedNagbar.tsx:33
 msgid "{productName} has moved to {host}. Open it in your browser to install the new app."
 msgstr "{productName}は{host}に移動しました。ブラウザで開いて新しいアプリをインストールしてください。"
@@ -1934,22 +1934,22 @@ msgstr "{productName}は{host}に移動しました。ブラウザで開いて�
 msgid "{productName} member since"
 msgstr "{productName}のメンバー登録日"
 
-#. Body of the camera-permission-denied modal on web. {productName} is Fluxer.
+#. Body of the camera-permission-denied modal on web. {productName} is YChat.
 #: src/features/permissions/system/components/MediaPermissionBlockedModal.tsx:39
 msgid "{productName} needs access to your camera to enable video chat. Grant camera permission in your browser settings and try again."
 msgstr "ビデオチャットを有効にするには、{productName}がカメラにアクセスする必要があります。ブラウザの設定でカメラへのアクセスを許可してから、もう一度お試しください。"
 
-#. Body of the camera-permission-denied modal on Windows and Linux. {productName} is Fluxer.
+#. Body of the camera-permission-denied modal on Windows and Linux. {productName} is YChat.
 #: src/features/permissions/system/components/MediaPermissionBlockedModal.tsx:34
 msgid "{productName} needs access to your camera. Allow camera access in your operating system privacy settings and restart the app."
 msgstr "{productName}にはカメラへのアクセスが必要です。OSのプライバシー設定でカメラへのアクセスを許可し、アプリを再起動してください。"
 
-#. Body of the microphone-permission-denied modal on web. {productName} is Fluxer.
+#. Body of the microphone-permission-denied modal on web. {productName} is YChat.
 #: src/features/permissions/system/components/MediaPermissionBlockedModal.tsx:29
 msgid "{productName} needs access to your microphone to enable voice chat. Grant microphone permission in your browser settings and try again."
 msgstr "ボイスチャットを有効にするには、{productName}がマイクにアクセスする必要があります。ブラウザの設定でマイクへのアクセスを許可してから、もう一度お試しください。"
 
-#. Body of the microphone-permission-denied modal on Windows and Linux. {productName} is Fluxer.
+#. Body of the microphone-permission-denied modal on Windows and Linux. {productName} is YChat.
 #: src/features/permissions/system/components/MediaPermissionBlockedModal.tsx:24
 msgid "{productName} needs access to your microphone. Allow microphone access in your operating system privacy settings and restart the app."
 msgstr "{productName}にはマイクへのアクセスが必要です。OSのプライバシー設定でマイクへのアクセスを許可し、アプリを再起動してください。"
@@ -1964,17 +1964,17 @@ msgstr "{productName}がデバイスを一覧表示するには、カメラへ�
 msgid "{productName} needs microphone access to list your devices."
 msgstr "{productName}がデバイスを一覧表示するには、マイクへのアクセスが必要です。"
 
-#. Body of the screen-permission-denied modal on non-mac desktop platforms. {productName} is Fluxer.
+#. Body of the screen-permission-denied modal on non-mac desktop platforms. {productName} is YChat.
 #: src/features/permissions/system/components/MediaPermissionBlockedModal.tsx:44
 msgid "{productName} needs screen recording access. Allow screen recording in your operating system privacy settings and restart the app."
 msgstr "{productName}には画面収録へのアクセスが必要です。OSのプライバシー設定で画面収録を許可し、アプリを再起動してください。"
 
-#. Intro in the modal that explains how to install the app from its new domain. productName is the app name. host is the new domain, for example fluxer.com.
+#. Intro in the modal that explains how to install the app from its new domain. productName is the app name. host is the new domain, for example YChat.com.
 #: src/features/app/domain_migration/DomainMovedStepsModal.tsx:22
 msgid "{productName} now lives at {host}. Install it from there, then sign in with this app."
 msgstr "{productName}は{host}に移動しました。そちらからインストールし、このアプリでサインインしてください。"
 
-#. Intro in the modal that explains how to install the app from its new domain when the account already moved. productName is the app name. host is the new domain, for example fluxer.com.
+#. Intro in the modal that explains how to install the app from its new domain when the account already moved. productName is the app name. host is the new domain, for example YChat.com.
 #: src/features/app/domain_migration/DomainMovedStepsModal.tsx:27
 msgid "{productName} now lives at {host}. Install it from there."
 msgstr "{productName}は{host}に移動しました。そちらからインストールしてください。"
@@ -1994,12 +1994,12 @@ msgstr "{productName} のリカバリーキット"
 msgid "{productName} registered its shortcuts with Hyprland. Bind them in your Hyprland config to use them while {productName} is not focused."
 msgstr "{productName}はショートカットをHyprlandに登録しました。{productName}がフォーカスされていない間も使うには、Hyprlandの設定でバインドしてください。"
 
-#. Nagbar shown after the app restarts while the user was connected to a community voice channel. {productName} is Fluxer, {channelName} is the voice channel name, and {communityName} is the community name.
+#. Nagbar shown after the app restarts while the user was connected to a community voice channel. {productName} is YChat, {channelName} is the voice channel name, and {communityName} is the community name.
 #: src/features/app/components/layout/app_layout/nagbars/VoiceSessionRestoreNagbar.tsx:24
 msgid "{productName} restarted while you were connected to the {channelName} channel in the {communityName} community."
 msgstr "{communityName}コミュニティの{channelName}チャンネルに接続中に、{productName}が再起動しました。"
 
-#. Nagbar shown after the app restarts while the user can reconnect to an active DM or group DM call. {productName} is Fluxer and {directCallName} is the DM or group DM display name.
+#. Nagbar shown after the app restarts while the user can reconnect to an active DM or group DM call. {productName} is YChat and {directCallName} is the DM or group DM display name.
 #: src/features/app/components/layout/app_layout/nagbars/VoiceSessionRestoreNagbar.tsx:30
 msgid "{productName} restarted while you were connected to the call in {directCallName}."
 msgstr "{directCallName}での通話中に、{productName}が再起動しました。"
@@ -2035,7 +2035,7 @@ msgid "{productName} Visionary since {premiumSinceFormatted}"
 msgstr "{productName}ビジョナリー（{premiumSinceFormatted}から）"
 
 #. Accessible label for the application wordmark.
-#: src/features/ui/components/icons/FluxerWordmark.tsx:13
+#: src/features/ui/components/icons/YChatWordmark.tsx:13
 msgid "{productName} wordmark"
 msgstr "{productName}のワードマーク"
 
@@ -2338,7 +2338,7 @@ msgstr "<0/>がチャンネル名を「{nameComponent}」に変更しました�
 msgid "<0/> changed the channel name."
 msgstr "<0/>がチャンネル名を変更しました。"
 
-#. System message shown in a channel after someone makes it follow an announcement channel. The source is the follower webhook name, usually the source community and channel, for example 'Fluxer News #announcements'.
+#. System message shown in a channel after someone makes it follow an announcement channel. The source is the follower webhook name, usually the source community and channel, for example 'YChat News #announcements'.
 #: src/features/channel/components/ChannelFollowAddMessage.tsx:39
 msgid "<0/> followed {sourceComponent} into this channel. Messages published there will appear here."
 msgstr "<0/> がこのチャンネルに {sourceComponent} をフォローしました。そちらで公開されたメッセージがここに表示されます。"
@@ -2668,7 +2668,7 @@ msgstr "チャンネル"
 msgid "A community that is either invite-only or unavailable."
 msgstr "招待制または利用できないコミュニティです。"
 
-#. Description of a custom emoji in the emoji info card when the viewer can use it outside the community. productName is the Fluxer product name.
+#. Description of a custom emoji in the emoji info card when the viewer can use it outside the community. productName is the YChat product name.
 #: src/features/expressions/components/ExpressionInfoCard.tsx:37
 msgid "A custom emoji from this community. You can use it anywhere on {productName}."
 msgstr "このコミュニティのカスタム絵文字です。{productName} のどこでも使えます。"
@@ -2678,7 +2678,7 @@ msgstr "このコミュニティのカスタム絵文字です。{productName} �
 msgid "A custom emoji from this community. You can use it in this community."
 msgstr "このコミュニティのカスタム絵文字です。このコミュニティ内で使用できます。"
 
-#. Description of a custom sticker in the sticker info card when the viewer can use it outside the community. productName is the Fluxer product name.
+#. Description of a custom sticker in the sticker info card when the viewer can use it outside the community. productName is the YChat product name.
 #: src/features/expressions/components/ExpressionInfoCard.tsx:42
 msgid "A custom sticker from this community. You can use it anywhere on {productName}."
 msgstr "このコミュニティのカスタムステッカーです。{productName}のどこでも使えます。"
@@ -2693,7 +2693,7 @@ msgstr "このコミュニティのカスタムステッカーです。このコ
 msgid "a date or date range"
 msgstr "日付または日付の範囲"
 
-#. Description of a built-in unicode emoji in the emoji info card. productName is the Fluxer product name.
+#. Description of a built-in unicode emoji in the emoji info card. productName is the YChat product name.
 #: src/features/expressions/components/ExpressionInfoCard.tsx:32
 msgid "A default emoji. You can use it anywhere on {productName}."
 msgstr "{productName} のどこでも使えるデフォルトの絵文字です。"
@@ -2802,7 +2802,7 @@ msgstr "A11y"
 msgid "About"
 msgstr "紹介文"
 
-#. Desktop app menu item. Opens the About panel. {appName} is the desktop app name (typically Fluxer).
+#. Desktop app menu item. Opens the About panel. {appName} is the desktop app name (typically YChat).
 #: src/features/platform/utils/DesktopLocaleBridge.ts:17
 msgid "About {appName}"
 msgstr "{appName}について"
@@ -4181,7 +4181,7 @@ msgstr "使用済み"
 msgid "Already set to cancel"
 msgstr "キャンセル設定済み"
 
-#. Toggle-switch label in the moderator delete-message confirmation dialog. When enabled, the message is reported (category: other) before being deleted. {productName} is the product name (e.g., Fluxer).
+#. Toggle-switch label in the moderator delete-message confirmation dialog. When enabled, the message is reported (category: other) before being deleted. {productName} is the product name (e.g., YChat).
 #: src/features/messaging/commands/MessageCommands.tsx:94
 msgid "Also report this message to the {productName} Safety Team"
 msgstr "このメッセージを{productName}安全チームにも報告する"
@@ -4803,7 +4803,7 @@ msgstr "すべてのコミュニティに適用"
 msgid "Approval required"
 msgstr "承認が必要"
 
-#. Hint under the sign-in option on fluxer.com that pairs a newly installed app with the old installed app. productName is the app name.
+#. Hint under the sign-in option on YChat.com that pairs a newly installed app with the old installed app. productName is the app name.
 #: src/features/auth/flow/AuthLoginLayout.tsx:101
 msgid "Approve this app from the {productName} app you already use. No password needed."
 msgstr "すでにお使いの{productName}アプリからこのアプリを承認してください。パスワードは不要です。"
@@ -5412,8 +5412,8 @@ msgstr "入力候補: {label}、{resultCount}件中{selectedOptionPosition}番�
 #. Option label for an SVC mode select.
 #. Option label for an encoder path select.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#. Voice region option label in the voice settings menu meaning let Fluxer pick the best region automatically.
-#. Voice region picker option label meaning 'let Fluxer pick the best region automatically'.
+#. Voice region option label in the voice settings menu meaning let YChat pick the best region automatically.
+#. Voice region picker option label meaning 'let YChat pick the best region automatically'.
 #: src/features/channel/components/modals/channel_tabs/channel_overview_tab/RtcRegionSelect.tsx:19
 #: src/features/user/components/modals/tabs/advanced_settings_tab/AdvancedVideoControls.tsx:56
 #: src/features/user/components/modals/tabs/advanced_settings_tab/AdvancedVideoControls.tsx:76
@@ -6439,12 +6439,12 @@ msgstr "ブラウザ: 読み込み停止"
 msgid "Browser time format"
 msgstr "ブラウザの時刻形式"
 
-#. Empty-state explanation in the screen-share picker apps tab on web. {productName} is Fluxer.
+#. Empty-state explanation in the screen-share picker apps tab on web. {productName} is YChat.
 #: src/features/voice/components/modals/screen_share_picker_modal/useNativePickerCopy.ts:15
 msgid "Browsers do not let {productName} list app windows ahead of time. Press \"Open browser picker\", then choose the tab or window there."
 msgstr "ブラウザの制限により、{productName}でアプリのウィンドウを事前に一覧表示することはできません。「ブラウザ選択を開く」を押し、そこでタブまたはウィンドウを選択してください。"
 
-#. Empty-state explanation in the screen-share picker displays tab on web. {productName} is Fluxer.
+#. Empty-state explanation in the screen-share picker displays tab on web. {productName} is YChat.
 #: src/features/voice/components/modals/screen_share_picker_modal/useNativePickerCopy.ts:24
 msgid "Browsers do not let {productName} list displays ahead of time. Press \"Open browser picker\", then choose the screen there."
 msgstr "ブラウザの制限により、{productName}でディスプレイを事前に一覧表示できません。「ブラウザ選択を開く」を押し、そこで画面を選択してください。"
@@ -6592,7 +6592,7 @@ msgstr "購入することにより、あなたは当社の<0>プライバシー
 msgid "By purchasing, you agreed to our <0>Terms of service</0>."
 msgstr "購入することにより、当社の<0>利用規約</0>に同意したものとみなされます。"
 
-#. Legal notice in the updated policies modal. productName is the Fluxer product name.
+#. Legal notice in the updated policies modal. productName is the YChat product name.
 #: src/features/auth/components/modals/TermsAcceptanceModal.tsx:35
 msgid "By using {productName}, you agree to the updated policies."
 msgstr "{productName}を利用することで、更新されたポリシーに同意するものとします。"
@@ -6770,7 +6770,7 @@ msgstr "カメラ設定"
 msgid "Camera test"
 msgstr "カメラテスト"
 
-#. Empty-state explanation in the screen-share picker devices tab on Linux/Wayland. {productName} is Fluxer.
+#. Empty-state explanation in the screen-share picker devices tab on Linux/Wayland. {productName} is YChat.
 #: src/features/voice/components/modals/screen_share_picker_modal/useDeviceEmptyStateCopy.ts:18
 msgid "Cameras and virtual capture devices are selected here in {productName}, not in the Wayland system picker. If nothing appears here, check permissions or connect a device."
 msgstr "カメラと仮想キャプチャデバイスは、Waylandシステムピッカーではなく、{productName}で選択されます。ここに何も表示されない場合は、権限を確認するか、デバイスを接続してください。"
@@ -6861,7 +6861,7 @@ msgstr "ここにファイルをアップロードできません"
 #: src/features/user/components/modals/EmailChangeModal.tsx:289
 #: src/features/user/components/modals/EmailChangeModal.tsx:311
 #: src/features/user/components/modals/EmailChangeModal.tsx:326
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:410
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:410
 #: src/features/user/components/modals/PasswordChangeModal.tsx:236
 #: src/features/user/components/modals/PasswordChangeModal.tsx:247
 #: src/features/user/components/modals/PasswordChangeModal.tsx:265
@@ -6882,7 +6882,7 @@ msgstr "メッセージの編集をキャンセル"
 msgid "Cancel friend request"
 msgstr "友達リクエストをキャンセル"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:154
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:154
 msgid "Cancel if you want to choose a different username instead."
 msgstr "別のユーザー名を選択したい場合はキャンセルしてください。"
 
@@ -7249,8 +7249,8 @@ msgstr "グローバルプロフィールに表示される名前を変更"
 msgid "Change username"
 msgstr "ユーザー名を変更"
 
-#. Short label in the FluxerTag change modal. Keep it concise.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:49
+#. Short label in the YChatTag change modal. Keep it concise.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:49
 msgid "Change username form"
 msgstr "ユーザー名変更フォーム"
 
@@ -7309,8 +7309,8 @@ msgid "Change your profile picture"
 msgstr "プロフィール写真を変更"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls.
-#. Short label in the FluxerTag change modal. Keep it concise.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:53
+#. Short label in the YChatTag change modal. Keep it concise.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:53
 #: src/features/user/components/settings_utils/search_index/MyProfileIndex.ts:77
 msgid "Change your username"
 msgstr "ユーザー名を変更"
@@ -7809,8 +7809,8 @@ msgid "Check for updates"
 msgstr "アップデートを確認"
 
 #: src/features/app/components/BootstrapErrorScreen.tsx:98
-msgid "Check our <0>{BLUESKY_PROVIDER_NAME} ({FLUXER_BLUESKY_HANDLE})</0> for status updates."
-msgstr "ステータス更新は<0>{BLUESKY_PROVIDER_NAME} ({FLUXER_BLUESKY_HANDLE})</0>をご確認ください。"
+msgid "Check our <0>{BLUESKY_PROVIDER_NAME} ({YChat_BLUESKY_HANDLE})</0> for status updates."
+msgstr "ステータス更新は<0>{BLUESKY_PROVIDER_NAME} ({YChat_BLUESKY_HANDLE})</0>をご確認ください。"
 
 #. Description text in the share theme modal.
 #: src/features/theme/components/modals/ShareThemeModal.tsx:36
@@ -8840,7 +8840,7 @@ msgstr "コードブロック"
 msgid "Code expired"
 msgstr "コードの有効期限が切れました"
 
-#. Label of the field in the browser where the user types the 12-character code shown in the desktop or mobile app. productName is the app name, such as Fluxer.
+#. Label of the field in the browser where the user types the 12-character code shown in the desktop or mobile app. productName is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:28
 msgid "Code from the {productName} app"
 msgstr "{productName}アプリのコード"
@@ -8907,7 +8907,7 @@ msgid "Collapse devices"
 msgstr "デバイスを折りたたむ"
 
 #. Setting label that collapses the inline DM list.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:31
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:31
 msgid "Collapse inline DM list"
 msgstr "DMリストを折りたたむ"
 
@@ -9781,7 +9781,7 @@ msgstr "左クリック（ボタン上）または右クリック（その他の
 #: src/features/auth/components/pages/oauth_authorize_page/OAuthAccountStep.tsx:36
 #: src/features/connection/components/modals/AddConnectionModal.tsx:384
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:726
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:413
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:413
 #: src/features/user/components/modals/tabs/AuthorizedAppsTab.tsx:182
 msgid "Continue"
 msgstr "続行"
@@ -10680,10 +10680,10 @@ msgstr "画像を処理できませんでした"
 msgid "Couldn't publish this message"
 msgstr "このメッセージを公開できませんでした"
 
-#. Instance selector error shown when no Fluxer instance answered at the address. Domain is interpolated.
+#. Instance selector error shown when no YChat instance answered at the address. Domain is interpolated.
 #: src/features/auth/flow/instance_selector/InstanceDiscoveryFailure.ts:20
-msgid "Couldn't reach a Fluxer instance at {domain}. Check the address and that the instance is online."
-msgstr "{domain} の Fluxer インスタンスに接続できませんでした。アドレスを確認し、インスタンスがオンラインであることを確認してください。"
+msgid "Couldn't reach a YChat instance at {domain}. Check the address and that the instance is online."
+msgstr "{domain} の YChat インスタンスに接続できませんでした。アドレスを確認し、インスタンスがオンラインであることを確認してください。"
 
 #. Title of the generic fallback error modal shown when reactivating a Plutonium subscription fails.
 #: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts:50
@@ -11457,8 +11457,8 @@ msgstr "カスタムBAN期間（秒）"
 msgid "Custom date range"
 msgstr "期間を指定"
 
-#. Error message in the FluxerTag change modal.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:66
+#. Error message in the YChatTag change modal.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:66
 msgid "Custom discriminators are not available on this instance"
 msgstr "カスタム識別子は、このインスタンスでは利用できません"
 
@@ -11685,7 +11685,7 @@ msgstr "プロフィールバナーをカスタマイズ"
 msgid "Customize your tag ({discriminatorLabel}) to your liking with {premiumProductName}"
 msgstr "{premiumProductName}でタグ（{discriminatorLabel}）を自由にカスタマイズ"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:402
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:402
 msgid "Customize your tag or keep it when changing your username"
 msgstr "タグをカスタマイズ、またはユーザー名を変更してもタグを維持"
 
@@ -12597,12 +12597,12 @@ msgstr "デスクトップアプリは最新です"
 msgid "Desktop audio isn't available right now on Linux."
 msgstr "Linuxでは現在、デスクトップオーディオを利用できません。"
 
-#. Inline notice on macOS when desktop/system audio capture is not supported because Fluxer cannot exclude call audio.
+#. Inline notice on macOS when desktop/system audio capture is not supported because YChat cannot exclude call audio.
 #: src/features/voice/components/modals/screen_share_picker_modal/PerWindowAudioNotice.tsx:37
 msgid "Desktop audio isn't available right now on macOS."
 msgstr "macOSでは現在、デスクトップオーディオを利用できません。"
 
-#. Inline notice on Windows when desktop/system audio capture is not supported because Fluxer cannot exclude call audio.
+#. Inline notice on Windows when desktop/system audio capture is not supported because YChat cannot exclude call audio.
 #: src/features/voice/components/modals/screen_share_picker_modal/PerWindowAudioNotice.tsx:18
 msgid "Desktop audio isn't available right now on Windows."
 msgstr "Windowsでは現在、デスクトップオーディオを利用できません。"
@@ -13566,8 +13566,8 @@ msgid "Download {productName}"
 msgstr "{productName}をダウンロード"
 
 #: src/features/connection/components/modals/AddConnectionModal.tsx:330
-msgid "Download <0>fluxer-verification</0> and place it in your <1>.well-known</1> folder so we can validate the domain."
-msgstr "<0>fluxer-verification</0> をダウンロードして <1>.well-known</1> フォルダーに配置してください。ドメインの検証に使用します。"
+msgid "Download <0>YChat-verification</0> and place it in your <1>.well-known</1> folder so we can validate the domain."
+msgstr "<0>YChat-verification</0> をダウンロードして <1>.well-known</1> フォルダーに配置してください。ドメインの検証に使用します。"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #: src/features/user/components/settings_utils/search_index/AppearanceIndex.ts:98
@@ -13604,8 +13604,8 @@ msgid "Download file"
 msgstr "ファイルをダウンロード"
 
 #: src/features/connection/components/modals/AddConnectionModal.tsx:352
-msgid "Download fluxer-verification"
-msgstr "fluxer-verificationをダウンロード"
+msgid "Download YChat-verification"
+msgstr "YChat-verificationをダウンロード"
 
 #. Media context menu action that downloads a GIF attachment.
 #: src/features/ui/action_menu/items/MediaMenuData.tsx:119
@@ -14851,10 +14851,10 @@ msgstr "有効なメールアドレスを入力してください。"
 msgid "Enter a valid message link."
 msgstr "有効なメッセージリンクを入力してください。"
 
-#. Description text in the channel and chat add friend form. Preserve {exampleFluxerTagFull}; it is inserted by code.
+#. Description text in the channel and chat add friend form. Preserve {exampleYChatTagFull}; it is inserted by code.
 #: src/features/channel/components/direct_message/AddFriendForm.tsx:33
-msgid "Enter a valid username ({exampleFluxerTagFull})."
-msgstr "有効なユーザー名を入力してください（{exampleFluxerTagFull}）。"
+msgid "Enter a valid username ({exampleYChatTagFull})."
+msgstr "有効なユーザー名を入力してください（{exampleYChatTagFull}）。"
 
 #. Error text in the add friend form on instances where people sign in with a username and have no tag.
 #: src/features/channel/components/direct_message/AddFriendForm.tsx:38
@@ -14925,7 +14925,7 @@ msgstr "認証アプリに表示された{digitCount}桁のコードを入力し
 msgid "Enter the code before continuing."
 msgstr "続行する前にコードを入力してください。"
 
-#. Title of the browser page where the user types the 12-character code the app shows under Signing in on another device. PRODUCT_NAME is the app name, such as Fluxer.
+#. Title of the browser page where the user types the 12-character code the app shows under Signing in on another device. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:182
 msgid "Enter the code from the {PRODUCT_NAME} app"
 msgstr "{PRODUCT_NAME}アプリからコードを入力してください"
@@ -16173,13 +16173,13 @@ msgstr "フロリダ州"
 
 #. Placeholder for the product name input in the setup wizard.
 #: src/features/app/components/setup/SetupWizardSteps.tsx:178
-msgid "Fluxer"
-msgstr "Fluxer"
+msgid "YChat"
+msgstr "YChat"
 
 #. Status shown when browser sign-in status polling gives up after repeated failures.
 #: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:57
-msgid "Fluxer stopped checking whether the browser approved this sign-in. It didn't lose your code."
-msgstr "Fluxer はブラウザでのサインイン承認の確認を停止しました。コードは失われていません。"
+msgid "YChat stopped checking whether the browser approved this sign-in. It didn't lose your code."
+msgstr "YChat はブラウザでのサインイン承認の確認を停止しました。コードは失われていません。"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #: src/features/user/components/settings_utils/section_registry/AccessibilitySections.ts:179
@@ -16755,8 +16755,8 @@ msgstr "友達からの通話のみ"
 msgid "From"
 msgstr "送信者"
 
-#. Attribution label on a gift, showing the sender FluxerTag.
-#. Sender label on a gift code embed. creatorTag is the FluxerTag of the gift creator.
+#. Attribution label on a gift, showing the sender YChatTag.
+#. Sender label on a gift code embed. creatorTag is the YChatTag of the gift creator.
 #: src/features/channel/components/GiftEmbed.tsx:29
 #: src/features/expressions/components/modals/GiftAcceptModal.tsx:33
 msgid "From {creatorTag}"
@@ -17013,8 +17013,8 @@ msgstr "自分用に{premiumProductName}を入手して、上限の引き上げ�
 msgid "Get {premiumProductName} to customize your tag"
 msgstr "タグをカスタマイズするには、{premiumProductName}を入手してください"
 
-#. Description text in the FluxerTag change modal. Preserve {premiumProductName}; it is inserted by code. Keep the tone plain and specific.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:57
+#. Description text in the YChatTag change modal. Preserve {premiumProductName}; it is inserted by code. Keep the tone plain and specific.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:57
 msgid "Get {premiumProductName} to customize your tag or keep it when changing your username"
 msgstr "タグをカスタマイズしたり、ユーザー名の変更時にタグを保持したりするには、{premiumProductName}を入手してください"
 
@@ -17337,7 +17337,7 @@ msgstr "グローバル名"
 msgid "Global profile"
 msgstr "グローバルプロフィール"
 
-#. Toggle in the keybinds tab. When on, the shortcut works even when Fluxer is not focused. Keep it concise.
+#. Toggle in the keybinds tab. When on, the shortcut works even when YChat is not focused. Keep it concise.
 #: src/features/user/components/modals/tabs/keybinds_tab/CustomKeybindRow.tsx:85
 #: src/features/user/components/modals/tabs/keybinds_tab/DefaultShortcutRow.tsx:65
 msgid "Global shortcut"
@@ -17358,12 +17358,12 @@ msgstr "戻って有効なメールアドレスを入力してください。"
 msgid "Go back to {productName} to continue."
 msgstr "{productName}に戻って続行してください。"
 
-#. Shown after approving a sign-in for an app on another device, which signs in by itself shortly. PRODUCT_NAME is the app name, such as Fluxer.
+#. Shown after approving a sign-in for an app on another device, which signs in by itself shortly. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:292
 msgid "Go back to the {PRODUCT_NAME} app. It finishes signing in on its own."
 msgstr "{PRODUCT_NAME}アプリに戻る。自動的にサインインが完了します。"
 
-#. Shown after approving, when the browser has already handed the sign-in back to the desktop app. PRODUCT_NAME is the app name, such as Fluxer.
+#. Shown after approving, when the browser has already handed the sign-in back to the desktop app. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:288
 msgid "Go back to the {PRODUCT_NAME} app. You can close this tab."
 msgstr "{PRODUCT_NAME}アプリに戻る。このタブは閉じても大丈夫です。"
@@ -17789,7 +17789,7 @@ msgstr "ギフトコードをお持ちですか？{PREMIUM_PRODUCT_NAME}をア�
 msgid "Have a gift code? Redeem it to unlock {premiumProductName}."
 msgstr "ギフトコードをお持ちですか？ {premiumProductName} をアンロックするためにコードを入力してください。"
 
-#. Friendly tagline shown on a Fluxer-branded button or upsell.
+#. Friendly tagline shown on a YChat-branded button or upsell.
 #: src/features/ui/state/Modal.ts:13
 msgid "Having fun?"
 msgstr "楽しんでる？"
@@ -18506,11 +18506,11 @@ msgstr "パスワードを忘れた場合、リカバリーキットがアカウ
 msgid "If you forget your password, this kit is the only way back into your account. Store it somewhere safe, like a password manager or a printed copy."
 msgstr "パスワードを忘れた場合、このキットがアカウントに戻る唯一の方法です。パスワードマネージャーや印刷物など、安全な場所に保管してください。"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:370
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:370
 msgid "If you save this username, your tag will reroll randomly when your {PREMIUM_PRODUCT_NAME} expires on <0>{premiumExpiresAtLabel}</0>, unless it renews."
 msgstr "このユーザー名を保存すると、{PREMIUM_PRODUCT_NAME}の有効期限（<0>{premiumExpiresAtLabel}</0>）が切れるとタグがランダムに再抽選されます（更新されない場合）。"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:377
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:377
 msgid "If you save this username, your tag will reroll randomly when your {PREMIUM_PRODUCT_NAME} expires, unless it renews."
 msgstr "このユーザー名を保存すると、{PREMIUM_PRODUCT_NAME}の有効期限が切れた際にタグがランダムに再抽選されます（更新されない場合）。"
 
@@ -19162,7 +19162,7 @@ msgstr "Insert"
 msgid "Insert emoji"
 msgstr "絵文字を挿入"
 
-#. CTA card body in the screen-share picker promoting the desktop app. {productName} is Fluxer.
+#. CTA card body in the screen-share picker promoting the desktop app. {productName} is YChat.
 #: src/features/voice/components/modals/screen_share_picker_modal/DesktopDownloadCta.tsx:16
 msgid "Install {productName} for the full source picker and smoother screen-sharing controls."
 msgstr "より詳細なソースピッカーとスムーズな画面共有コントロールには、{productName}をインストールしてください。"
@@ -19390,7 +19390,7 @@ msgstr "招待を作成しました"
 msgid "Invite deleted"
 msgstr "招待を削除しました"
 
-#. Fallback header on the invite modal when no community context is available. Refers to inviting friends to Fluxer.
+#. Fallback header on the invite modal when no community context is available. Refers to inviting friends to YChat.
 #: src/features/invite/components/modals/InviteModal.tsx:87
 msgid "Invite friends"
 msgstr "友達を招待"
@@ -19558,7 +19558,7 @@ msgstr "このコミュニティでは現在、招待が一時停止されてい
 msgid "Invites are paused after a suspected raid"
 msgstr "レイドの疑いがあるため、招待が一時停止されています"
 
-#. Invite settings notice shown when automated raid protection pauses invites. productName is the Fluxer product name.
+#. Invite settings notice shown when automated raid protection pauses invites. productName is the YChat product name.
 #: src/features/invite/utils/InviteMessageDescriptors.ts:28
 msgid "Invites are paused because {productName} detected a potential raid. New users can't join right now."
 msgstr "{productName}が潜在的なレイドを検出したため、招待は一時停止されています。現在、新しいユーザーは参加できません。"
@@ -19596,7 +19596,7 @@ msgstr "招待は一時停止中"
 msgid "Invites to {communityName} are currently disabled"
 msgstr "{communityName}への招待は現在無効です"
 
-#. Guild nagbar body shown when invite links are paused because raid detection is active. {communityName} is the community name and {productName} is Fluxer.
+#. Guild nagbar body shown when invite links are paused because raid detection is active. {communityName} is the community name and {productName} is YChat.
 #: src/features/app/components/layout/GuildLayout.tsx:64
 msgid "Invites to {communityName} are currently disabled because {productName} detected a potential raid. New people cannot join right now."
 msgstr "{productName}が潜在的なレイドを検出したため、{communityName}への招待は現在無効になっています。新しいメンバーは参加できません。"
@@ -19812,7 +19812,7 @@ msgstr "ボイスチャンネルに参加して、他の人の声を聞くこと
 msgid "Joined"
 msgstr "参加しました"
 
-#. Community members table column header for the date the account joined Fluxer.
+#. Community members table column header for the date the account joined YChat.
 #: src/features/channel/components/guild_members_page/MembersTableHeaderRow.tsx:29
 msgid "Joined {productName}"
 msgstr "{productName}への参加日"
@@ -21059,7 +21059,7 @@ msgstr "{userName}さんをグループのオーナーにしますか？オー�
 msgid "Make group owner"
 msgstr "グループのオーナーにする"
 
-#. Shown above the code on the browser approval page when the app cannot be signed in automatically. PRODUCT_NAME is the app name, such as Fluxer.
+#. Shown above the code on the browser approval page when the app cannot be signed in automatically. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:253
 msgid "Make sure this code matches the one in the {PRODUCT_NAME} app."
 msgstr "{PRODUCT_NAME} アプリ内のコードが一致していることを確認してください。"
@@ -21229,12 +21229,12 @@ msgid "Mark all as read"
 msgstr "すべて既読にする"
 
 #. Action that marks every community as read.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:43
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:43
 msgid "Mark all communities as read"
 msgstr "すべてのコミュニティを既読にする"
 
 #. Action that marks every direct message conversation as read.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:23
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:23
 msgid "Mark all DMs as read"
 msgstr "すべてのDMを既読にする"
 
@@ -24630,7 +24630,7 @@ msgstr "物"
 msgid "Off"
 msgstr "オフ"
 
-#. Accessible label for identifying the official Fluxer instance.
+#. Accessible label for identifying the official YChat instance.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:854
 msgid "Official instance"
 msgstr "公式インスタンス"
@@ -24698,7 +24698,7 @@ msgstr "<0>{listPriceEffectiveDate}</0>に、サブスクリプションが{list
 msgid "On click"
 msgstr "クリック時"
 
-#. One line explanation in the desktop app above the code. signInAddress is the web address of the sign-in page, such as web.fluxer.app/login?handoff=1.
+#. One line explanation in the desktop app above the code. signInAddress is the web address of the sign-in page, such as web.YChat.app/login?handoff=1.
 #: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:243
 msgid "On your other device, sign in at {signInAddress} and enter this code when asked."
 msgstr "他のデバイスで {signInAddress} にサインインし、求められたらこのコードを入力してください。"
@@ -24931,12 +24931,12 @@ msgstr "{contextName}を開く"
 msgid "Open {displayName}"
 msgstr "{displayName}を開く"
 
-#. First install step on Apple devices. host is the new domain, for example fluxer.com. Safari is the browser.
+#. First install step on Apple devices. host is the new domain, for example YChat.com. Safari is the browser.
 #: src/features/app/domain_migration/DomainMovedStepsModal.tsx:32
 msgid "Open {host} in Safari."
 msgstr "Safariで{host}を開いてください。"
 
-#. First install step on other devices. host is the new domain, for example fluxer.com.
+#. First install step on other devices. host is the new domain, for example YChat.com.
 #: src/features/app/domain_migration/DomainMovedStepsModal.tsx:37
 msgid "Open {host} in your browser."
 msgstr "{host}をブラウザで開いてください。"
@@ -24961,7 +24961,7 @@ msgstr "{landmarkName}を開く"
 msgid "Open {premiumProductFullName}"
 msgstr "{premiumProductFullName}を開く"
 
-#. Button on the browser page after approving that opens the desktop app again if it did not come to the front. PRODUCT_NAME is the app name, such as Fluxer.
+#. Button on the browser page after approving that opens the desktop app again if it did not come to the front. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:304
 msgid "Open {PRODUCT_NAME}"
 msgstr "{PRODUCT_NAME}を開く"
@@ -25113,7 +25113,7 @@ msgstr "{guildName}のコミュニティメニューを開く"
 msgid "Open date picker"
 msgstr "日付ピッカーを開く"
 
-#. Button label that opens the Fluxer desktop downloads page in a browser.
+#. Button label that opens the YChat desktop downloads page in a browser.
 #: src/features/updater/commands/UpdaterModalCommands.tsx:92
 msgid "Open desktop downloads"
 msgstr "デスクトップ版のダウンロードページを開く"
@@ -25630,7 +25630,7 @@ msgstr "OTP"
 #. IAR modal: body copy on the success step shown after a platform report is submitted. Reassures the user about follow-up.
 #: src/features/moderation/components/report_modal/IARModalCopy.ts:101
 msgid "Our safety team is reviewing it. We'll send you a DM and email once we've reached a verdict."
-msgstr "Fluxerの安全チームが内容を確認しています。結果が出ましたら、DMとメールでお知らせします。"
+msgstr "YChatの安全チームが内容を確認しています。結果が出ましたら、DMとメールでお知らせします。"
 
 #. Field label in the voice connection status popout. Shows WebRTC estimated available outgoing bandwidth.
 #: src/features/voice/components/voice_connection_status/shared.ts:120
@@ -25980,8 +25980,8 @@ msgstr "通知を一時停止"
 
 #. Voice screen share menu preference that pauses the local stream preview while the app is unfocused.
 #: src/features/ui/action_menu/items/voice_participant_menu_data/shared.ts:28
-msgid "Pause preview when Fluxer isn’t focused"
-msgstr "Fluxerがフォーカスされていないときはプレビューを一時停止"
+msgid "Pause preview when YChat isn’t focused"
+msgstr "YChatがフォーカスされていないときはプレビューを一時停止"
 
 #. Description shown for the emoji toggle while reduced motion is active.
 #: src/features/user/components/modals/tabs/accessibility_tab/AnimationTab.tsx:81
@@ -27282,7 +27282,7 @@ msgstr "代名詞"
 msgid "Pronouns: "
 msgstr "代名詞: "
 
-#. Nagbar body shown to Visionary premium users who have not enabled two-factor authentication. {productName} is Fluxer.
+#. Nagbar body shown to Visionary premium users who have not enabled two-factor authentication. {productName} is YChat.
 #: src/features/app/components/layout/app_layout/nagbars/VisionaryMfaNagbar.tsx:18
 msgid "Protect your Visionary account by enabling two-factor authentication. Thanks for supporting {productName}!"
 msgstr "2段階認証を有効にして、Visionaryアカウントを保護しましょう。{productName}をご利用いただきありがとうございます！"
@@ -27642,7 +27642,7 @@ msgstr "終了"
 msgid "Quit {appName}"
 msgstr "{appName}を終了"
 
-#. Detail line in the native dialog shown when the desktop app cannot open its local data store. {appName} is the desktop app name (typically Fluxer).
+#. Detail line in the native dialog shown when the desktop app cannot open its local data store. {appName} is the desktop app name (typically YChat).
 #: src/features/platform/utils/DesktopLocaleBridge.ts:304
 msgid "Quit {appName}, make sure no other copy is running, and open it again."
 msgstr "{appName}を終了し、他に実行中のコピーがないことを確認してから、もう一度開いてください。"
@@ -28930,7 +28930,7 @@ msgstr "報告の種類"
 msgid "Report user"
 msgstr "ユーザーを報告"
 
-#. Field label on the details step of the DSA report form (message report). Optional FluxerTag of the user who sent the message.
+#. Field label on the details step of the DSA report form (message report). Optional YChatTag of the user who sent the message.
 #: src/features/moderation/components/report/ReportStepDetails.tsx:28
 msgid "Reported user tag (optional)"
 msgstr "報告対象ユーザーのタグ（任意）"
@@ -30240,7 +30240,7 @@ msgstr "画面共有に失敗しました"
 
 #. Body shown when a failed screen share could not be fully stopped.
 #: src/features/voice/components/alerts/ScreenShareRollbackIncompleteModal.tsx:12
-msgid "Screen sharing failed, but Fluxer could not confirm that every capture path stopped. Stop sharing or disconnect from the call before continuing."
+msgid "Screen sharing failed, but YChat could not confirm that every capture path stopped. Stop sharing or disconnect from the call before continuing."
 msgstr "画面共有に失敗しましたが、すべてのキャプチャパスが停止したことを確認できませんでした。続行する前に、共有を停止するか通話から切断してください。"
 
 #. Body of the screen-share-unsupported modal. Mentions specific browsers and OSes; keep all proper nouns intact.
@@ -31032,7 +31032,7 @@ msgstr "送信 ({selectedCount}/{selectionLimit})"
 msgid "Send a direct message to a user."
 msgstr "ユーザーにダイレクトメッセージを送信します。"
 
-#. Body of the staff-only add-friend confirmation modal. The staff override is a Fluxer-staff-only feature that bypasses the normal request flow. {userName} is the target user.
+#. Body of the staff-only add-friend confirmation modal. The staff override is a YChat-staff-only feature that bypasses the normal request flow. {userName} is the target user.
 #: src/features/relationship/utils/RelationshipActionUtils.tsx:67
 msgid "Send a friend request to {userName}, or use the staff override to add them immediately."
 msgstr "{userName}に友達リクエストを送信するか、スタッフオーバーライドを使用してすぐに友達に追加します。"
@@ -31563,7 +31563,7 @@ msgstr "すべてのサウンドエフェクトの音量を設定します。個
 msgid "Settings"
 msgstr "設定"
 
-#. Type chip suffix in tooltips for inline rendered fluxer://settings/user deep links. Lowercase.
+#. Type chip suffix in tooltips for inline rendered YChat://settings/user deep links. Lowercase.
 #: src/features/messaging/components/markdown/renderers/LinkRenderer.tsx:138
 msgid "settings link"
 msgstr "設定へのリンク"
@@ -32038,12 +32038,12 @@ msgid "Show in all communities"
 msgstr "すべてのコミュニティに表示"
 
 #. Setting label that shows a badge for incoming friend requests.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:39
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:39
 msgid "Show incoming friend request count"
 msgstr "受信した友達リクエストの件数を表示"
 
 #. Setting label that shows the inline DM list in the sidebar.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:27
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:27
 msgid "Show inline DM list"
 msgstr "DMリストをインライン表示"
 
@@ -32281,7 +32281,7 @@ msgid "Show typing indicator with user avatars in the channel list"
 msgstr "チャンネルリストで入力インジケーターをユーザーアバター付きで表示"
 
 #. Setting label that shows an unread badge while the inline DM list is collapsed.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:35
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:35
 msgid "Show unread DM count when collapsed"
 msgstr "折りたたみ時に未読DM数を表示"
 
@@ -32362,12 +32362,12 @@ msgstr "もう一度サインイン"
 msgid "Sign in again as {accountLabel}"
 msgstr "{accountLabel} として再度サインインしてください"
 
-#. Shown in the desktop app while it waits for the browser. instanceName is the server name, such as Fluxer.
+#. Shown in the desktop app while it waits for the browser. instanceName is the server name, such as YChat.
 #: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:200
 msgid "Sign in to {instanceName} in your browser and confirm. This app finishes signing in on its own."
 msgstr "ブラウザで {instanceName} にサインインして確認してください。このアプリは自動的にサインインを完了します。"
 
-#. Shown in the desktop app above the code when the browser cannot return the sign-in automatically. instanceName is the server name, such as Fluxer.
+#. Shown in the desktop app above the code when the browser cannot return the sign-in automatically. instanceName is the server name, such as YChat.
 #: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:196
 msgid "Sign in to {instanceName} in your browser, and check that it shows this code:"
 msgstr "ブラウザで {instanceName} にサインインし、このコードが表示されていることを確認してください。"
@@ -32376,17 +32376,17 @@ msgstr "ブラウザで {instanceName} にサインインし、このコード�
 msgid "Sign in to claim your gift"
 msgstr "サインインしてギフトを受け取る"
 
-#. Title of the browser page where the user approves signing in to an app that asked for it. PRODUCT_NAME is the app name, such as Fluxer.
+#. Title of the browser page where the user approves signing in to an app that asked for it. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:71
 msgid "Sign in to the {PRODUCT_NAME} app"
 msgstr "{PRODUCT_NAME} アプリにサインイン"
 
-#. Title of the browser page where the user approves signing in to the desktop app that opened it. PRODUCT_NAME is the app name, such as Fluxer.
+#. Title of the browser page where the user approves signing in to the desktop app that opened it. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:58
 msgid "Sign in to the {PRODUCT_NAME} desktop app"
 msgstr "{PRODUCT_NAME} デスクトップアプリにサインイン"
 
-#. Title of the browser page where the user approves signing in to the mobile app that asked for it. PRODUCT_NAME is the app name, such as Fluxer.
+#. Title of the browser page where the user approves signing in to the mobile app that asked for it. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:65
 msgid "Sign in to the {PRODUCT_NAME} mobile app"
 msgstr "{PRODUCT_NAME}モバイルアプリにサインイン"
@@ -32411,7 +32411,7 @@ msgstr "ユーザー名でサインイン"
 msgid "Sign in with your browser"
 msgstr "ブラウザでサインイン"
 
-#. Sign-in option and modal title on fluxer.com that pairs a newly installed app with the old installed app still signed in on the previous domain. productName is the app name.
+#. Sign-in option and modal title on YChat.com that pairs a newly installed app with the old installed app still signed in on the previous domain. productName is the app name.
 #: src/features/auth/flow/BrowserLoginHandoffModal.tsx:28
 msgid "Sign in with your old {productName} app"
 msgstr "古い{productName}アプリでサインイン"
@@ -34556,7 +34556,7 @@ msgstr "システム"
 msgid "System & welcome"
 msgstr "システムとウェルカムメッセージ"
 
-#. Read-only system DM barrier message. productName is the Fluxer product name.
+#. Read-only system DM barrier message. productName is the YChat product name.
 #: src/features/channel/components/barriers/BarrierComponents.tsx:51
 msgid "System announcements from {productName} staff. You can't reply here."
 msgstr "{productName}スタッフからのシステムアナウンスです。ここに返信することはできません。"
@@ -34583,7 +34583,7 @@ msgstr "システムDMではビデオ通話を開始できません。"
 msgid "System DMs cannot host voice calls"
 msgstr "システムDMでは音声通話を開始できません"
 
-#. Tooltip body on the disabled voice call button in a system DM. System DMs are official Fluxer system accounts.
+#. Tooltip body on the disabled voice call button in a system DM. System DMs are official YChat system accounts.
 #: src/features/channel/components/channel_header_components/CallButtons.tsx:28
 msgid "System DMs cannot host voice calls."
 msgstr "システムDMでは音声通話を開始できません。"
@@ -34675,8 +34675,8 @@ msgid "Tables"
 msgstr "テーブル"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#. Short label in the FluxerTag change modal. Keep it concise.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:62
+#. Short label in the YChatTag change modal. Keep it concise.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:62
 #: src/features/user/components/settings_utils/search_index/MyProfileIndex.ts:73
 msgid "Tag"
 msgstr "タグ"
@@ -34985,7 +34985,7 @@ msgstr "タイ語"
 msgid "Thank you for helping keep {productName} safe. We'll review your report as soon as possible."
 msgstr "{productName}を安全に保つためのご協力ありがとうございます。できるだけ早くご報告内容を確認いたします。"
 
-#. Error in the browser when a code typed from the app is not found. instanceHost is the server the browser checked, such as api.fluxer.app. productName is the app name, such as Fluxer.
+#. Error in the browser when a code typed from the app is not found. instanceHost is the server the browser checked, such as api.YChat.app. productName is the app name, such as YChat.
 #: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:25
 msgid "That code is not valid on {instanceHost}. Check the code in the {productName} app and try again."
 msgstr "そのコードは {instanceHost} では無効です。{productName} アプリでコードを確認してから、もう一度お試しください。"
@@ -35045,18 +35045,18 @@ msgstr "ブックマークは以上です。"
 msgid "The {PRODUCT_NAME} app asked to sign in as {requestedIdentifier}, but you chose {name}."
 msgstr "{PRODUCT_NAME}アプリは{requestedIdentifier}としてサインインを求めましたが、{name}を選択しました。"
 
-#. Explains where the code comes from, under the title of the browser page where it is typed. Signing in on another device is the label of a button in the app and must match its translation. PRODUCT_NAME is the app name, such as Fluxer.
+#. Explains where the code comes from, under the title of the browser page where it is typed. Signing in on another device is the label of a button in the app and must match its translation. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:187
 msgid "The {PRODUCT_NAME} app on your other device shows it under Signing in on another device. Only enter a code from a device you control."
 msgstr "他のデバイスの{PRODUCT_NAME}アプリで「他のデバイスでのサインイン」の下に表示されます。管理下にあるデバイスからのコードのみを入力してください。"
 
-#. Shown after the user cancelled the sign-in request in the browser. PRODUCT_NAME is the app name, such as Fluxer.
+#. Shown after the user cancelled the sign-in request in the browser. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:327
 msgid "The {PRODUCT_NAME} app was not signed in. You can close this tab."
 msgstr "{PRODUCT_NAME} アプリでサインインが完了していません。このタブは閉じることができます。"
 
-#. Description text in the FluxerTag change modal.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:70
+#. Description text in the YChatTag change modal.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:70
 msgid "The #0000 tag is reserved for Visionary subscribers. Visionary is no longer available for purchase."
 msgstr "#0000タグはVisionary登録者専用です。Visionaryは現在購入できません。"
 
@@ -35232,8 +35232,8 @@ msgstr "新しいボイスチャンネルには、<0>{channelLabel}</0>の権限
 
 #. Setup wizard push relay consent step body.
 #: src/features/app/components/setup/SetupWizardSteps.tsx:355
-msgid "The official Fluxer mobile apps receive notifications through Fluxer's push relay, which hands them to Apple and Google. Self-hosted UnifiedPush and ntfy endpoints never reach the relay and need no agreement."
-msgstr "Fluxer公式モバイルアプリは、Fluxerのプッシュリレーを通じて通知を受け取ります。これはAppleおよびGoogleに通知を渡します。セルフホスト型のUnifiedPushおよびntfyエンドポイントは、リレーに到達せず、同意も不要です。"
+msgid "The official YChat mobile apps receive notifications through YChat's push relay, which hands them to Apple and Google. Self-hosted UnifiedPush and ntfy endpoints never reach the relay and need no agreement."
+msgstr "YChat公式モバイルアプリは、YChatのプッシュリレーを通じて通知を受け取ります。これはAppleおよびGoogleに通知を渡します。セルフホスト型のUnifiedPushおよびntfyエンドポイントは、リレーに到達せず、同意も不要です。"
 
 #. Activity log detail row under a removed channel permission override, listing the permissions it explicitly allowed before it was removed. It describes the removed override. It does not mean these permissions are allowed now. A permission override is a channel-level exception to the permissions of a role or member. It allows or denies chosen permissions in one channel or category only. Use the same word for override as the channel permissions settings, such as Add override. {permissions} is a list of permission names joined into one phrase, for example "View channel and Send messages". A long list ends with a count, for example "View channel, Send messages, and 3 more permissions".
 #: src/features/guild/utils/guild_tabs/audit_log/AuditLogChannelMessages.ts:418
@@ -35300,9 +35300,9 @@ msgstr "システムが {role} のロールを {target} から削除しました
 msgid "The upload service rejected this sticker as larger than {maxSize}. Try a smaller file, a simpler image, or a shorter animation."
 msgstr "アップロードサービスにより、このスタンプは{maxSize}より大きいと判断されました。より小さいファイル、よりシンプルな画像、またはより短いアニメーションをお試しください。"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:144
-msgid "The username <0>{fluxerTag}</0> is already taken. Continuing will reroll your tag automatically."
-msgstr "ユーザー名<0>{fluxerTag}</0>は既に使用されています。続行すると、タグが自動的に再抽選されます。"
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:144
+msgid "The username <0>{YChatTag}</0> is already taken. Continuing will reroll your tag automatically."
+msgstr "ユーザー名<0>{YChatTag}</0>は既に使用されています。続行すると、タグが自動的に再抽選されます。"
 
 #. Setup wizard error when the username style was already fixed because an account exists.
 #: src/features/app/components/setup/SelfHostedSetupWizardGate.tsx:117
@@ -35504,7 +35504,7 @@ msgstr "サードパーティ"
 msgid "This account can't be blocked."
 msgstr "このアカウントをブロックすることはできません。"
 
-#. Error in the browser when the chosen account belongs to a different server than the app that asked to sign in. accountHost and requestHost are server addresses. productName is the app name, such as Fluxer.
+#. Error in the browser when the chosen account belongs to a different server than the app that asked to sign in. accountHost and requestHost are server addresses. productName is the app name, such as YChat.
 #: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:38
 msgid "This account is on {accountHost}, but the {productName} app is signing in to {requestHost}. Choose an account on {requestHost}."
 msgstr "このアカウントは {accountHost} にありますが、{productName} アプリは {requestHost} にサインインしようとしています。{requestHost} のアカウントを選択してください。"
@@ -36171,7 +36171,7 @@ msgstr "このリセットリンクは期限切れです。リセットリンク
 msgid "This shows how links appear: {linkPreviewExampleUrl}"
 msgstr "リンクの表示例: {linkPreviewExampleUrl}"
 
-#. Error in the browser when the sign-in request from the desktop app no longer exists, because it expired or the app cancelled it. productName is the app name, such as Fluxer.
+#. Error in the browser when the sign-in request from the desktop app no longer exists, because it expired or the app cancelled it. productName is the app name, such as YChat.
 #: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:20
 msgid "This sign-in request expired or was cancelled in the {productName} app. Start again from the app."
 msgstr "{productName}アプリでこのサインインリクエストは期限切れまたはキャンセルされました。アプリからもう一度やり直してください。"
@@ -38733,7 +38733,7 @@ msgstr "デフォルトを使用"
 msgid "Use direct input device access"
 msgstr "入力デバイスへの直接アクセスを使用"
 
-#. Permission description in the channel-scoped permissions editor for the Use External Emoji permission. "Other communities" means custom emoji uploaded in a different Fluxer community.
+#. Permission description in the channel-scoped permissions editor for the Use External Emoji permission. "Other communities" means custom emoji uploaded in a different YChat community.
 #: src/features/permissions/utils/PermissionLabelDescriptors.ts:261
 msgid "Use emoji from other communities in this channel."
 msgstr "他のコミュニティの絵文字をこのチャンネルで使用できます。"
@@ -38743,7 +38743,7 @@ msgstr "他のコミュニティの絵文字をこのチャンネルで使用で
 msgid "Use emoji from other communities with {premiumProductName}"
 msgstr "{premiumProductName}で他のコミュニティの絵文字を使用"
 
-#. Permission description in the role/permission editor for the Use External Emoji permission. "Other communities" means custom emoji uploaded in a different Fluxer community.
+#. Permission description in the role/permission editor for the Use External Emoji permission. "Other communities" means custom emoji uploaded in a different YChat community.
 #: src/features/permissions/utils/PermissionLabelDescriptors.ts:79
 msgid "Use emoji from other communities."
 msgstr "他のコミュニティの絵文字を使用できます。"
@@ -38812,7 +38812,7 @@ msgstr "パスキーを使用してパスワードなしでサインインする
 msgid "Use selection"
 msgstr "選択範囲を使用"
 
-#. Permission description in the channel-scoped permissions editor for the Use External Stickers permission. "Other communities" means stickers uploaded in a different Fluxer community.
+#. Permission description in the channel-scoped permissions editor for the Use External Stickers permission. "Other communities" means stickers uploaded in a different YChat community.
 #: src/features/permissions/utils/PermissionLabelDescriptors.ts:266
 msgid "Use stickers from other communities in this channel."
 msgstr "他のコミュニティのスタンプをこのチャンネルで使用できます。"
@@ -38822,7 +38822,7 @@ msgstr "他のコミュニティのスタンプをこのチャンネルで使用
 msgid "Use stickers from other communities with {premiumProductName}"
 msgstr "{premiumProductName}で他のコミュニティのスタンプを使用"
 
-#. Permission description in the role/permission editor for the Use External Stickers permission. "Other communities" means stickers uploaded in a different Fluxer community.
+#. Permission description in the role/permission editor for the Use External Stickers permission. "Other communities" means stickers uploaded in a different YChat community.
 #: src/features/permissions/utils/PermissionLabelDescriptors.ts:158
 msgid "Use stickers from other communities."
 msgstr "他のコミュニティのスタンプを使用できます。"
@@ -38832,10 +38832,10 @@ msgstr "他のコミュニティのスタンプを使用できます。"
 msgid "Use system locale for time format"
 msgstr "時刻形式にシステムのロケールを使用"
 
-#. Accessible label for the official Fluxer instance option.
+#. Accessible label for the official YChat instance option.
 #: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:27
-msgid "Use the official Fluxer instance"
-msgstr "公式のFluxerインスタンスを使用"
+msgid "Use the official YChat instance"
+msgstr "公式のYChatインスタンスを使用"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls.
 #: src/features/user/components/settings_utils/search_index/DesktopSettingsIndex.ts:175
@@ -38971,7 +38971,7 @@ msgstr "ユーザーコントロール"
 msgid "User debug"
 msgstr "ユーザーデバッグ"
 
-#. Field label on the details step of the DSA report form (user report). Optional Fluxer user snowflake ID. "ID" is conventional.
+#. Field label on the details step of the DSA report form (user report). Optional YChat user snowflake ID. "ID" is conventional.
 #: src/features/moderation/components/report/ReportStepDetails.tsx:33
 msgid "User ID (optional)"
 msgstr "ユーザーID（任意）"
@@ -39031,7 +39031,7 @@ msgstr "ユーザーレコード"
 msgid "User settings"
 msgstr "ユーザー設定"
 
-#. Field label on the details step of the DSA report form (user report). Optional FluxerTag of the reported user.
+#. Field label on the details step of the DSA report form (user report). Optional YChatTag of the reported user.
 #: src/features/moderation/components/report/ReportStepDetails.tsx:38
 msgid "User tag (optional)"
 msgstr "ユーザーのタグ（任意）"
@@ -39046,7 +39046,7 @@ msgstr "ユーザーの音量"
 #. Settings search entry label. Also used as a search synonym in the settings search bar.
 #: src/features/app/components/setup/SetupWizardSteps.tsx:1119
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:581
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:227
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:227
 #: src/features/user/components/modals/tabs/my_profile_tab/MyProfileTabUsernameSection.tsx:56
 #: src/features/user/components/settings_utils/search_index/MyProfileIndex.ts:53
 msgid "Username"
@@ -39057,8 +39057,8 @@ msgstr "ユーザー名"
 msgid "Username (optional)"
 msgstr "ユーザー名（任意）"
 
-#. Short label in the FluxerTag change modal. Keep it concise.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:41
+#. Short label in the YChatTag change modal. Keep it concise.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:41
 msgid "Username already taken"
 msgstr "ユーザー名は既に使用されています"
 
@@ -39097,8 +39097,8 @@ msgstr "ユーザー名でのサインインは、現在モバイルアプリ向
 msgid "Username tags"
 msgstr "ユーザー名タグ"
 
-#. Short label in the FluxerTag change modal. Keep it concise.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:45
+#. Short label in the YChatTag change modal. Keep it concise.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:45
 msgid "Username updated"
 msgstr "ユーザー名を更新しました"
 
@@ -39112,7 +39112,7 @@ msgstr "ユーザー名"
 msgid "Usernames (recommended)"
 msgstr "ユーザー名（推奨）"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:220
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:220
 msgid "Usernames can only contain letters (a-z, A-Z), numbers (0-9), and underscores. Usernames are case-insensitive."
 msgstr "ユーザー名に使用できるのは、文字（a-z、A-Z）、数字（0-9）、アンダースコアのみです。大文字・小文字は区別されません。"
 
@@ -40562,7 +40562,7 @@ msgstr "ウェブフック"
 msgid "Webhooks updated"
 msgstr "ウェブフックを更新しました"
 
-#. Native Help submenu item that opens the Fluxer marketing website.
+#. Native Help submenu item that opens the YChat marketing website.
 #: src/features/platform/utils/DesktopLocaleBridge.ts:147
 msgid "Website"
 msgstr "ウェブサイト"
@@ -40586,7 +40586,7 @@ msgstr "{username}さん、ようこそ！"
 msgid "Welcome to {channelDisplayName}"
 msgstr "{channelDisplayName}へようこそ"
 
-#. Premium onboarding nagbar body. {premiumProductFullName} is the full premium product name, such as Fluxer Plutonium. {premiumProductName} is the short product name.
+#. Premium onboarding nagbar body. {premiumProductFullName} is the full premium product name, such as YChat Plutonium. {premiumProductName} is the short product name.
 #: src/features/app/components/layout/app_layout/nagbars/PremiumOnboardingNagbar.tsx:29
 msgid "Welcome to {premiumProductFullName}. Explore your {premiumProductName} perks and manage your subscription."
 msgstr "{premiumProductFullName}へようこそ。{premiumProductName}の特典をチェックして、サブスクリプションを管理してください。"
@@ -41058,7 +41058,7 @@ msgstr "すでに永久版の{premiumProductName}をお持ちです"
 msgid "You already have this connection."
 msgstr "この接続はすでに追加されています。"
 
-#. External link warning title. productName is the Fluxer product name.
+#. External link warning title. productName is the YChat product name.
 #: src/features/messaging/components/modals/ExternalLinkWarningModal.tsx:22
 msgid "You are about to leave {productName}"
 msgstr "{productName}から移動します"
@@ -41394,11 +41394,11 @@ msgstr "この権限を削除すると自分からも権限が削除されるた
 msgid "You changed your nickname in this community from **{previousNickname}** to **{newNickname}**."
 msgstr "このコミュニティでのニックネームを**{previousNickname}**から**{newNickname}**に変更しました。"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:383
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:383
 msgid "You changed your tag while on {PREMIUM_PRODUCT_NAME}. It will reroll randomly when your {PREMIUM_PRODUCT_NAME} expires on <0>{premiumExpiresAtLabel}</0>, unless it renews."
 msgstr "{PREMIUM_PRODUCT_NAME}の利用中にタグを変更しました。{PREMIUM_PRODUCT_NAME}の有効期限（<0>{premiumExpiresAtLabel}</0>）が切れると、更新されない限りタグはランダムに再設定されます。"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:390
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:390
 msgid "You changed your tag while on {PREMIUM_PRODUCT_NAME}. It will reroll randomly when your {PREMIUM_PRODUCT_NAME} expires, unless it renews."
 msgstr "{PREMIUM_PRODUCT_NAME}の利用中にタグを変更しました。{PREMIUM_PRODUCT_NAME}の有効期限が切れると、更新されない限りタグはランダムに再設定されます。"
 
@@ -42400,7 +42400,7 @@ msgstr "次回の更新時に、サブスクリプションが年額請求に切
 msgid "Your theme CSS is too large to share. Trim it down and try again."
 msgstr "テーマのCSSが大きすぎるため共有できません。サイズを小さくしてからもう一度お試しください。"
 
-#. Field label on the details step of the DSA report form. Optional Fluxer username of the reporter so staff can follow up.
+#. Field label on the details step of the DSA report form. Optional YChat username of the reporter so staff can follow up.
 #: src/features/moderation/components/report/ReportStepDetails.tsx:67
 msgid "Your username (optional)"
 msgstr "あなたのユーザー名（任意）"

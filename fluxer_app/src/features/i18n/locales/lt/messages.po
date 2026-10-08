@@ -917,17 +917,17 @@ msgstr "{altText} — peržiūra su šviesia tema"
 msgid "{appCount, plural, one {# app selected for access revocation} other {# apps selected for access revocation}}"
 msgstr "{appCount, plural, one {# programa pasirinkta prieigai atšaukti} few {# programos pasirinktos prieigai atšaukti} other {# programų pasirinkta prieigai atšaukti}}"
 
-#. Body of the native dialog shown when the desktop app has repeatedly failed to load. {appName} is the desktop app name (typically Fluxer). The app keeps retrying on its own while the dialog is open.
+#. Body of the native dialog shown when the desktop app has repeatedly failed to load. {appName} is the desktop app name (typically YChat). The app keeps retrying on its own while the dialog is open.
 #: src/features/platform/utils/DesktopLocaleBridge.ts:348
 msgid "{appName} can't reach its servers. It will keep trying in the background."
 msgstr "{appName} negali prisijungti prie savo serverių. Jis ir toliau bandys veikti fone."
 
-#. Title of the native error dialog shown when the desktop app cannot open the local data store it used before. {appName} is the desktop app name (typically Fluxer).
+#. Title of the native error dialog shown when the desktop app cannot open the local data store it used before. {appName} is the desktop app name (typically YChat).
 #: src/features/platform/utils/DesktopLocaleBridge.ts:290
 msgid "{appName} cannot open its local data"
 msgstr "{appName} negali atidaryti vietinių duomenų"
 
-#. Main message of the native error dialog shown when the desktop app cannot open its local data store. {appName} is the desktop app name (typically Fluxer).
+#. Main message of the native error dialog shown when the desktop app cannot open its local data store. {appName} is the desktop app name (typically YChat).
 #: src/features/platform/utils/DesktopLocaleBridge.ts:295
 msgid "{appName} cannot open the local data it saved on this computer."
 msgstr "{appName} negali atidaryti vietinių duomenų, kuriuos išsaugojo šiame kompiuteryje."
@@ -942,7 +942,7 @@ msgstr "{appName} nepavyko įkelti programos failų. Uždarykite ir vėl atidary
 msgid "{appName} could not read one of its app files. Quit and open it again."
 msgstr "{appName} nepavyko perskaityti vieno iš programos failų. Išeikite ir vėl atidarykite programą"
 
-#. Title of the native error dialog shown when the desktop app cannot boot. {appName} is the desktop app name (typically Fluxer).
+#. Title of the native error dialog shown when the desktop app cannot boot. {appName} is the desktop app name (typically YChat).
 #: src/features/platform/utils/DesktopLocaleBridge.ts:338
 msgid "{appName} failed to start"
 msgstr "Nepavyko paleisti {appName}"
@@ -1007,7 +1007,7 @@ msgstr "{clientLabel} nori prisijungti"
 msgid "{clientName} will use this account for this authorization."
 msgstr "{clientName} naudos šią paskyrą šiam autorizavimui."
 
-#. Guild nagbar body shown for staff-only communities. {communityName} is the community name and {productName} is Fluxer.
+#. Guild nagbar body shown for staff-only communities. {communityName} is the community name and {productName} is YChat.
 #: src/features/app/components/layout/GuildLayout.tsx:84
 msgid "{communityName} is currently only accessible to {productName} staff members"
 msgstr "{communityName} šiuo metu prieinama tik {productName} darbuotojams"
@@ -1373,13 +1373,13 @@ msgstr "{desktopChannel} darbalaukio versija {desktopVersion}"
 msgid "{deviceCount, plural, one {# device selected for sign-out} other {# devices selected for sign-out}}"
 msgstr "{deviceCount, plural, one {# įrenginys pasirinktas atjungti} few {# įrenginiai pasirinkti atjungti} other {# įrenginių pasirinkta atjungti}}"
 
-#. Sidebar Fluxer-home button tooltip showing how many incoming friend requests are pending. Count is interpolated.
-#: src/features/app/components/layout/sidebar_nav/FluxerButton.tsx:41
+#. Sidebar YChat-home button tooltip showing how many incoming friend requests are pending. Count is interpolated.
+#: src/features/app/components/layout/sidebar_nav/YChatButton.tsx:41
 msgid "{displayedIncomingFriendRequestCount, plural, one {# friend request} other {# friend requests}}"
 msgstr "{displayedIncomingFriendRequestCount, plural, one {# draugystės užklausa} few {# draugystės užklausos} many {# draugystės užklausos} other {# draugystės užklausų}}"
 
-#. Short label in the sidebar navigation fluxer button. Preserve {displayedUnreadDmCount}; it is inserted by code.
-#: src/features/app/components/layout/sidebar_nav/FluxerButton.tsx:36
+#. Short label in the sidebar navigation YChat button. Preserve {displayedUnreadDmCount}; it is inserted by code.
+#: src/features/app/components/layout/sidebar_nav/YChatButton.tsx:36
 msgid "{displayedUnreadDmCount, plural, one {# unread DM} other {# unread DMs}}"
 msgstr "{displayedUnreadDmCount, plural, one {# neperskaityta tiesioginė žinutė} few {# neperskaitytos tiesioginės žinutės} many {# neperskaitytos tiesioginės žinutės} other {# neperskaitytų tiesioginių žinučių}}"
 
@@ -1395,8 +1395,8 @@ msgstr "{displayName} atsiuntė jums draugystės užklausą"
 
 #. Instance selector error shown when the instance speaks a protocol generation this client does not know. Domain is interpolated.
 #: src/features/auth/flow/instance_selector/InstanceDiscoveryFailure.ts:24
-msgid "{domain} runs a newer version of Fluxer than this app. Update Fluxer, then try again."
-msgstr "{domain} naudoja naujesnę „Fluxer“ versiją nei ši programėlė. Atnaujinkite „Fluxer“ ir bandykite dar kartą."
+msgid "{domain} runs a newer version of YChat than this app. Update YChat, then try again."
+msgstr "{domain} naudoja naujesnę „YChat“ versiją nei ši programėlė. Atnaujinkite „YChat“ ir bandykite dar kartą."
 
 #. Profile timezone difference text. duration is a localized hours/minutes phrase for how far ahead the target user's local time is.
 #: src/features/user/components/popouts/UserProfileShared.tsx:65
@@ -1810,13 +1810,13 @@ msgstr "Kad pavadinimo juostos pakeitimas įsigaliotų, {PRODUCT_NAME} reikia pa
 msgid "{PRODUCT_NAME} needs to restart to disable Chromium's hardware acceleration. Use this only if you're troubleshooting graphics glitches or high GPU usage."
 msgstr "{PRODUCT_NAME} reikia paleisti iš naujo, kad būtų išjungtas „Chromium“ aparatinės įrangos spartinimas. Naudokite tai tik tada, kai sprendžiate grafikos trikdžių arba didelio GPU naudojimo problemas."
 
-#. Accessible label for the Fluxer application icon.
-#: src/features/ui/components/icons/FluxerIconMark.tsx:6
+#. Accessible label for the YChat application icon.
+#: src/features/ui/components/icons/YChatIconMark.tsx:6
 msgid "{productName} application icon"
 msgstr "{productName} programos piktograma"
 
 #. Accessible label for the application logo.
-#: src/features/ui/components/icons/FluxerLogo.tsx:11
+#: src/features/ui/components/icons/YChatLogo.tsx:11
 msgid "{productName} application logo"
 msgstr "„{productName}“ programos logotipas"
 
@@ -1894,12 +1894,12 @@ msgstr "{productName} užsidarys, įdiegs naujinį ir vėl atsidarys."
 msgid "{productName} could not reach the update service. Check your connection and try again."
 msgstr "„{productName}“ nepavyko pasiekti atnaujinimų tarnybos. Patikrinkite interneto ryšį ir bandykite dar kartą."
 
-#. Invite page notice shown when automated raid protection pauses invites. productName is the Fluxer product name.
+#. Invite page notice shown when automated raid protection pauses invites. productName is the YChat product name.
 #: src/features/invite/utils/InviteMessageDescriptors.ts:17
 msgid "{productName} detected a potential raid in this community, so invites are paused."
 msgstr "{productName} aptiko galimą ataką šioje bendruomenėje, todėl kvietimai yra pristabdyti."
 
-#. Invite modal notice shown when automated raid protection pauses invites. productName is the Fluxer product name.
+#. Invite modal notice shown when automated raid protection pauses invites. productName is the YChat product name.
 #: src/features/invite/utils/InviteMessageDescriptors.ts:22
 msgid "{productName} detected a potential raid in this community. Invites are paused, so new users cannot join right now."
 msgstr "{productName} aptiko galimą ataką šioje bendruomenėje. Kvietimai pristabdyti, todėl nauji naudotojai šiuo metu negali prisijungti."
@@ -1909,22 +1909,22 @@ msgstr "{productName} aptiko galimą ataką šioje bendruomenėje. Kvietimai pri
 msgid "{productName} detected a potential raid, so new users can't join right now."
 msgstr "{productName} aptiko galimą ataką, todėl nauji naudotojai šiuo metu negali prisijungti."
 
-#. Banner in a web app installed on iPhone, iPad or Mac. productName is the app name. host is the new domain, for example fluxer.com. Home Screen and Dock are Apple names.
+#. Banner in a web app installed on iPhone, iPad or Mac. productName is the app name. host is the new domain, for example YChat.com. Home Screen and Dock are Apple names.
 #: src/features/app/components/layout/app_layout/nagbars/DomainMovedNagbar.tsx:38
 msgid "{productName} has moved to {host}. Add it to your Home Screen or Dock, then sign in with this app."
 msgstr "{productName} perkeltas į {host}. Pridėkite jį prie pradžios ekrano arba Dock, tada prisijunkite naudodami šią programėlę."
 
-#. Banner in an installed web app on other browsers. productName is the app name. host is the new domain, for example fluxer.com.
+#. Banner in an installed web app on other browsers. productName is the app name. host is the new domain, for example YChat.com.
 #: src/features/app/components/layout/app_layout/nagbars/DomainMovedNagbar.tsx:43
 msgid "{productName} has moved to {host}. Install it from your browser, then sign in with this app."
 msgstr "{productName} perkeltas į {host}. Įdiekite jį iš naršyklės, tada prisijunkite naudodami šią programėlę."
 
-#. Banner in an installed desktop web app after the account moved to the new domain. productName is the app name. host is the new domain, for example fluxer.com.
+#. Banner in an installed desktop web app after the account moved to the new domain. productName is the app name. host is the new domain, for example YChat.com.
 #: src/features/app/components/layout/app_layout/nagbars/DomainMovedNagbar.tsx:28
 msgid "{productName} has moved to {host}. Install the new app and you will already be signed in."
 msgstr "{productName} perkeltas į {host}. Įdiekite naująją programėlę ir jau būsite prisijungę."
 
-#. Banner in an installed Android web app. productName is the app name. host is the new domain, for example fluxer.com.
+#. Banner in an installed Android web app. productName is the app name. host is the new domain, for example YChat.com.
 #: src/features/app/components/layout/app_layout/nagbars/DomainMovedNagbar.tsx:33
 msgid "{productName} has moved to {host}. Open it in your browser to install the new app."
 msgstr "{productName} perkeltas į {host}. Atidarykite jį naršyklėje, kad įdiegtumėte naująją programėlę."
@@ -1934,22 +1934,22 @@ msgstr "{productName} perkeltas į {host}. Atidarykite jį naršyklėje, kad įd
 msgid "{productName} member since"
 msgstr "{productName} narys nuo"
 
-#. Body of the camera-permission-denied modal on web. {productName} is Fluxer.
+#. Body of the camera-permission-denied modal on web. {productName} is YChat.
 #: src/features/permissions/system/components/MediaPermissionBlockedModal.tsx:39
 msgid "{productName} needs access to your camera to enable video chat. Grant camera permission in your browser settings and try again."
 msgstr "Kad būtų galima naudoti vaizdo pokalbius, „{productName}“ reikia prieigos prie jūsų kameros. Suteikite kameros leidimą naršyklės nustatymuose ir bandykite dar kartą."
 
-#. Body of the camera-permission-denied modal on Windows and Linux. {productName} is Fluxer.
+#. Body of the camera-permission-denied modal on Windows and Linux. {productName} is YChat.
 #: src/features/permissions/system/components/MediaPermissionBlockedModal.tsx:34
 msgid "{productName} needs access to your camera. Allow camera access in your operating system privacy settings and restart the app."
 msgstr "„{productName}“ reikia prieigos prie jūsų kameros. Leiskite naudoti kamerą operacinės sistemos privatumo nustatymuose ir iš naujo paleiskite programą."
 
-#. Body of the microphone-permission-denied modal on web. {productName} is Fluxer.
+#. Body of the microphone-permission-denied modal on web. {productName} is YChat.
 #: src/features/permissions/system/components/MediaPermissionBlockedModal.tsx:29
 msgid "{productName} needs access to your microphone to enable voice chat. Grant microphone permission in your browser settings and try again."
 msgstr "Kad būtų galima naudoti balso pokalbius, „{productName}“ reikia prieigos prie jūsų mikrofono. Suteikite mikrofono leidimą naršyklės nustatymuose ir bandykite dar kartą."
 
-#. Body of the microphone-permission-denied modal on Windows and Linux. {productName} is Fluxer.
+#. Body of the microphone-permission-denied modal on Windows and Linux. {productName} is YChat.
 #: src/features/permissions/system/components/MediaPermissionBlockedModal.tsx:24
 msgid "{productName} needs access to your microphone. Allow microphone access in your operating system privacy settings and restart the app."
 msgstr "{productName} reikia prieigos prie jūsų mikrofono. Leiskite naudoti mikrofoną operacinės sistemos privatumo nustatymuose ir iš naujo paleiskite programą."
@@ -1964,17 +1964,17 @@ msgstr "{productName} reikia prieigos prie kameros, kad būtų galima parodyti j
 msgid "{productName} needs microphone access to list your devices."
 msgstr "{productName} reikia prieigos prie mikrofono, kad būtų galima parodyti jūsų įrenginius."
 
-#. Body of the screen-permission-denied modal on non-mac desktop platforms. {productName} is Fluxer.
+#. Body of the screen-permission-denied modal on non-mac desktop platforms. {productName} is YChat.
 #: src/features/permissions/system/components/MediaPermissionBlockedModal.tsx:44
 msgid "{productName} needs screen recording access. Allow screen recording in your operating system privacy settings and restart the app."
 msgstr "{productName} reikia leidimo įrašyti ekraną. Leiskite įrašyti ekraną operacinės sistemos privatumo nustatymuose ir iš naujo paleiskite programą."
 
-#. Intro in the modal that explains how to install the app from its new domain. productName is the app name. host is the new domain, for example fluxer.com.
+#. Intro in the modal that explains how to install the app from its new domain. productName is the app name. host is the new domain, for example YChat.com.
 #: src/features/app/domain_migration/DomainMovedStepsModal.tsx:22
 msgid "{productName} now lives at {host}. Install it from there, then sign in with this app."
 msgstr "{productName} dabar veikia adresu {host}. Įdiekite jį ten, tada prisijunkite naudodami šią programėlę."
 
-#. Intro in the modal that explains how to install the app from its new domain when the account already moved. productName is the app name. host is the new domain, for example fluxer.com.
+#. Intro in the modal that explains how to install the app from its new domain when the account already moved. productName is the app name. host is the new domain, for example YChat.com.
 #: src/features/app/domain_migration/DomainMovedStepsModal.tsx:27
 msgid "{productName} now lives at {host}. Install it from there."
 msgstr "{productName} dabar veikia adresu {host}. Įdiekite jį iš ten."
@@ -1994,12 +1994,12 @@ msgstr "{productName} atkūrimo rinkinys"
 msgid "{productName} registered its shortcuts with Hyprland. Bind them in your Hyprland config to use them while {productName} is not focused."
 msgstr "{productName} užregistravo savo sparčiuosius klavišus Hyprland. Susiekite juos savo Hyprland konfigūracijoje, kad galėtumėte juos naudoti, kai {productName} nėra aktyvus."
 
-#. Nagbar shown after the app restarts while the user was connected to a community voice channel. {productName} is Fluxer, {channelName} is the voice channel name, and {communityName} is the community name.
+#. Nagbar shown after the app restarts while the user was connected to a community voice channel. {productName} is YChat, {channelName} is the voice channel name, and {communityName} is the community name.
 #: src/features/app/components/layout/app_layout/nagbars/VoiceSessionRestoreNagbar.tsx:24
 msgid "{productName} restarted while you were connected to the {channelName} channel in the {communityName} community."
 msgstr "{productName} paleista iš naujo, kol buvote prisijungę prie {communityName} bendruomenės kanalo „{channelName}“."
 
-#. Nagbar shown after the app restarts while the user can reconnect to an active DM or group DM call. {productName} is Fluxer and {directCallName} is the DM or group DM display name.
+#. Nagbar shown after the app restarts while the user can reconnect to an active DM or group DM call. {productName} is YChat and {directCallName} is the DM or group DM display name.
 #: src/features/app/components/layout/app_layout/nagbars/VoiceSessionRestoreNagbar.tsx:30
 msgid "{productName} restarted while you were connected to the call in {directCallName}."
 msgstr "{productName} paleista iš naujo, kol buvote prisijungę prie skambučio {directCallName}."
@@ -2035,7 +2035,7 @@ msgid "{productName} Visionary since {premiumSinceFormatted}"
 msgstr "{productName} vizionierius nuo {premiumSinceFormatted}"
 
 #. Accessible label for the application wordmark.
-#: src/features/ui/components/icons/FluxerWordmark.tsx:13
+#: src/features/ui/components/icons/YChatWordmark.tsx:13
 msgid "{productName} wordmark"
 msgstr "{productName} pavadinimo logotipas"
 
@@ -2338,7 +2338,7 @@ msgstr "<0/> pakeitė kanalo pavadinimą į „{nameComponent}“."
 msgid "<0/> changed the channel name."
 msgstr "<0/> pakeitė kanalo pavadinimą."
 
-#. System message shown in a channel after someone makes it follow an announcement channel. The source is the follower webhook name, usually the source community and channel, for example 'Fluxer News #announcements'.
+#. System message shown in a channel after someone makes it follow an announcement channel. The source is the follower webhook name, usually the source community and channel, for example 'YChat News #announcements'.
 #: src/features/channel/components/ChannelFollowAddMessage.tsx:39
 msgid "<0/> followed {sourceComponent} into this channel. Messages published there will appear here."
 msgstr "<0/> sekė {sourceComponent} į šį kanalą. Ten paskelbti pranešimai čia pasirodys."
@@ -2668,7 +2668,7 @@ msgstr "kanalas"
 msgid "A community that is either invite-only or unavailable."
 msgstr "Bendruomenė, į kurią galima patekti tik pakviestam arba kuri šiuo metu nepasiekiama."
 
-#. Description of a custom emoji in the emoji info card when the viewer can use it outside the community. productName is the Fluxer product name.
+#. Description of a custom emoji in the emoji info card when the viewer can use it outside the community. productName is the YChat product name.
 #: src/features/expressions/components/ExpressionInfoCard.tsx:37
 msgid "A custom emoji from this community. You can use it anywhere on {productName}."
 msgstr "Pasirinktinis jaustukas iš šios bendruomenės. Galite jį naudoti bet kurioje „{productName}“ vietoje."
@@ -2678,7 +2678,7 @@ msgstr "Pasirinktinis jaustukas iš šios bendruomenės. Galite jį naudoti bet 
 msgid "A custom emoji from this community. You can use it in this community."
 msgstr "Pasirinktinis jaustukas iš šios bendruomenės. Galite jį naudoti šioje bendruomenėje."
 
-#. Description of a custom sticker in the sticker info card when the viewer can use it outside the community. productName is the Fluxer product name.
+#. Description of a custom sticker in the sticker info card when the viewer can use it outside the community. productName is the YChat product name.
 #: src/features/expressions/components/ExpressionInfoCard.tsx:42
 msgid "A custom sticker from this community. You can use it anywhere on {productName}."
 msgstr "Pasirinktas lipdukas iš šios bendruomenės. Galite jį naudoti bet kurioje „{productName}“ vietoje."
@@ -2693,7 +2693,7 @@ msgstr "Ši bendruomenės lipdukas. Galite jį naudoti šioje bendruomenėje."
 msgid "a date or date range"
 msgstr "data arba datų intervalas"
 
-#. Description of a built-in unicode emoji in the emoji info card. productName is the Fluxer product name.
+#. Description of a built-in unicode emoji in the emoji info card. productName is the YChat product name.
 #: src/features/expressions/components/ExpressionInfoCard.tsx:32
 msgid "A default emoji. You can use it anywhere on {productName}."
 msgstr "Numylėtas jaustukas. Galite jį naudoti bet kurioje „{productName}“ vietoje."
@@ -2802,7 +2802,7 @@ msgstr "A11y"
 msgid "About"
 msgstr "Apie"
 
-#. Desktop app menu item. Opens the About panel. {appName} is the desktop app name (typically Fluxer).
+#. Desktop app menu item. Opens the About panel. {appName} is the desktop app name (typically YChat).
 #: src/features/platform/utils/DesktopLocaleBridge.ts:17
 msgid "About {appName}"
 msgstr "Apie {appName}"
@@ -4181,7 +4181,7 @@ msgstr "Jau išpirkta"
 msgid "Already set to cancel"
 msgstr "Jau nustatyta atšaukti"
 
-#. Toggle-switch label in the moderator delete-message confirmation dialog. When enabled, the message is reported (category: other) before being deleted. {productName} is the product name (e.g., Fluxer).
+#. Toggle-switch label in the moderator delete-message confirmation dialog. When enabled, the message is reported (category: other) before being deleted. {productName} is the product name (e.g., YChat).
 #: src/features/messaging/commands/MessageCommands.tsx:94
 msgid "Also report this message to the {productName} Safety Team"
 msgstr "Taip pat pranešti apie šią žinutę „{productName}“ saugos komandai"
@@ -4803,7 +4803,7 @@ msgstr "Taikyti visoms bendruomenėms"
 msgid "Approval required"
 msgstr "Reikalingas patvirtinimas"
 
-#. Hint under the sign-in option on fluxer.com that pairs a newly installed app with the old installed app. productName is the app name.
+#. Hint under the sign-in option on YChat.com that pairs a newly installed app with the old installed app. productName is the app name.
 #: src/features/auth/flow/AuthLoginLayout.tsx:101
 msgid "Approve this app from the {productName} app you already use. No password needed."
 msgstr "Patvirtinkite šią programėlę iš jau naudojamos {productName} programėlės. Slaptažodis nereikalingas."
@@ -5412,8 +5412,8 @@ msgstr "Automatinio užbaigimo pasiūlymas: {label}, {selectedOptionPosition} i�
 #. Option label for an SVC mode select.
 #. Option label for an encoder path select.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#. Voice region option label in the voice settings menu meaning let Fluxer pick the best region automatically.
-#. Voice region picker option label meaning 'let Fluxer pick the best region automatically'.
+#. Voice region option label in the voice settings menu meaning let YChat pick the best region automatically.
+#. Voice region picker option label meaning 'let YChat pick the best region automatically'.
 #: src/features/channel/components/modals/channel_tabs/channel_overview_tab/RtcRegionSelect.tsx:19
 #: src/features/user/components/modals/tabs/advanced_settings_tab/AdvancedVideoControls.tsx:56
 #: src/features/user/components/modals/tabs/advanced_settings_tab/AdvancedVideoControls.tsx:76
@@ -6439,12 +6439,12 @@ msgstr "Naršyklė: stabdyti įkėlimą"
 msgid "Browser time format"
 msgstr "Naršyklės laiko formatas"
 
-#. Empty-state explanation in the screen-share picker apps tab on web. {productName} is Fluxer.
+#. Empty-state explanation in the screen-share picker apps tab on web. {productName} is YChat.
 #: src/features/voice/components/modals/screen_share_picker_modal/useNativePickerCopy.ts:15
 msgid "Browsers do not let {productName} list app windows ahead of time. Press \"Open browser picker\", then choose the tab or window there."
 msgstr "Naršyklės neleidžia „{productName}“ iš anksto pateikti programų langų sąrašo. Paspauskite „Atidaryti naršyklės parinkiklį“, tada ten pasirinkite skirtuką arba langą."
 
-#. Empty-state explanation in the screen-share picker displays tab on web. {productName} is Fluxer.
+#. Empty-state explanation in the screen-share picker displays tab on web. {productName} is YChat.
 #: src/features/voice/components/modals/screen_share_picker_modal/useNativePickerCopy.ts:24
 msgid "Browsers do not let {productName} list displays ahead of time. Press \"Open browser picker\", then choose the screen there."
 msgstr "Naršyklės neleidžia „{productName}“ iš anksto pateikti ekranų sąrašo. Paspauskite „Atidaryti naršyklės parinkiklį“, tada ten pasirinkite ekraną."
@@ -6592,7 +6592,7 @@ msgstr "Pirkdami sutinkate su mūsų <0>privatumo politika</0>."
 msgid "By purchasing, you agreed to our <0>Terms of service</0>."
 msgstr "Pirkdami sutinkate su mūsų „<0>Paslaugų teikimo sąlygomis</0>“."
 
-#. Legal notice in the updated policies modal. productName is the Fluxer product name.
+#. Legal notice in the updated policies modal. productName is the YChat product name.
 #: src/features/auth/components/modals/TermsAcceptanceModal.tsx:35
 msgid "By using {productName}, you agree to the updated policies."
 msgstr "Naudodami „{productName}“, sutinkate su atnaujintomis taisyklėmis."
@@ -6770,7 +6770,7 @@ msgstr "Kameros nustatymai"
 msgid "Camera test"
 msgstr "Kameros testas"
 
-#. Empty-state explanation in the screen-share picker devices tab on Linux/Wayland. {productName} is Fluxer.
+#. Empty-state explanation in the screen-share picker devices tab on Linux/Wayland. {productName} is YChat.
 #: src/features/voice/components/modals/screen_share_picker_modal/useDeviceEmptyStateCopy.ts:18
 msgid "Cameras and virtual capture devices are selected here in {productName}, not in the Wayland system picker. If nothing appears here, check permissions or connect a device."
 msgstr "Kameros ir virtualūs fiksavimo įrenginiai pasirenkami čia, „{productName}“, o ne „Wayland“ sistemos parinkiklyje. Jei čia nieko nerodoma, patikrinkite leidimus arba prijunkite įrenginį."
@@ -6861,7 +6861,7 @@ msgstr "Čia negalima įkelti failų"
 #: src/features/user/components/modals/EmailChangeModal.tsx:289
 #: src/features/user/components/modals/EmailChangeModal.tsx:311
 #: src/features/user/components/modals/EmailChangeModal.tsx:326
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:410
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:410
 #: src/features/user/components/modals/PasswordChangeModal.tsx:236
 #: src/features/user/components/modals/PasswordChangeModal.tsx:247
 #: src/features/user/components/modals/PasswordChangeModal.tsx:265
@@ -6882,7 +6882,7 @@ msgstr "Atšaukti žinutės redagavimą"
 msgid "Cancel friend request"
 msgstr "Atšaukti draugystės užklausą"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:154
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:154
 msgid "Cancel if you want to choose a different username instead."
 msgstr "Atšaukite, jei norite pasirinkti kitą naudotojo vardą."
 
@@ -7249,8 +7249,8 @@ msgstr "Pakeisti vardą, rodomą jūsų visuotiniame profilyje"
 msgid "Change username"
 msgstr "Keisti naudotojo vardą"
 
-#. Short label in the FluxerTag change modal. Keep it concise.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:49
+#. Short label in the YChatTag change modal. Keep it concise.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:49
 msgid "Change username form"
 msgstr "Naudotojo vardo keitimo forma"
 
@@ -7309,8 +7309,8 @@ msgid "Change your profile picture"
 msgstr "Pakeisti profilio nuotrauką"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls.
-#. Short label in the FluxerTag change modal. Keep it concise.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:53
+#. Short label in the YChatTag change modal. Keep it concise.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:53
 #: src/features/user/components/settings_utils/search_index/MyProfileIndex.ts:77
 msgid "Change your username"
 msgstr "Pakeisti naudotojo vardą"
@@ -7809,8 +7809,8 @@ msgid "Check for updates"
 msgstr "Tikrinti, ar yra naujinimų"
 
 #: src/features/app/components/BootstrapErrorScreen.tsx:98
-msgid "Check our <0>{BLUESKY_PROVIDER_NAME} ({FLUXER_BLUESKY_HANDLE})</0> for status updates."
-msgstr "Patikrinkite mūsų <0>{BLUESKY_PROVIDER_NAME} ({FLUXER_BLUESKY_HANDLE})</0>, kad gautumėte būsenos naujinių."
+msgid "Check our <0>{BLUESKY_PROVIDER_NAME} ({YChat_BLUESKY_HANDLE})</0> for status updates."
+msgstr "Patikrinkite mūsų <0>{BLUESKY_PROVIDER_NAME} ({YChat_BLUESKY_HANDLE})</0>, kad gautumėte būsenos naujinių."
 
 #. Description text in the share theme modal.
 #: src/features/theme/components/modals/ShareThemeModal.tsx:36
@@ -8840,7 +8840,7 @@ msgstr "Kodo blokai"
 msgid "Code expired"
 msgstr "Kodas baigė galioti"
 
-#. Label of the field in the browser where the user types the 12-character code shown in the desktop or mobile app. productName is the app name, such as Fluxer.
+#. Label of the field in the browser where the user types the 12-character code shown in the desktop or mobile app. productName is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:28
 msgid "Code from the {productName} app"
 msgstr "Kodas iš „{productName}“ programėlės"
@@ -8907,7 +8907,7 @@ msgid "Collapse devices"
 msgstr "Sutraukti įrenginius"
 
 #. Setting label that collapses the inline DM list.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:31
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:31
 msgid "Collapse inline DM list"
 msgstr "Sutraukti tiesioginių žinučių sąrašą"
 
@@ -9781,7 +9781,7 @@ msgstr "Kontekstiniai meniu atidaromi kairiuoju pelės mygtuku (ant mygtukų) ar
 #: src/features/auth/components/pages/oauth_authorize_page/OAuthAccountStep.tsx:36
 #: src/features/connection/components/modals/AddConnectionModal.tsx:384
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:726
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:413
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:413
 #: src/features/user/components/modals/tabs/AuthorizedAppsTab.tsx:182
 msgid "Continue"
 msgstr "Tęsti"
@@ -10680,10 +10680,10 @@ msgstr "Nepavyko apdoroti paveikslėlio"
 msgid "Couldn't publish this message"
 msgstr "Nepavyko paskelbti šio pranešimo"
 
-#. Instance selector error shown when no Fluxer instance answered at the address. Domain is interpolated.
+#. Instance selector error shown when no YChat instance answered at the address. Domain is interpolated.
 #: src/features/auth/flow/instance_selector/InstanceDiscoveryFailure.ts:20
-msgid "Couldn't reach a Fluxer instance at {domain}. Check the address and that the instance is online."
-msgstr "Nepavyko susisiekti su Fluxer egzemplioriumi adresu {domain}. Patikrinkite adresą ir įsitikinkite, kad egzempliorius veikia."
+msgid "Couldn't reach a YChat instance at {domain}. Check the address and that the instance is online."
+msgstr "Nepavyko susisiekti su YChat egzemplioriumi adresu {domain}. Patikrinkite adresą ir įsitikinkite, kad egzempliorius veikia."
 
 #. Title of the generic fallback error modal shown when reactivating a Plutonium subscription fails.
 #: src/features/app/components/dialogs/components/plutonium/hooks/useSubscriptionActions.ts:50
@@ -11457,8 +11457,8 @@ msgstr "Pasirinktinė užblokavimo trukmė (sekundėmis)"
 msgid "Custom date range"
 msgstr "Pasirinktinis datos intervalas"
 
-#. Error message in the FluxerTag change modal.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:66
+#. Error message in the YChatTag change modal.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:66
 msgid "Custom discriminators are not available on this instance"
 msgstr "Pasirinktiniai diskriminatoriai šioje instancijoje nepasiekiami"
 
@@ -11685,7 +11685,7 @@ msgstr "Tinkinti profilio reklamjuostę"
 msgid "Customize your tag ({discriminatorLabel}) to your liking with {premiumProductName}"
 msgstr "Tinkinkite savo žymą ({discriminatorLabel}) pagal savo skonį su {premiumProductName}"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:402
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:402
 msgid "Customize your tag or keep it when changing your username"
 msgstr "Tinkinkite savo žymą arba pasilikite ją keisdami naudotojo vardą"
 
@@ -12597,12 +12597,12 @@ msgstr "Darbalaukio programa yra naujausios versijos"
 msgid "Desktop audio isn't available right now on Linux."
 msgstr "Darbalaukio garsas šiuo metu nepasiekiamas „Linux“ sistemoje."
 
-#. Inline notice on macOS when desktop/system audio capture is not supported because Fluxer cannot exclude call audio.
+#. Inline notice on macOS when desktop/system audio capture is not supported because YChat cannot exclude call audio.
 #: src/features/voice/components/modals/screen_share_picker_modal/PerWindowAudioNotice.tsx:37
 msgid "Desktop audio isn't available right now on macOS."
 msgstr "Darbalaukio garsas šiuo metu nepasiekiamas „macOS“ sistemoje."
 
-#. Inline notice on Windows when desktop/system audio capture is not supported because Fluxer cannot exclude call audio.
+#. Inline notice on Windows when desktop/system audio capture is not supported because YChat cannot exclude call audio.
 #: src/features/voice/components/modals/screen_share_picker_modal/PerWindowAudioNotice.tsx:18
 msgid "Desktop audio isn't available right now on Windows."
 msgstr "Darbalaukio garsas šiuo metu nepasiekiamas „Windows“ sistemoje."
@@ -13566,8 +13566,8 @@ msgid "Download {productName}"
 msgstr "Atsisiųsti „{productName}“"
 
 #: src/features/connection/components/modals/AddConnectionModal.tsx:330
-msgid "Download <0>fluxer-verification</0> and place it in your <1>.well-known</1> folder so we can validate the domain."
-msgstr "Atsisiųskite <0>fluxer-verification</0> ir įdėkite į savo <1>.well-known</1> aplanką, kad galėtume patvirtinti domeną."
+msgid "Download <0>YChat-verification</0> and place it in your <1>.well-known</1> folder so we can validate the domain."
+msgstr "Atsisiųskite <0>YChat-verification</0> ir įdėkite į savo <1>.well-known</1> aplanką, kad galėtume patvirtinti domeną."
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #: src/features/user/components/settings_utils/search_index/AppearanceIndex.ts:98
@@ -13604,8 +13604,8 @@ msgid "Download file"
 msgstr "Atsisiųsti failą"
 
 #: src/features/connection/components/modals/AddConnectionModal.tsx:352
-msgid "Download fluxer-verification"
-msgstr "Atsisiųsti fluxer-verification"
+msgid "Download YChat-verification"
+msgstr "Atsisiųsti YChat-verification"
 
 #. Media context menu action that downloads a GIF attachment.
 #: src/features/ui/action_menu/items/MediaMenuData.tsx:119
@@ -14851,10 +14851,10 @@ msgstr "Įveskite galiojantį el. pašto adresą."
 msgid "Enter a valid message link."
 msgstr "Įveskite galiojančią žinutės nuorodą."
 
-#. Description text in the channel and chat add friend form. Preserve {exampleFluxerTagFull}; it is inserted by code.
+#. Description text in the channel and chat add friend form. Preserve {exampleYChatTagFull}; it is inserted by code.
 #: src/features/channel/components/direct_message/AddFriendForm.tsx:33
-msgid "Enter a valid username ({exampleFluxerTagFull})."
-msgstr "Įveskite galiojantį naudotojo vardą ({exampleFluxerTagFull})."
+msgid "Enter a valid username ({exampleYChatTagFull})."
+msgstr "Įveskite galiojantį naudotojo vardą ({exampleYChatTagFull})."
 
 #. Error text in the add friend form on instances where people sign in with a username and have no tag.
 #: src/features/channel/components/direct_message/AddFriendForm.tsx:38
@@ -14925,7 +14925,7 @@ msgstr "Įveskite {digitCount} skaitmenų kodą iš savo autentifikavimo program
 msgid "Enter the code before continuing."
 msgstr "Įveskite kodą prieš tęsdami."
 
-#. Title of the browser page where the user types the 12-character code the app shows under Signing in on another device. PRODUCT_NAME is the app name, such as Fluxer.
+#. Title of the browser page where the user types the 12-character code the app shows under Signing in on another device. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:182
 msgid "Enter the code from the {PRODUCT_NAME} app"
 msgstr "Įveskite kodą iš „{PRODUCT_NAME}“ programėlės"
@@ -16173,13 +16173,13 @@ msgstr "Florida"
 
 #. Placeholder for the product name input in the setup wizard.
 #: src/features/app/components/setup/SetupWizardSteps.tsx:178
-msgid "Fluxer"
-msgstr "Fluxer"
+msgid "YChat"
+msgstr "YChat"
 
 #. Status shown when browser sign-in status polling gives up after repeated failures.
 #: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:57
-msgid "Fluxer stopped checking whether the browser approved this sign-in. It didn't lose your code."
-msgstr "Fluxer nustojo tikrinti, ar naršyklė patvirtino šį prisijungimą. Ji neprarado jūsų kodo."
+msgid "YChat stopped checking whether the browser approved this sign-in. It didn't lose your code."
+msgstr "YChat nustojo tikrinti, ar naršyklė patvirtino šį prisijungimą. Ji neprarado jūsų kodo."
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #: src/features/user/components/settings_utils/section_registry/AccessibilitySections.ts:179
@@ -16755,8 +16755,8 @@ msgstr "Tik draugų skambučiai"
 msgid "From"
 msgstr "Nuo"
 
-#. Attribution label on a gift, showing the sender FluxerTag.
-#. Sender label on a gift code embed. creatorTag is the FluxerTag of the gift creator.
+#. Attribution label on a gift, showing the sender YChatTag.
+#. Sender label on a gift code embed. creatorTag is the YChatTag of the gift creator.
 #: src/features/channel/components/GiftEmbed.tsx:29
 #: src/features/expressions/components/modals/GiftAcceptModal.tsx:33
 msgid "From {creatorTag}"
@@ -17013,8 +17013,8 @@ msgstr "Gaukite {premiumProductName} ir atrakinkite didesnius limitus bei išski
 msgid "Get {premiumProductName} to customize your tag"
 msgstr "Gaukite {premiumProductName}, kad tinkintumėte savo žymą"
 
-#. Description text in the FluxerTag change modal. Preserve {premiumProductName}; it is inserted by code. Keep the tone plain and specific.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:57
+#. Description text in the YChatTag change modal. Preserve {premiumProductName}; it is inserted by code. Keep the tone plain and specific.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:57
 msgid "Get {premiumProductName} to customize your tag or keep it when changing your username"
 msgstr "Gaukite {premiumProductName}, kad tinkintumėte savo žymą arba ją išsaugotumėte keisdami naudotojo vardą"
 
@@ -17337,7 +17337,7 @@ msgstr "Visuotinis vardas"
 msgid "Global profile"
 msgstr "Visuotinis profilis"
 
-#. Toggle in the keybinds tab. When on, the shortcut works even when Fluxer is not focused. Keep it concise.
+#. Toggle in the keybinds tab. When on, the shortcut works even when YChat is not focused. Keep it concise.
 #: src/features/user/components/modals/tabs/keybinds_tab/CustomKeybindRow.tsx:85
 #: src/features/user/components/modals/tabs/keybinds_tab/DefaultShortcutRow.tsx:65
 msgid "Global shortcut"
@@ -17358,12 +17358,12 @@ msgstr "Grįžkite ir įveskite galiojantį el. pašto adresą."
 msgid "Go back to {productName} to continue."
 msgstr "Grįžkite į {productName}, kad tęstumėte."
 
-#. Shown after approving a sign-in for an app on another device, which signs in by itself shortly. PRODUCT_NAME is the app name, such as Fluxer.
+#. Shown after approving a sign-in for an app on another device, which signs in by itself shortly. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:292
 msgid "Go back to the {PRODUCT_NAME} app. It finishes signing in on its own."
 msgstr "Grįžkite į {PRODUCT_NAME} programėlę. Ji baigs prisijungti pati."
 
-#. Shown after approving, when the browser has already handed the sign-in back to the desktop app. PRODUCT_NAME is the app name, such as Fluxer.
+#. Shown after approving, when the browser has already handed the sign-in back to the desktop app. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:288
 msgid "Go back to the {PRODUCT_NAME} app. You can close this tab."
 msgstr "Grįžkite į „{PRODUCT_NAME}“ programėlę. Galite uždaryti šią kortelę."
@@ -17789,7 +17789,7 @@ msgstr "Turite dovanų kodą? Aktyvuokite jį, kad atrakintumėte {PREMIUM_PRODU
 msgid "Have a gift code? Redeem it to unlock {premiumProductName}."
 msgstr "Turite dovanų kodą? Aktyvuokite jį, kad atrakintumėte {premiumProductName}."
 
-#. Friendly tagline shown on a Fluxer-branded button or upsell.
+#. Friendly tagline shown on a YChat-branded button or upsell.
 #: src/features/ui/state/Modal.ts:13
 msgid "Having fun?"
 msgstr "Gerai leidžiate laiką?"
@@ -18507,11 +18507,11 @@ msgstr "Jei pamiršite slaptažodį, atkūrimo rinkinys yra vienintelis būdas g
 msgid "If you forget your password, this kit is the only way back into your account. Store it somewhere safe, like a password manager or a printed copy."
 msgstr "Jei pamiršite slaptažodį, šis rinkinys yra vienintelis būdas grįžti į paskyrą. Laikykite jį saugioje vietoje, pavyzdžiui, slaptažodžių tvarkyklėje arba atspausdintą kopiją."
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:370
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:370
 msgid "If you save this username, your tag will reroll randomly when your {PREMIUM_PRODUCT_NAME} expires on <0>{premiumExpiresAtLabel}</0>, unless it renews."
 msgstr "Jei išsaugosite šį naudotojo vardą, jūsų žyma bus atsitiktinai pakeista, kai {PREMIUM_PRODUCT_NAME} baigs galioti <0>{premiumExpiresAtLabel}</0>, nebent ji bus atnaujinta."
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:377
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:377
 msgid "If you save this username, your tag will reroll randomly when your {PREMIUM_PRODUCT_NAME} expires, unless it renews."
 msgstr "Jei išsaugosite šį naudotojo vardą, jūsų žyma bus atsitiktinai pakeista, kai baigs galioti jūsų {PREMIUM_PRODUCT_NAME}, nebent ji bus atnaujinta."
 
@@ -19163,7 +19163,7 @@ msgstr "Insert"
 msgid "Insert emoji"
 msgstr "Įterpti jaustuką"
 
-#. CTA card body in the screen-share picker promoting the desktop app. {productName} is Fluxer.
+#. CTA card body in the screen-share picker promoting the desktop app. {productName} is YChat.
 #: src/features/voice/components/modals/screen_share_picker_modal/DesktopDownloadCta.tsx:16
 msgid "Install {productName} for the full source picker and smoother screen-sharing controls."
 msgstr "Įdiekite „{productName}“, kad galėtumėte naudoti visą šaltinio parinkiklį ir sklandesnius ekrano bendrinimo valdiklius."
@@ -19391,7 +19391,7 @@ msgstr "Kvietimas sukurtas"
 msgid "Invite deleted"
 msgstr "Kvietimas ištrintas"
 
-#. Fallback header on the invite modal when no community context is available. Refers to inviting friends to Fluxer.
+#. Fallback header on the invite modal when no community context is available. Refers to inviting friends to YChat.
 #: src/features/invite/components/modals/InviteModal.tsx:87
 msgid "Invite friends"
 msgstr "Kviesti draugus"
@@ -19559,7 +19559,7 @@ msgstr "Kvietimai šioje bendruomenėje šiuo metu pristabdyti"
 msgid "Invites are paused after a suspected raid"
 msgstr "Kvietimai pristabdyti po įtariamo reido"
 
-#. Invite settings notice shown when automated raid protection pauses invites. productName is the Fluxer product name.
+#. Invite settings notice shown when automated raid protection pauses invites. productName is the YChat product name.
 #: src/features/invite/utils/InviteMessageDescriptors.ts:28
 msgid "Invites are paused because {productName} detected a potential raid. New users can't join right now."
 msgstr "Kvietimai pristabdyti, nes „{productName}“ aptiko galimą reidą. Nauji naudotojai šiuo metu negali prisijungti."
@@ -19597,7 +19597,7 @@ msgstr "Kvietimai pristabdyti"
 msgid "Invites to {communityName} are currently disabled"
 msgstr "Kvietimai į „{communityName}“ šiuo metu išjungti"
 
-#. Guild nagbar body shown when invite links are paused because raid detection is active. {communityName} is the community name and {productName} is Fluxer.
+#. Guild nagbar body shown when invite links are paused because raid detection is active. {communityName} is the community name and {productName} is YChat.
 #: src/features/app/components/layout/GuildLayout.tsx:64
 msgid "Invites to {communityName} are currently disabled because {productName} detected a potential raid. New people cannot join right now."
 msgstr "Kvietimai į „{communityName}“ šiuo metu išjungti, nes „{productName}“ aptiko galimą reidą. Nauji žmonės dabar prisijungti negali."
@@ -19813,7 +19813,7 @@ msgstr "Prisijunkite prie balso kanalų ir girdėkite kitus."
 msgid "Joined"
 msgstr "Prisijungėte"
 
-#. Community members table column header for the date the account joined Fluxer.
+#. Community members table column header for the date the account joined YChat.
 #: src/features/channel/components/guild_members_page/MembersTableHeaderRow.tsx:29
 msgid "Joined {productName}"
 msgstr "Prisijungė prie „{productName}“"
@@ -21060,7 +21060,7 @@ msgstr "Padaryti {userName} grupės savininku? Prarasite savininko teises."
 msgid "Make group owner"
 msgstr "Padaryti grupės savininku"
 
-#. Shown above the code on the browser approval page when the app cannot be signed in automatically. PRODUCT_NAME is the app name, such as Fluxer.
+#. Shown above the code on the browser approval page when the app cannot be signed in automatically. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:253
 msgid "Make sure this code matches the one in the {PRODUCT_NAME} app."
 msgstr "Įsitikinkite, kad šis kodas sutampa su kodu programėlėje {PRODUCT_NAME}."
@@ -21230,12 +21230,12 @@ msgid "Mark all as read"
 msgstr "Pažymėti visus kaip perskaitytus"
 
 #. Action that marks every community as read.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:43
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:43
 msgid "Mark all communities as read"
 msgstr "Pažymėti visas bendruomenes kaip perskaitytas"
 
 #. Action that marks every direct message conversation as read.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:23
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:23
 msgid "Mark all DMs as read"
 msgstr "Pažymėti visus DM kaip perskaitytus"
 
@@ -24631,7 +24631,7 @@ msgstr "Objektai"
 msgid "Off"
 msgstr "Išjungta"
 
-#. Accessible label for identifying the official Fluxer instance.
+#. Accessible label for identifying the official YChat instance.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:854
 msgid "Official instance"
 msgstr "Oficialus serveris"
@@ -24699,7 +24699,7 @@ msgstr "Nuo <0>{listPriceEffectiveDate}</0> jūsų prenumeratos kaina pasikeis i
 msgid "On click"
 msgstr "Spustelėjus"
 
-#. One line explanation in the desktop app above the code. signInAddress is the web address of the sign-in page, such as web.fluxer.app/login?handoff=1.
+#. One line explanation in the desktop app above the code. signInAddress is the web address of the sign-in page, such as web.YChat.app/login?handoff=1.
 #: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:243
 msgid "On your other device, sign in at {signInAddress} and enter this code when asked."
 msgstr "Kitame įrenginyje prisijunkite adresu {signInAddress} ir įveskite šį kodą, kai būsite paprašyti."
@@ -24932,12 +24932,12 @@ msgstr "Atidaryti „{contextName}“"
 msgid "Open {displayName}"
 msgstr "Atidaryti „{displayName}“"
 
-#. First install step on Apple devices. host is the new domain, for example fluxer.com. Safari is the browser.
+#. First install step on Apple devices. host is the new domain, for example YChat.com. Safari is the browser.
 #: src/features/app/domain_migration/DomainMovedStepsModal.tsx:32
 msgid "Open {host} in Safari."
 msgstr "Atidarykite {host} naršyklėje „Safari“."
 
-#. First install step on other devices. host is the new domain, for example fluxer.com.
+#. First install step on other devices. host is the new domain, for example YChat.com.
 #: src/features/app/domain_migration/DomainMovedStepsModal.tsx:37
 msgid "Open {host} in your browser."
 msgstr "Atidarykite {host} naršyklėje."
@@ -24962,7 +24962,7 @@ msgstr "Atidaryti „{landmarkName}“"
 msgid "Open {premiumProductFullName}"
 msgstr "Atidarykite {premiumProductFullName}"
 
-#. Button on the browser page after approving that opens the desktop app again if it did not come to the front. PRODUCT_NAME is the app name, such as Fluxer.
+#. Button on the browser page after approving that opens the desktop app again if it did not come to the front. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:304
 msgid "Open {PRODUCT_NAME}"
 msgstr "Atidarykite {PRODUCT_NAME}"
@@ -25114,7 +25114,7 @@ msgstr "Atidaryti bendruomenės „{guildName}“ meniu"
 msgid "Open date picker"
 msgstr "Atidaryti datos parinkiklį"
 
-#. Button label that opens the Fluxer desktop downloads page in a browser.
+#. Button label that opens the YChat desktop downloads page in a browser.
 #: src/features/updater/commands/UpdaterModalCommands.tsx:92
 msgid "Open desktop downloads"
 msgstr "Atidaryti darbalaukio programos atsisiuntimus"
@@ -25981,8 +25981,8 @@ msgstr "Pristabdyti pranešimus"
 
 #. Voice screen share menu preference that pauses the local stream preview while the app is unfocused.
 #: src/features/ui/action_menu/items/voice_participant_menu_data/shared.ts:28
-msgid "Pause preview when Fluxer isn’t focused"
-msgstr "Pristabdyti peržiūrą, kai „Fluxer“ nėra aktyvus"
+msgid "Pause preview when YChat isn’t focused"
+msgstr "Pristabdyti peržiūrą, kai „YChat“ nėra aktyvus"
 
 #. Description shown for the emoji toggle while reduced motion is active.
 #: src/features/user/components/modals/tabs/accessibility_tab/AnimationTab.tsx:81
@@ -27283,7 +27283,7 @@ msgstr "Įvardžiai"
 msgid "Pronouns: "
 msgstr "Įvardžiai: "
 
-#. Nagbar body shown to Visionary premium users who have not enabled two-factor authentication. {productName} is Fluxer.
+#. Nagbar body shown to Visionary premium users who have not enabled two-factor authentication. {productName} is YChat.
 #: src/features/app/components/layout/app_layout/nagbars/VisionaryMfaNagbar.tsx:18
 msgid "Protect your Visionary account by enabling two-factor authentication. Thanks for supporting {productName}!"
 msgstr "Apsaugokite savo „Visionary“ paskyrą įjungdami dviejų veiksnių autentifikavimą. Dėkojame, kad palaikote „{productName}“!"
@@ -27643,7 +27643,7 @@ msgstr "Išeiti"
 msgid "Quit {appName}"
 msgstr "Išeiti iš „{appName}“"
 
-#. Detail line in the native dialog shown when the desktop app cannot open its local data store. {appName} is the desktop app name (typically Fluxer).
+#. Detail line in the native dialog shown when the desktop app cannot open its local data store. {appName} is the desktop app name (typically YChat).
 #: src/features/platform/utils/DesktopLocaleBridge.ts:304
 msgid "Quit {appName}, make sure no other copy is running, and open it again."
 msgstr "Uždarykite {appName}, įsitikinkite, kad neveikia jokia kita kopija, ir atidarykite ją dar kartą."
@@ -28931,7 +28931,7 @@ msgstr "Pranešimo tipas"
 msgid "Report user"
 msgstr "Pranešti apie naudotoją"
 
-#. Field label on the details step of the DSA report form (message report). Optional FluxerTag of the user who sent the message.
+#. Field label on the details step of the DSA report form (message report). Optional YChatTag of the user who sent the message.
 #: src/features/moderation/components/report/ReportStepDetails.tsx:28
 msgid "Reported user tag (optional)"
 msgstr "Naudotojo, apie kurį pranešama, žyma (pasirinktinai)"
@@ -30241,8 +30241,8 @@ msgstr "Nepavyko bendrinti ekrano"
 
 #. Body shown when a failed screen share could not be fully stopped.
 #: src/features/voice/components/alerts/ScreenShareRollbackIncompleteModal.tsx:12
-msgid "Screen sharing failed, but Fluxer could not confirm that every capture path stopped. Stop sharing or disconnect from the call before continuing."
-msgstr "Nepavyko bendrinti ekrano, o „Fluxer“ negalėjo patvirtinti, kad visi fiksavimo procesai sustabdyti. Prieš tęsdami sustabdykite bendrinimą arba atsijunkite nuo skambučio."
+msgid "Screen sharing failed, but YChat could not confirm that every capture path stopped. Stop sharing or disconnect from the call before continuing."
+msgstr "Nepavyko bendrinti ekrano, o „YChat“ negalėjo patvirtinti, kad visi fiksavimo procesai sustabdyti. Prieš tęsdami sustabdykite bendrinimą arba atsijunkite nuo skambučio."
 
 #. Body of the screen-share-unsupported modal. Mentions specific browsers and OSes; keep all proper nouns intact.
 #: src/features/voice/components/alerts/ScreenShareUnsupportedModal.tsx:12
@@ -31033,7 +31033,7 @@ msgstr "Siųsti ({selectedCount}/{selectionLimit})"
 msgid "Send a direct message to a user."
 msgstr "Siųsti tiesioginę žinutę naudotojui."
 
-#. Body of the staff-only add-friend confirmation modal. The staff override is a Fluxer-staff-only feature that bypasses the normal request flow. {userName} is the target user.
+#. Body of the staff-only add-friend confirmation modal. The staff override is a YChat-staff-only feature that bypasses the normal request flow. {userName} is the target user.
 #: src/features/relationship/utils/RelationshipActionUtils.tsx:67
 msgid "Send a friend request to {userName}, or use the staff override to add them immediately."
 msgstr "Siųsti draugystės užklausą naudotojui {userName} arba naudoti darbuotojo prieigos teises ir pridėti jį iškart."
@@ -31564,7 +31564,7 @@ msgstr "Nustato visų garso efektų lygį. Atskirų garsų nustatymai šio nepai
 msgid "Settings"
 msgstr "Nustatymai"
 
-#. Type chip suffix in tooltips for inline rendered fluxer://settings/user deep links. Lowercase.
+#. Type chip suffix in tooltips for inline rendered YChat://settings/user deep links. Lowercase.
 #: src/features/messaging/components/markdown/renderers/LinkRenderer.tsx:138
 msgid "settings link"
 msgstr "nustatymų nuoroda"
@@ -32039,12 +32039,12 @@ msgid "Show in all communities"
 msgstr "Rodyti visose bendruomenėse"
 
 #. Setting label that shows a badge for incoming friend requests.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:39
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:39
 msgid "Show incoming friend request count"
 msgstr "Rodyti gaunamų draugystės užklausų skaičių"
 
 #. Setting label that shows the inline DM list in the sidebar.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:27
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:27
 msgid "Show inline DM list"
 msgstr "Rodyti tiesioginių žinučių sąrašą"
 
@@ -32282,7 +32282,7 @@ msgid "Show typing indicator with user avatars in the channel list"
 msgstr "Rodyti rašymo indikatorių su naudotojų avatarais kanalų sąraše"
 
 #. Setting label that shows an unread badge while the inline DM list is collapsed.
-#: src/features/ui/action_menu/FluxerButtonContextMenu.tsx:35
+#: src/features/ui/action_menu/YChatButtonContextMenu.tsx:35
 msgid "Show unread DM count when collapsed"
 msgstr "Rodyti neperskaitytų tiesioginių žinučių skaičių, kai sąrašas sutrauktas"
 
@@ -32363,12 +32363,12 @@ msgstr "Prisijungti iš naujo"
 msgid "Sign in again as {accountLabel}"
 msgstr "Prisijunkite dar kartą kaip {accountLabel}"
 
-#. Shown in the desktop app while it waits for the browser. instanceName is the server name, such as Fluxer.
+#. Shown in the desktop app while it waits for the browser. instanceName is the server name, such as YChat.
 #: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:200
 msgid "Sign in to {instanceName} in your browser and confirm. This app finishes signing in on its own."
 msgstr "Prisijunkite prie {instanceName} naršyklėje ir patvirtinkite. Ši programa baigs prisijungimą pati."
 
-#. Shown in the desktop app above the code when the browser cannot return the sign-in automatically. instanceName is the server name, such as Fluxer.
+#. Shown in the desktop app above the code when the browser cannot return the sign-in automatically. instanceName is the server name, such as YChat.
 #: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:196
 msgid "Sign in to {instanceName} in your browser, and check that it shows this code:"
 msgstr "Prisijunkite prie {instanceName} savo naršyklėje ir patikrinkite, ar rodomas šis kodas:"
@@ -32377,17 +32377,17 @@ msgstr "Prisijunkite prie {instanceName} savo naršyklėje ir patikrinkite, ar r
 msgid "Sign in to claim your gift"
 msgstr "Prisijunkite, kad atsiimtumėte dovaną"
 
-#. Title of the browser page where the user approves signing in to an app that asked for it. PRODUCT_NAME is the app name, such as Fluxer.
+#. Title of the browser page where the user approves signing in to an app that asked for it. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:71
 msgid "Sign in to the {PRODUCT_NAME} app"
 msgstr "Prisijunkite prie {PRODUCT_NAME} programėlės"
 
-#. Title of the browser page where the user approves signing in to the desktop app that opened it. PRODUCT_NAME is the app name, such as Fluxer.
+#. Title of the browser page where the user approves signing in to the desktop app that opened it. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:58
 msgid "Sign in to the {PRODUCT_NAME} desktop app"
 msgstr "Prisijunkite prie „{PRODUCT_NAME}“ darbalaukio programos"
 
-#. Title of the browser page where the user approves signing in to the mobile app that asked for it. PRODUCT_NAME is the app name, such as Fluxer.
+#. Title of the browser page where the user approves signing in to the mobile app that asked for it. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:65
 msgid "Sign in to the {PRODUCT_NAME} mobile app"
 msgstr "Prisijunkite prie „{PRODUCT_NAME}“ mobiliosios programėlės"
@@ -32412,7 +32412,7 @@ msgstr "Prisijungti naudojant vartotojo vardą"
 msgid "Sign in with your browser"
 msgstr "Prisijunkite per naršyklę"
 
-#. Sign-in option and modal title on fluxer.com that pairs a newly installed app with the old installed app still signed in on the previous domain. productName is the app name.
+#. Sign-in option and modal title on YChat.com that pairs a newly installed app with the old installed app still signed in on the previous domain. productName is the app name.
 #: src/features/auth/flow/BrowserLoginHandoffModal.tsx:28
 msgid "Sign in with your old {productName} app"
 msgstr "Prisijungti naudojant senąją {productName} programėlę"
@@ -34557,7 +34557,7 @@ msgstr "Sistema"
 msgid "System & welcome"
 msgstr "Sistema ir pasveikinimas"
 
-#. Read-only system DM barrier message. productName is the Fluxer product name.
+#. Read-only system DM barrier message. productName is the YChat product name.
 #: src/features/channel/components/barriers/BarrierComponents.tsx:51
 msgid "System announcements from {productName} staff. You can't reply here."
 msgstr "Sistemos pranešimai iš „{productName}“ darbuotojų. Čia negalite atsakyti."
@@ -34584,7 +34584,7 @@ msgstr "Sistemos DM negali rengti vaizdo skambučių."
 msgid "System DMs cannot host voice calls"
 msgstr "Sistemos DM negali rengti balso skambučių"
 
-#. Tooltip body on the disabled voice call button in a system DM. System DMs are official Fluxer system accounts.
+#. Tooltip body on the disabled voice call button in a system DM. System DMs are official YChat system accounts.
 #: src/features/channel/components/channel_header_components/CallButtons.tsx:28
 msgid "System DMs cannot host voice calls."
 msgstr "Sistemos DM negali rengti balso skambučių."
@@ -34676,8 +34676,8 @@ msgid "Tables"
 msgstr "Lentelės"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#. Short label in the FluxerTag change modal. Keep it concise.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:62
+#. Short label in the YChatTag change modal. Keep it concise.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:62
 #: src/features/user/components/settings_utils/search_index/MyProfileIndex.ts:73
 msgid "Tag"
 msgstr "Žyma"
@@ -34986,7 +34986,7 @@ msgstr "tajų"
 msgid "Thank you for helping keep {productName} safe. We'll review your report as soon as possible."
 msgstr "Dėkojame, kad padedate užtikrinti „{productName}“ saugumą. Jūsų pranešimą peržiūrėsime kuo greičiau."
 
-#. Error in the browser when a code typed from the app is not found. instanceHost is the server the browser checked, such as api.fluxer.app. productName is the app name, such as Fluxer.
+#. Error in the browser when a code typed from the app is not found. instanceHost is the server the browser checked, such as api.YChat.app. productName is the app name, such as YChat.
 #: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:25
 msgid "That code is not valid on {instanceHost}. Check the code in the {productName} app and try again."
 msgstr "Šis kodas netinkamas {instanceHost}. Patikrinkite kodą programėlėje {productName} ir bandykite dar kartą."
@@ -35046,18 +35046,18 @@ msgstr "Tai viskas."
 msgid "The {PRODUCT_NAME} app asked to sign in as {requestedIdentifier}, but you chose {name}."
 msgstr "„{PRODUCT_NAME}“ programa paprašė prisijungti kaip {requestedIdentifier}, bet pasirinkote {name}."
 
-#. Explains where the code comes from, under the title of the browser page where it is typed. Signing in on another device is the label of a button in the app and must match its translation. PRODUCT_NAME is the app name, such as Fluxer.
+#. Explains where the code comes from, under the title of the browser page where it is typed. Signing in on another device is the label of a button in the app and must match its translation. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:187
 msgid "The {PRODUCT_NAME} app on your other device shows it under Signing in on another device. Only enter a code from a device you control."
 msgstr "„{PRODUCT_NAME}“ programa jūsų kitame įrenginyje rodoma skiltyje „Prisijungimas kitu įrenginiu“. Įveskite kodą tik iš įrenginio, kurį kontroliuojate."
 
-#. Shown after the user cancelled the sign-in request in the browser. PRODUCT_NAME is the app name, such as Fluxer.
+#. Shown after the user cancelled the sign-in request in the browser. PRODUCT_NAME is the app name, such as YChat.
 #: src/features/auth/flow/HandoffApprovalFlow.tsx:327
 msgid "The {PRODUCT_NAME} app was not signed in. You can close this tab."
 msgstr "„{PRODUCT_NAME}“ programa nebuvo prisijungta. Galite uždaryti šią skirtuką."
 
-#. Description text in the FluxerTag change modal.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:70
+#. Description text in the YChatTag change modal.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:70
 msgid "The #0000 tag is reserved for Visionary subscribers. Visionary is no longer available for purchase."
 msgstr "Žyma #0000 skirta „Visionary“ prenumeratoriams. „Visionary“ nebegalima įsigyti."
 
@@ -35233,8 +35233,8 @@ msgstr "Naujas balso kanalas pakartotinai naudos leidimus, naudotojų limitą ir
 
 #. Setup wizard push relay consent step body.
 #: src/features/app/components/setup/SetupWizardSteps.tsx:355
-msgid "The official Fluxer mobile apps receive notifications through Fluxer's push relay, which hands them to Apple and Google. Self-hosted UnifiedPush and ntfy endpoints never reach the relay and need no agreement."
-msgstr "Oficialios „Fluxer“ mobiliosios programėlės gauna pranešimus per „Fluxer“ persiuntimo tarnybą, kuri perduoda juos „Apple“ ir „Google“. Savarankiškai prižiūrimi „UnifiedPush“ ir „ntfy“ galiniai taškai niekada nepasiekia persiuntimo tarnybos ir nereikalauja sutikimo."
+msgid "The official YChat mobile apps receive notifications through YChat's push relay, which hands them to Apple and Google. Self-hosted UnifiedPush and ntfy endpoints never reach the relay and need no agreement."
+msgstr "Oficialios „YChat“ mobiliosios programėlės gauna pranešimus per „YChat“ persiuntimo tarnybą, kuri perduoda juos „Apple“ ir „Google“. Savarankiškai prižiūrimi „UnifiedPush“ ir „ntfy“ galiniai taškai niekada nepasiekia persiuntimo tarnybos ir nereikalauja sutikimo."
 
 #. Activity log detail row under a removed channel permission override, listing the permissions it explicitly allowed before it was removed. It describes the removed override. It does not mean these permissions are allowed now. A permission override is a channel-level exception to the permissions of a role or member. It allows or denies chosen permissions in one channel or category only. Use the same word for override as the channel permissions settings, such as Add override. {permissions} is a list of permission names joined into one phrase, for example "View channel and Send messages". A long list ends with a count, for example "View channel, Send messages, and 3 more permissions".
 #: src/features/guild/utils/guild_tabs/audit_log/AuditLogChannelMessages.ts:418
@@ -35301,9 +35301,9 @@ msgstr "Sistema pašalino vaidmenį {role} iš {target}"
 msgid "The upload service rejected this sticker as larger than {maxSize}. Try a smaller file, a simpler image, or a shorter animation."
 msgstr "Įkėlimo paslauga atmetė šį lipduką, nes jis didesnis nei {maxSize}. Pabandykite įkelti mažesnį failą, paprastesnį paveikslėlį arba trumpesnę animaciją."
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:144
-msgid "The username <0>{fluxerTag}</0> is already taken. Continuing will reroll your tag automatically."
-msgstr "Naudotojo vardas <0>{fluxerTag}</0> jau užimtas. Tęsiant jūsų žyma bus automatiškai pakeista."
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:144
+msgid "The username <0>{YChatTag}</0> is already taken. Continuing will reroll your tag automatically."
+msgstr "Naudotojo vardas <0>{YChatTag}</0> jau užimtas. Tęsiant jūsų žyma bus automatiškai pakeista."
 
 #. Setup wizard error when the username style was already fixed because an account exists.
 #: src/features/app/components/setup/SelfHostedSetupWizardGate.tsx:117
@@ -35505,7 +35505,7 @@ msgstr "Trečioji šalis"
 msgid "This account can't be blocked."
 msgstr "Šios paskyros negalima užblokuoti."
 
-#. Error in the browser when the chosen account belongs to a different server than the app that asked to sign in. accountHost and requestHost are server addresses. productName is the app name, such as Fluxer.
+#. Error in the browser when the chosen account belongs to a different server than the app that asked to sign in. accountHost and requestHost are server addresses. productName is the app name, such as YChat.
 #: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:38
 msgid "This account is on {accountHost}, but the {productName} app is signing in to {requestHost}. Choose an account on {requestHost}."
 msgstr "Ši paskyra yra serveryje {accountHost}, bet programa {productName} jungiasi prie {requestHost}. Pasirinkite paskyrą iš serverio {requestHost}."
@@ -36172,7 +36172,7 @@ msgstr "Ši naujo slaptažodžio nuoroda nebegalioja. Nuorodos galioja 1 valand�
 msgid "This shows how links appear: {linkPreviewExampleUrl}"
 msgstr "Taip atrodo nuorodos: {linkPreviewExampleUrl}"
 
-#. Error in the browser when the sign-in request from the desktop app no longer exists, because it expired or the app cancelled it. productName is the app name, such as Fluxer.
+#. Error in the browser when the sign-in request from the desktop app no longer exists, because it expired or the app cancelled it. productName is the app name, such as YChat.
 #: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:20
 msgid "This sign-in request expired or was cancelled in the {productName} app. Start again from the app."
 msgstr "Šis prisijungimo prašymas baigėsi arba buvo atšauktas programėlėje {productName}. Pabandykite dar kartą iš programėlės."
@@ -38734,7 +38734,7 @@ msgstr "Naudoti numatytąjį"
 msgid "Use direct input device access"
 msgstr "Naudoti tiesioginę prieigą prie įvesties įrenginių"
 
-#. Permission description in the channel-scoped permissions editor for the Use External Emoji permission. "Other communities" means custom emoji uploaded in a different Fluxer community.
+#. Permission description in the channel-scoped permissions editor for the Use External Emoji permission. "Other communities" means custom emoji uploaded in a different YChat community.
 #: src/features/permissions/utils/PermissionLabelDescriptors.ts:261
 msgid "Use emoji from other communities in this channel."
 msgstr "Naudoti jaustukus iš kitų bendruomenių šiame kanale."
@@ -38744,7 +38744,7 @@ msgstr "Naudoti jaustukus iš kitų bendruomenių šiame kanale."
 msgid "Use emoji from other communities with {premiumProductName}"
 msgstr "Naudokite jaustukus iš kitų bendruomenių su {premiumProductName}"
 
-#. Permission description in the role/permission editor for the Use External Emoji permission. "Other communities" means custom emoji uploaded in a different Fluxer community.
+#. Permission description in the role/permission editor for the Use External Emoji permission. "Other communities" means custom emoji uploaded in a different YChat community.
 #: src/features/permissions/utils/PermissionLabelDescriptors.ts:79
 msgid "Use emoji from other communities."
 msgstr "Naudoti jaustukus iš kitų bendruomenių."
@@ -38813,7 +38813,7 @@ msgstr "Naudokite prieigos raktus, kad prisijungtumėte be slaptažodžio"
 msgid "Use selection"
 msgstr "Naudoti pasirinkimą"
 
-#. Permission description in the channel-scoped permissions editor for the Use External Stickers permission. "Other communities" means stickers uploaded in a different Fluxer community.
+#. Permission description in the channel-scoped permissions editor for the Use External Stickers permission. "Other communities" means stickers uploaded in a different YChat community.
 #: src/features/permissions/utils/PermissionLabelDescriptors.ts:266
 msgid "Use stickers from other communities in this channel."
 msgstr "Naudoti lipdukus iš kitų bendruomenių šiame kanale."
@@ -38823,7 +38823,7 @@ msgstr "Naudoti lipdukus iš kitų bendruomenių šiame kanale."
 msgid "Use stickers from other communities with {premiumProductName}"
 msgstr "Naudokite lipdukus iš kitų bendruomenių su {premiumProductName}"
 
-#. Permission description in the role/permission editor for the Use External Stickers permission. "Other communities" means stickers uploaded in a different Fluxer community.
+#. Permission description in the role/permission editor for the Use External Stickers permission. "Other communities" means stickers uploaded in a different YChat community.
 #: src/features/permissions/utils/PermissionLabelDescriptors.ts:158
 msgid "Use stickers from other communities."
 msgstr "Naudoti lipdukus iš kitų bendruomenių."
@@ -38833,10 +38833,10 @@ msgstr "Naudoti lipdukus iš kitų bendruomenių."
 msgid "Use system locale for time format"
 msgstr "Naudoti sistemos lokalę laiko formatui"
 
-#. Accessible label for the official Fluxer instance option.
+#. Accessible label for the official YChat instance option.
 #: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:27
-msgid "Use the official Fluxer instance"
-msgstr "Naudoti oficialų „Fluxer“ serverį"
+msgid "Use the official YChat instance"
+msgstr "Naudoti oficialų „YChat“ serverį"
 
 #. Settings search entry description. One-line summary of what the settings search entry controls.
 #: src/features/user/components/settings_utils/search_index/DesktopSettingsIndex.ts:175
@@ -38972,7 +38972,7 @@ msgstr "Naudotojo valdikliai"
 msgid "User debug"
 msgstr "Naudotojo derinimas"
 
-#. Field label on the details step of the DSA report form (user report). Optional Fluxer user snowflake ID. "ID" is conventional.
+#. Field label on the details step of the DSA report form (user report). Optional YChat user snowflake ID. "ID" is conventional.
 #: src/features/moderation/components/report/ReportStepDetails.tsx:33
 msgid "User ID (optional)"
 msgstr "Naudotojo ID (pasirinktinai)"
@@ -39032,7 +39032,7 @@ msgstr "Naudotojo įrašas"
 msgid "User settings"
 msgstr "Naudotojo nustatymai"
 
-#. Field label on the details step of the DSA report form (user report). Optional FluxerTag of the reported user.
+#. Field label on the details step of the DSA report form (user report). Optional YChatTag of the reported user.
 #: src/features/moderation/components/report/ReportStepDetails.tsx:38
 msgid "User tag (optional)"
 msgstr "Naudotojo žyma (pasirinktinai)"
@@ -39047,7 +39047,7 @@ msgstr "Naudotojo garsumas"
 #. Settings search entry label. Also used as a search synonym in the settings search bar.
 #: src/features/app/components/setup/SetupWizardSteps.tsx:1119
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:581
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:227
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:227
 #: src/features/user/components/modals/tabs/my_profile_tab/MyProfileTabUsernameSection.tsx:56
 #: src/features/user/components/settings_utils/search_index/MyProfileIndex.ts:53
 msgid "Username"
@@ -39058,8 +39058,8 @@ msgstr "Naudotojo vardas"
 msgid "Username (optional)"
 msgstr "Naudotojo vardas (pasirinktinai)"
 
-#. Short label in the FluxerTag change modal. Keep it concise.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:41
+#. Short label in the YChatTag change modal. Keep it concise.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:41
 msgid "Username already taken"
 msgstr "Naudotojo vardas jau užimtas"
 
@@ -39098,8 +39098,8 @@ msgstr "Vartotojo vardo prisijungimas dar palaipsniui diegiamas mobiliosiose pro
 msgid "Username tags"
 msgstr "Vartotojo vardų žymos"
 
-#. Short label in the FluxerTag change modal. Keep it concise.
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:45
+#. Short label in the YChatTag change modal. Keep it concise.
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:45
 msgid "Username updated"
 msgstr "Naudotojo vardas atnaujintas"
 
@@ -39113,7 +39113,7 @@ msgstr "Vartotojo vardai"
 msgid "Usernames (recommended)"
 msgstr "Vartotojo vardai (rekomenduojama)"
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:220
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:220
 msgid "Usernames can only contain letters (a-z, A-Z), numbers (0-9), and underscores. Usernames are case-insensitive."
 msgstr "Naudotojo vardą gali sudaryti tik raidės (a-z, A-Z), skaičiai (0-9) ir apatiniai brūkšniai. Naudotojų varduose didžiosios ir mažosios raidės neskiriamos."
 
@@ -40563,7 +40563,7 @@ msgstr "Webhookai"
 msgid "Webhooks updated"
 msgstr "Webhookai atnaujinti"
 
-#. Native Help submenu item that opens the Fluxer marketing website.
+#. Native Help submenu item that opens the YChat marketing website.
 #: src/features/platform/utils/DesktopLocaleBridge.ts:147
 msgid "Website"
 msgstr "Svetainė"
@@ -40587,7 +40587,7 @@ msgstr "Sveiki atvykę, {username}!"
 msgid "Welcome to {channelDisplayName}"
 msgstr "Sveiki atvykę į {channelDisplayName}"
 
-#. Premium onboarding nagbar body. {premiumProductFullName} is the full premium product name, such as Fluxer Plutonium. {premiumProductName} is the short product name.
+#. Premium onboarding nagbar body. {premiumProductFullName} is the full premium product name, such as YChat Plutonium. {premiumProductName} is the short product name.
 #: src/features/app/components/layout/app_layout/nagbars/PremiumOnboardingNagbar.tsx:29
 msgid "Welcome to {premiumProductFullName}. Explore your {premiumProductName} perks and manage your subscription."
 msgstr "Sveiki atvykę į {premiumProductFullName}. Atraskite savo {premiumProductName} privilegijas ir valdykite prenumeratą."
@@ -41059,7 +41059,7 @@ msgstr "Jau turite {premiumProductName} visam laikui"
 msgid "You already have this connection."
 msgstr "Jau turite šį ryšį."
 
-#. External link warning title. productName is the Fluxer product name.
+#. External link warning title. productName is the YChat product name.
 #: src/features/messaging/components/modals/ExternalLinkWarningModal.tsx:22
 msgid "You are about to leave {productName}"
 msgstr "Ketinate palikti „{productName}“"
@@ -41395,11 +41395,11 @@ msgstr "Negalite pašalinti šio leidimo, nes jis būtų pašalintas iš jūsų 
 msgid "You changed your nickname in this community from **{previousNickname}** to **{newNickname}**."
 msgstr "Šioje bendruomenėje savo slapyvardį pakeitėte iš **{previousNickname}** į **{newNickname}**."
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:383
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:383
 msgid "You changed your tag while on {PREMIUM_PRODUCT_NAME}. It will reroll randomly when your {PREMIUM_PRODUCT_NAME} expires on <0>{premiumExpiresAtLabel}</0>, unless it renews."
 msgstr "Pakeitėte savo žymą, kol naudojatės {PREMIUM_PRODUCT_NAME}. Ji bus atsitiktinai pakeista, kai {PREMIUM_PRODUCT_NAME} baigs galioti <0>{premiumExpiresAtLabel}</0>, nebent ji bus atnaujinta."
 
-#: src/features/user/components/modals/FluxerTagChangeModal.tsx:390
+#: src/features/user/components/modals/YChatTagChangeModal.tsx:390
 msgid "You changed your tag while on {PREMIUM_PRODUCT_NAME}. It will reroll randomly when your {PREMIUM_PRODUCT_NAME} expires, unless it renews."
 msgstr "Pakeitėte savo žymą, kol naudojatės {PREMIUM_PRODUCT_NAME}. Ji bus atsitiktinai pakeista, kai baigs galioti jūsų {PREMIUM_PRODUCT_NAME}, nebent ji bus atnaujinta."
 
@@ -42401,7 +42401,7 @@ msgstr "Jūsų prenumerata bus pakeista į metinį atsiskaitymą per kitą atnau
 msgid "Your theme CSS is too large to share. Trim it down and try again."
 msgstr "Jūsų temos CSS per didelis, kad būtų galima bendrinti. Apkarpykite jį ir bandykite dar kartą."
 
-#. Field label on the details step of the DSA report form. Optional Fluxer username of the reporter so staff can follow up.
+#. Field label on the details step of the DSA report form. Optional YChat username of the reporter so staff can follow up.
 #: src/features/moderation/components/report/ReportStepDetails.tsx:67
 msgid "Your username (optional)"
 msgstr "Jūsų naudotojo vardas (nebūtina)"

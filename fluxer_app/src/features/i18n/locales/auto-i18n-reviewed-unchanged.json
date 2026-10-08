@@ -30,7 +30,7 @@
         "msgid": "Esc"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "HEVC"
@@ -128,7 +128,7 @@
         "msgid": "Escape"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Google Lens"
@@ -307,7 +307,7 @@
         "msgid": "Escape"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Google Lens"
@@ -796,7 +796,7 @@
         "msgid": "Download app"
       },
       {
-        "msgid": "Download fluxer-verification"
+        "msgid": "Download YChat-verification"
       },
       {
         "msgid": "Download {productName}"
@@ -823,7 +823,7 @@
         "msgid": "Finland"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Forum"
@@ -1606,7 +1606,7 @@
         "msgid": "Filter"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Forum"
@@ -2224,7 +2224,7 @@
         "msgid": "Favicon"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Google Lens"
@@ -3155,7 +3155,7 @@
         "msgid": "Couldn't publish this message"
       },
       {
-        "msgid": "Couldn't reach a Fluxer instance at {domain}. Check the address and that the instance is online."
+        "msgid": "Couldn't reach a YChat instance at {domain}. Check the address and that the instance is online."
       },
       {
         "msgid": "Couldn't save channel settings"
@@ -3524,10 +3524,10 @@
         "msgid": "Finish setup"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
-        "msgid": "Fluxer stopped checking whether the browser approved this sign-in. It didn't lose your code."
+        "msgid": "YChat stopped checking whether the browser approved this sign-in. It didn't lose your code."
       },
       {
         "msgid": "Focus window"
@@ -4310,7 +4310,7 @@
         "msgid": "Passkey updated"
       },
       {
-        "msgid": "Pause preview when Fluxer isn’t focused"
+        "msgid": "Pause preview when YChat isn’t focused"
       },
       {
         "msgid": "Paused. The person who followed this channel can no longer see it. Follow it again to resume."
@@ -4874,7 +4874,7 @@
         "msgid": "Screen share privacy"
       },
       {
-        "msgid": "Screen sharing failed, but Fluxer could not confirm that every capture path stopped. Use Stop Sharing or disconnect from the call before continuing."
+        "msgid": "Screen sharing failed, but YChat could not confirm that every capture path stopped. Use Stop Sharing or disconnect from the call before continuing."
       },
       {
         "msgid": "Screenshare"
@@ -5534,7 +5534,7 @@
         "msgid": "The new price is already scheduled for {effectiveDate}."
       },
       {
-        "msgid": "The official Fluxer mobile apps receive notifications through Fluxer's push relay, which hands them to Apple and Google. Self-hosted UnifiedPush and ntfy endpoints never reach the relay and need no agreement."
+        "msgid": "The official YChat mobile apps receive notifications through YChat's push relay, which hands them to Apple and Google. Self-hosted UnifiedPush and ntfy endpoints never reach the relay and need no agreement."
       },
       {
         "msgid": "The override allowed {permissions}."
@@ -5912,7 +5912,7 @@
         "msgid": "Use the Up and Down arrow keys to move between items and Space or Enter to open one. Where a tab has sections, the Right arrow expands it and the Left arrow collapses it."
       },
       {
-        "msgid": "Use the official Fluxer instance"
+        "msgid": "Use the official YChat instance"
       },
       {
         "msgid": "Use video and camera previews."
@@ -6851,7 +6851,7 @@
         "msgid": "{count, plural, one {The invite was used # time.} other {The invite was used # times.}}"
       },
       {
-        "msgid": "{domain} runs a newer version of Fluxer than this app. Update Fluxer, then try again."
+        "msgid": "{domain} runs a newer version of YChat than this app. Update YChat, then try again."
       },
       {
         "msgid": "{expressionName} is a custom emoji from this community. Members can use it here."
@@ -7109,7 +7109,7 @@
         "msgid": "Favicon"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "GIFs"
@@ -7570,7 +7570,7 @@
         "msgid": "Experimental"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Gateway"
@@ -7964,7 +7964,7 @@
         "msgid": "Favicon"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Google Lens"
@@ -8445,7 +8445,7 @@
         "msgid": "Expressions"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Forum"
@@ -9050,7 +9050,7 @@
         "msgid": "Escape"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Google Lens"
@@ -9196,7 +9196,7 @@
         "msgid": "Esc"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Google Lens"
@@ -9330,7 +9330,7 @@
         "msgid": "Favicon"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Font"
@@ -9754,7 +9754,7 @@
         "msgid": "Favicon"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Gateway"
@@ -10267,7 +10267,7 @@
         "msgid": "Filter"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Folder"
@@ -10911,7 +10911,7 @@
         "msgid": "File: {fileName}"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Focus"
@@ -11449,7 +11449,7 @@
         "msgid": "Esc"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "HEVC"
@@ -11609,7 +11609,7 @@
         "msgid": "Esc"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "HEVC"
@@ -11748,7 +11748,7 @@
         "msgid": "Escape"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Google Lens"
@@ -12074,7 +12074,7 @@
         "msgid": "Finland"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Focus"
@@ -12849,7 +12849,7 @@
         "msgid": "Finland"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Forum"
@@ -13371,7 +13371,7 @@
         "msgid": "Favicon"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Folder"
@@ -13804,7 +13804,7 @@
         "msgid": "Experimental"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "GIFs"
@@ -14379,7 +14379,7 @@
         "msgid": "Favicon"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Font"
@@ -14923,7 +14923,7 @@
         "msgid": "Escape"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "HEVC"
@@ -15104,7 +15104,7 @@
         "msgid": "Finland"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Forum"
@@ -15648,7 +15648,7 @@
         "msgid": "Esc"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Google Lens"
@@ -15829,7 +15829,7 @@
         "msgid": "Favicon"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Forum"
@@ -16216,7 +16216,7 @@
         "msgid": "Escape"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Google Lens"
@@ -16391,7 +16391,7 @@
         "msgid": "Estonia"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "Google Lens"
@@ -16788,7 +16788,7 @@
         "msgid": "Esc"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "HEVC"
@@ -16944,7 +16944,7 @@
         "msgid": "Escape"
       },
       {
-        "msgid": "Fluxer"
+        "msgid": "YChat"
       },
       {
         "msgid": "HEVC"
