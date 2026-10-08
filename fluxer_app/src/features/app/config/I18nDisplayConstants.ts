@@ -9,8 +9,8 @@ export {PRODUCT_NAME};
 export const PRODUCT_API_NAME = `${PRODUCT_NAME} API`;
 export const PRODUCT_HQ_COMMUNITY_NAME = `${PRODUCT_NAME} HQ`;
 export const CANARY_RELEASE_CHANNEL_NAME = `${PRODUCT_NAME} Canary`;
-export const DESKTOP_ENTRY_NAME = 'Fluxer';
-export const CANARY_DESKTOP_ENTRY_NAME = 'Fluxer Canary';
+export const DESKTOP_ENTRY_NAME = 'YChat';
+export const CANARY_DESKTOP_ENTRY_NAME = 'YChat Canary';
 export const VOICE_PROVIDER_NAME = 'LiveKit';
 export const PAYMENT_PROVIDER_NAME = 'Stripe';
 export const BLUESKY_PROVIDER_NAME = 'Bluesky';
@@ -19,11 +19,11 @@ export const GOOGLE_PLAY_NAME = 'Google Play';
 export const PIX_PAYMENT_METHOD = 'Pix';
 export const UPI_PAYMENT_METHOD = 'UPI';
 export const BLIK_PAYMENT_METHOD = 'BLIK';
-export const SUPPORT_EMAIL = 'support@fluxer.app';
+export const SUPPORT_EMAIL = 'support@yamada.top';
 export const SUPPORT_EMAIL_MAILTO = `mailto:${SUPPORT_EMAIL}`;
-export const I18N_EMAIL = 'i18n@fluxer.app';
+export const I18N_EMAIL = 'i18n@yamada.top';
 export const I18N_EMAIL_MAILTO = `mailto:${I18N_EMAIL}`;
-export const I18N_WEBLATE_DOMAIN = 'weblate.fluxer.tools';
+export const I18N_WEBLATE_DOMAIN = 'weblate.yamada.top';
 export const I18N_WEBLATE_URL = `https://${I18N_WEBLATE_DOMAIN}`;
 export const EXAMPLE_DOMAIN = 'example.com';
 export const EXAMPLE_URL = `https://${EXAMPLE_DOMAIN}`;
@@ -43,26 +43,26 @@ export const EXAMPLE_GENERAL_CHANNEL_NAME = 'general';
 export const EXAMPLE_USERNAME_MENTION = '@username';
 export const EXAMPLE_FLUXER_TAG_FULL = 'Username#0000';
 export const EXAMPLE_USERNAME = 'Username';
-export const FLUXER_TAG_LABEL = 'FluxerTag';
+export const FLUXER_TAG_LABEL = 'YChatTag';
 export const VISIONARY_LIFETIME_BADGE_LABEL = 'Visionary #42';
 export const FLUXER_TAG_MIN_WITH_ZERO_LABEL = '#0000';
 export const FLUXER_TAG_MIN_STANDARD_LABEL = '#0001';
 export const FLUXER_TAG_MAX_LABEL = '#9999';
-export const LINK_PREVIEW_EXAMPLE_URL = 'https://fluxer.app';
+export const LINK_PREVIEW_EXAMPLE_URL = 'https://chat.yamada.top:8443';
 export const EXAMPLE_MESSAGE_LINK = `${LINK_PREVIEW_EXAMPLE_URL}/channels/...`;
 export const EXAMPLE_GIF_URLS = `${EXAMPLE_URL}/gif1.gif\n${EXAMPLE_URL}/gif2.gif`;
 export const THE_OTHER_PLATFORM_TEMPLATE_EXAMPLE_URL = `https://${THE_OTHER_PLATFORM.toLowerCase()}.new/abcd1234`;
 const DESKTOP_DOWNLOAD_URLS: Record<string, string> = {
-	stable: 'https://fluxer.app/download',
-	canary: 'https://canary.fluxer.app/download',
+	stable: 'https://chat.yamada.top:8443/download',
+	canary: 'https://chat.yamada.top:8443/download/canary',
 	development: 'http://localhost:8088/download',
 };
 
 export const DESKTOP_DOWNLOAD_URL =
 	DESKTOP_DOWNLOAD_URLS[Config.PUBLIC_RELEASE_CHANNEL] ?? DESKTOP_DOWNLOAD_URLS.stable;
-export const FLUXER_DOCS_DOMAIN = 'fluxer.dev';
-export const FLUXER_DOCS_URL = `https://${FLUXER_DOCS_DOMAIN}`;
-export const FLUXER_BLUESKY_HANDLE = '@fluxer.app';
+export const FLUXER_DOCS_DOMAIN = 'chat.yamada.top';
+export const FLUXER_DOCS_URL = `https://${FLUXER_DOCS_DOMAIN}:8443/docs`;
+export const FLUXER_BLUESKY_HANDLE = '@yamada.top';
 export const SPLASH_IRC_SERVER = 'irc.fluxer.com:6667';
 export const YOUTUBE_PROVIDER_NAME = 'YouTube';
 export const EVERYONE_MENTION = '@everyone';
