@@ -1093,7 +1093,7 @@ msgstr "{count, plural, one {# चैनल इसे फ़ॉलो करत�
 msgid "{count, plural, one {# community found} other {# communities found}}"
 msgstr "{count, plural, one {# कम्युनिटी मिली} other {# कम्युनिटी मिलीं}}"
 
-#: src/features/app/components/layout/GuildsLayout.tsx:1952
+#: src/features/app/components/layout/GuildsLayout.tsx:1951
 msgid "{count, plural, one {# community is temporarily unavailable due to a flux capacitor malfunction.} other {# communities are temporarily unavailable due to a flux capacitor malfunction.}}"
 msgstr "{count, plural, one {# कम्युनिटी फ्लक्स कैपेसिटर में खराबी के कारण अस्थायी रूप से अनुपलब्ध है।} other {# कम्युनिटी फ्लक्स कैपेसिटर में खराबी के कारण अस्थायी रूप से अनुपलब्ध हैं।}}"
 
@@ -1135,7 +1135,7 @@ msgstr "{count, plural, one {# सदस्य} other {# सदस्य}}"
 #. Message count on a forum post card. count is the number of replies.
 #. Message count on a thread chip and in the thread browser. count is the number of messages.
 #: src/features/forum/utils/ForumMessageDescriptors.ts:203
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:153
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:169
 msgid "{count, plural, one {# message} other {# messages}}"
 msgstr "{count, plural, one {# संदेश} other {# संदेश}}"
 
@@ -1430,7 +1430,7 @@ msgstr "{durationQuantity, plural, one {# साल} other {# साल}} का
 
 #. Accessible label for the avatar status badge; placeholder is the localized status name.
 #: src/features/app/components/shared/GroupDMAvatar.tsx:33
-#: src/features/ui/components/BaseAvatar.tsx:26
+#: src/features/ui/components/BaseAvatar.tsx:27
 #: src/features/ui/components/StatusIndicator.tsx:12
 msgid "{effectiveStatusLabel} status"
 msgstr "{effectiveStatusLabel} स्टेटस"
@@ -1476,7 +1476,7 @@ msgid "{fifteenMinutes} minutes"
 msgstr "{fifteenMinutes} मिनट"
 
 #. Short label in the sidebar navigation guild folder item. Preserve {folderName}; it is inserted by code.
-#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:77
+#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:78
 msgid "{folderName} folder"
 msgstr "{folderName} फ़ोल्डर"
 
@@ -1573,7 +1573,7 @@ msgid "{imageCount, plural, one {# image} other {# images}}, {videoCount, plural
 msgstr "{imageCount, plural, one {# इमेज} other {# इमेज}}, {videoCount, plural, one {# वीडियो} other {# वीडियो}}"
 
 #. Explanation shown when the selected instance advertises no web app endpoint. Instance name is interpolated.
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:76
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:61
 msgid "{instanceName} does not publish a web address, so sign-in cannot be handed to a browser."
 msgstr "{instanceName} कोई वेब पता प्रकाशित नहीं करता है, इसलिए साइन-इन को ब्राउज़र को नहीं सौंपा जा सकता है।"
 
@@ -1884,15 +1884,15 @@ msgstr "{productName} इस ऐप के ऑडियो के लिए अ�
 msgid "{productName} cannot use a hardware encoder for this, so it will use your CPU."
 msgstr "{productName} इसके लिए हार्डवेयर एन्कोडर का इस्तेमाल नहीं कर सकता, इसलिए वह आपके CPU का इस्तेमाल करेगा।"
 
+#. Desktop updater modal body after a manual update check finds an update. Confirming closes the app window and opens the updater. productName is the app name.
+#: src/features/updater/commands/UpdaterModalCommands.tsx:37
+msgid "{productName} closes, installs the update and opens again."
+msgstr "{productName} बंद हो जाएगा, अपडेट इंस्टॉल करेगा और फिर से खुल जाएगा।"
+
 #. Modal body shown when a user-initiated update check fails. productName is the app name.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:108
+#: src/features/updater/commands/UpdaterModalCommands.tsx:100
 msgid "{productName} could not reach the update service. Check your connection and try again."
 msgstr "{productName} अपडेट सेवा तक नहीं पहुँच सका। अपना कनेक्शन जाँचें और फिर से कोशिश करें।"
-
-#. Modal body shown when starting installation of a downloaded desktop update fails. productName is the app name.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:125
-msgid "{productName} could not restart into the downloaded update. Try again from the update button."
-msgstr "{productName} डाउनलोड किए गए अपडेट के साथ रीस्टार्ट नहीं हो सका। अपडेट बटन से फिर से कोशिश करें।"
 
 #. Invite page notice shown when automated raid protection pauses invites. productName is the Fluxer product name.
 #: src/features/invite/utils/InviteMessageDescriptors.ts:17
@@ -2076,7 +2076,7 @@ msgstr "{remainingSlotCount} बाकी"
 #: src/features/channel/components/CrosspostCommunityCard.tsx:247
 #: src/features/channel/components/InviteEmbed.tsx:250
 #: src/features/channel/components/InviteEmbed.tsx:358
-#: src/features/channel/components/InviteEmbed.tsx:627
+#: src/features/channel/components/InviteEmbed.tsx:629
 msgid "{renderedMemberCount} {memberCount, plural, one {member} other {members}}"
 msgstr "{renderedMemberCount} {memberCount, plural, one {सदस्य} other {सदस्य}}"
 
@@ -2158,7 +2158,7 @@ msgid "{textChannelCount, plural, one {# text channel} other {# text channels}},
 msgstr "{textChannelCount, plural, one {# टेक्स्ट चैनल} other {# टेक्स्ट चैनल}}, {voiceChannelCount, plural, one {# वॉइस चैनल} other {# वॉइस चैनल}}, {categoryCount, plural, =0 {# श्रेणियाँ} one {# श्रेणी} other {# श्रेणियाँ}}, {roleCount, plural, one {# रोल} other {# रोल}}"
 
 #. Name given to the copy created by the Duplicate button in the Theme Studio theme library. {themeName} is the name of the theme being duplicated.
-#: src/features/theme/state/ThemeLibrary.ts:35
+#: src/features/theme/state/ThemeLibrary.ts:37
 msgid "{themeName} Copy"
 msgstr "{themeName} की कॉपी"
 
@@ -2399,7 +2399,7 @@ msgstr "1 दिन"
 #. Fixed duration label for a one-hour interval. Used as a standalone label in duration text or option lists.
 #. Thread auto archive duration option.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:15
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:226
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:242
 msgid "1 hour"
 msgstr "1 घंटा"
 
@@ -2446,7 +2446,7 @@ msgstr "1 यूज़र"
 #. Fixed duration label for a one-week interval. Used as a standalone label in duration text or option lists.
 #. Thread auto archive duration option.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:36
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:238
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:254
 msgid "1 week"
 msgstr "1 हफ़्ता"
 
@@ -2544,7 +2544,7 @@ msgid "2–32 characters: letters, numbers, and underscores."
 msgstr "2–32 वर्ण: अक्षर, अंक और अंडरस्कोर।"
 
 #. Thread auto archive duration option.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:230
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:246
 msgid "24 hours"
 msgstr "24 घंटे"
 
@@ -2577,7 +2577,7 @@ msgstr "2FA ज़रूरी"
 #. Ban duration option in the destructive ban-member modal for a three-day temporary ban.
 #. Thread auto archive duration option.
 #: src/features/moderation/components/modals/BanMemberModal.tsx:42
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:234
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:250
 msgid "3 days"
 msgstr "3 दिन"
 
@@ -2729,7 +2729,7 @@ msgid "a hostname, e.g. {exampleDomain}"
 msgstr "एक होस्टनेम, जैसे {exampleDomain}"
 
 #. Linux desktop updater modal body shown before version details and package format selector. productName is the app name.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:130
+#: src/features/updater/commands/UpdaterModalCommands.tsx:113
 msgid "A Linux desktop update is available. Choose the package format for this system and {productName} will save it locally."
 msgstr "लिनक्स डेस्कटॉप के लिए एक अपडेट उपलब्ध है। इस सिस्टम के लिए पैकेज फ़ॉर्मैट चुनें और {productName} उसे आपके डिवाइस पर सेव कर लेगा।"
 
@@ -2776,14 +2776,6 @@ msgstr "एक रिच एम्बेड या लिंक प्रीव�
 #: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts:191
 msgid "A separate profile for each community"
 msgstr "हर समुदाय के लिए एक अलग प्रोफ़ाइल"
-
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:164
-msgid "A sign-in request was made for your account. Only approve if you initiated it."
-msgstr "आपके अकाउंट के लिए साइन-इन का अनुरोध किया गया था। मंज़ूरी तभी दें जब यह अनुरोध आपने किया हो।"
-
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:162
-msgid "A sign-in request was made from the following device. Only approve if you recognize it."
-msgstr "नीचे दिए गए डिवाइस से साइन-इन का अनुरोध किया गया था। मंज़ूरी तभी दें जब आप इसे पहचानते हों।"
 
 #. Description for has:sticker. Sentence case, no trailing punctuation.
 #: src/features/search/utils/SearchUtils.ts:51
@@ -3050,7 +3042,7 @@ msgstr "कार्रवाइयाँ"
 #. Tab in the thread browser that lists active threads.
 #: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx:454
 #: src/features/channel/components/channel_header_components/developer_tools/DeveloperToolsShared.ts:37
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:161
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:177
 #: src/features/user/components/settings_utils/search_index/DevicesIndex.ts:19
 msgid "Active"
 msgstr "सक्रिय"
@@ -3288,8 +3280,8 @@ msgid "Add another custom shortcut"
 msgstr "एक और कस्टम शॉर्टकट जोड़ें"
 
 #. Button label that opens the self-hosted instance URL step.
-#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:33
-#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:261
+#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:36
+#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:268
 msgid "Add another instance"
 msgstr "एक और इंस्टेंस जोड़ें"
 
@@ -3886,7 +3878,7 @@ msgstr "सभी भाषाएँ"
 #: src/features/guild/components/modals/guild_tabs/guild_overview_tab/sections/DefaultNotificationsSection.tsx:20
 #: src/features/guild/utils/guild_tabs/audit_log/AuditLogSharedMessages.ts:82
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:352
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:121
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:137
 #: src/features/user/components/modals/tabs/accessibility_tab/VisualTab.tsx:21
 msgid "All messages"
 msgstr "सभी मैसेज"
@@ -3939,7 +3931,7 @@ msgid "Allow {productName} under Screen Recording in System Settings. If it is a
 msgstr "सिस्टम सेटिंग्स में स्क्रीन रिकॉर्डिंग के तहत {productName} को अनुमति दें। यदि यह पहले से ही अनुमत है, तो {productName2} को पुनः लॉन्च करें ताकि macOS इसे लागू कर सके।"
 
 #. Private thread setting that lets non-moderators add other members.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:222
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:238
 msgid "Allow anyone to invite"
 msgstr "सभी को आमंत्रित करने की अनुमति दें"
 
@@ -4597,11 +4589,6 @@ msgstr "इनकमिंग कॉल का जवाब दें"
 msgid "Any key"
 msgstr "कोई भी कुंजी"
 
-#. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:76
-msgid "Any updater ready"
-msgstr "कोई भी अपडेटर तैयार"
-
 #. Description for has:file. Sentence case, no trailing punctuation.
 #: src/features/search/utils/SearchUtils.ts:35
 msgid "any uploaded attachment"
@@ -4816,10 +4803,6 @@ msgstr "सभी कम्युनिटी पर लागू करें"
 msgid "Approval required"
 msgstr "मंज़ूरी ज़रूरी"
 
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:206
-msgid "Approve"
-msgstr "स्वीकृत करें"
-
 #. Hint under the sign-in option on fluxer.com that pairs a newly installed app with the old installed app. productName is the app name.
 #: src/features/auth/flow/AuthLoginLayout.tsx:101
 msgid "Approve this app from the {productName} app you already use. No password needed."
@@ -4850,7 +4833,7 @@ msgid "Are you sure you want to delete {channelLabel}? This cannot be undone."
 msgstr "क्या आप वाकई {channelLabel} को हटाना चाहते हैं? इसे पहले जैसा नहीं किया जा सकता है।"
 
 #. Confirmation text before deleting a thread. threadName is the thread name.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:89
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:97
 msgid "Are you sure you want to delete {threadName}? This cannot be undone."
 msgstr "क्या आप वाकई {threadName} को डिलीट करना चाहते हैं? इसे वापस नहीं लाया जा सकता।"
 
@@ -5168,7 +5151,7 @@ msgid "Audio packet loss:"
 msgstr "ऑडियो पैकेट लॉस:"
 
 #. Aria label for the inline audio attachment player container.
-#: src/features/voice/components/media_player/components/InlineAudioPlayer.tsx:35
+#: src/features/voice/components/media_player/components/InlineAudioPlayer.tsx:36
 msgid "Audio player"
 msgstr "ऑडियो प्लेयर"
 
@@ -5208,7 +5191,7 @@ msgid "Audio processing (focused voice)"
 msgstr "ऑडियो प्रोसेसिंग (फ़ोकस्ड वॉइस)"
 
 #. Aria label on the playback progress slider in the inline audio attachment player.
-#: src/features/voice/components/media_player/components/InlineAudioPlayer.tsx:39
+#: src/features/voice/components/media_player/components/InlineAudioPlayer.tsx:40
 msgid "Audio progress"
 msgstr "ऑडियो प्रगति"
 
@@ -5551,7 +5534,7 @@ msgstr "AV1 (ऑप्ट-इन आवश्यक)"
 #. Label for the available desktop version in the Linux update modal.
 #. Screen reader text for a check mark in the Plutonium page comparison table.
 #: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts:140
-#: src/features/updater/commands/UpdaterModalCommands.tsx:140
+#: src/features/updater/commands/UpdaterModalCommands.tsx:123
 msgid "Available"
 msgstr "उपलब्ध"
 
@@ -5568,7 +5551,7 @@ msgstr "डेस्कटॉप ऐप में उपलब्ध है।"
 #. Accessible label for an avatar image.
 #. Form label for a webhook avatar image.
 #. Settings search entry label. Also used as a search synonym in the settings search bar.
-#: src/features/ui/components/BaseAvatar.tsx:18
+#: src/features/ui/components/BaseAvatar.tsx:19
 #: src/features/user/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:353
 #: src/features/user/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:401
 #: src/features/user/components/settings_utils/search_index/MyProfileIndex.ts:13
@@ -5905,7 +5888,7 @@ msgid "Bans"
 msgstr "बैन"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:200
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:180
 msgid "Barrier countdown"
 msgstr "बैरियर काउंटडाउन"
 
@@ -5979,7 +5962,7 @@ msgid "Billing"
 msgstr "बिलिंग"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:168
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:148
 msgid "Billing cycle"
 msgstr "बिलिंग साइकल"
 
@@ -6867,7 +6850,7 @@ msgstr "यहां फ़ाइलें अपलोड नहीं की �
 #: src/features/messaging/components/modals/EditAltTextModal.tsx:190
 #: src/features/messaging/components/modals/ExternalLinkWarningModal.tsx:111
 #: src/features/messaging/components/modals/ForwardModal.tsx:603
-#: src/features/messaging/components/modals/ImageCropModal.tsx:1025
+#: src/features/messaging/components/modals/ImageCropModal.tsx:1026
 #: src/features/messaging/components/modals/MessageHistoryThresholdModal.tsx:107
 #: src/features/moderation/components/modals/BanMemberModal.tsx:266
 #: src/features/moderation/components/modals/RemoveTimeoutModal.tsx:70
@@ -7878,6 +7861,11 @@ msgstr "एक्सेस जाँचा जा रहा है..."
 msgid "Checking screen recording permission..."
 msgstr "स्क्रीन रिकॉर्डिंग अनुमति की जाँच की जा रही है..."
 
+#. Title while the browser looks up the sign-in request from the app.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:224
+msgid "Checking the sign-in request…"
+msgstr "साइन-इन अनुरोध की जाँच हो रही है…"
+
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts:67
 msgid "Checkout"
@@ -8736,7 +8724,7 @@ msgid "Close this group DM? You can reopen it anytime."
 msgstr "क्या आप इस ग्रुप DM को बंद करना चाहते हैं? आप इसे कभी भी फिर से खोल सकते हैं।"
 
 #. Moderator or owner action that archives a thread so it leaves the channel list.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:65
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:73
 msgid "Close thread"
 msgstr "थ्रेड बंद करें"
 
@@ -8782,7 +8770,7 @@ msgstr "क्या आप {username} के साथ अपनी DM बं�
 #. Registration mode option that disables public registration.
 #. Tab in the thread browser that lists archived threads.
 #: src/features/app/components/setup/SetupWizardSteps.tsx:256
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:165
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:181
 msgid "Closed"
 msgstr "बंद"
 
@@ -8797,7 +8785,7 @@ msgid "Closed DMs"
 msgstr "बंद किए गए DM"
 
 #. Tab in the thread browser that lists closed private threads. Keep it short, it shares a row with Active and Closed.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:177
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:193
 msgid "Closed private"
 msgstr "बंद निजी"
 
@@ -8807,7 +8795,7 @@ msgid "Closed the thread"
 msgstr "थ्रेड बंद कर दिया"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:128
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:108
 msgid "Cloud upload"
 msgstr "क्लाउड अपलोड"
 
@@ -8852,6 +8840,11 @@ msgstr "कोड ब्लॉक"
 msgid "Code expired"
 msgstr "कोड की समय-सीमा समाप्त हो गई"
 
+#. Label of the field in the browser where the user types the 12-character code shown in the desktop or mobile app. productName is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:28
+msgid "Code from the {productName} app"
+msgstr "{productName} ऐप से कोड"
+
 #. Short label in the authentication claim account modal. Keep the tone plain and specific.
 #. Success toast on the verification step of the DSA report flow after resending the email verification code.
 #: src/features/auth/components/modals/ClaimAccountModal.tsx:41
@@ -8881,7 +8874,7 @@ msgid "Collapse"
 msgstr "छोटा करें"
 
 #. Short label in the sidebar navigation guild folder item. Preserve {folderName}; it is inserted by code.
-#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:97
+#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:98
 msgid "Collapse {folderName}"
 msgstr "{folderName} को छोटा करें"
 
@@ -8926,7 +8919,7 @@ msgstr "{channelHeading} के लिए न पढ़े गए मैसे�
 #. Lowercase screen-reader fragment in the sidebar navigation guild folder item.
 #. Lowercase state label used inside channel-list accessible text for a collapsed category.
 #: src/features/app/components/layout/ChannelItem.tsx:101
-#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:85
+#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:86
 msgid "collapsed"
 msgstr "छोटा किया गया"
 
@@ -9353,7 +9346,6 @@ msgstr "अपने {premiumProductName} बैज को दूसरे य�
 
 #: src/features/auth/components/pages/SsoCallbackPage.tsx:256
 #: src/features/auth/components/pages/SsoCallbackPage.tsx:322
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:216
 msgid "Completing sign-in…"
 msgstr "साइन-इन पूरा हो रहा है…"
 
@@ -9385,7 +9377,7 @@ msgid "Composer focus"
 msgstr "कंपोजर फ़ोकस"
 
 #. Progress label on the save button while a cropped animated image is compressed. Keep it concise.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:67
+#: src/features/messaging/components/modals/ImageCropModal.tsx:68
 msgid "Compressing"
 msgstr "संपीड़ित हो रहा है"
 
@@ -9787,13 +9779,17 @@ msgstr "कॉन्टेक्स्ट मेन्यू को लेफ्
 #: src/features/auth/components/modals/DeviceRevokeModal.tsx:77
 #: src/features/auth/components/modals/PasskeyPinModal.tsx:111
 #: src/features/auth/components/pages/oauth_authorize_page/OAuthAccountStep.tsx:36
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:99
 #: src/features/connection/components/modals/AddConnectionModal.tsx:384
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:726
 #: src/features/user/components/modals/FluxerTagChangeModal.tsx:413
 #: src/features/user/components/modals/tabs/AuthorizedAppsTab.tsx:182
 msgid "Continue"
 msgstr "जारी रखें"
+
+#. Title in the desktop app while it waits for the user to sign in on the browser page it opened.
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:184
+msgid "Continue in your browser"
+msgstr "अपने ब्राउज़र में जारी रखें"
 
 #. Button in the gift time confirmation that proceeds to subscription checkout.
 #: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx:145
@@ -10148,7 +10144,7 @@ msgstr "hyprland.lua के लिए लाइनें कॉपी करे�
 #. Action that copies a link to the thread.
 #. Generic action label that copies a URL to the clipboard.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:754
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:105
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:113
 #: src/features/user/components/modals/tabs/component_gallery_tab/ComponentGalleryTabButtonsTab.tsx:326
 #: src/features/user/components/modals/tabs/component_gallery_tab/index.tsx:145
 msgid "Copy link"
@@ -10263,7 +10259,7 @@ msgid "Copy the setup key into your authenticator app."
 msgstr "अपने ऑथेंटिकेटर ऐप में सेटअप कुंजी कॉपी करें।"
 
 #. Developer mode action that copies the thread ID.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:109
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:117
 msgid "Copy thread ID"
 msgstr "थ्रेड आईडी कॉपी करें"
 
@@ -10347,7 +10343,7 @@ msgid "Could not start the screen share. The selected source may no longer be av
 msgstr "स्क्रीन शेयर शुरू नहीं हो सका। हो सकता है कि चुना गया स्रोत अब उपलब्ध न हो या कैप्चर ब्लॉक कर दिया गया हो। किसी खास विंडो के बजाय अपनी पूरी स्क्रीन या मॉनिटर शेयर करने की कोशिश करें।"
 
 #. Toast when creating a thread failed. detail is the server error message.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:254
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:270
 msgid "Could not start the thread: {detail}"
 msgstr "थ्रेड शुरू नहीं हो सका: {detail}"
 
@@ -10417,7 +10413,7 @@ msgid "Couldn't change your price"
 msgstr "आपकी कीमत नहीं बदली जा सकी"
 
 #. Modal title shown when a user-initiated update check fails.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:104
+#: src/features/updater/commands/UpdaterModalCommands.tsx:96
 msgid "Couldn't check for updates"
 msgstr "अपडेट की जाँच नहीं की जा सकी"
 
@@ -10442,7 +10438,7 @@ msgid "Couldn't close DM"
 msgstr "DM बंद नहीं कर पाए"
 
 #. Desktop handoff flow error shown when finalizing the sign-in fails after a valid code.
-#: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:21
+#: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:34
 msgid "Couldn't complete sign-in. Try again."
 msgstr "साइन-इन पूरा नहीं हो सका। फिर से कोशिश करें।"
 
@@ -10502,7 +10498,7 @@ msgid "Couldn't create your recovery kit. You can create one later in your accou
 msgstr "आपका रिकवरी किट नहीं बनाया जा सका। आप इसे बाद में अपनी खाता सेटिंग में बना सकते हैं।"
 
 #. Title of the error modal shown when image cropping fails.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:32
+#: src/features/messaging/components/modals/ImageCropModal.tsx:33
 msgid "Couldn't crop image"
 msgstr "इमेज क्रॉप नहीं की जा सकी"
 
@@ -10549,7 +10545,7 @@ msgid "Couldn't delete your messages"
 msgstr "आपके मैसेज मिटाए नहीं जा सके"
 
 #. Modal title shown when a desktop update download fails.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:112
+#: src/features/updater/commands/UpdaterModalCommands.tsx:104
 msgid "Couldn't download the desktop update"
 msgstr "डेस्कटॉप अपडेट डाउनलोड नहीं किया जा सका"
 
@@ -10790,7 +10786,7 @@ msgid "Couldn't save the tag: {detail}"
 msgstr "टैग सहेजा नहीं जा सका: {detail}"
 
 #. Error state of the thread browser search.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:278
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:294
 msgid "Couldn't search threads. Try again later."
 msgstr "थ्रेड्स में खोज नहीं हो सकी। बाद में फिर से प्रयास करें।"
 
@@ -10836,15 +10832,15 @@ msgstr "{blueskyProviderName} ऑथराइज़ेशन शुरू नह
 msgid "Couldn't start checkout"
 msgstr "चेकआउट शुरू नहीं किया जा सका"
 
+#. Shown in the desktop app when the browser sign-in request could not be created.
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:66
+msgid "Couldn't start signing in with your browser."
+msgstr "आपके ब्राउज़र से साइन इन शुरू नहीं हो सका।"
+
 #. Toast error shown when creating a new account connection fails.
 #: src/features/connection/commands/ConnectionCommands.ts:27
 msgid "Couldn't start the connection"
 msgstr "कनेक्शन शुरू नहीं हो पाया"
-
-#. Modal title shown when starting installation of a downloaded desktop update fails.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:121
-msgid "Couldn't start the desktop update"
-msgstr "डेस्कटॉप अपडेट शुरू नहीं हो सका"
 
 #. Title of the generic fallback error modal shown when opening or creating a DM fails.
 #: src/features/app/components/alerts/DmActionErrorModal.tsx:68
@@ -10952,7 +10948,7 @@ msgid "Couldn't upload banner"
 msgstr "बैनर अपलोड नहीं किया जा सका"
 
 #. Desktop handoff flow error shown when verifying the pairing code fails for an unexpected reason.
-#: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:17
+#: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:30
 msgid "Couldn't verify that code. Try again."
 msgstr "उस कोड को सत्यापित नहीं किया जा सका। फिर से कोशिश करें।"
 
@@ -11331,7 +11327,7 @@ msgid "Crop invite background"
 msgstr "इनवाइट बैकग्राउंड क्रॉप करें"
 
 #. Short label in the image crop modal. Keep it concise.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:24
+#: src/features/messaging/components/modals/ImageCropModal.tsx:25
 msgid "Crop preview"
 msgstr "क्रॉप का पूर्वावलोकन"
 
@@ -11343,12 +11339,12 @@ msgstr "प्रोफ़ाइल बैनर क्रॉप करें"
 #. Error modal body shown when a cropped community image still exceeds the size limit. {maxSizeLabel} is a formatted file size.
 #. Error modal body shown when a cropped image still exceeds the size limit. {maxSizeLabel} is a formatted file size.
 #: src/features/guild/components/modals/guild_tabs/guild_overview_tab/hooks/useGuildImageAssetField.tsx:47
-#: src/features/messaging/components/modals/ImageCropModal.tsx:36
+#: src/features/messaging/components/modals/ImageCropModal.tsx:37
 msgid "Cropped image is too large. Choose a smaller area or a smaller file (max {maxSizeLabel})."
 msgstr "क्रॉप की गई इमेज बहुत बड़ी है। कोई छोटा हिस्सा या छोटी फ़ाइल चुनें (अधिकतम {maxSizeLabel})।"
 
 #. Progress label on the save button while animated image frames are cropped. {percent} is a whole number. Keep it concise.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:62
+#: src/features/messaging/components/modals/ImageCropModal.tsx:63
 msgid "Cropping {percent}%"
 msgstr "{percent}% क्रॉप हो रहा है"
 
@@ -11930,7 +11926,7 @@ msgid "Deafened by moderators"
 msgstr "मॉडरेटर ने डीफ़ेन किया"
 
 #. Option in the Linux package format dropdown of the desktop updater modal. Keep the format token "DEB" verbatim and translate only the word "package".
-#: src/features/updater/commands/UpdaterModalCommands.tsx:160
+#: src/features/updater/commands/UpdaterModalCommands.tsx:143
 msgid "DEB package"
 msgstr "DEB पैकेज"
 
@@ -11966,6 +11962,11 @@ msgstr "सदस्य को डीबग करें"
 #: src/features/ui/action_menu/items/MessageMenuItems.tsx:66
 msgid "Debug message"
 msgstr "मैसेज डीबग करें"
+
+#. Developer-mode action that opens the thread debug modal.
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:121
+msgid "Debug thread"
+msgstr "थ्रेड डीबग करें"
 
 #. Channel details bottom sheet label or action (channel type, settings, toast, confirmation, or notification option).
 #. Developer-mode action that opens a user debug panel.
@@ -12035,7 +12036,7 @@ msgid "Default emoji"
 msgstr "डिफ़ॉल्ट इमोजी"
 
 #. Label of the default auto archive duration for new threads in a text channel.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:214
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:230
 msgid "Default hide after inactivity"
 msgstr "निष्क्रियता के बाद डिफ़ॉल्ट रूप से छिपाएँ"
 
@@ -12093,7 +12094,7 @@ msgid "Default sort order"
 msgstr "डिफ़ॉल्ट सॉर्ट ऑर्डर"
 
 #. Label of the slowmode copied onto new threads in a text channel.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:218
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:234
 msgid "Default thread slowmode"
 msgstr "डिफ़ॉल्ट थ्रेड स्लोमोड"
 
@@ -12406,7 +12407,7 @@ msgid "Delete this message? Can't be undone. This message is also removed from e
 msgstr "इस संदेश को हटा दें? इसे वापस नहीं लाया जा सकता। यह संदेश हर उस समुदाय से भी हटा दिया जाएगा जो इस चैनल को फॉलो करता है।"
 
 #. Destructive moderator action that deletes a thread and all its messages.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:85
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:93
 msgid "Delete thread"
 msgstr "थ्रेड हटाएं"
 
@@ -12513,7 +12514,6 @@ msgstr "सघन लेआउट"
 
 #. Short label in the settings dialog permission components. Keep the tone plain and specific.
 #: src/features/app/components/dialogs/shared/PermissionComponents.tsx:16
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:203
 msgid "Deny"
 msgstr "अस्वीकार करें"
 
@@ -12588,7 +12588,7 @@ msgid "Desktop app"
 msgstr "डेस्कटॉप ऐप"
 
 #. Modal title shown after a manual desktop update check finds no update.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:41
+#: src/features/updater/commands/UpdaterModalCommands.tsx:50
 msgid "Desktop app is up to date"
 msgstr "डेस्कटॉप ऐप अप-टू-डेट है"
 
@@ -12642,7 +12642,7 @@ msgid "Desktop startup"
 msgstr "डेस्कटॉप स्टार्टअप"
 
 #. Tooltip on the updater icon for a Linux desktop update that requires choosing a package format.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:58
+#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:20
 msgid "Desktop update {version} available. Choose a Linux package."
 msgstr "डेस्कटॉप अपडेट {version} उपलब्ध है। एक लिनक्स पैकेज चुनें।"
 
@@ -12652,19 +12652,9 @@ msgid "Desktop update available"
 msgstr "डेस्कटॉप अपडेट उपलब्ध है"
 
 #. Tooltip on the updater icon for a Linux desktop update that requires choosing a package format and no version is known.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:62
+#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:24
 msgid "Desktop update available. Choose a Linux package."
 msgstr "डेस्कटॉप अपडेट उपलब्ध है। एक लिनक्स पैकेज चुनें।"
-
-#. Modal title shown when a desktop app update has finished downloading.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:87
-msgid "Desktop update ready"
-msgstr "डेस्कटॉप अपडेट तैयार है"
-
-#. Desktop updater modal body. The version placeholder is the downloaded app version; productName is the app name.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:91
-msgid "Desktop version {version} has been downloaded. Restart {productName} to finish installing."
-msgstr "डेस्कटॉप संस्करण {version} डाउनलोड हो गया है। इंस्टॉलेशन पूरा करने के लिए {productName} को पुनरारंभ करें।"
 
 #. Desktop updater modal body. The version placeholder is the target app version; productName is the app name.
 #: src/features/updater/commands/UpdaterModalCommands.tsx:20
@@ -12736,7 +12726,7 @@ msgid "Developer mode"
 msgstr "डेवलपर मोड"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:256
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:236
 msgid "Developer option"
 msgstr "डेवलपर विकल्प"
 
@@ -12763,7 +12753,7 @@ msgid "Developer tools unavailable"
 msgstr "डेवलपर टूल उपलब्ध नहीं हैं"
 
 #. Modal title when the desktop app is running unpackaged during development.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:57
+#: src/features/updater/commands/UpdaterModalCommands.tsx:66
 msgid "Development build"
 msgstr "डेवलपमेंट बिल्ड"
 
@@ -13604,26 +13594,6 @@ msgstr "डाउनलोड बटन"
 msgid "Download desktop app"
 msgstr "डेस्कटॉप ऐप डाउनलोड करें"
 
-#. Tooltip on the channel header updater icon prompting download of an update with no version or size info.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:54
-msgid "Download desktop update"
-msgstr "डेस्कटॉप अपडेट डाउनलोड करें"
-
-#. Tooltip on the channel header updater icon prompting download of an update of known size but unknown version.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:45
-msgid "Download desktop update ({formatBytes})"
-msgstr "डेस्कटॉप अपडेट डाउनलोड करें ({formatBytes})"
-
-#. Tooltip on the channel header updater icon prompting download of a versioned update with unknown size.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:50
-msgid "Download desktop update {version}"
-msgstr "डेस्कटॉप अपडेट {version} डाउनलोड करें"
-
-#. Tooltip on the channel header updater icon prompting download of a versioned update with known size.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:41
-msgid "Download desktop update {version} ({formatBytes})"
-msgstr "डेस्कटॉप अपडेट {version} ({formatBytes}) डाउनलोड करें"
-
 #: src/features/user/components/modals/tabs/privacy_safety_tab/DataExportTab.tsx:94
 msgid "Download export"
 msgstr "निर्यात डाउनलोड करें"
@@ -13687,26 +13657,6 @@ msgstr "डेवलपर टूल और स्टैक ट्रेस क�
 #: src/features/ui/action_menu/items/MediaMenuData.tsx:123
 msgid "Download video"
 msgstr "वीडियो डाउनलोड करें"
-
-#. Tooltip on the channel header updater icon while downloading a versioned update without throughput info.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:33
-msgid "Downloading desktop update {version}: {percent}%"
-msgstr "डेस्कटॉप अपडेट {version} डाउनलोड हो रहा है: {percent}%"
-
-#. Tooltip on the channel header updater icon while downloading an update with only percent available.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:37
-msgid "Downloading desktop update: {percent}%"
-msgstr "डेस्कटॉप अपडेट डाउनलोड हो रहा है: {percent}%"
-
-#. Tooltip on the channel header updater icon while downloading an update. Shows percent, bytes downloaded, total bytes, and bytes per second.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:28
-msgid "Downloading desktop update: {percent}% ({formatBytes} / {formatBytes2} at {formatBytes3}/s)"
-msgstr "डेस्कटॉप अपडेट डाउनलोड हो रहा है: {percent}% ({formatBytes} / {formatBytes2} {formatBytes3}/सेकंड पर)"
-
-#. Short desktop updater status label.
-#: src/features/app/state/Updater.ts:56
-msgid "Downloading desktop update…"
-msgstr "डेस्कटॉप अपडेट डाउनलोड हो रहा है…"
 
 #. IAR modal: rule description.
 #: src/features/moderation/components/report_modal/IARModalCopy.ts:290
@@ -14142,7 +14092,7 @@ msgid "Edit the bot avatar, tag, bio, banner, and friend request behavior"
 msgstr "बॉट अवतार, टैग, बायो, बैनर और फ्रेंड रिक्वेस्ट व्यवहार को एडिट करें"
 
 #. Action that opens the thread settings.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:81
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:89
 msgid "Edit thread"
 msgstr "थ्रेड संपादित करें"
 
@@ -14261,7 +14211,7 @@ msgid "Email verification required"
 msgstr "ईमेल वेरिफ़िकेशन ज़रूरी है"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:188
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:168
 msgid "Email verified"
 msgstr "ईमेल सत्यापित"
 
@@ -14970,14 +14920,15 @@ msgstr "अपने ऑथेंटिकेटर ऐप से {digitCount} �
 msgid "Enter the {digitCount}-digit code from your authenticator app."
 msgstr "अपने ऑथेंटिकेटर ऐप से {digitCount} अंकों वाला कोड डालें।"
 
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:108
-msgid "Enter the code"
-msgstr "कोड डालें"
-
 #. Inline validation error on the verification step of the DSA report flow when the code field is empty.
 #: src/features/moderation/components/pages/ReportPage.tsx:74
 msgid "Enter the code before continuing."
 msgstr "जारी रखने से पहले कोड डालें।"
+
+#. Title of the browser page where the user types the 12-character code the app shows under Signing in on another device. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:182
+msgid "Enter the code from the {PRODUCT_NAME} app"
+msgstr "{PRODUCT_NAME} ऐप से कोड दर्ज करें"
 
 #. Body text in the authentication sudo verification modal. Keep the tone plain and specific.
 #: src/features/auth/components/modals/SudoVerificationModal.tsx:56
@@ -14992,10 +14943,6 @@ msgstr "आपके मौजूदा ईमेल पर भेजा गय�
 #: src/features/user/components/modals/PasswordChangeModal.tsx:165
 msgid "Enter the code sent to your email address."
 msgstr "आपके ईमेल पते पर भेजा गया कोड डालें।"
-
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:111
-msgid "Enter the code shown in the app to continue."
-msgstr "जारी रखने के लिए ऐप में दिखाया गया कोड डालें।"
 
 #: src/features/user/components/modals/BouncedEmailChangeModal.tsx:157
 #: src/features/user/components/modals/EmailChangeModal.tsx:244
@@ -15018,6 +14965,11 @@ msgstr "वह नया ईमेल डालें जिसका आप उ
 #: src/features/auth/components/modals/PasskeyPinModal.tsx:29
 msgid "Enter the PIN for your security key to continue."
 msgstr "जारी रखने के लिए अपनी सुरक्षा कुंजी का पिन डालें।"
+
+#. Title in the desktop app above the code the user types into a browser on another device.
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:235
+msgid "Enter this code in your browser"
+msgstr "अपने ब्राउज़र में यह कोड दर्ज करें"
 
 #: src/features/auth/flow/HandoffCodeDisplay.tsx:132
 msgid "Enter this code in your browser to complete sign-in."
@@ -15336,7 +15288,7 @@ msgstr "{channelHeading} के लिए न पढ़े गए मैसे�
 #. Lowercase screen-reader fragment in the sidebar navigation guild folder item.
 #. Lowercase state label used inside channel-list accessible text for an expanded category.
 #: src/features/app/components/layout/ChannelItem.tsx:105
-#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:81
+#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:82
 msgid "expanded"
 msgstr "विस्तारित"
 
@@ -15422,7 +15374,7 @@ msgstr "{earliest} और {latest} के बीच समाप्त होग
 msgid "Expires in {remaining}s"
 msgstr "{remaining} सेकंड में समाप्त होगा"
 
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:374
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:257
 msgid "Expires in {remainingSeconds}s"
 msgstr "{remainingSeconds}s में समाप्त हो रहा है"
 
@@ -15966,7 +15918,7 @@ msgstr "सुविधा अस्थायी रूप से बंद ह�
 
 #. Developer options group for feature behavior overrides.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:123
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:119
 #: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts:137
 msgid "Features"
 msgstr "सुविधाएँ"
@@ -16225,7 +16177,7 @@ msgid "Fluxer"
 msgstr "Fluxer"
 
 #. Status shown when browser sign-in status polling gives up after repeated failures.
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:72
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:57
 msgid "Fluxer stopped checking whether the browser approved this sign-in. It didn't lose your code."
 msgstr "Fluxer ने यह जांचना बंद कर दिया कि ब्राउज़र ने इस साइन-इन को मंजूरी दी है या नहीं। इसने आपका कोड नहीं खोया है।"
 
@@ -16277,7 +16229,7 @@ msgstr "फ़ोकस्ड वॉइस"
 
 #. Folder icon option in the community-folder settings modal: a generic folder shape. Short standalone label.
 #. Short label in the sidebar navigation guild folder item.
-#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:73
+#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:74
 #: src/features/guild/components/modals/GuildFolderSettingsModal.tsx:40
 msgid "Folder"
 msgstr "फ़ोल्डर"
@@ -16460,17 +16412,17 @@ msgid "Force enabled"
 msgstr "ज़बरदस्ती चालू किया गया"
 
 #. Developer option label for simulating failed message loads.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:119
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:115
 msgid "Force failed message loads"
 msgstr "मैसेज लोड ज़बरदस्ती फ़ेल करें"
 
 #. Developer option label for simulating failed message sends.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:115
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:111
 msgid "Force failed message sends"
 msgstr "मैसेज सेंड ज़बरदस्ती फ़ेल करें"
 
 #. Developer option label for simulating a loading GIF picker.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:75
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:71
 msgid "Force GIF picker loading"
 msgstr "GIF पिकर लोडिंग को फ़ोर्स करें"
 
@@ -16487,7 +16439,7 @@ msgid "Force loading skeleton"
 msgstr "लोडिंग स्केलेटन फ़ोर्स करें"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:212
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:192
 #: src/features/channel/components/channel_header_components/developer_tools/MockingMenu.tsx:190
 msgid "Force mature media"
 msgstr "वयस्क मीडिया फ़ोर्स करें"
@@ -16502,12 +16454,12 @@ msgid "Force no {permissionName} permission"
 msgstr "{permissionName} अनुमति न होना फ़ोर्स करें"
 
 #. Developer option label for always showing profile data warnings.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:111
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:107
 msgid "Force profile data warning"
 msgstr "प्रोफ़ाइल डेटा चेतावनी ज़बरदस्ती दिखाएं"
 
 #. Developer option label for forcing user profile loading skeletons.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:107
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:103
 msgid "Force profile skeletons"
 msgstr "प्रोफ़ाइल स्केलेटन को फ़ोर्स करें"
 
@@ -16522,12 +16474,12 @@ msgid "Force show"
 msgstr "ज़बरदस्ती दिखाएं"
 
 #. Developer option label for always showing a community settings warning.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:79
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:75
 msgid "Force show vanity URL disclaimer"
 msgstr "वैनिटी यूआरएल अस्वीकरण ज़बरदस्ती दिखाएं"
 
 #. Developer option label for always showing the voice connection status bar.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:131
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:127
 msgid "Force show voice connection"
 msgstr "वॉइस कनेक्शन ज़बरदस्ती दिखाएं"
 
@@ -16536,14 +16488,9 @@ msgid "Force slowmode active"
 msgstr "स्लोमोड ज़बरदस्ती सक्रिय करें"
 
 #. Developer option label for rendering messages as unknown message types.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:127
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:123
 msgid "Force unknown message type"
 msgstr "अज्ञात मैसेज टाइप फ़ोर्स करें"
-
-#. Developer option label for simulating an available update.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:59
-msgid "Force update ready"
-msgstr "अपडेट तैयार होना फ़ोर्स करें"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
 #: src/features/channel/components/channel_header_components/developer_tools/DeveloperToolsShared.ts:25
@@ -16597,7 +16544,7 @@ msgid "Forward"
 msgstr "फ़ॉरवर्ड करें"
 
 #. Tooltip / aria label on the forward / fast-forward button in the standalone audio player. {defaultSeekAmount} is an integer second count.
-#: src/features/voice/components/media_player/components/AudioPlayer.tsx:32
+#: src/features/voice/components/media_player/components/AudioPlayer.tsx:33
 msgid "Forward {defaultSeekAmount} seconds"
 msgstr "{defaultSeekAmount} सेकंड आगे बढ़ाएं"
 
@@ -17017,8 +16964,6 @@ msgstr "शेयर करने लायक लिंक जनरेट क�
 msgid "Generate invite link"
 msgstr "इनवाइट लिंक जनरेट करें"
 
-#. Button label that replaces an expired browser sign-in code with a fresh one.
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:64
 #: src/features/auth/flow/HandoffCodeDisplay.tsx:117
 msgid "Generate new code"
 msgstr "नया कोड जनरेट करें"
@@ -17028,7 +16973,7 @@ msgid "Generating code…"
 msgstr "कोड जनरेट हो रहा है…"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:220
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:200
 msgid "Geo block overlay"
 msgstr "भू-ब्लॉक ओवरले"
 
@@ -17141,7 +17086,7 @@ msgid "GIF options"
 msgstr "GIF विकल्प"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:132
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:112
 msgid "GIF picker loading"
 msgstr "GIF पिकर लोड हो रहा है"
 
@@ -17226,14 +17171,14 @@ msgstr "उपहार कोड"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:244
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:224
 #: src/features/channel/components/channel_header_components/developer_tools/MockingMenu.tsx:74
 msgid "Gift duration"
 msgstr "उपहार की अवधि"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:240
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:220
 #: src/features/user/components/settings_utils/search_index/GiftInventoryIndex.ts:42
 msgid "Gift inventory"
 msgstr "उपहार इन्वेंट्री"
@@ -17266,7 +17211,7 @@ msgid "Gift not found"
 msgstr "उपहार नहीं मिला"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:248
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:228
 msgid "Gift redeemed"
 msgstr "उपहार रिडीम किया गया"
 
@@ -17412,6 +17357,16 @@ msgstr "वापस जाएं और मान्य ईमेल पता 
 #: src/features/auth/passkey_migration/PasskeyBridgePage.tsx:52
 msgid "Go back to {productName} to continue."
 msgstr "जारी रखने के लिए {productName} पर वापस जाएँ।"
+
+#. Shown after approving a sign-in for an app on another device, which signs in by itself shortly. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:292
+msgid "Go back to the {PRODUCT_NAME} app. It finishes signing in on its own."
+msgstr "{PRODUCT_NAME} ऐप पर वापस जाएं। यह अपने आप साइन इन हो जाएगा।"
+
+#. Shown after approving, when the browser has already handed the sign-in back to the desktop app. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:288
+msgid "Go back to the {PRODUCT_NAME} app. You can close this tab."
+msgstr "{PRODUCT_NAME} ऐप पर वापस जाएं। आप इस टैब को बंद कर सकते हैं।"
 
 #. Accessible label for the community row of an expression info card, which opens a community the viewer is already a member of. {communityName} is the community name.
 #: src/features/expressions/components/ExpressionInfoCard.tsx:89
@@ -17809,7 +17764,7 @@ msgid "Has"
 msgstr "कंटेंट"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:176
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:156
 msgid "Has ever purchased"
 msgstr "कभी खरीदा है"
 
@@ -17892,7 +17847,7 @@ msgstr "दिल"
 msgid "Hebrew"
 msgstr "हिब्रू"
 
-#: src/features/messaging/components/modals/ImageCropModal.tsx:958
+#: src/features/messaging/components/modals/ImageCropModal.tsx:959
 msgid "Height"
 msgstr "ऊँचाई"
 
@@ -18027,7 +17982,7 @@ msgid "Hide {premiumProductName} purchase date ({dateUtilsGetFormattedShortDateP
 msgstr "{premiumProductName} खरीदने की तारीख ({dateUtilsGetFormattedShortDatePremiumSince}) छिपाएँ"
 
 #. Label of the thread auto archive duration setting.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:206
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:222
 msgid "Hide after inactivity"
 msgstr "निष्क्रियता के बाद छिपाएँ"
 
@@ -19223,24 +19178,14 @@ msgid "Install the new app"
 msgstr "नया ऐप इंस्टॉल करें"
 
 #. Label for the installed desktop version in the Linux update modal.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:136
+#: src/features/updater/commands/UpdaterModalCommands.tsx:119
 msgid "Installed"
 msgstr "इंस्टॉल किया गया"
 
 #. Desktop updater modal body. The currentVersion placeholder is the installed app version.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:45
+#: src/features/updater/commands/UpdaterModalCommands.tsx:54
 msgid "Installed version: {currentVersion}."
 msgstr "इंस्टॉल किया गया वर्ज़न: {currentVersion}।"
-
-#. Tooltip on the channel header updater icon while a Fluxer Desktop update is being installed. version is the target version. Trailing horizontal ellipsis is intentional.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:18
-msgid "Installing desktop update {version}…"
-msgstr "डेस्कटॉप अपडेट {version} इंस्टॉल किया जा रहा है…"
-
-#. Tooltip on the channel header updater icon while a Fluxer Desktop update is being installed when version is not known. Trailing horizontal ellipsis is intentional.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:23
-msgid "Installing desktop update…"
-msgstr "डेस्कटॉप अपडेट इंस्टॉल हो रहा है…"
 
 #. Label for the server address in the printed or downloaded recovery kit.
 #: src/features/auth/components/modals/RecoveryKitModal.tsx:76
@@ -19369,11 +19314,6 @@ msgstr "अमान्य JSON। ऊपर दिए गए यूआरएल
 #: src/features/user/components/modals/PasswordChangeModal.tsx:36
 msgid "Invalid or expired code"
 msgstr "कोड अमान्य है या उसकी समय-सीमा समाप्त हो चुकी है"
-
-#. Desktop handoff flow error shown when the entered pairing code is invalid or expired.
-#: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:13
-msgid "Invalid or expired code. Try again."
-msgstr "कोड अमान्य है या उसकी समय-सीमा समाप्त हो चुकी है। फिर से कोशिश करें।"
 
 #. Short label in the authentication authorize flow. Keep the tone plain and specific.
 #: src/features/auth/components/pages/oauth_authorize_page/state/useAuthorizeFlow.ts:82
@@ -19817,7 +19757,7 @@ msgid "Join the call"
 msgstr "कॉल में शामिल हों"
 
 #. Notice above the composer when the user is not a member of the thread.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:145
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:161
 msgid "Join this thread to follow it in your channel list and get notifications."
 msgstr "इस थ्रेड में शामिल हों ताकि आप इसे अपनी चैनल सूची में फ़ॉलो कर सकें और सूचनाएं प्राप्त कर सकें।"
 
@@ -19868,7 +19808,7 @@ msgid "Join voice channels and hear others."
 msgstr "वॉइस चैनल से जुड़ें और दूसरों को सुनें।"
 
 #. Section header in the thread browser for threads the user joined.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:169
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:185
 msgid "Joined"
 msgstr "जुड़े"
 
@@ -20255,7 +20195,7 @@ msgstr "लेटेंसी ग्राफ़"
 #. Short label in the desktop settings tab. Keep it concise.
 #. Short label in the theme studio settings section. Keep it concise.
 #: src/features/theme_studio/sections/ThemeStudioSettingsSection.tsx:61
-#: src/features/updater/commands/UpdaterModalCommands.tsx:37
+#: src/features/updater/commands/UpdaterModalCommands.tsx:46
 #: src/features/user/components/modals/tabs/advanced_settings_tab/AdvancedAccessibilityControls.tsx:51
 #: src/features/user/components/modals/tabs/advanced_settings_tab/AdvancedDesktopControls.tsx:74
 #: src/features/user/components/modals/tabs/DesktopSettingsTab.tsx:48
@@ -20329,6 +20269,11 @@ msgstr "Visionary के बारे में ज़्यादा जान�
 msgid "Leave"
 msgstr "छोड़ें"
 
+#. Confirmation text before leaving a private thread. threadName is the thread name.
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:65
+msgid "Leave {threadName}? It's private, so you can only come back if someone adds you again."
+msgstr "क्या आप {threadName} छोड़ना चाहते हैं? यह निजी है, इसलिए आप तभी वापस आ सकते हैं जब कोई आपको फिर से जोड़ता है।"
+
 #. Short label in the authentication auth register form core. Keep the tone plain and specific.
 #: src/features/auth/flow/AuthRegisterFormCore.tsx:62
 msgid "Leave blank for a random username"
@@ -20353,6 +20298,11 @@ msgstr "विंडो के उस सिरे को असीमित छ
 #: src/features/channel/utils/ChannelMessageDescriptors.ts:57
 msgid "Leave group"
 msgstr "ग्रुप छोड़ें"
+
+#. Title of the confirmation dialog shown before leaving a private thread.
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:61
+msgid "Leave private thread"
+msgstr "निजी थ्रेड छोड़ें"
 
 #. Switch label in the leave-group confirmation modal. Suppresses the system leave notice so other members are not pinged.
 #: src/features/guild/hooks/useLeaveGroup.tsx:34
@@ -20796,7 +20746,7 @@ msgid "Linux default"
 msgstr "लिनक्स डिफ़ॉल्ट"
 
 #. Select label for choosing the Linux desktop package format to download.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:152
+#: src/features/updater/commands/UpdaterModalCommands.tsx:135
 msgid "Linux package"
 msgstr "लिनक्स पैकेज"
 
@@ -20844,7 +20794,7 @@ msgid "Live region"
 msgstr "लाइव क्षेत्र"
 
 #. Button that loads the next page of archived threads.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:190
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:206
 msgid "Load more"
 msgstr "और लोड करें"
 
@@ -20951,13 +20901,13 @@ msgstr "स्थानीय समय फ़ॉर्मैट"
 msgid "Localization"
 msgstr "लोकलाइज़ेशन"
 
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:192
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:109
 #: src/features/user/components/modals/tabs/DevicesTab.tsx:152
 msgid "Location"
 msgstr "जगह"
 
 #. Moderator action that stops non-moderators from sending messages in a thread.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:73
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:81
 msgid "Lock thread"
 msgstr "थ्रेड लॉक करें"
 
@@ -21109,6 +21059,11 @@ msgstr "क्या आप {userName} को ग्रुप का माल�
 msgid "Make group owner"
 msgstr "ग्रुप का मालिक बनाएं"
 
+#. Shown above the code on the browser approval page when the app cannot be signed in automatically. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:253
+msgid "Make sure this code matches the one in the {PRODUCT_NAME} app."
+msgstr "सुनिश्चित करें कि यह कोड {PRODUCT_NAME} ऐप में मौजूद कोड से मेल खाता है।"
+
 #. Setup wizard branding step title.
 #: src/features/app/components/setup/SetupWizardSteps.tsx:166
 msgid "Make the instance yours"
@@ -21147,7 +21102,7 @@ msgid "Manage"
 msgstr "प्रबंधित करें"
 
 #. Accessible label for the account switcher surface that lists every saved account.
-#: src/features/app/components/floating/UserAreaAccountSwitchMenu.tsx:257
+#: src/features/app/components/floating/UserAreaAccountSwitchMenu.tsx:289
 #: src/features/auth/components/accounts/AccountSwitcherModal.tsx:35
 msgid "Manage accounts"
 msgstr "अकाउंट प्रबंधित करें"
@@ -21262,7 +21217,7 @@ msgid "Manage your subscription"
 msgstr "अपनी सदस्यता प्रबंधित करें"
 
 #. Modal title when automatic in-app desktop updates cannot be used.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:53
+#: src/features/updater/commands/UpdaterModalCommands.tsx:62
 msgid "Manual desktop update"
 msgstr "मैन्युअल डेस्कटॉप अपडेट"
 
@@ -21474,7 +21429,7 @@ msgid "Mature content & content warnings"
 msgstr "वयस्क सामग्री और सामग्री चेतावनियाँ"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:204
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:184
 msgid "Mature content channel gate"
 msgstr "वयस्क सामग्री चैनल गेट"
 
@@ -21500,7 +21455,7 @@ msgid "Mature content checks are currently available only in the UK."
 msgstr "वयस्क सामग्री की जाँच फ़िलहाल केवल यूके में उपलब्ध है।"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:208
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:188
 msgid "Mature content media gate"
 msgstr "वयस्क सामग्री मीडिया गेट"
 
@@ -22888,13 +22843,13 @@ msgstr "म्यूट करें"
 #. Mute toggle button label in the mobile video viewer (currently unmuted).
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #. Voice menu checkbox label. Locally mutes another participant only for the current user.
-#: src/features/channel/components/embeds/media/EmbedVideo.tsx:73
+#: src/features/channel/components/embeds/media/EmbedVideo.tsx:74
 #: src/features/ui/action_menu/items/voice_participant_menu_data/shared.ts:42
 #: src/features/ui/action_menu/items/VoiceParticipantMenuItems.tsx:74
 #: src/features/user/components/settings_utils/section_registry/NotificationsSections.ts:147
 #: src/features/voice/components/media_player/components/MediaVerticalVolumeControl.tsx:25
 #: src/features/voice/components/media_player/components/MediaVolumeControl.tsx:25
-#: src/features/voice/components/modals/MobileVideoViewer.tsx:45
+#: src/features/voice/components/modals/MobileVideoViewer.tsx:46
 msgctxt "playback-control-action"
 msgid "Mute"
 msgstr "आवाज़ बंद करें"
@@ -23045,7 +23000,7 @@ msgid "Mute stream audio"
 msgstr "स्ट्रीम ऑडियो म्यूट करें"
 
 #. Action that mutes notifications and unread badges for a thread.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:97
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:105
 msgid "Mute thread"
 msgstr "थ्रेड म्यूट करें"
 
@@ -23316,16 +23271,6 @@ msgstr "वर्णन"
 msgid "Native title bar"
 msgstr "नेटिव टाइटल बार"
 
-#. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:84
-msgid "Native update progress"
-msgstr "नेटिव अपडेट की प्रगति"
-
-#. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:80
-msgid "Native updater ready"
-msgstr "नेटिव अपडेटर तैयार है"
-
 #. Unicode emoji category label.
 #: src/features/expressions/utils/UnicodeEmojis.ts:26
 msgid "Nature"
@@ -23402,7 +23347,7 @@ msgid "Network error"
 msgstr "नेटवर्क में गड़बड़ी"
 
 #. Developer options group for simulated slow or failed operations.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:83
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:79
 msgid "Networking and performance"
 msgstr "नेटवर्किंग और परफ़ॉर्मेंस"
 
@@ -23606,7 +23551,7 @@ msgid "New thread"
 msgstr "नया थ्रेड"
 
 #. Help text for the default thread auto archive duration setting on a text channel.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:210
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:226
 msgid "New threads will stop showing in the channel list after this period of inactivity."
 msgstr "इस अवधि की निष्क्रियता के बाद नए थ्रेड चैनल सूची में दिखना बंद हो जाएंगे।"
 
@@ -23616,7 +23561,7 @@ msgid "New users can't join right now. You can still create an account or sign i
 msgstr "नए यूज़र अभी शामिल नहीं हो सकते। आप अभी भी अकाउंट बना सकते हैं या साइन इन कर सकते हैं, फिर बाद में इस लिंक को दोबारा आज़माएँ।"
 
 #. Fallback version label when the available desktop version is unknown.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:148
+#: src/features/updater/commands/UpdaterModalCommands.tsx:131
 msgid "New version"
 msgstr "नया वर्ज़न"
 
@@ -23683,12 +23628,12 @@ msgid "No"
 msgstr "नहीं"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:228
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:208
 msgid "No {attachFilesPermission} permission"
 msgstr "{attachFilesPermission} की अनुमति नहीं है"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:224
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:204
 msgid "No {sendMessagesPermission} permission"
 msgstr "{sendMessagesPermission} की अनुमति नहीं है"
 
@@ -23872,7 +23817,7 @@ msgid "No description."
 msgstr "कोई विवरण नहीं।"
 
 #. Desktop updater modal body when no installed version string is available.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:49
+#: src/features/updater/commands/UpdaterModalCommands.tsx:58
 msgid "No desktop update is available."
 msgstr "कोई डेस्कटॉप अपडेट उपलब्ध नहीं है।"
 
@@ -24259,7 +24204,7 @@ msgid "No themes saved yet."
 msgstr "अभी तक कोई थीम सेव नहीं की गई है।"
 
 #. Empty state of the thread browser while searching.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:270
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:286
 msgid "No threads match"
 msgstr "कोई थ्रेड मेल नहीं खाता"
 
@@ -24315,7 +24260,7 @@ msgid "No webhooks"
 msgstr "कोई वेबहुक नहीं"
 
 #. Developer option label for short-circuiting the in-app reporting (IAR) flow. When enabled, submitting a report skips the network call.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:135
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:131
 msgid "No-op in-app reports"
 msgstr "इन-ऐप रिपोर्ट को नो-ऑप करें"
 
@@ -24517,7 +24462,7 @@ msgstr "नोट (सिर्फ़ आपको दिखेगा)"
 #. Notification level option. Suppresses all pushes for the channel or community. Paired with "All messages" and "Only mentions".
 #. Thread notification option that never notifies.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:362
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:129
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:145
 msgid "Nothing"
 msgstr "कुछ नहीं"
 
@@ -24567,7 +24512,7 @@ msgstr "सूचना ओवरराइड"
 #. Submenu / section header that groups per-channel or per-community notification preferences.
 #. Submenu label for the thread notification options.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:344
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:133
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:149
 msgid "Notification settings"
 msgstr "सूचना सेटिंग"
 
@@ -24753,6 +24698,11 @@ msgstr "<0>{listPriceEffectiveDate}</0> को आपकी सदस्यत�
 msgid "On click"
 msgstr "क्लिक करने पर"
 
+#. One line explanation in the desktop app above the code. signInAddress is the web address of the sign-in page, such as web.fluxer.app/login?handoff=1.
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:243
+msgid "On your other device, sign in at {signInAddress} and enter this code when asked."
+msgstr "अपने दूसरे डिवाइस पर, {signInAddress} पर साइन इन करें और पूछे जाने पर यह कोड दर्ज करें।"
+
 #: src/features/user/components/modals/tabs/applications_tab/ApplicationDetail.tsx:715
 msgid "Once deleted, the application and its credentials are permanently removed."
 msgstr "एक बार डिलीट होने के बाद, ऐप्लिकेशन और उसके क्रेडेंशियल हमेशा के लिए हटा दिए जाते हैं।"
@@ -24810,13 +24760,18 @@ msgid "Only {count, plural, one {# community} other {# communities}}"
 msgstr "सिर्फ़ {count, plural, one {# कम्युनिटी} other {# कम्युनिटी}}"
 
 #. Thread notification option that notifies only for mentions.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:125
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:141
 msgid "Only @mentions"
 msgstr "सिर्फ़ @उल्लेख"
 
 #: src/features/guild/components/modals/guild_tabs/guild_overview_tab/fields/GuildInviteSplashSettingsField.tsx:119
 msgid "Only applies on wide screens."
 msgstr "केवल चौड़ी स्क्रीन पर लागू होता है।"
+
+#. Warning under the title of the browser approval page, so people do not approve a sign-in someone else started.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:245
+msgid "Only continue if you started this sign-in on a device you control."
+msgstr "तभी जारी रखें यदि आपने यह साइन-इन उस डिवाइस पर शुरू किया है जिसे आप नियंत्रित करते हैं।"
 
 #. Body copy in the mature content check modal.
 #: src/features/auth/components/modals/MatureContentCheckModal.tsx:32
@@ -25006,6 +24961,11 @@ msgstr "{landmarkName} खोलें"
 msgid "Open {premiumProductFullName}"
 msgstr "{premiumProductFullName} खोलें"
 
+#. Button on the browser page after approving that opens the desktop app again if it did not come to the front. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:304
+msgid "Open {PRODUCT_NAME}"
+msgstr "{PRODUCT_NAME} खोलें"
+
 #. Button label that opens the desktop app. productName is the app name.
 #. Button that hands SSO sign-in back to the mobile app. productName is the app name.
 #: src/features/auth/components/pages/SsoCallbackPage.tsx:47
@@ -25096,11 +25056,14 @@ msgstr "बैनर विकल्प खोलें"
 msgid "Open bookmarks"
 msgstr "बुकमार्क खोलें"
 
-#. Button label that opens the browser sign-in handoff page.
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:56
 #: src/features/auth/flow/BrowserLoginHandoffModal.tsx:184
 msgid "Open browser"
 msgstr "ब्राउज़र खोलें"
+
+#. Button in the desktop app that reopens the browser sign-in page while the app waits for the browser.
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:53
+msgid "Open browser again"
+msgstr "ब्राउज़र फिर से खोलें"
 
 #. Primary button in the screen-share picker on web. Hands off to the browser's native getDisplayMedia picker.
 #: src/features/voice/components/modals/ScreenSharePickerModal.tsx:209
@@ -25141,7 +25104,7 @@ msgid "Open community"
 msgstr "कम्युनिटी खोलें"
 
 #. Short label in the app layout guild header. Preserve {guildName}; it is inserted by code.
-#: src/features/app/components/layout/GuildHeader.tsx:33
+#: src/features/app/components/layout/GuildHeader.tsx:34
 msgid "Open community menu for {guildName}"
 msgstr "{guildName} के लिए कम्युनिटी मेन्यू खोलें"
 
@@ -25151,7 +25114,7 @@ msgid "Open date picker"
 msgstr "डेट पिकर खोलें"
 
 #. Button label that opens the Fluxer desktop downloads page in a browser.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:83
+#: src/features/updater/commands/UpdaterModalCommands.tsx:92
 msgid "Open desktop downloads"
 msgstr "डेस्कटॉप डाउनलोड खोलें"
 
@@ -25348,7 +25311,7 @@ msgid "Open settings"
 msgstr "सेटिंग्स खोलें"
 
 #. Button label that opens the software center via appstream protocol.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:79
+#: src/features/updater/commands/UpdaterModalCommands.tsx:88
 msgid "Open software center"
 msgstr "सॉफ़्टवेयर सेंटर खोलें"
 
@@ -25438,7 +25401,7 @@ msgid "Open thread"
 msgstr "थ्रेड खोलें"
 
 #. Action that unarchives an archived thread.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:69
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:77
 msgid "Open thread again"
 msgstr "थ्रेड फिर से खोलें"
 
@@ -25448,7 +25411,7 @@ msgid "Open user menu for {displayName}"
 msgstr "{displayName} के लिए यूज़र मेन्यू खोलें"
 
 #. Button or menu action label in the channel and chat embed video. Keep it concise.
-#: src/features/channel/components/embeds/media/EmbedVideo.tsx:51
+#: src/features/channel/components/embeds/media/EmbedVideo.tsx:52
 msgid "Open video"
 msgstr "वीडियो खोलें"
 
@@ -25477,10 +25440,6 @@ msgstr "वॉइस और वीडियो सेटिंग्स खो�
 msgid "Open with {accountName} on {instanceName}"
 msgstr "{accountName} पर {instanceName} के साथ खोलें"
 
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:414
-msgid "Open your browser to finish signing in."
-msgstr "साइन इन पूरा करने के लिए अपना ब्राउज़र खोलें।"
-
 #: src/features/auth/flow/BrowserLoginHandoffModal.tsx:137
 msgid "Open your browser, sign in, then enter the code below to link your account."
 msgstr "अपना ब्राउज़र खोलें, साइन इन करें, फिर अपना अकाउंट लिंक करने के लिए नीचे दिया गया कोड डालें।"
@@ -25506,7 +25465,7 @@ msgstr "सदस्य पेज खोलता है। खोलने क�
 
 #. Short label in the language tab. Keep it concise.
 #. Spellcheck engine option in the textarea spellcheck submenu. Uses the host operating system spellchecker.
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:182
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:99
 #: src/features/channel/components/textarea/TextareaContextMenu.tsx:79
 #: src/features/user/components/modals/tabs/LanguageTab.tsx:110
 msgid "Operating system"
@@ -25614,7 +25573,7 @@ msgid "Original message was deleted"
 msgstr "मूल मैसेज मिटा दिया गया"
 
 #. Shown at the top of a thread when the message it was started from was deleted.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:202
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:218
 msgid "Original message was deleted."
 msgstr "मूल संदेश हटा दिया गया था।"
 
@@ -25643,7 +25602,7 @@ msgid "Other"
 msgstr "अन्य"
 
 #. Section header in the thread browser for active threads the user did not join.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:173
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:189
 msgid "Other active threads"
 msgstr "अन्य सक्रिय थ्रेड"
 
@@ -26524,7 +26483,7 @@ msgstr "प्लान"
 msgid "Plans, perks, gifts and your subscription all live on one page."
 msgstr "योजनाएं, लाभ, उपहार और आपकी सदस्यता - सब एक ही पेज पर उपलब्ध हैं।"
 
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:172
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:89
 msgid "Platform"
 msgstr "प्लेटफ़ॉर्म"
 
@@ -26558,9 +26517,9 @@ msgstr "चुना गया हिस्सा चलाएं"
 #. Play-button label on the inline video player thumbnail before playback starts.
 #. Short label in the channel and chat embed video. Keep it concise.
 #. Short label in the channel and chat embed you tube. Keep it concise.
-#: src/features/channel/components/embeds/media/EmbedVideo.tsx:64
+#: src/features/channel/components/embeds/media/EmbedVideo.tsx:65
 #: src/features/channel/components/embeds/media/EmbedYouTube.tsx:29
-#: src/features/voice/components/media_player/components/VideoPlayer.tsx:62
+#: src/features/voice/components/media_player/components/VideoPlayer.tsx:63
 msgid "Play video"
 msgstr "वीडियो चलाएं"
 
@@ -26814,7 +26773,7 @@ msgid "Premium perks disabled"
 msgstr "प्रीमियम पर्क बंद"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:160
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:140
 msgid "Premium since date"
 msgstr "प्रीमियम इस तारीख से"
 
@@ -26824,17 +26783,17 @@ msgid "Premium state reset on the backend."
 msgstr "प्रीमियम स्थिति बैकएंड पर रीसेट हो गई।"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:152
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:132
 msgid "Premium type"
 msgstr "प्रीमियम प्रकार"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:164
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:144
 msgid "Premium until date"
 msgstr "इस तारीख तक प्रीमियम"
 
 #. Progress label on the save button while an animated image crop starts. Keep it concise.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:58
+#: src/features/messaging/components/modals/ImageCropModal.tsx:59
 msgid "Preparing"
 msgstr "तैयार हो रहा है"
 
@@ -27215,7 +27174,7 @@ msgid "Profile customization form"
 msgstr "प्रोफ़ाइल कस्टमाइज़ेशन फ़ॉर्म"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:124
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:104
 msgid "Profile data warning"
 msgstr "प्रोफ़ाइल डेटा चेतावनी"
 
@@ -27263,7 +27222,7 @@ msgid "Profile privacy"
 msgstr "प्रोफ़ाइल गोपनीयता"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:120
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:100
 msgid "Profile skeletons"
 msgstr "प्रोफ़ाइल स्केलेटन"
 
@@ -28223,18 +28182,13 @@ msgstr "फिर से लोड करें"
 msgid "Reload {PRODUCT_NAME} to fully apply the engine change. Switching between in-app and system spellcheck requires a renderer reload because Electron can't swap providers while running."
 msgstr "इंजन बदलाव को पूरी तरह लागू करने के लिए {PRODUCT_NAME} को रीलोड करें। इन-ऐप और सिस्टम स्पेलचेक के बीच स्विच करने पर रेंडरर रीलोड ज़रूरी है, क्योंकि Electron चलते हुए प्रोवाइडर स्वैप नहीं कर सकता।"
 
-#. Tooltip on the channel header updater icon prompting a reload to apply freshly downloaded desktop modules. productName is the app name.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:77
-msgid "Reload {productName} to use the updated modules"
-msgstr "अपडेट किए गए मॉड्यूल का उपयोग करने के लिए {productName} को रीलोड करें"
-
 #. Tooltip on the channel header updater icon prompting a web reload to apply an update of unknown version. productName is the app name.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:87
+#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:34
 msgid "Reload {productName} to use web update"
 msgstr "वेब अपडेट का उपयोग करने के लिए {productName} को रीलोड करें"
 
 #. Tooltip on the channel header updater icon prompting a web reload to apply an in-place build update. productName is the app name.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:82
+#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:29
 msgid "Reload {productName} to use web update {version}"
 msgstr "{productName} को रीलोड करें ताकि वेब अपडेट {version} का उपयोग किया जा सके"
 
@@ -28429,7 +28383,7 @@ msgid "Remove from group"
 msgstr "ग्रुप से हटाएँ"
 
 #. Context menu item that removes a self-hosted instance from the authentication instance picker history.
-#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:37
+#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:40
 msgid "Remove from recent instances"
 msgstr "हाल के इंस्टेंस से हटाएं"
 
@@ -28439,7 +28393,7 @@ msgid "Remove from saved media"
 msgstr "सेव किए गए मीडिया से हटाएँ"
 
 #. Moderation action that removes the selected member from a thread.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:61
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:69
 msgid "Remove from thread"
 msgstr "थ्रेड से हटाएँ"
 
@@ -29142,7 +29096,7 @@ msgstr "फिर से भेजा गया"
 #: src/features/app/components/dialogs/shared/UnsavedChangesBannerContent.tsx:51
 #: src/features/app/components/floating/ColorPickerPopover.tsx:190
 #: src/features/input/components/KeybindRecorder.tsx:499
-#: src/features/messaging/components/modals/ImageCropModal.tsx:1022
+#: src/features/messaging/components/modals/ImageCropModal.tsx:1023
 msgid "Reset"
 msgstr "रीसेट करें"
 
@@ -29475,25 +29429,10 @@ msgstr "भेजने वाले की मर्ज़ी चलेगी, 
 msgid "Restart {appName}"
 msgstr "{appName} को रीस्टार्ट करें"
 
-#. Button label that restarts the app to apply a desktop update. productName is the app name.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:100
-msgid "Restart {productName}"
-msgstr "{productName} को रीस्टार्ट करें"
-
 #. Desktop setting description shown when a tray-icon change on Linux requires restart.
 #: src/features/user/components/modals/tabs/DesktopSettingsTab.tsx:35
 msgid "Restart {productName} for this change to take effect because Linux desktops can't reliably add or remove tray icons at runtime."
 msgstr "इस बदलाव को प्रभावी करने के लिए {productName} को रीस्टार्ट करें, क्योंकि Linux डेस्कटॉप रनटाइम पर ट्रे आइकन को विश्वसनीय रूप से जोड़ या हटा नहीं सकते हैं।"
-
-#. Tooltip on the channel header updater icon prompting a restart to apply a downloaded update of unknown version. productName is the app name.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:72
-msgid "Restart {productName} to install desktop update"
-msgstr "डेस्कटॉप अपडेट इंस्टॉल करने के लिए {productName} को रीस्टार्ट करें"
-
-#. Tooltip on the channel header updater icon prompting a restart to apply a downloaded versioned update. productName is the app name.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:67
-msgid "Restart {productName} to install desktop update {version}"
-msgstr "डेस्कटॉप अपडेट {version} इंस्टॉल करने के लिए {productName} को रीस्टार्ट करें"
 
 #. Confirmation prompt in advanced settings. Preserve {productName}; it is inserted by code.
 #. Confirmation prompt in advanced settings. Preserve {productName}; it is inserted by code.
@@ -29544,7 +29483,7 @@ msgstr "इनवाइट फिर से शुरू किए गए"
 #. Button that retries loading forum posts.
 #: src/features/forum/utils/ForumMessageDescriptors.ts:175
 #: src/features/platform/components/loadable/LoadableComponent.tsx:98
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:286
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:302
 msgid "Retry"
 msgstr "पुनः प्रयास करें"
 
@@ -29717,7 +29656,7 @@ msgid "Revoked ban for {0}"
 msgstr "{0} का बैन हटा दिया गया"
 
 #. Tooltip / aria label on the rewind button in the standalone audio player. {defaultSeekAmount} is an integer second count.
-#: src/features/voice/components/media_player/components/AudioPlayer.tsx:27
+#: src/features/voice/components/media_player/components/AudioPlayer.tsx:28
 msgid "Rewind {defaultSeekAmount} seconds"
 msgstr "{defaultSeekAmount} सेकंड रिवाइंड करें"
 
@@ -29866,7 +29805,7 @@ msgstr "रोमानियाई"
 
 #. Short label in the image crop modal. Keep it concise.
 #. Tooltip on the media viewer button that rotates the current media item 90 degrees clockwise.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:28
+#: src/features/messaging/components/modals/ImageCropModal.tsx:29
 #: src/features/messaging/components/modals/media_modal/shared.ts:93
 msgid "Rotate clockwise"
 msgstr "घड़ी की दिशा में घुमाएँ"
@@ -29889,7 +29828,7 @@ msgid "Rows per page"
 msgstr "प्रति पेज पंक्तियाँ"
 
 #. Option in the Linux package format dropdown of the desktop updater modal. Keep the format token "RPM" verbatim and translate only the word "package".
-#: src/features/updater/commands/UpdaterModalCommands.tsx:165
+#: src/features/updater/commands/UpdaterModalCommands.tsx:148
 msgid "RPM package"
 msgstr "RPM पैकेज"
 
@@ -29964,7 +29903,7 @@ msgstr "सैचुरेशन"
 #: src/features/messaging/components/modals/AttachmentEditModal.tsx:136
 #: src/features/messaging/components/modals/EditAltTextModal.tsx:193
 #: src/features/messaging/components/modals/MessageHistoryThresholdModal.tsx:115
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:246
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:262
 #: src/features/user/components/modals/BaseChangeNicknameModal.tsx:136
 #: src/features/user/components/modals/CustomStatusBottomSheet.tsx:300
 #: src/features/user/components/modals/NoteEditSheet.tsx:48
@@ -30506,7 +30445,7 @@ msgstr "इसमें खोजें"
 #. Notice in a forum channel while the server is still building the post search index.
 #. Shown in the thread browser while the search index is being built.
 #: src/features/forum/utils/ForumMessageDescriptors.ts:167
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:282
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:298
 msgid "Search is getting ready for this community. Trying again shortly..."
 msgstr "इस समुदाय के लिए खोज तैयार हो रही है। थोड़ी देर में फिर से प्रयास करें..."
 
@@ -30666,7 +30605,7 @@ msgid "Search themes…"
 msgstr "थीम खोजें…"
 
 #. Placeholder and label of the search box at the top of the thread browser.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:266
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:282
 msgid "Search threads"
 msgstr "थ्रेड खोजें"
 
@@ -30823,7 +30762,7 @@ msgid "Security key PIN form"
 msgstr "सुरक्षा कुंजी पिन फॉर्म"
 
 #. Link in the thread created system message that opens the thread browser.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:198
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:214
 msgid "See all threads"
 msgstr "सभी थ्रेड देखें"
 
@@ -31062,12 +31001,12 @@ msgid "Self-host setup"
 msgstr "सेल्फ़-होस्ट सेटअप"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:140
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:120
 msgid "Self-hosted mode"
 msgstr "सेल्फ़-होस्टेड मोड"
 
 #. Developer option label for forcing self-hosted client mode.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:67
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:63
 msgid "Self-hosted mode override"
 msgstr "सेल्फ़-होस्टेड मोड ओवरराइड"
 
@@ -31964,11 +31903,6 @@ msgstr "चैट दिखाएं"
 msgid "Show chat with {count, plural, one {# unread message} other {# unread messages}}"
 msgstr "{count, plural, one {# अपठित मैसेज के साथ चैट दिखाएं} other {# अपठित मैसेज के साथ चैट दिखाएं}}"
 
-#. Button label that opens the manual browser handoff code fallback.
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:60
-msgid "Show code"
-msgstr "कोड दिखाएँ"
-
 #. Developer voice status menu option for displaying the voice connection identifier.
 #: src/features/voice/components/voice_connection_status/VoiceConnectionStatusInner.tsx:76
 msgid "Show connection ID"
@@ -32212,8 +32146,8 @@ msgstr "मेरी स्क्रीन शेयर दिखाएं"
 
 #. Developer option label for showing the current user as typing.
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:96
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:63
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:76
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:59
 msgid "Show myself typing"
 msgstr "खुद को टाइप करते हुए दिखाएं"
 
@@ -32411,7 +32345,9 @@ msgstr "कम्युनिटी हेडर के नीचे बैन�
 msgid "Sidebar"
 msgstr "साइडबार"
 
+#. Button in the browser that approves signing in to the desktop or mobile app that asked for it.
 #. Generic authentication action label. Use for buttons, links, page titles, and accessible labels.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:33
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:79
 msgid "Sign in"
 msgstr "साइन इन करें"
@@ -32426,9 +32362,34 @@ msgstr "फिर से साइन इन करें"
 msgid "Sign in again as {accountLabel}"
 msgstr "{accountLabel} के तौर पर फिर से साइन इन करें"
 
+#. Shown in the desktop app while it waits for the browser. instanceName is the server name, such as Fluxer.
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:200
+msgid "Sign in to {instanceName} in your browser and confirm. This app finishes signing in on its own."
+msgstr "अपने ब्राउज़र में {instanceName} में साइन इन करें और पुष्टि करें। यह ऐप अपने आप साइन इन पूरा कर लेगा।"
+
+#. Shown in the desktop app above the code when the browser cannot return the sign-in automatically. instanceName is the server name, such as Fluxer.
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:196
+msgid "Sign in to {instanceName} in your browser, and check that it shows this code:"
+msgstr "अपने ब्राउज़र में {instanceName} में साइन इन करें, और जांचें कि यह कोड दिखाता है:"
+
 #: src/features/auth/flow/GiftHeader.tsx:33
 msgid "Sign in to claim your gift"
 msgstr "अपना उपहार पाने के लिए साइन इन करें"
+
+#. Title of the browser page where the user approves signing in to an app that asked for it. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:71
+msgid "Sign in to the {PRODUCT_NAME} app"
+msgstr "{PRODUCT_NAME} ऐप में साइन इन करें"
+
+#. Title of the browser page where the user approves signing in to the desktop app that opened it. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:58
+msgid "Sign in to the {PRODUCT_NAME} desktop app"
+msgstr "{PRODUCT_NAME} डेस्कटॉप ऐप में साइन इन करें"
+
+#. Title of the browser page where the user approves signing in to the mobile app that asked for it. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:65
+msgid "Sign in to the {PRODUCT_NAME} mobile app"
+msgstr "{PRODUCT_NAME} मोबाइल ऐप में साइन इन करें"
 
 #. Action label that starts passkey authentication.
 #: src/features/auth/AuthMessageDescriptors.ts:13
@@ -32508,14 +32469,10 @@ msgstr "अपने अकाउंट से दूसरे डिवाइ�
 msgid "Sign out?"
 msgstr "साइन आउट करें?"
 
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:234
-msgid "Sign-in approved"
-msgstr "साइन-इन मंज़ूर किया गया"
-
-#. Short label in the authentication handoff approval flow. Keep the tone plain and specific.
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:26
-msgid "Sign-in code"
-msgstr "साइन-इन कोड"
+#. Title of the browser page after the user cancelled the sign-in request from the app.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:322
+msgid "Sign-in cancelled"
+msgstr "साइन-इन रद्द किया गया"
 
 #. Section title for email address and password controls in the account security tab. Keep it concise.
 #: src/features/user/components/modals/tabs/account_security_tab/AccountSecuritySections.tsx:23
@@ -32538,10 +32495,6 @@ msgstr "साइन-इन फ़्लो"
 msgid "Sign-in method"
 msgstr "साइन-इन विधि"
 
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:84
-msgid "Sign-in request"
-msgstr "साइन-इन अनुरोध"
-
 #. Aria label on the signal-strength icon shown while the first latency sample is still pending.
 #: src/features/voice/components/SignalStrengthIcon.tsx:16
 msgid "Signal strength loading"
@@ -32557,6 +32510,21 @@ msgstr "साइन इन किया गया"
 #: src/features/user/components/settings_utils/section_registry/GeneralSettingsSections.ts:34
 msgid "Signed-in devices"
 msgstr "साइन इन किए गए डिवाइस"
+
+#. Shown on the browser approval page above the buttons. name is the display name of the account that will be signed in to the app.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:137
+msgid "Signing in as {name}"
+msgstr "{name} के तौर पर साइन इन हो रहा है"
+
+#. Text button in the desktop app that shows a code to type into a browser on a different device.
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:214
+msgid "Signing in on another device?"
+msgstr "किसी दूसरे डिवाइस पर साइन इन कर रहे हैं?"
+
+#. Title while the browser approves the sign-in to the app.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:228
+msgid "Signing in…"
+msgstr "साइन इन हो रहा है…"
 
 #. Label for Bluesky OAuth signing key ID input.
 #: src/features/app/components/setup/SetupWizardSteps.tsx:1161
@@ -32675,7 +32643,7 @@ msgstr "छोड़ें"
 msgid "Skip \"Mark all as read\" confirmation"
 msgstr "\"सभी को पढ़ा गया मार्क करें\" की पुष्टि छोड़ें"
 
-#: src/features/messaging/components/modals/ImageCropModal.tsx:1034
+#: src/features/messaging/components/modals/ImageCropModal.tsx:1035
 msgid "Skip cropping"
 msgstr "क्रॉप करना छोड़ें"
 
@@ -32690,7 +32658,7 @@ msgid "Skip the external link warning for all domains"
 msgstr "सभी डोमेन के लिए बाहरी लिंक चेतावनी को छोड़ें"
 
 #. Developer / debug surface — keep terse and technical. Tooltip / description for the no-op in-app reports toggle.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:140
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:136
 msgid "Skip the network call when an in-app report is submitted. The flow still advances to the success screen so you can exercise the UI, but nothing is actually sent to the safety team."
 msgstr "इन-ऐप रिपोर्ट सबमिट होने पर नेटवर्क कॉल छोड़ दें। फ़्लो फिर भी सफलता स्क्रीन तक बढ़ता है ताकि आप UI आज़मा सकें, लेकिन सुरक्षा टीम को असल में कुछ नहीं भेजा जाता।"
 
@@ -32752,8 +32720,8 @@ msgstr "स्लोवेनिया"
 
 #. Developer option label for simulating slow file uploads.
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:100
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:99
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:80
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:95
 msgid "Slow attachment upload"
 msgstr "अटैचमेंट अपलोड धीमा करें"
 
@@ -32769,29 +32737,29 @@ msgstr "धीमे चलें — दोबारा कोशिश कर�
 
 #. Developer option label for simulating slow message edits.
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:112
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:95
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:92
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:91
 msgid "Slow message edit"
 msgstr "मैसेज एडिट धीमा करें"
 
 #. Developer option label for simulating slow message loading.
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:104
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:87
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:84
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:83
 msgid "Slow message load"
 msgstr "मैसेज लोड धीमा करें"
 
 #. Developer option label for simulating slow message sending.
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:108
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:91
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:88
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:87
 msgid "Slow message send"
 msgstr "मैसेज भेजना धीमा करें"
 
 #. Developer option label for simulating slow profile loading.
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:116
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:103
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:96
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:99
 msgid "Slow profile load"
 msgstr "प्रोफ़ाइल लोड धीमा करें"
 
@@ -32807,7 +32775,7 @@ msgstr "स्लोमोड · {remaining} इंतज़ार करें"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
 #. Short label in the slowmode rate limited modal. Keep it concise.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:232
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:212
 #: src/features/slowmode/components/alerts/SlowmodeRateLimitedModal.tsx:8
 msgid "Slowmode active"
 msgstr "स्लोमोड सक्रिय है"
@@ -32858,7 +32826,7 @@ msgid "Slowmode is set to {durationLabel}. Wait before sending another message."
 msgstr "स्लोमोड {durationLabel} पर सेट है। दूसरा मैसेज भेजने से पहले इंतज़ार करें।"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:236
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:216
 msgid "Slowmode remaining"
 msgstr "स्लोमोड बाकी"
 
@@ -33109,7 +33077,7 @@ msgid "Something went wrong while starting checkout. Please try again in a momen
 msgstr "चेकआउट शुरू करते समय कुछ गड़बड़ हो गई। कृपया कुछ देर बाद फिर से कोशिश करें।"
 
 #. Toast when a thread action failed. detail is the server error message.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:258
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:274
 msgid "Something went wrong: {detail}"
 msgstr "कुछ गलत हो गया: {detail}"
 
@@ -33609,6 +33577,8 @@ msgstr "माइक्रोफ़ोन की जाँच शुरू क�
 msgid "Start minimized"
 msgstr "मिनिमाइज़ करके शुरू करें"
 
+#. Button on the browser page after cancelling that goes back to choosing an account.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:337
 #: src/features/moderation/components/report/ReportStepDetails.tsx:326
 #: src/features/moderation/components/report/ReportStepEmail.tsx:97
 #: src/features/moderation/components/report/ReportStepVerification.tsx:134
@@ -33650,12 +33620,12 @@ msgid "Start with computer"
 msgstr "कंप्यूटर के साथ शुरू करें"
 
 #. Fragment of the thread created system message. Appears after the author name.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:194
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:210
 msgid "started a thread"
 msgstr "ने एक थ्रेड शुरू किया"
 
 #. Subtitle at the top of a thread. name is the display name of the member who started it.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:262
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:278
 msgid "Started by {name}"
 msgstr "{name} ने शुरू किया"
 
@@ -33703,7 +33673,7 @@ msgid "Status:"
 msgstr "स्थिति:"
 
 #. Empty state explanation in the thread browser.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:186
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:202
 msgid "Stay focused on a conversation with a thread, a temporary text channel."
 msgstr "किसी थ्रेड के साथ बातचीत पर ध्यान केंद्रित रखें, जो एक अस्थायी टेक्स्ट चैनल है।"
 
@@ -34655,7 +34625,7 @@ msgid "System tray"
 msgstr "सिस्टम ट्रे"
 
 #. Modal title when the desktop app is installed through a system package manager such as Flatpak.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:61
+#: src/features/updater/commands/UpdaterModalCommands.tsx:70
 msgid "System-managed install"
 msgstr "सिस्टम-प्रबंधित इंस्टॉल"
 
@@ -34781,7 +34751,7 @@ msgid "Tap to add a note"
 msgstr "नोट जोड़ने के लिए टैप करें"
 
 #. Option in the Linux package format dropdown of the desktop updater modal. Keep the format token "tar.gz" verbatim and translate only the word "archive".
-#: src/features/updater/commands/UpdaterModalCommands.tsx:170
+#: src/features/updater/commands/UpdaterModalCommands.tsx:153
 msgid "tar.gz archive"
 msgstr "tar.gz आर्काइव"
 
@@ -35015,6 +34985,11 @@ msgstr "थाई"
 msgid "Thank you for helping keep {productName} safe. We'll review your report as soon as possible."
 msgstr "{productName} को सुरक्षित रखने में मदद करने के लिए धन्यवाद। हम जल्द से जल्द आपकी रिपोर्ट की समीक्षा करेंगे।"
 
+#. Error in the browser when a code typed from the app is not found. instanceHost is the server the browser checked, such as api.fluxer.app. productName is the app name, such as Fluxer.
+#: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:25
+msgid "That code is not valid on {instanceHost}. Check the code in the {productName} app and try again."
+msgstr "वह कोड {instanceHost} पर मान्य नहीं है। कृपया कोड को {productName} ऐप में देखें और पुनः प्रयास करें।"
+
 #. Body of the passkey page after the passkey prompt failed or was dismissed. Keep plain.
 #: src/features/auth/passkey_migration/PasskeyBridgePage.tsx:36
 msgid "That didn't work. Try again or cancel."
@@ -35058,17 +35033,27 @@ msgstr "वह मैसेज डिलीट नहीं हो सका"
 msgid "That message is gone, or you lost access to the conversation."
 msgstr "वह मैसेज अब मौजूद नहीं है, या उस बातचीत का आपका एक्सेस चला गया है।"
 
-#. Error shown when a browser sign-in handoff code expires before it is approved.
-#: src/features/auth/flow/browser_handoff/BrowserHandoffDescriptors.ts:9
-msgid "That sign-in code expired. Try again."
-msgstr "वह साइन-इन कोड समाप्त हो गया। पुनः प्रयास करें।"
-
 #. End-of-list line in the saved messages popout after every bookmark has been shown.
 #. End-of-list line on the saved messages page after every bookmark has been shown.
 #: src/features/messaging/components/pages/SavedMessagesPage.tsx:35
 #: src/features/messaging/components/popouts/SavedMessagesContent.tsx:42
 msgid "That's all of them."
 msgstr "बस इतना ही था।"
+
+#. Warning on the browser approval page when the app asked for a different account than the one chosen. requestedIdentifier is the email or username the app asked for, name is the chosen account's display name.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:131
+msgid "The {PRODUCT_NAME} app asked to sign in as {requestedIdentifier}, but you chose {name}."
+msgstr "{PRODUCT_NAME} ऐप ने {requestedIdentifier} के रूप में साइन इन करने के लिए कहा, लेकिन आपने {name} को चुना।"
+
+#. Explains where the code comes from, under the title of the browser page where it is typed. Signing in on another device is the label of a button in the app and must match its translation. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:187
+msgid "The {PRODUCT_NAME} app on your other device shows it under Signing in on another device. Only enter a code from a device you control."
+msgstr "आपके दूसरे डिवाइस पर {PRODUCT_NAME} ऐप इसे \"किसी दूसरे डिवाइस पर साइन इन करना\" के तहत दिखाता है। केवल उसी डिवाइस से कोड दर्ज करें जिसे आप नियंत्रित करते हैं।"
+
+#. Shown after the user cancelled the sign-in request in the browser. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:327
+msgid "The {PRODUCT_NAME} app was not signed in. You can close this tab."
+msgstr "{PRODUCT_NAME} ऐप में साइन इन नहीं किया गया था। आप इस टैब को बंद कर सकते हैं।"
 
 #. Description text in the FluxerTag change modal.
 #: src/features/user/components/modals/FluxerTagChangeModal.tsx:70
@@ -35087,10 +35072,6 @@ msgstr "ऐप क्रैश हो गया"
 #: src/features/app/components/ErrorFallback.tsx:134
 msgid "The app has crashed. Checking for updates that might fix this issue…"
 msgstr "ऐप क्रैश हो गया है। ऐसे अपडेट देखे जा रहे हैं जिनसे यह समस्या ठीक हो सकती है…"
-
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:237
-msgid "The app should now be signed in to your account."
-msgstr "अब ऐप आपके अकाउंट में साइन इन हो जाना चाहिए।"
 
 #. Activity log detail line under a lifted ban, for a temporary ban that had already ended on its own before it was lifted. A ban is the community ban, not the feature that blocks a user. {date} is when the ban ended, shown as a formatted date and time.
 #: src/features/guild/utils/guild_tabs/audit_log/AuditLogMemberMessages.ts:55
@@ -35130,17 +35111,12 @@ msgid "The community you're looking for may have been deleted or you may not hav
 msgstr "आप जिस कम्युनिटी को ढूंढ रहे हैं, हो सकता है उसे डिलीट कर दिया गया हो या आपके पास उसका एक्सेस न हो।"
 
 #. Modal body shown when a desktop update download fails.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:116
+#: src/features/updater/commands/UpdaterModalCommands.tsx:108
 msgid "The desktop update could not be downloaded. Try again from the update button when your connection is stable."
 msgstr "डेस्कटॉप अपडेट डाउनलोड नहीं किया जा सका। जब आपका कनेक्शन स्थिर हो, तो अपडेट बटन से फिर से कोशिश करें।"
 
-#. Desktop updater modal body when the downloaded version is unknown. productName is the app name.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:96
-msgid "The desktop update has been downloaded. Restart {productName} to finish installing."
-msgstr "डेस्कटॉप अपडेट डाउनलोड हो गया है। इंस्टॉलेशन पूरा करने के लिए {productName} को रीस्टार्ट करें।"
-
 #. Help text below the Linux package format selector in the desktop updater modal.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:156
+#: src/features/updater/commands/UpdaterModalCommands.tsx:139
 msgid "The downloaded file is saved to your computer. Install it with your normal package manager."
 msgstr "डाउनलोड की गई फ़ाइल आपके कंप्यूटर पर सेव हो गई है। इसे अपने सामान्य पैकेज मैनेजर से इंस्टॉल करें।"
 
@@ -35294,6 +35270,16 @@ msgctxt "screen-share"
 msgid "The screen share source stopped sending video, so your screen share was stopped."
 msgstr "स्क्रीन शेयर स्रोत ने वीडियो भेजना बंद कर दिया है, इसलिए आपका स्क्रीन शेयर रोक दिया गया।"
 
+#. Error shown in the desktop app when a browser sign-in request expires before it is approved in the browser.
+#: src/features/auth/flow/browser_handoff/BrowserHandoffDescriptors.ts:9
+msgid "The sign-in request expired before your browser approved it."
+msgstr "आपके ब्राउज़र द्वारा अप्रूव किए जाने से पहले साइन-इन अनुरोध की समय सीमा समाप्त हो गई।"
+
+#. Error shown in the desktop app when the user pressed Cancel on the browser sign-in page.
+#: src/features/auth/flow/browser_handoff/BrowserHandoffDescriptors.ts:14
+msgid "The sign-in was cancelled in your browser."
+msgstr "आपके ब्राउज़र में साइन-इन रद्द कर दिया गया था।"
+
 #. Activity log detail line under a deleted sticker, shown only when someone other than the person who deleted it had uploaded it. {user} is the user who uploaded the sticker, shown as a clickable user chip.
 #: src/features/guild/utils/guild_tabs/audit_log/AuditLogExpressionMessageMessages.ts:100
 msgid "The sticker was uploaded by {user}"
@@ -35433,7 +35419,7 @@ msgid "There are no posts yet"
 msgstr "अभी तक कोई पोस्ट नहीं है"
 
 #. Preview text on a thread chip when the thread has no messages yet.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:157
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:173
 msgid "There are no recent messages in this thread."
 msgstr "इस थ्रेड में कोई हालिया संदेश नहीं है।"
 
@@ -35442,7 +35428,7 @@ msgid "There are no roles to assign in this community at this time, but you can 
 msgstr "इस कम्युनिटी में अभी असाइन करने के लिए कोई रोल नहीं है, लेकिन आप <0>{rolesSettingsPath}</0> में नया रोल बना सकते हैं।"
 
 #. Empty state of the thread browser.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:182
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:198
 msgid "There are no threads"
 msgstr "कोई थ्रेड नहीं हैं"
 
@@ -35518,12 +35504,17 @@ msgstr "थर्ड पार्टी"
 msgid "This account can't be blocked."
 msgstr "इस अकाउंट को ब्लॉक नहीं किया जा सकता।"
 
+#. Error in the browser when the chosen account belongs to a different server than the app that asked to sign in. accountHost and requestHost are server addresses. productName is the app name, such as Fluxer.
+#: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:38
+msgid "This account is on {accountHost}, but the {productName} app is signing in to {requestHost}. Choose an account on {requestHost}."
+msgstr "यह खाता {accountHost} पर है, लेकिन {productName} ऐप {requestHost} में साइन इन कर रहा है। {requestHost} पर एक खाता चुनें।"
+
 #: src/features/user/components/modals/tabs/applications_tab/ApplicationDetail.tsx:418
 msgid "This action cannot be undone. All associated data, including the bot user, will be permanently deleted."
 msgstr "यह कार्रवाई पूर्ववत नहीं की जा सकती। बॉट यूज़र सहित सभी संबंधित डेटा स्थायी रूप से हटा दिया जाएगा।"
 
 #. Error modal body shown when an animated image has too many frames or pixels to crop in the browser.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:41
+#: src/features/messaging/components/modals/ImageCropModal.tsx:42
 msgid "This animation is too long or too large to crop. Try a shorter or smaller file."
 msgstr "यह एनीमेशन क्रॉप करने के लिए बहुत लंबा या बहुत बड़ा है। एक छोटी या हल्की फ़ाइल आज़माएँ।"
 
@@ -35549,7 +35540,7 @@ msgstr "यह बॉट एडमिनिस्ट्रेटर की अ�
 #. Error modal body shown when the browser cannot decode animated AVIF for cropping. {avifFormatLabel} is the AVIF format name.
 #. Modal body shown when an animated AVIF upload is rejected because this browser cannot crop it.
 #: src/features/expressions/utils/AnimatedAvifModalUtils.tsx:14
-#: src/features/messaging/components/modals/ImageCropModal.tsx:49
+#: src/features/messaging/components/modals/ImageCropModal.tsx:50
 msgid "This browser can't crop animated {avifFormatLabel} files. Upload a GIF or WebP instead."
 msgstr "यह ब्राउज़र एनिमेटेड {avifFormatLabel} फ़ाइलों को क्रॉप नहीं कर सकता है। इसके बजाय GIF या WebP अपलोड करें।"
 
@@ -35559,7 +35550,7 @@ msgid "This browser console is a developer tool."
 msgstr "यह ब्राउज़र कंसोल एक डेवलपर टूल है।"
 
 #. Error modal body shown when WebAssembly is unavailable, which animated image cropping needs.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:54
+#: src/features/messaging/components/modals/ImageCropModal.tsx:55
 msgid "This browser has WebAssembly turned off, so animated images can't be cropped."
 msgstr "इस ब्राउज़र में वेबअसेंबली बंद है, इसलिए एनिमेटेड इमेज को क्रॉप नहीं किया जा सकता है।"
 
@@ -35661,11 +35652,6 @@ msgstr "यह आपकी बैकएंड प्रीमियम स्�
 msgid "This code doesn't exist."
 msgstr "यह कोड मौजूद नहीं है।"
 
-#. Status shown under the browser sign-in code once its countdown reaches zero.
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:68
-msgid "This code expired."
-msgstr "यह कोड समाप्त हो गया है।"
-
 #. Gift redemption error modal body for an invalid or already used code.
 #: src/features/gift/commands/GiftCommands.tsx:37
 msgid "This code is invalid or already used."
@@ -35755,7 +35741,7 @@ msgid "This conversation is no longer available."
 msgstr "यह बातचीत अब उपलब्ध नहीं है।"
 
 #. Desktop updater modal body for platforms that do not support in-app installation. productName is the app name.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:69
+#: src/features/updater/commands/UpdaterModalCommands.tsx:78
 msgid "This desktop build cannot install updates inside {productName}. Download the latest desktop installer instead."
 msgstr "यह डेस्कटॉप बिल्ड {productName} के अंदर अपडेट इंस्टॉल नहीं कर सकता। इसके बजाय, नया डेस्कटॉप इंस्टॉलर डाउनलोड करें।"
 
@@ -35770,7 +35756,7 @@ msgid "This desktop doesn't offer system-wide shortcuts. Shortcuts still work wh
 msgstr "यह डेस्कटॉप सिस्टम-व्यापी शॉर्टकट प्रदान नहीं करता है। {productName} फ़ोकस में होने पर शॉर्टकट अब भी काम करते हैं।"
 
 #. Desktop updater modal body for development or unpackaged builds.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:65
+#: src/features/updater/commands/UpdaterModalCommands.tsx:74
 msgid "This development build cannot update itself. Download a desktop installer to test the update flow."
 msgstr "यह डेवलपमेंट बिल्ड खुद को अपडेट नहीं कर सकता है। अपडेट फ़्लो का परीक्षण करने के लिए डेस्कटॉप इंस्टॉलर डाउनलोड करें।"
 
@@ -35877,12 +35863,12 @@ msgid "This handoff code has expired. Generate a new one to continue."
 msgstr "यह हैंडऑफ़ कोड समाप्त हो गया है। जारी रखने के लिए एक नया कोड जनरेट करें।"
 
 #. Error modal body shown when an animated image fails to decode during cropping.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:45
+#: src/features/messaging/components/modals/ImageCropModal.tsx:46
 msgid "This image couldn't be read. It may be damaged."
 msgstr "यह इमेज पढ़ी नहीं जा सकी। यह खराब हो सकती है।"
 
 #. Desktop updater modal body for managed package builds such as Flatpak. productName is the app name.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:75
+#: src/features/updater/commands/UpdaterModalCommands.tsx:84
 msgid "This install is managed by your system. Update {productName} from your software center or package manager."
 msgstr "यह इंस्टॉलेशन आपके सिस्टम द्वारा प्रबंधित किया जाता है। अपने सॉफ़्टवेयर सेंटर या पैकेज मैनेजर से {productName} को अपडेट करें।"
 
@@ -36185,6 +36171,11 @@ msgstr "यह रीसेट लिंक समाप्त हो गया 
 msgid "This shows how links appear: {linkPreviewExampleUrl}"
 msgstr "यह दिखाता है कि लिंक कैसे दिखते हैं: {linkPreviewExampleUrl}"
 
+#. Error in the browser when the sign-in request from the desktop app no longer exists, because it expired or the app cancelled it. productName is the app name, such as Fluxer.
+#: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:20
+msgid "This sign-in request expired or was cancelled in the {productName} app. Start again from the app."
+msgstr "यह साइन-इन अनुरोध {productName} ऐप में समाप्त हो गया या रद्द कर दिया गया। ऐप से पुनः आरंभ करें।"
+
 #. Label above the community a sticker comes from in the sticker info card.
 #: src/features/expressions/components/ExpressionInfoCard.tsx:75
 msgid "This sticker is from"
@@ -36230,12 +36221,12 @@ msgid "This theme may have been removed or the link is invalid."
 msgstr "यह थीम हटा दी गई होगी या लिंक अमान्य है।"
 
 #. Notice above the composer of an archived thread.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:137
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:153
 msgid "This thread is closed. Sending a message will open it again."
 msgstr "यह थ्रेड बंद है। संदेश भेजने पर यह फिर से खुल जाएगा।"
 
 #. Barrier shown instead of the composer in a locked thread.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:141
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:157
 msgid "This thread is locked. Only moderators can send messages."
 msgstr "यह थ्रेड लॉक है। केवल मॉडरेटर ही संदेश भेज सकते हैं।"
 
@@ -36383,20 +36374,25 @@ msgstr "थ्रेड"
 msgid "Thread created"
 msgstr "थ्रेड बनाया गया"
 
+#. Title of the developer-mode thread debug modal.
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:125
+msgid "Thread debug"
+msgstr "थ्रेड डीबग"
+
 #. Activity log action filter option for threads that were deleted.
 #. Toast after a thread was deleted.
 #: src/features/app/config/AuditLogConstants.ts:383
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:93
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:101
 msgid "Thread deleted"
 msgstr "थ्रेड हटा दिया गया"
 
 #. Toast after the thread link was copied.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:113
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:129
 msgid "Thread link copied"
 msgstr "थ्रेड का लिंक कॉपी हो गया"
 
 #. Title of the thread member list.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:149
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:165
 msgid "Thread members"
 msgstr "थ्रेड सदस्य"
 
@@ -36406,7 +36402,7 @@ msgid "Thread name"
 msgstr "थ्रेड का नाम"
 
 #. Title of the thread settings modal.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:242
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:258
 msgid "Thread settings"
 msgstr "थ्रेड सेटिंग"
 
@@ -36446,7 +36442,7 @@ msgid "Threshold date cannot be in the future"
 msgstr "थ्रेशोल्ड की तारीख भविष्य की नहीं हो सकती"
 
 #. Short label in the channel and chat embed video. Keep it concise. Preserve {title}; it is inserted by code.
-#: src/features/channel/components/embeds/media/EmbedVideo.tsx:55
+#: src/features/channel/components/embeds/media/EmbedVideo.tsx:56
 msgid "Thumbnail for {title}"
 msgstr "{title} का थंबनेल"
 
@@ -36559,7 +36555,7 @@ msgid "Title bar"
 msgstr "टाइटल बार"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:252
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:232
 msgid "Title bar platform"
 msgstr "टाइटल बार प्लेटफ़ॉर्म"
 
@@ -36620,7 +36616,7 @@ msgid "Toggle camera"
 msgstr "कैमरा टॉगल करें"
 
 #. Aria label on the tap-to-toggle area of the mobile video viewer. Shows or hides the playback controls.
-#: src/features/voice/components/modals/MobileVideoViewer.tsx:36
+#: src/features/voice/components/modals/MobileVideoViewer.tsx:37
 msgid "Toggle controls"
 msgstr "कंट्रोल टॉगल करें"
 
@@ -36952,7 +36948,7 @@ msgid "Trusted domains cleared."
 msgstr "भरोसेमंद डोमेन हटा दिए गए हैं।"
 
 #. Hint under the empty search state in the thread browser.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:274
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:290
 msgid "Try a different name or check the other tab."
 msgstr "कोई दूसरा नाम आज़माएँ या दूसरा टैब देखें।"
 
@@ -37358,7 +37354,7 @@ msgstr "टाइपिंग अवतार"
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #. Short label in the channel and chat typing. Keep it concise.
 #: src/features/channel/components/ChannelTyping.tsx:11
-#: src/features/ui/components/BaseAvatar.tsx:22
+#: src/features/ui/components/BaseAvatar.tsx:23
 #: src/features/user/components/settings_utils/section_registry/AppearanceSections.ts:350
 msgid "Typing indicator"
 msgstr "टाइपिंग इंडिकेटर"
@@ -37387,12 +37383,12 @@ msgid "Typography"
 msgstr "टाइपोग्राफ़ी"
 
 #. Developer options group for forcing UI component states.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:71
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:67
 msgid "UI components"
 msgstr "यूआई कॉम्पोनेंट"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:216
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:196
 msgid "UK geo"
 msgstr "यूके जियो"
 
@@ -37528,7 +37524,7 @@ msgstr "बिना श्रेणी"
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
 #: src/features/app/components/dialogs/components/UnclaimedAccountAlert.tsx:15
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:192
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:172
 #: src/features/channel/components/channel_header_components/developer_tools/OptionPresets.ts:37
 msgid "Unclaimed account"
 msgstr "क्लेम न किया गया अकाउंट"
@@ -37689,7 +37685,7 @@ msgstr "यूनिवर्सल फ़ॉलबैक। सबसे कम
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:770
 #: src/features/invite/components/InviteListItem.tsx:36
 #: src/features/moderation/components/modals/BanDetailsModal.tsx:115
-#: src/features/updater/commands/UpdaterModalCommands.tsx:144
+#: src/features/updater/commands/UpdaterModalCommands.tsx:127
 msgid "Unknown"
 msgstr "अज्ञात"
 
@@ -37757,7 +37753,7 @@ msgid "Unknown invite"
 msgstr "अज्ञात इनवाइट"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:136
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:116
 msgid "Unknown message type"
 msgstr "अज्ञात मैसेज प्रकार"
 
@@ -37874,7 +37870,7 @@ msgid "Unlock stickers in DMs with {premiumProductName}"
 msgstr "{premiumProductName} के साथ DM में स्टिकर अनलॉक करें"
 
 #. Moderator action that lets everyone send messages in a locked thread again.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:77
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:85
 msgid "Unlock thread"
 msgstr "थ्रेड अनलॉक करें"
 
@@ -37893,10 +37889,10 @@ msgstr "अनम्यूट करें"
 #. Mute toggle button label in the media player volume control (currently muted).
 #. Mute toggle button label in the media player volume control (currently muted).
 #. Mute toggle button label in the mobile video viewer (currently muted).
-#: src/features/channel/components/embeds/media/EmbedVideo.tsx:68
+#: src/features/channel/components/embeds/media/EmbedVideo.tsx:69
 #: src/features/voice/components/media_player/components/MediaVerticalVolumeControl.tsx:20
 #: src/features/voice/components/media_player/components/MediaVolumeControl.tsx:20
-#: src/features/voice/components/modals/MobileVideoViewer.tsx:40
+#: src/features/voice/components/modals/MobileVideoViewer.tsx:41
 msgctxt "playback-control-action"
 msgid "Unmute"
 msgstr "आवाज़ चालू करें"
@@ -37979,7 +37975,7 @@ msgid "Unmute stream audio"
 msgstr "स्ट्रीम ऑडियो अनम्यूट करें"
 
 #. Action that unmutes a thread.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:101
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:109
 msgid "Unmute thread"
 msgstr "थ्रेड को अनम्यूट करें"
 
@@ -38077,7 +38073,7 @@ msgstr "ग्रुप DM अनपिन किया गया"
 #. Lowercase state label used inside channel-list accessible text when a channel has unread messages.
 #. Screen-reader fragment announcing that the DM list row has unread messages. Lowercase fragment.
 #: src/features/app/components/layout/ChannelItem.tsx:109
-#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:89
+#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:90
 #: src/features/app/components/layout/sidebar_nav/GuildListDMItem.tsx:58
 #: src/features/app/components/layout/sidebar_nav/UseGuildListItemState.ts:27
 #: src/features/channel/components/direct_message/DMListItem.tsx:71
@@ -38125,12 +38121,12 @@ msgid "Unread DMs only"
 msgstr "केवल अपठित DM"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:184
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:164
 msgid "Unread gift count"
 msgstr "न पढ़े हुए उपहारों की संख्या"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:180
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:160
 msgid "Unread gift inventory"
 msgstr "न पढ़े हुए उपहारों की इन्वेंट्री"
 
@@ -38267,9 +38263,19 @@ msgstr "यह मैसेज देखने के लिए {productName} �
 msgid "Update app"
 msgstr "ऐप अपडेट करें"
 
+#. Tooltip and accessible label on the channel header updater icon in the desktop app. Clicking it closes the window and opens the updater, which downloads and installs the update.
+#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:15
+msgid "Update available"
+msgstr "अपडेट उपलब्ध है"
+
 #: src/features/user/components/modals/CustomStatusModal.tsx:424
 msgid "Update my status"
 msgstr "अपना स्टेटस अपडेट करें"
+
+#. Button label that closes the desktop app and opens the updater to install an available update.
+#: src/features/updater/commands/UpdaterModalCommands.tsx:42
+msgid "Update now"
+msgstr "अभी अपडेट करें"
 
 #. Primary button in the modal that saves an updated passkey.
 #: src/features/auth/passkey_migration/PasskeyUpdateModal.tsx:39
@@ -38310,11 +38316,6 @@ msgstr "अपडेट की गई नीतियाँ"
 #: src/features/expressions/commands/FavoriteMemeCommands.tsx:23
 msgid "Updated saved media"
 msgstr "सेव किया गया मीडिया अपडेट किया गया"
-
-#. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:92
-msgid "Updater state"
-msgstr "अपडेटर स्थिति"
 
 #. Heading of the dialog shown after the user follows an announcement channel.
 #: src/features/channel/components/modals/ChannelFollowSuccessModal.tsx:19
@@ -38592,7 +38593,7 @@ msgid "Use {everyoneMention}/{hereMention} and {rolesMention}"
 msgstr "{everyoneMention}/{hereMention} और {rolesMention} का उपयोग करें"
 
 #. Accessible label for a known authentication instance option. Preserve {name} and {domain}. Code inserts them.
-#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:28
+#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:31
 msgid "Use {name} on {domain}"
 msgstr "{name} का उपयोग {domain} पर करें"
 
@@ -38625,7 +38626,12 @@ msgstr "जहाँ इमेज यूआरएल डालना है, व
 msgid "Use a dedicated modal to set a message history threshold date for members who don't have the {readMessageHistoryPermissionLabel} permission."
 msgstr "जिन सदस्यों के पास {readMessageHistoryPermissionLabel} अनुमति नहीं है, उनके लिए मैसेज हिस्ट्री थ्रेशोल्ड की तारीख एक अलग डायलॉग में सेट करें।"
 
-#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:267
+#. Text button on the browser approval page that goes back to choosing which account signs in to the app.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:149
+msgid "Use a different account"
+msgstr "कोई दूसरा खाता इस्तेमाल करें"
+
+#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:274
 msgid "Use a self-hosted instance URL"
 msgstr "एक स्व-होस्टेड इंस्टेंस यूआरएल का उपयोग करें"
 
@@ -38686,7 +38692,7 @@ msgid "Use category default"
 msgstr "श्रेणी डिफ़ॉल्ट का उपयोग करें"
 
 #. Thread notification option that follows the parent channel setting.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:117
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:133
 msgid "Use channel default"
 msgstr "चैनल डिफ़ॉल्ट का उपयोग करें"
 
@@ -38827,7 +38833,7 @@ msgid "Use system locale for time format"
 msgstr "समय फ़ॉर्मैट के लिए सिस्टम का लोकेल इस्तेमाल करें"
 
 #. Accessible label for the official Fluxer instance option.
-#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:24
+#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:27
 msgid "Use the official Fluxer instance"
 msgstr "आधिकारिक Fluxer इंस्टेंस का उपयोग करें"
 
@@ -39207,7 +39213,7 @@ msgid "Vanity URL can only contain alphanumeric characters and internal hyphens.
 msgstr "वैनिटी यूआरएल में केवल अल्फ़ान्यूमेरिक वर्ण और आंतरिक हाइफ़न हो सकते हैं।"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:144
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:124
 msgid "Vanity URL disclaimer"
 msgstr "वैनिटी यूआरएल अस्वीकरण"
 
@@ -39240,7 +39246,7 @@ msgid "Verification & membership barriers"
 msgstr "वेरिफ़िकेशन और सदस्यता बाधाएँ"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:196
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:176
 msgid "Verification barrier"
 msgstr "वेरिफ़िकेशन बाधा"
 
@@ -39401,10 +39407,6 @@ msgstr "{premiumProductFullName} खरीदने के लिए अपन�
 msgid "Verify your email to start DMs."
 msgstr "DM शुरू करने के लिए अपना ईमेल वेरिफ़ाई करें।"
 
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:142
-msgid "Verifying code…"
-msgstr "कोड वेरिफ़ाई किया जा रहा है…"
-
 #: src/features/auth/components/pages/ResetPasswordPage.tsx:145
 msgid "Verifying your reset link…"
 msgstr "आपका रीसेट लिंक वेरिफ़ाई किया जा रहा है…"
@@ -39438,7 +39440,7 @@ msgstr "वाइब्रेंसी"
 #: src/features/user/components/modals/tabs/VoiceVideoTab.tsx:15
 #: src/features/user/components/settings_utils/search_index/AccessibilityIndex.ts:113
 #: src/features/user/components/settings_utils/section_registry/VoiceVideoSections.ts:170
-#: src/features/voice/components/media_player/components/VideoPlayer.tsx:58
+#: src/features/voice/components/media_player/components/VideoPlayer.tsx:59
 msgid "Video"
 msgstr "वीडियो"
 
@@ -39508,7 +39510,7 @@ msgid "Video preview"
 msgstr "वीडियो प्रीव्यू"
 
 #. Aria label on the video scrubber / progress slider in the mobile video viewer.
-#: src/features/voice/components/modals/MobileVideoViewer.tsx:50
+#: src/features/voice/components/modals/MobileVideoViewer.tsx:51
 msgid "Video progress"
 msgstr "वीडियो प्रगति"
 
@@ -39540,7 +39542,7 @@ msgid "Video settings"
 msgstr "वीडियो सेटिंग्स"
 
 #. Short label in the channel and chat embed video. Keep it concise.
-#: src/features/channel/components/embeds/media/EmbedVideo.tsx:60
+#: src/features/channel/components/embeds/media/EmbedVideo.tsx:61
 #: src/features/channel/components/embeds/media/EmbedYouTube.tsx:27
 msgid "Video thumbnail"
 msgstr "वीडियो थंबनेल"
@@ -39857,7 +39859,7 @@ msgid "Visionary badge"
 msgstr "विजनरी बैज"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:156
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:136
 msgid "Visionary badge ID"
 msgstr "विजनरी बैज आईडी"
 
@@ -39926,7 +39928,7 @@ msgstr "वॉइस ऐक्टिवेशन"
 
 #. Lowercase screen-reader fragment in the sidebar navigation guild folder item.
 #. Lowercase screen-reader fragment in the sidebar navigation guild list item.
-#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:93
+#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:94
 #: src/features/app/components/layout/sidebar_nav/UseGuildListItemState.ts:47
 msgid "voice activity"
 msgstr "वॉइस गतिविधि"
@@ -40028,7 +40030,7 @@ msgid "Voice connection confirmation"
 msgstr "वॉइस कनेक्शन की पुष्टि"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:148
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:128
 msgid "Voice connection debug"
 msgstr "वॉइस कनेक्शन डीबग करें"
 
@@ -40060,7 +40062,7 @@ msgid "Voice message"
 msgstr "वॉइस मैसेज"
 
 #. Short label in the channel and chat voice message player. Keep it concise.
-#: src/features/channel/components/embeds/media/VoiceMessagePlayer.tsx:31
+#: src/features/channel/components/embeds/media/VoiceMessagePlayer.tsx:32
 msgid "Voice message player"
 msgstr "वॉइस मैसेज प्लेयर"
 
@@ -40178,10 +40180,6 @@ msgstr "और मैसेज डिलीट करने से पहले 
 msgid "Wait between messages. Members with \"{bypassSlowmodePermissionLabel}\" can bypass this."
 msgstr "मैसेज के बीच इंतज़ार करें। जिन सदस्यों के पास \"{bypassSlowmodePermissionLabel}\" अनुमति है, वे इसे बायपास कर सकते हैं।"
 
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:445
-msgid "Waiting for browser approval."
-msgstr "ब्राउज़र से मंज़ूरी की प्रतीक्षा हो रही है।"
-
 #. Tooltip explaining that video / screen share controls are gated while the voice connection is not yet ready.
 #: src/features/voice/components/voice_connection_status/LocalParticipantControls.tsx:45
 msgid "Waiting for connection..."
@@ -40222,10 +40220,6 @@ msgstr "जगाएँ"
 #: src/features/messaging/utils/markdown/Plaintext.ts:64
 msgid "Warning"
 msgstr "चेतावनी"
-
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:158
-msgid "Was this you?"
-msgstr "क्या यह आप थे?"
 
 #. US state name, shown next to the country name in the mature content gate.
 #: src/features/user/utils/UserGeo.ts:243
@@ -40499,11 +40493,6 @@ msgstr "वेब खोज"
 #: src/features/search/components/modals/SearchProviderPickerModal.tsx:39
 msgid "Web search provider"
 msgstr "वेब सर्च प्रोवाइडर"
-
-#. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:88
-msgid "Web updater ready"
-msgstr "वेब अपडेटर तैयार है"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #: src/features/user/components/settings_utils/section_registry/AccountSecuritySections.ts:92
@@ -40850,7 +40839,7 @@ msgid "Whoa, this is heavy"
 msgstr "अरे, यह तो बहुत ज़्यादा है"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:172
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:152
 msgid "Will cancel"
 msgstr "रद्द होगा"
 
@@ -41069,10 +41058,6 @@ msgstr "आपके पास पहले से ही आजीवन {premi
 msgid "You already have this connection."
 msgstr "यह कनेक्शन आपके पास पहले से है।"
 
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:87
-msgid "You are about to authorize an app to sign in to your account. Only continue if you initiated this request from a device you control."
-msgstr "आप एक ऐप को अपने अकाउंट में साइन इन करने के लिए अधिकृत करने वाले हैं। अगर आपने यह अनुरोध अपने नियंत्रण वाले डिवाइस से शुरू किया है, तभी जारी रखें।"
-
 #. External link warning title. productName is the Fluxer product name.
 #: src/features/messaging/components/modals/ExternalLinkWarningModal.tsx:22
 msgid "You are about to leave {productName}"
@@ -41199,7 +41184,7 @@ msgid "You can sign back in at any time."
 msgstr "आप कभी भी वापस साइन इन कर सकते हैं।"
 
 #. Cooldown notice in the new thread pane when the parent channel has slowmode. seconds is the wait time.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:250
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:266
 msgid "You can start another thread in {seconds, plural, one {# second} other {# seconds}}."
 msgstr "आप {seconds, plural, one {# सेकंड} other {# सेकंड}} में एक और थ्रेड शुरू कर सकते हैं।"
 
@@ -41842,6 +41827,11 @@ msgstr "आप पुरानी दर पर हैं। इस प्ला
 msgid "You're sending messages too quickly"
 msgstr "आप बहुत तेज़ी से मैसेज भेज रहे हैं"
 
+#. Title of the browser page after the user approved signing in to the app.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:282
+msgid "You're signed in"
+msgstr "आप साइन इन हो गए हैं"
+
 #. Status text on the screen-share hover popout shown to the local streamer. Lightly playful tone.
 #: src/features/voice/components/StreamWatchHoverPopout.tsx:43
 msgid "You're streaming!"
@@ -42447,7 +42437,7 @@ msgid "YubiKey"
 msgstr "YubiKey"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:917
+#: src/features/messaging/components/modals/ImageCropModal.tsx:918
 #: src/features/user/components/settings_utils/section_registry/AppearanceSections.ts:182
 msgid "Zoom"
 msgstr "ज़ूम"

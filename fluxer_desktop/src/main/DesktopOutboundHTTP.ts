@@ -15,6 +15,7 @@ import {
 	resolveDesktopSessionProxy,
 	sendThroughDesktopSession,
 } from '@electron/main/DesktopSessionHTTP';
+import {resolveDesktopTrustedCertificates} from '@electron/main/DesktopTrustedCertificates';
 import {normalizeHTTPNetworkOrigin} from '@fluxer/instance_bootstrap/src/NetworkOrigin';
 
 const logger = createChildLogger('DesktopOutboundHTTP');
@@ -135,6 +136,7 @@ interface DesktopOutboundHTTPOptions {
 	readonly resolveHostAddresses?: DesktopHostAddressResolver;
 	readonly resolveProxy?: DesktopProxyResolver;
 	readonly sendThroughSession?: DesktopSessionHTTPSender;
+	readonly trustedCertificates?: ReadonlyArray<string>;
 }
 
 interface DesktopOutboundGETRequest {
@@ -226,13 +228,6 @@ class DesktopOutboundHTTPOriginNotRegisteredError extends Error {
 	public constructor(origin: string) {
 		super(`Desktop outbound HTTP origin is not registered to a discovered instance: ${origin}`);
 		this.name = 'DesktopOutboundHTTPOriginNotRegisteredError';
-	}
-}
-
-class DesktopOutboundHTTPMixedAddressScopeError extends Error {
-	public constructor(origin: string) {
-		super(`Desktop outbound HTTP origin ${origin} resolved to both public and non-public addresses`);
-		this.name = 'DesktopOutboundHTTPMixedAddressScopeError';
 	}
 }
 
@@ -638,15 +633,6 @@ function requireScope(binding: DesktopOriginAddressBinding, requirement: Desktop
 	}
 }
 
-function requireStableScope(
-	previous: DesktopOriginAddressBinding | undefined,
-	next: DesktopOriginAddressBinding,
-): void {
-	if (previous != null && previous.scope !== next.scope) {
-		throw new DesktopOutboundHTTPMixedAddressScopeError(next.origin);
-	}
-}
-
 function isStaleKeepAliveSocketError(error: unknown): boolean {
 	if (error == null || typeof error !== 'object') {
 		return false;
@@ -725,15 +711,12 @@ interface DesktopProxiedSend {
 
 export class DesktopOutboundHTTP {
 	private readonly httpAgent = new http.Agent({keepAlive: true, maxSockets: DESKTOP_OUTBOUND_HTTP_MAX_SOCKETS});
-	private readonly httpsAgent = new https.Agent({keepAlive: true, maxSockets: DESKTOP_OUTBOUND_HTTP_MAX_SOCKETS});
+	private readonly httpsAgent: https.Agent;
 	private readonly originRequestHttpAgent = new http.Agent({
 		keepAlive: true,
 		maxSockets: DESKTOP_OUTBOUND_HTTP_MAX_IN_FLIGHT_PER_SERVICE,
 	});
-	private readonly originRequestHttpsAgent = new https.Agent({
-		keepAlive: true,
-		maxSockets: DESKTOP_OUTBOUND_HTTP_MAX_IN_FLIGHT_PER_SERVICE,
-	});
+	private readonly originRequestHttpsAgent: https.Agent;
 	private readonly bindings = new Map<string, DesktopOriginAddressBinding>();
 	private readonly pendingBindings = new Map<string, DesktopPendingOriginBinding>();
 	private readonly registeredRequirements = new Map<string, DesktopAddressRequirement>();
@@ -750,6 +733,14 @@ export class DesktopOutboundHTTP {
 		this.resolveHostAddresses = options.resolveHostAddresses ?? lookupAllAddresses;
 		this.resolveProxy = options.resolveProxy ?? resolveDesktopSessionProxy;
 		this.sendThroughSession = options.sendThroughSession ?? sendThroughDesktopSession;
+		const certificates = options.trustedCertificates ?? resolveDesktopTrustedCertificates();
+		const trust = certificates.length > 0 ? {ca: [...certificates]} : {};
+		this.httpsAgent = new https.Agent({keepAlive: true, maxSockets: DESKTOP_OUTBOUND_HTTP_MAX_SOCKETS, ...trust});
+		this.originRequestHttpsAgent = new https.Agent({
+			keepAlive: true,
+			maxSockets: DESKTOP_OUTBOUND_HTTP_MAX_IN_FLIGHT_PER_SERVICE,
+			...trust,
+		});
 	}
 
 	public async get(request: DesktopOutboundGETRequest): Promise<DesktopOutboundHTTPMessage> {
@@ -1161,7 +1152,6 @@ export class DesktopOutboundHTTP {
 		const record: DesktopPendingOriginBinding = {
 			operation: this.resolveBinding(origin).then((binding) => {
 				this.requireAdmission();
-				requireStableScope(existing, binding);
 				requireScope(binding, record.requirement);
 				this.bindings.set(origin, binding);
 				return binding;
@@ -1264,13 +1254,21 @@ export class DesktopOutboundHTTP {
 			let attemptsRemaining = isReplayableRequest(request) ? DESKTOP_OUTBOUND_HTTP_STALE_SOCKET_ATTEMPTS : 0;
 			let active: http.ClientRequest | null = null;
 			let terminated = false;
+			const releaseUnconnectedBinding = (): void => {
+				const socket = active?.socket;
+				if (socket == null || socket.connecting) {
+					this.markBindingUnreachable(binding);
+				}
+			};
 			const timeout = setTimeout(() => {
 				terminated = true;
+				releaseUnconnectedBinding();
 				active?.destroy(new DesktopOutboundHTTPRequestTimeoutError(target.toString(), request.timeoutMs));
 			}, request.timeoutMs);
 			timeout.unref();
 			const onAbort = (): void => {
 				terminated = true;
+				releaseUnconnectedBinding();
 				active?.destroy(new DesktopOutboundHTTPRequestAbortedError(target.toString()));
 			};
 			request.signal?.addEventListener('abort', onAbort, {once: true});
@@ -1348,6 +1346,9 @@ export class DesktopOutboundHTTP {
 		if (body instanceof Uint8Array) {
 			clientRequest.end(Buffer.from(body));
 			return;
+		}
+		if (!clientRequest.hasHeader('content-length') && !clientRequest.hasHeader('transfer-encoding')) {
+			clientRequest.setHeader('Transfer-Encoding', 'chunked');
 		}
 		const source = Readable.fromWeb(body as unknown as NodeReadableStream<Uint8Array>);
 		const limit = createRequestBodyLimit(

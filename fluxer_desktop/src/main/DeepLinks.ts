@@ -3,14 +3,16 @@
 import {APP_PROTOCOL} from '@electron/common/Constants';
 import {parseJumpListTaskFromArgv} from '@electron/main/JumpList';
 import {recordRecentDeepLink} from '@electron/main/RecentDocuments';
-import {getMainWindow, showWindow} from '@electron/main/Window';
+import {getMainWindow, isMainWindowTakenOver, onMainWindowTakeoverEnded, showWindow} from '@electron/main/Window';
 import {app, ipcMain} from 'electron';
 import log from 'electron-log';
 
 let initialDeepLink: string | null = null;
+let handoffReturnLinkSink: ((url: URL) => void) | null = null;
 
 const DUPLICATE_URL_SUPPRESS_MS = 1500;
 const APP_PROTOCOL_SCHEME = `${APP_PROTOCOL}:`;
+const HANDOFF_RETURN_HOST = 'handoff';
 const DEEP_LINK_RENDERER_PAYLOAD_BLOCKLIST = /["'<>\\|\t\r\n]/;
 const INSTANCE_DESIGNATING_KEYS = new Set([
 	'api',
@@ -91,6 +93,25 @@ function extractDeepLinkFromArgv(argv: ReadonlyArray<string>): string | null {
 	return argv.find(isAppProtocolUrl) ?? null;
 }
 
+export function setHandoffReturnLinkSink(sink: ((url: URL) => void) | null): void {
+	handoffReturnLinkSink = sink;
+}
+
+function parseHandoffReturnLink(rawUrl: string): URL | null {
+	try {
+		const parsed = new URL(rawUrl);
+		if (
+			parsed.protocol.toLowerCase() !== APP_PROTOCOL_SCHEME ||
+			parsed.hostname.toLowerCase() !== HANDOFF_RETURN_HOST
+		) {
+			return null;
+		}
+		return parsed;
+	} catch {
+		return null;
+	}
+}
+
 function normalizeDeepLinkForRenderer(rawUrl: string): string | null {
 	try {
 		const parsed = new URL(rawUrl);
@@ -125,15 +146,24 @@ export function initializeDeepLinks(): void {
 	registerInitialDeepLinkHandler();
 }
 
+function deliverDeepLinkHeldByTakeover(): void {
+	const mainWindow = getMainWindow();
+	if (initialDeepLink == null || mainWindow == null || mainWindow.isDestroyed()) return;
+	const url = initialDeepLink;
+	initialDeepLink = null;
+	mainWindow.webContents.send('deep-link', url);
+}
+
 function registerInitialDeepLinkHandler(): void {
 	const deepLinkArg = extractDeepLinkFromArgv(process.argv);
-	if (deepLinkArg) {
+	if (deepLinkArg && parseHandoffReturnLink(deepLinkArg) == null) {
 		const normalized = normalizeDeepLinkForRenderer(deepLinkArg);
 		if (normalized) {
 			initialDeepLink = normalized;
 			shouldSuppressAsDuplicate(normalized);
 		}
 	}
+	onMainWindowTakeoverEnded(deliverDeepLinkHeldByTakeover);
 	ipcMain.handle('get-initial-deep-link', (): string | null => {
 		const url = initialDeepLink;
 		initialDeepLink = null;
@@ -142,9 +172,20 @@ function registerInitialDeepLinkHandler(): void {
 }
 
 function dispatchDeepLink(url: string): void {
+	const handoffReturnLink = parseHandoffReturnLink(url);
+	if (handoffReturnLink != null) {
+		handoffReturnLinkSink?.(handoffReturnLink);
+		showWindow();
+		return;
+	}
 	const normalized = normalizeDeepLinkForRenderer(url);
 	if (!normalized || shouldSuppressAsDuplicate(normalized)) return;
 	recordRecentDeepLink(url);
+	if (isMainWindowTakenOver()) {
+		initialDeepLink = normalized;
+		showWindow();
+		return;
+	}
 	const mainWindow = getMainWindow();
 	if (mainWindow && !mainWindow.isDestroyed()) {
 		mainWindow.webContents.send('deep-link', normalized);

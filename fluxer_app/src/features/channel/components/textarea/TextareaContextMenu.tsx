@@ -140,12 +140,6 @@ export const TextareaContextMenu = observer(
 			}
 			targetElement.focus({preventScroll: true});
 		};
-		const handleReplaceMisspelling = async (suggestion: string) => {
-			if (electronAPI?.spellcheckReplaceMisspelling) {
-				await electronAPI.spellcheckReplaceMisspelling(suggestion);
-			}
-			onClose();
-		};
 		const handleAddToDictionary = async () => {
 			if (!misspelledWord) return;
 			Spellcheck.addPersonalWord(misspelledWord);
@@ -165,6 +159,11 @@ export const TextareaContextMenu = observer(
 			requestAnimationFrame(() => {
 				focusTargetElement();
 				requestAnimationFrame(action);
+			});
+		};
+		const handleReplaceMisspelling = (suggestion: string) => {
+			runAfterClose(() => {
+				void electronAPI?.spellcheckReplaceMisspelling?.(suggestion);
 			});
 		};
 		const execCommand = (command: string) => {
@@ -217,6 +216,7 @@ export const TextareaContextMenu = observer(
 			);
 			onClose();
 		};
+		const isPasswordTarget = targetElement instanceof HTMLInputElement && targetElement.type === 'password';
 		const spellcheckEnabled = Spellcheck.enabled;
 		const hasMisspelling = spellcheckEnabled && misspelledWord && suggestions.length > 0;
 		return (
@@ -307,19 +307,21 @@ export const TextareaContextMenu = observer(
 						{i18n._(SELECT_ALL_DESCRIPTOR)}
 					</MenuItem>
 				</MenuGroup>
-				<MenuGroup data-flx="channel.textarea.textarea-context-menu.menu-group--5">
-					<MenuItemSubmenu
-						label={i18n._(SPELLCHECK_DESCRIPTOR)}
-						render={() => (
-							<SpellcheckSubmenu
-								isElectron={isElectron()}
-								onOpenSpellcheckSettings={handleOpenSpellcheckSettings}
-								data-flx="channel.textarea.textarea-context-menu.spellcheck-submenu"
-							/>
-						)}
-						data-flx="channel.textarea.textarea-context-menu.menu-item-submenu"
-					/>
-				</MenuGroup>
+				{!isPasswordTarget && (
+					<MenuGroup data-flx="channel.textarea.textarea-context-menu.menu-group--5">
+						<MenuItemSubmenu
+							label={i18n._(SPELLCHECK_DESCRIPTOR)}
+							render={() => (
+								<SpellcheckSubmenu
+									isElectron={isElectron()}
+									onOpenSpellcheckSettings={handleOpenSpellcheckSettings}
+									data-flx="channel.textarea.textarea-context-menu.spellcheck-submenu"
+								/>
+							)}
+							data-flx="channel.textarea.textarea-context-menu.menu-item-submenu"
+						/>
+					</MenuGroup>
+				)}
 				{showSendButtonToggle && (
 					<MenuGroup data-flx="channel.textarea.textarea-context-menu.menu-group--6">
 						<CheckboxItem

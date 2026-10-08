@@ -1093,7 +1093,7 @@ msgstr "{count, plural, one {# kanál ho sleduje} other {# kanálů ho sleduje}}
 msgid "{count, plural, one {# community found} other {# communities found}}"
 msgstr "{count, plural, one {Nalezena # komunita} few {Nalezeny # komunity} many {Nalezeno # komunity} other {Nalezeno # komunit}}"
 
-#: src/features/app/components/layout/GuildsLayout.tsx:1952
+#: src/features/app/components/layout/GuildsLayout.tsx:1951
 msgid "{count, plural, one {# community is temporarily unavailable due to a flux capacitor malfunction.} other {# communities are temporarily unavailable due to a flux capacitor malfunction.}}"
 msgstr "{count, plural, one {# komunita je dočasně nedostupná kvůli poruše fluxkondenzátoru.} few {# komunity jsou dočasně nedostupné kvůli poruše fluxkondenzátoru.} many {# komunity je dočasně nedostupných kvůli poruše fluxkondenzátoru.} other {# komunit je dočasně nedostupných kvůli poruše fluxkondenzátoru.}}"
 
@@ -1135,7 +1135,7 @@ msgstr "{count, plural, one {# člen} few {# členové} many {# člena} other {#
 #. Message count on a forum post card. count is the number of replies.
 #. Message count on a thread chip and in the thread browser. count is the number of messages.
 #: src/features/forum/utils/ForumMessageDescriptors.ts:203
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:153
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:169
 msgid "{count, plural, one {# message} other {# messages}}"
 msgstr "{count, plural, one {# zpráva} other {# zpráv}}"
 
@@ -1430,7 +1430,7 @@ msgstr "{durationQuantity, plural, one {# rok} few {# roky} many {# roku} other 
 
 #. Accessible label for the avatar status badge; placeholder is the localized status name.
 #: src/features/app/components/shared/GroupDMAvatar.tsx:33
-#: src/features/ui/components/BaseAvatar.tsx:26
+#: src/features/ui/components/BaseAvatar.tsx:27
 #: src/features/ui/components/StatusIndicator.tsx:12
 msgid "{effectiveStatusLabel} status"
 msgstr "Stav: {effectiveStatusLabel}"
@@ -1476,7 +1476,7 @@ msgid "{fifteenMinutes} minutes"
 msgstr "{fifteenMinutes} minut"
 
 #. Short label in the sidebar navigation guild folder item. Preserve {folderName}; it is inserted by code.
-#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:77
+#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:78
 msgid "{folderName} folder"
 msgstr "Složka {folderName}"
 
@@ -1573,7 +1573,7 @@ msgid "{imageCount, plural, one {# image} other {# images}}, {videoCount, plural
 msgstr "{imageCount, plural, one {# obrázek} few {# obrázky} many {# obrázku} other {# obrázků}}, {videoCount, plural, one {# video} few {# videa} many {# videa} other {# videí}}"
 
 #. Explanation shown when the selected instance advertises no web app endpoint. Instance name is interpolated.
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:76
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:61
 msgid "{instanceName} does not publish a web address, so sign-in cannot be handed to a browser."
 msgstr "{instanceName} nezveřejňuje webovou adresu, takže přihlášení nelze předat prohlížeči."
 
@@ -1884,15 +1884,15 @@ msgstr "Aplikace {productName} nedokáže bezpečně spustit oddělené zachytá
 msgid "{productName} cannot use a hardware encoder for this, so it will use your CPU."
 msgstr "Aplikace {productName} nemůže použít hardwarový enkodér, takže bude využívat váš procesor."
 
+#. Desktop updater modal body after a manual update check finds an update. Confirming closes the app window and opens the updater. productName is the app name.
+#: src/features/updater/commands/UpdaterModalCommands.tsx:37
+msgid "{productName} closes, installs the update and opens again."
+msgstr "{productName} se zavře, nainstaluje aktualizaci a znovu se otevře."
+
 #. Modal body shown when a user-initiated update check fails. productName is the app name.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:108
+#: src/features/updater/commands/UpdaterModalCommands.tsx:100
 msgid "{productName} could not reach the update service. Check your connection and try again."
 msgstr "Aplikace {productName} se nemohla připojit ke službě pro aktualizace. Zkontrolujte své připojení a zkuste to znovu."
-
-#. Modal body shown when starting installation of a downloaded desktop update fails. productName is the app name.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:125
-msgid "{productName} could not restart into the downloaded update. Try again from the update button."
-msgstr "Aplikaci {productName} se nepodařilo restartovat do stažené aktualizace. Zkuste to znovu pomocí tlačítka pro aktualizaci."
 
 #. Invite page notice shown when automated raid protection pauses invites. productName is the Fluxer product name.
 #: src/features/invite/utils/InviteMessageDescriptors.ts:17
@@ -2076,7 +2076,7 @@ msgstr "Zbývá: {remainingSlotCount}"
 #: src/features/channel/components/CrosspostCommunityCard.tsx:247
 #: src/features/channel/components/InviteEmbed.tsx:250
 #: src/features/channel/components/InviteEmbed.tsx:358
-#: src/features/channel/components/InviteEmbed.tsx:627
+#: src/features/channel/components/InviteEmbed.tsx:629
 msgid "{renderedMemberCount} {memberCount, plural, one {member} other {members}}"
 msgstr "{renderedMemberCount} {memberCount, plural, one {člen} few {členové} many {člena} other {členů}}"
 
@@ -2158,7 +2158,7 @@ msgid "{textChannelCount, plural, one {# text channel} other {# text channels}},
 msgstr "{textChannelCount, plural, one {# textový kanál} few {# textové kanály} many {# textového kanálu} other {# textových kanálů}}, {voiceChannelCount, plural, one {# hlasový kanál} few {# hlasové kanály} many {# hlasového kanálu} other {# hlasových kanálů}}, {categoryCount, plural, one {# kategorie} few {# kategorie} many {# kategorie} other {# kategorií}}, {roleCount, plural, one {# role} few {# role} many {# role} other {# rolí}}"
 
 #. Name given to the copy created by the Duplicate button in the Theme Studio theme library. {themeName} is the name of the theme being duplicated.
-#: src/features/theme/state/ThemeLibrary.ts:35
+#: src/features/theme/state/ThemeLibrary.ts:37
 msgid "{themeName} Copy"
 msgstr "{themeName} (kopie)"
 
@@ -2399,7 +2399,7 @@ msgstr "1 den"
 #. Fixed duration label for a one-hour interval. Used as a standalone label in duration text or option lists.
 #. Thread auto archive duration option.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:15
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:226
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:242
 msgid "1 hour"
 msgstr "1 hodina"
 
@@ -2446,7 +2446,7 @@ msgstr "1 uživatel"
 #. Fixed duration label for a one-week interval. Used as a standalone label in duration text or option lists.
 #. Thread auto archive duration option.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:36
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:238
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:254
 msgid "1 week"
 msgstr "1 týden"
 
@@ -2544,7 +2544,7 @@ msgid "2–32 characters: letters, numbers, and underscores."
 msgstr "2–32 znaků, písmena, čísla, podtržítka."
 
 #. Thread auto archive duration option.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:230
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:246
 msgid "24 hours"
 msgstr "24 hodin"
 
@@ -2577,7 +2577,7 @@ msgstr "Požadavek na 2FA"
 #. Ban duration option in the destructive ban-member modal for a three-day temporary ban.
 #. Thread auto archive duration option.
 #: src/features/moderation/components/modals/BanMemberModal.tsx:42
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:234
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:250
 msgid "3 days"
 msgstr "3 dny"
 
@@ -2729,7 +2729,7 @@ msgid "a hostname, e.g. {exampleDomain}"
 msgstr "název hostitele, např. {exampleDomain}"
 
 #. Linux desktop updater modal body shown before version details and package format selector. productName is the app name.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:130
+#: src/features/updater/commands/UpdaterModalCommands.tsx:113
 msgid "A Linux desktop update is available. Choose the package format for this system and {productName} will save it locally."
 msgstr "Je k dispozici aktualizace desktopové aplikace pro Linux. Vyberte formát balíčku pro tento systém a aplikace {productName} jej uloží do počítače."
 
@@ -2776,14 +2776,6 @@ msgstr "formátovaný vložený obsah nebo náhled odkazu (nikoli nahraný soubo
 #: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts:191
 msgid "A separate profile for each community"
 msgstr "Samostatný profil pro každé společenství"
-
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:164
-msgid "A sign-in request was made for your account. Only approve if you initiated it."
-msgstr "Přišel požadavek na přihlášení k vašemu účtu. Schvalte jej pouze v případě, že jste se přihlašovali vy."
-
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:162
-msgid "A sign-in request was made from the following device. Only approve if you recognize it."
-msgstr "Byl odeslán požadavek na přihlášení z následujícího zařízení. Schvalte jej, pouze pokud jej poznáváte."
 
 #. Description for has:sticker. Sentence case, no trailing punctuation.
 #: src/features/search/utils/SearchUtils.ts:51
@@ -3050,7 +3042,7 @@ msgstr "Akce"
 #. Tab in the thread browser that lists active threads.
 #: src/features/app/components/dialogs/components/plutonium/SubscriptionCard.tsx:454
 #: src/features/channel/components/channel_header_components/developer_tools/DeveloperToolsShared.ts:37
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:161
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:177
 #: src/features/user/components/settings_utils/search_index/DevicesIndex.ts:19
 msgid "Active"
 msgstr "Aktivní"
@@ -3288,8 +3280,8 @@ msgid "Add another custom shortcut"
 msgstr "Přidat další vlastní zkratku"
 
 #. Button label that opens the self-hosted instance URL step.
-#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:33
-#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:261
+#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:36
+#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:268
 msgid "Add another instance"
 msgstr "Přidat další instanci"
 
@@ -3886,7 +3878,7 @@ msgstr "Všechny jazyky"
 #: src/features/guild/components/modals/guild_tabs/guild_overview_tab/sections/DefaultNotificationsSection.tsx:20
 #: src/features/guild/utils/guild_tabs/audit_log/AuditLogSharedMessages.ts:82
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:352
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:121
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:137
 #: src/features/user/components/modals/tabs/accessibility_tab/VisualTab.tsx:21
 msgid "All messages"
 msgstr "Všechny zprávy"
@@ -3939,7 +3931,7 @@ msgid "Allow {productName} under Screen Recording in System Settings. If it is a
 msgstr "Povolte {productName} v části Nahrávání obrazovky v Nastavení systému. Pokud je již povoleno, restartujte {productName2}, aby se to projevilo v systému macOS."
 
 #. Private thread setting that lets non-moderators add other members.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:222
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:238
 msgid "Allow anyone to invite"
 msgstr "Povolit komukoli pozvat"
 
@@ -4597,11 +4589,6 @@ msgstr "Přijmout příchozí hovor"
 msgid "Any key"
 msgstr "Libovolná klávesa"
 
-#. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:76
-msgid "Any updater ready"
-msgstr "Libovolný aktualizátor připraven"
-
 #. Description for has:file. Sentence case, no trailing punctuation.
 #: src/features/search/utils/SearchUtils.ts:35
 msgid "any uploaded attachment"
@@ -4816,10 +4803,6 @@ msgstr "Použít pro všechny komunity"
 msgid "Approval required"
 msgstr "Vyžaduje schválení"
 
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:206
-msgid "Approve"
-msgstr "Schválit"
-
 #. Hint under the sign-in option on fluxer.com that pairs a newly installed app with the old installed app. productName is the app name.
 #: src/features/auth/flow/AuthLoginLayout.tsx:101
 msgid "Approve this app from the {productName} app you already use. No password needed."
@@ -4850,7 +4833,7 @@ msgid "Are you sure you want to delete {channelLabel}? This cannot be undone."
 msgstr "Opravdu chcete smazat {channelLabel}? Tuto akci nelze vrátit zpět."
 
 #. Confirmation text before deleting a thread. threadName is the thread name.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:89
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:97
 msgid "Are you sure you want to delete {threadName}? This cannot be undone."
 msgstr "Opravdu chcete smazat vlákno {threadName}? Tuto akci nelze vrátit zpět."
 
@@ -5168,7 +5151,7 @@ msgid "Audio packet loss:"
 msgstr "Ztráta zvukových paketů:"
 
 #. Aria label for the inline audio attachment player container.
-#: src/features/voice/components/media_player/components/InlineAudioPlayer.tsx:35
+#: src/features/voice/components/media_player/components/InlineAudioPlayer.tsx:36
 msgid "Audio player"
 msgstr "Přehrávač zvuku"
 
@@ -5208,7 +5191,7 @@ msgid "Audio processing (focused voice)"
 msgstr "Zpracování zvuku (hlas v popředí)"
 
 #. Aria label on the playback progress slider in the inline audio attachment player.
-#: src/features/voice/components/media_player/components/InlineAudioPlayer.tsx:39
+#: src/features/voice/components/media_player/components/InlineAudioPlayer.tsx:40
 msgid "Audio progress"
 msgstr "Průběh přehrávání zvuku"
 
@@ -5551,7 +5534,7 @@ msgstr "AV1 (vyžaduje výslovné zapnutí)"
 #. Label for the available desktop version in the Linux update modal.
 #. Screen reader text for a check mark in the Plutonium page comparison table.
 #: src/features/premium/components/plutonium_page/PlutoniumPageMessages.ts:140
-#: src/features/updater/commands/UpdaterModalCommands.tsx:140
+#: src/features/updater/commands/UpdaterModalCommands.tsx:123
 msgid "Available"
 msgstr "K dispozici"
 
@@ -5568,7 +5551,7 @@ msgstr "K dispozici v desktopové aplikaci."
 #. Accessible label for an avatar image.
 #. Form label for a webhook avatar image.
 #. Settings search entry label. Also used as a search synonym in the settings search bar.
-#: src/features/ui/components/BaseAvatar.tsx:18
+#: src/features/ui/components/BaseAvatar.tsx:19
 #: src/features/user/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:353
 #: src/features/user/components/modals/tabs/my_profile_tab/AvatarUploader.tsx:401
 #: src/features/user/components/settings_utils/search_index/MyProfileIndex.ts:13
@@ -5905,7 +5888,7 @@ msgid "Bans"
 msgstr "Bany"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:200
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:180
 msgid "Barrier countdown"
 msgstr "Odpočet bariéry"
 
@@ -5979,7 +5962,7 @@ msgid "Billing"
 msgstr "Platby"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:168
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:148
 msgid "Billing cycle"
 msgstr "Fakturační cyklus"
 
@@ -6867,7 +6850,7 @@ msgstr "Sem nelze nahrávat soubory"
 #: src/features/messaging/components/modals/EditAltTextModal.tsx:190
 #: src/features/messaging/components/modals/ExternalLinkWarningModal.tsx:111
 #: src/features/messaging/components/modals/ForwardModal.tsx:603
-#: src/features/messaging/components/modals/ImageCropModal.tsx:1025
+#: src/features/messaging/components/modals/ImageCropModal.tsx:1026
 #: src/features/messaging/components/modals/MessageHistoryThresholdModal.tsx:107
 #: src/features/moderation/components/modals/BanMemberModal.tsx:266
 #: src/features/moderation/components/modals/RemoveTimeoutModal.tsx:70
@@ -7878,6 +7861,11 @@ msgstr "Kontrola přístupu..."
 msgid "Checking screen recording permission..."
 msgstr "Kontrola oprávnění k nahrávání obrazovky..."
 
+#. Title while the browser looks up the sign-in request from the app.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:224
+msgid "Checking the sign-in request…"
+msgstr "Kontroluje se žádost o přihlášení…"
+
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts:67
 msgid "Checkout"
@@ -8736,7 +8724,7 @@ msgid "Close this group DM? You can reopen it anytime."
 msgstr "Zavřít tuto skupinovou konverzaci? Můžete ji kdykoli znovu otevřít."
 
 #. Moderator or owner action that archives a thread so it leaves the channel list.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:65
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:73
 msgid "Close thread"
 msgstr "Zavřít vlákno"
 
@@ -8782,7 +8770,7 @@ msgstr "Zavřít soukromou konverzaci s uživatelem {username}? Můžete ji kdyk
 #. Registration mode option that disables public registration.
 #. Tab in the thread browser that lists archived threads.
 #: src/features/app/components/setup/SetupWizardSteps.tsx:256
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:165
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:181
 msgid "Closed"
 msgstr "Zavřeno"
 
@@ -8797,7 +8785,7 @@ msgid "Closed DMs"
 msgstr "Zavřené soukromé konverzace"
 
 #. Tab in the thread browser that lists closed private threads. Keep it short, it shares a row with Active and Closed.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:177
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:193
 msgid "Closed private"
 msgstr "Zavřené soukromé"
 
@@ -8807,7 +8795,7 @@ msgid "Closed the thread"
 msgstr "Vlákno bylo uzavřeno"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:128
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:108
 msgid "Cloud upload"
 msgstr "Nahrát na cloud"
 
@@ -8852,6 +8840,11 @@ msgstr "Bloky kódu"
 msgid "Code expired"
 msgstr "Platnost kódu vypršela"
 
+#. Label of the field in the browser where the user types the 12-character code shown in the desktop or mobile app. productName is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:28
+msgid "Code from the {productName} app"
+msgstr "Kód z aplikace {productName}"
+
 #. Short label in the authentication claim account modal. Keep the tone plain and specific.
 #. Success toast on the verification step of the DSA report flow after resending the email verification code.
 #: src/features/auth/components/modals/ClaimAccountModal.tsx:41
@@ -8881,7 +8874,7 @@ msgid "Collapse"
 msgstr "Sbalit"
 
 #. Short label in the sidebar navigation guild folder item. Preserve {folderName}; it is inserted by code.
-#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:97
+#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:98
 msgid "Collapse {folderName}"
 msgstr "Sbalit složku {folderName}"
 
@@ -8926,7 +8919,7 @@ msgstr "Sbalit nepřečtené zprávy pro {channelHeading}"
 #. Lowercase screen-reader fragment in the sidebar navigation guild folder item.
 #. Lowercase state label used inside channel-list accessible text for a collapsed category.
 #: src/features/app/components/layout/ChannelItem.tsx:101
-#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:85
+#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:86
 msgid "collapsed"
 msgstr "sbaleno"
 
@@ -9353,7 +9346,6 @@ msgstr "Zcela skrýt odznak {premiumProductName} před ostatními uživateli"
 
 #: src/features/auth/components/pages/SsoCallbackPage.tsx:256
 #: src/features/auth/components/pages/SsoCallbackPage.tsx:322
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:216
 msgid "Completing sign-in…"
 msgstr "Dokončování přihlášení…"
 
@@ -9385,7 +9377,7 @@ msgid "Composer focus"
 msgstr "Fokus v poli pro psaní zpráv"
 
 #. Progress label on the save button while a cropped animated image is compressed. Keep it concise.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:67
+#: src/features/messaging/components/modals/ImageCropModal.tsx:68
 msgid "Compressing"
 msgstr "Komprimuji"
 
@@ -9787,13 +9779,17 @@ msgstr "Kontextové nabídky lze otevřít levým kliknutím (na tlačítka) neb
 #: src/features/auth/components/modals/DeviceRevokeModal.tsx:77
 #: src/features/auth/components/modals/PasskeyPinModal.tsx:111
 #: src/features/auth/components/pages/oauth_authorize_page/OAuthAccountStep.tsx:36
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:99
 #: src/features/connection/components/modals/AddConnectionModal.tsx:384
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:726
 #: src/features/user/components/modals/FluxerTagChangeModal.tsx:413
 #: src/features/user/components/modals/tabs/AuthorizedAppsTab.tsx:182
 msgid "Continue"
 msgstr "Pokračovat"
+
+#. Title in the desktop app while it waits for the user to sign in on the browser page it opened.
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:184
+msgid "Continue in your browser"
+msgstr "Pokračovat v prohlížeči"
 
 #. Button in the gift time confirmation that proceeds to subscription checkout.
 #: src/features/app/components/dialogs/components/plutonium/hooks/useCheckoutActions.tsx:145
@@ -10148,7 +10144,7 @@ msgstr "Kopírovat řádky pro hyprland.lua"
 #. Action that copies a link to the thread.
 #. Generic action label that copies a URL to the clipboard.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:754
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:105
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:113
 #: src/features/user/components/modals/tabs/component_gallery_tab/ComponentGalleryTabButtonsTab.tsx:326
 #: src/features/user/components/modals/tabs/component_gallery_tab/index.tsx:145
 msgid "Copy link"
@@ -10263,7 +10259,7 @@ msgid "Copy the setup key into your authenticator app."
 msgstr "Zkopírujte klíč pro nastavení do své ověřovací aplikace."
 
 #. Developer mode action that copies the thread ID.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:109
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:117
 msgid "Copy thread ID"
 msgstr "Zkopírovat ID vlákna"
 
@@ -10347,7 +10343,7 @@ msgid "Could not start the screen share. The selected source may no longer be av
 msgstr "Nepodařilo se spustit sdílení obrazovky. Vybraný zdroj už nemusí být dostupný nebo mohl zablokovat snímání. Zkuste místo konkrétního okna sdílet celou obrazovku nebo monitor."
 
 #. Toast when creating a thread failed. detail is the server error message.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:254
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:270
 msgid "Could not start the thread: {detail}"
 msgstr "Nepodařilo se spustit vlákno: {detail}"
 
@@ -10417,7 +10413,7 @@ msgid "Couldn't change your price"
 msgstr "Nepodařilo se změnit vaši cenu"
 
 #. Modal title shown when a user-initiated update check fails.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:104
+#: src/features/updater/commands/UpdaterModalCommands.tsx:96
 msgid "Couldn't check for updates"
 msgstr "Nepodařilo se zkontrolovat aktualizace"
 
@@ -10442,7 +10438,7 @@ msgid "Couldn't close DM"
 msgstr "Nepodařilo se zavřít soukromou konverzaci"
 
 #. Desktop handoff flow error shown when finalizing the sign-in fails after a valid code.
-#: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:21
+#: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:34
 msgid "Couldn't complete sign-in. Try again."
 msgstr "Přihlášení se nepodařilo dokončit. Zkuste to znovu."
 
@@ -10502,7 +10498,7 @@ msgid "Couldn't create your recovery kit. You can create one later in your accou
 msgstr "Nepodařilo se vytvořit váš záchranný balíček. Můžete si ho vytvořit později v nastavení účtu."
 
 #. Title of the error modal shown when image cropping fails.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:32
+#: src/features/messaging/components/modals/ImageCropModal.tsx:33
 msgid "Couldn't crop image"
 msgstr "Obrázek se nepodařilo oříznout"
 
@@ -10549,7 +10545,7 @@ msgid "Couldn't delete your messages"
 msgstr "Zprávy se nepodařilo smazat"
 
 #. Modal title shown when a desktop update download fails.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:112
+#: src/features/updater/commands/UpdaterModalCommands.tsx:104
 msgid "Couldn't download the desktop update"
 msgstr "Nepodařilo se stáhnout aktualizaci desktopové aplikace"
 
@@ -10790,7 +10786,7 @@ msgid "Couldn't save the tag: {detail}"
 msgstr "Nepodařilo se uložit značku: {detail}"
 
 #. Error state of the thread browser search.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:278
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:294
 msgid "Couldn't search threads. Try again later."
 msgstr "Nepodařilo se prohledat vlákna. Zkuste to později."
 
@@ -10836,15 +10832,15 @@ msgstr "Nepodařilo se spustit autorizaci pro {blueskyProviderName}"
 msgid "Couldn't start checkout"
 msgstr "Nepodařilo se spustit platbu"
 
+#. Shown in the desktop app when the browser sign-in request could not be created.
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:66
+msgid "Couldn't start signing in with your browser."
+msgstr "Nepodařilo se spustit přihlašování přes prohlížeč."
+
 #. Toast error shown when creating a new account connection fails.
 #: src/features/connection/commands/ConnectionCommands.ts:27
 msgid "Couldn't start the connection"
 msgstr "Nepodařilo se zahájit propojení"
-
-#. Modal title shown when starting installation of a downloaded desktop update fails.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:121
-msgid "Couldn't start the desktop update"
-msgstr "Nepodařilo se spustit aktualizaci desktopové aplikace"
 
 #. Title of the generic fallback error modal shown when opening or creating a DM fails.
 #: src/features/app/components/alerts/DmActionErrorModal.tsx:68
@@ -10952,7 +10948,7 @@ msgid "Couldn't upload banner"
 msgstr "Nepodařilo se nahrát banner"
 
 #. Desktop handoff flow error shown when verifying the pairing code fails for an unexpected reason.
-#: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:17
+#: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:30
 msgid "Couldn't verify that code. Try again."
 msgstr "Kód se nepodařilo ověřit. Zkuste to znovu."
 
@@ -11331,7 +11327,7 @@ msgid "Crop invite background"
 msgstr "Oříznout pozadí pozvánky"
 
 #. Short label in the image crop modal. Keep it concise.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:24
+#: src/features/messaging/components/modals/ImageCropModal.tsx:25
 msgid "Crop preview"
 msgstr "Náhled ořezu"
 
@@ -11343,12 +11339,12 @@ msgstr "Oříznout banner profilu"
 #. Error modal body shown when a cropped community image still exceeds the size limit. {maxSizeLabel} is a formatted file size.
 #. Error modal body shown when a cropped image still exceeds the size limit. {maxSizeLabel} is a formatted file size.
 #: src/features/guild/components/modals/guild_tabs/guild_overview_tab/hooks/useGuildImageAssetField.tsx:47
-#: src/features/messaging/components/modals/ImageCropModal.tsx:36
+#: src/features/messaging/components/modals/ImageCropModal.tsx:37
 msgid "Cropped image is too large. Choose a smaller area or a smaller file (max {maxSizeLabel})."
 msgstr "Oříznutý obrázek je příliš velký. Vyberte menší oblast nebo menší soubor (max. {maxSizeLabel})."
 
 #. Progress label on the save button while animated image frames are cropped. {percent} is a whole number. Keep it concise.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:62
+#: src/features/messaging/components/modals/ImageCropModal.tsx:63
 msgid "Cropping {percent}%"
 msgstr "Ořezávání {percent}%"
 
@@ -11930,7 +11926,7 @@ msgid "Deafened by moderators"
 msgstr "Zvuk vypnutý moderátory"
 
 #. Option in the Linux package format dropdown of the desktop updater modal. Keep the format token "DEB" verbatim and translate only the word "package".
-#: src/features/updater/commands/UpdaterModalCommands.tsx:160
+#: src/features/updater/commands/UpdaterModalCommands.tsx:143
 msgid "DEB package"
 msgstr "Balíček DEB"
 
@@ -11966,6 +11962,11 @@ msgstr "Ladit člena"
 #: src/features/ui/action_menu/items/MessageMenuItems.tsx:66
 msgid "Debug message"
 msgstr "Ladit zprávu"
+
+#. Developer-mode action that opens the thread debug modal.
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:121
+msgid "Debug thread"
+msgstr "Ladit vlákno"
 
 #. Channel details bottom sheet label or action (channel type, settings, toast, confirmation, or notification option).
 #. Developer-mode action that opens a user debug panel.
@@ -12035,7 +12036,7 @@ msgid "Default emoji"
 msgstr "Výchozí emoji"
 
 #. Label of the default auto archive duration for new threads in a text channel.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:214
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:230
 msgid "Default hide after inactivity"
 msgstr "Výchozí skrytí po neaktivitě"
 
@@ -12093,7 +12094,7 @@ msgid "Default sort order"
 msgstr "Výchozí řazení"
 
 #. Label of the slowmode copied onto new threads in a text channel.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:218
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:234
 msgid "Default thread slowmode"
 msgstr "Výchozí zpomalený režim vlákna"
 
@@ -12406,7 +12407,7 @@ msgid "Delete this message? Can't be undone. This message is also removed from e
 msgstr "Smazat tuto zprávu? Nelze vrátit zpět. Tato zpráva bude také odebrána z každé komunity, která tento kanál sleduje."
 
 #. Destructive moderator action that deletes a thread and all its messages.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:85
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:93
 msgid "Delete thread"
 msgstr "Smazat vlákno"
 
@@ -12513,7 +12514,6 @@ msgstr "Zhuštěné rozvržení"
 
 #. Short label in the settings dialog permission components. Keep the tone plain and specific.
 #: src/features/app/components/dialogs/shared/PermissionComponents.tsx:16
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:203
 msgid "Deny"
 msgstr "Odepřít"
 
@@ -12588,7 +12588,7 @@ msgid "Desktop app"
 msgstr "Desktopová aplikace"
 
 #. Modal title shown after a manual desktop update check finds no update.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:41
+#: src/features/updater/commands/UpdaterModalCommands.tsx:50
 msgid "Desktop app is up to date"
 msgstr "Desktopová aplikace je aktuální"
 
@@ -12642,7 +12642,7 @@ msgid "Desktop startup"
 msgstr "Spuštění na počítači"
 
 #. Tooltip on the updater icon for a Linux desktop update that requires choosing a package format.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:58
+#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:20
 msgid "Desktop update {version} available. Choose a Linux package."
 msgstr "Je k dispozici aktualizace desktopové aplikace {version}. Vyberte balíček pro Linux."
 
@@ -12652,19 +12652,9 @@ msgid "Desktop update available"
 msgstr "Je k dispozici aktualizace desktopové aplikace"
 
 #. Tooltip on the updater icon for a Linux desktop update that requires choosing a package format and no version is known.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:62
+#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:24
 msgid "Desktop update available. Choose a Linux package."
 msgstr "Je k dispozici aktualizace desktopové aplikace. Vyberte balíček pro Linux."
-
-#. Modal title shown when a desktop app update has finished downloading.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:87
-msgid "Desktop update ready"
-msgstr "Aktualizace desktopové aplikace je připravena"
-
-#. Desktop updater modal body. The version placeholder is the downloaded app version; productName is the app name.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:91
-msgid "Desktop version {version} has been downloaded. Restart {productName} to finish installing."
-msgstr "Verze desktopové aplikace {version} byla stažena. Pro dokončení instalace restartujte aplikaci {productName}."
 
 #. Desktop updater modal body. The version placeholder is the target app version; productName is the app name.
 #: src/features/updater/commands/UpdaterModalCommands.tsx:20
@@ -12736,7 +12726,7 @@ msgid "Developer mode"
 msgstr "Režim pro vývojáře"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:256
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:236
 msgid "Developer option"
 msgstr "Možnost pro vývojáře"
 
@@ -12763,7 +12753,7 @@ msgid "Developer tools unavailable"
 msgstr "Nástroje pro vývojáře nejsou k dispozici"
 
 #. Modal title when the desktop app is running unpackaged during development.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:57
+#: src/features/updater/commands/UpdaterModalCommands.tsx:66
 msgid "Development build"
 msgstr "Vývojová verze"
 
@@ -13604,26 +13594,6 @@ msgstr "Tlačítko pro stažení"
 msgid "Download desktop app"
 msgstr "Stáhnout desktopovou aplikaci"
 
-#. Tooltip on the channel header updater icon prompting download of an update with no version or size info.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:54
-msgid "Download desktop update"
-msgstr "Stáhnout aktualizaci desktopové aplikace"
-
-#. Tooltip on the channel header updater icon prompting download of an update of known size but unknown version.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:45
-msgid "Download desktop update ({formatBytes})"
-msgstr "Stáhnout aktualizaci desktopové aplikace ({formatBytes})"
-
-#. Tooltip on the channel header updater icon prompting download of a versioned update with unknown size.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:50
-msgid "Download desktop update {version}"
-msgstr "Stáhnout aktualizaci desktopové aplikace {version}"
-
-#. Tooltip on the channel header updater icon prompting download of a versioned update with known size.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:41
-msgid "Download desktop update {version} ({formatBytes})"
-msgstr "Stáhnout aktualizaci desktopové aplikace {version} ({formatBytes})"
-
 #: src/features/user/components/modals/tabs/privacy_safety_tab/DataExportTab.tsx:94
 msgid "Download export"
 msgstr "Stáhnout export"
@@ -13687,26 +13657,6 @@ msgstr "Stáhnout zdrojové mapy, aby se zásobníkové výpisy a vývojářské
 #: src/features/ui/action_menu/items/MediaMenuData.tsx:123
 msgid "Download video"
 msgstr "Stáhnout video"
-
-#. Tooltip on the channel header updater icon while downloading a versioned update without throughput info.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:33
-msgid "Downloading desktop update {version}: {percent}%"
-msgstr "Stahování aktualizace desktopové aplikace {version}: {percent} %"
-
-#. Tooltip on the channel header updater icon while downloading an update with only percent available.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:37
-msgid "Downloading desktop update: {percent}%"
-msgstr "Stahování aktualizace desktopové aplikace: {percent} %"
-
-#. Tooltip on the channel header updater icon while downloading an update. Shows percent, bytes downloaded, total bytes, and bytes per second.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:28
-msgid "Downloading desktop update: {percent}% ({formatBytes} / {formatBytes2} at {formatBytes3}/s)"
-msgstr "Stahování aktualizace desktopové aplikace: {percent} % ({formatBytes} / {formatBytes2} rychlostí {formatBytes3}/s)"
-
-#. Short desktop updater status label.
-#: src/features/app/state/Updater.ts:56
-msgid "Downloading desktop update…"
-msgstr "Stahování aktualizace desktopové aplikace…"
 
 #. IAR modal: rule description.
 #: src/features/moderation/components/report_modal/IARModalCopy.ts:290
@@ -14142,7 +14092,7 @@ msgid "Edit the bot avatar, tag, bio, banner, and friend request behavior"
 msgstr "Upravit avatar, uživatelský tag, popis, banner a přijímání žádostí o přátelství u bota"
 
 #. Action that opens the thread settings.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:81
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:89
 msgid "Edit thread"
 msgstr "Upravit vlákno"
 
@@ -14261,7 +14211,7 @@ msgid "Email verification required"
 msgstr "Je potřeba ověřit e-mail"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:188
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:168
 msgid "Email verified"
 msgstr "E-mail ověřen"
 
@@ -14970,14 +14920,15 @@ msgstr "Zadejte {digitCount}místný kód ze své ověřovací aplikace nebo jed
 msgid "Enter the {digitCount}-digit code from your authenticator app."
 msgstr "Zadejte {digitCount}místný kód ze své ověřovací aplikace."
 
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:108
-msgid "Enter the code"
-msgstr "Zadejte kód"
-
 #. Inline validation error on the verification step of the DSA report flow when the code field is empty.
 #: src/features/moderation/components/pages/ReportPage.tsx:74
 msgid "Enter the code before continuing."
 msgstr "Před pokračováním zadejte kód."
+
+#. Title of the browser page where the user types the 12-character code the app shows under Signing in on another device. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:182
+msgid "Enter the code from the {PRODUCT_NAME} app"
+msgstr "Zadejte kód z aplikace {PRODUCT_NAME}"
 
 #. Body text in the authentication sudo verification modal. Keep the tone plain and specific.
 #: src/features/auth/components/modals/SudoVerificationModal.tsx:56
@@ -14992,10 +14943,6 @@ msgstr "Zadejte kód odeslaný na váš aktuální e-mail."
 #: src/features/user/components/modals/PasswordChangeModal.tsx:165
 msgid "Enter the code sent to your email address."
 msgstr "Zadejte kód odeslaný na vaši e-mailovou adresu."
-
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:111
-msgid "Enter the code shown in the app to continue."
-msgstr "Zadejte kód zobrazený v aplikaci a pokračujte."
 
 #: src/features/user/components/modals/BouncedEmailChangeModal.tsx:157
 #: src/features/user/components/modals/EmailChangeModal.tsx:244
@@ -15018,6 +14965,11 @@ msgstr "Zadejte nový e-mail, který chcete použít. Pošleme na něj kód."
 #: src/features/auth/components/modals/PasskeyPinModal.tsx:29
 msgid "Enter the PIN for your security key to continue."
 msgstr "Zadejte PIN pro váš bezpečnostní klíč a pokračujte."
+
+#. Title in the desktop app above the code the user types into a browser on another device.
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:235
+msgid "Enter this code in your browser"
+msgstr "Zadejte tento kód do prohlížeče"
 
 #: src/features/auth/flow/HandoffCodeDisplay.tsx:132
 msgid "Enter this code in your browser to complete sign-in."
@@ -15336,7 +15288,7 @@ msgstr "Rozbalit nepřečtené zprávy pro {channelHeading}"
 #. Lowercase screen-reader fragment in the sidebar navigation guild folder item.
 #. Lowercase state label used inside channel-list accessible text for an expanded category.
 #: src/features/app/components/layout/ChannelItem.tsx:105
-#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:81
+#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:82
 msgid "expanded"
 msgstr "rozbaleno"
 
@@ -15422,7 +15374,7 @@ msgstr "Platnost vyprší mezi {earliest} a {latest}"
 msgid "Expires in {remaining}s"
 msgstr "Vyprší za {remaining} s"
 
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:374
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:257
 msgid "Expires in {remainingSeconds}s"
 msgstr "Vyprší za {remainingSeconds} s"
 
@@ -15966,7 +15918,7 @@ msgstr "Funkce dočasně vypnuta"
 
 #. Developer options group for feature behavior overrides.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:123
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:119
 #: src/features/user/components/settings_utils/search_index/PlutoniumIndex.ts:137
 msgid "Features"
 msgstr "Funkce"
@@ -16225,7 +16177,7 @@ msgid "Fluxer"
 msgstr "Fluxer"
 
 #. Status shown when browser sign-in status polling gives up after repeated failures.
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:72
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:57
 msgid "Fluxer stopped checking whether the browser approved this sign-in. It didn't lose your code."
 msgstr "Fluxer přestal kontrolovat, zda prohlížeč schválil toto přihlášení. Váš kód neztratil."
 
@@ -16277,7 +16229,7 @@ msgstr "Hlas v popředí"
 
 #. Folder icon option in the community-folder settings modal: a generic folder shape. Short standalone label.
 #. Short label in the sidebar navigation guild folder item.
-#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:73
+#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:74
 #: src/features/guild/components/modals/GuildFolderSettingsModal.tsx:40
 msgid "Folder"
 msgstr "Složka"
@@ -16460,17 +16412,17 @@ msgid "Force enabled"
 msgstr "Vynuceně zapnuto"
 
 #. Developer option label for simulating failed message loads.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:119
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:115
 msgid "Force failed message loads"
 msgstr "Vynutit selhání načítání zpráv"
 
 #. Developer option label for simulating failed message sends.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:115
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:111
 msgid "Force failed message sends"
 msgstr "Vynutit selhání odesílání zpráv"
 
 #. Developer option label for simulating a loading GIF picker.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:75
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:71
 msgid "Force GIF picker loading"
 msgstr "Vynutit načítání výběru GIFů"
 
@@ -16487,7 +16439,7 @@ msgid "Force loading skeleton"
 msgstr "Vynutit zástupný náhled načítání"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:212
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:192
 #: src/features/channel/components/channel_header_components/developer_tools/MockingMenu.tsx:190
 msgid "Force mature media"
 msgstr "Vynutit označení médií jako určených pro dospělé"
@@ -16502,12 +16454,12 @@ msgid "Force no {permissionName} permission"
 msgstr "Vynutit chybějící oprávnění „{permissionName}“"
 
 #. Developer option label for always showing profile data warnings.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:111
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:107
 msgid "Force profile data warning"
 msgstr "Vynutit upozornění na data profilu"
 
 #. Developer option label for forcing user profile loading skeletons.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:107
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:103
 msgid "Force profile skeletons"
 msgstr "Vynutit zástupné náhledy načítání profilů"
 
@@ -16522,12 +16474,12 @@ msgid "Force show"
 msgstr "Vynutit zobrazení"
 
 #. Developer option label for always showing a community settings warning.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:79
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:75
 msgid "Force show vanity URL disclaimer"
 msgstr "Vynutit zobrazení upozornění k vlastnímu odkazu na pozvánku"
 
 #. Developer option label for always showing the voice connection status bar.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:131
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:127
 msgid "Force show voice connection"
 msgstr "Vždy zobrazit stav hlasového připojení"
 
@@ -16536,14 +16488,9 @@ msgid "Force slowmode active"
 msgstr "Vynutit zapnutý pomalý režim"
 
 #. Developer option label for rendering messages as unknown message types.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:127
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:123
 msgid "Force unknown message type"
 msgstr "Vynutit neznámý typ zprávy"
-
-#. Developer option label for simulating an available update.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:59
-msgid "Force update ready"
-msgstr "Vynutit připravenost aktualizace"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
 #: src/features/channel/components/channel_header_components/developer_tools/DeveloperToolsShared.ts:25
@@ -16597,7 +16544,7 @@ msgid "Forward"
 msgstr "Přeposlat"
 
 #. Tooltip / aria label on the forward / fast-forward button in the standalone audio player. {defaultSeekAmount} is an integer second count.
-#: src/features/voice/components/media_player/components/AudioPlayer.tsx:32
+#: src/features/voice/components/media_player/components/AudioPlayer.tsx:33
 msgid "Forward {defaultSeekAmount} seconds"
 msgstr "Přetočit o {defaultSeekAmount} sekund dopředu"
 
@@ -17017,8 +16964,6 @@ msgstr "Vygenerujte odkaz ke sdílení nebo zkopírujte svůj kombinovaný vlast
 msgid "Generate invite link"
 msgstr "Vygenerovat odkaz na pozvánku"
 
-#. Button label that replaces an expired browser sign-in code with a fresh one.
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:64
 #: src/features/auth/flow/HandoffCodeDisplay.tsx:117
 msgid "Generate new code"
 msgstr "Vygenerovat nový kód"
@@ -17028,7 +16973,7 @@ msgid "Generating code…"
 msgstr "Generování kódu…"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:220
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:200
 msgid "Geo block overlay"
 msgstr "Překryv s územním omezením"
 
@@ -17141,7 +17086,7 @@ msgid "GIF options"
 msgstr "Možnosti GIFu"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:132
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:112
 msgid "GIF picker loading"
 msgstr "Načítání výběru GIFů"
 
@@ -17226,14 +17171,14 @@ msgstr "Dárkové kódy"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:244
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:224
 #: src/features/channel/components/channel_header_components/developer_tools/MockingMenu.tsx:74
 msgid "Gift duration"
 msgstr "Délka trvání dárku"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:240
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:220
 #: src/features/user/components/settings_utils/search_index/GiftInventoryIndex.ts:42
 msgid "Gift inventory"
 msgstr "Inventář dárků"
@@ -17266,7 +17211,7 @@ msgid "Gift not found"
 msgstr "Dárek nenalezen"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:248
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:228
 msgid "Gift redeemed"
 msgstr "Dárek uplatněn"
 
@@ -17412,6 +17357,16 @@ msgstr "Vraťte se a zadejte platný e-mail."
 #: src/features/auth/passkey_migration/PasskeyBridgePage.tsx:52
 msgid "Go back to {productName} to continue."
 msgstr "Pro pokračování se vraťte do aplikace {productName}."
+
+#. Shown after approving a sign-in for an app on another device, which signs in by itself shortly. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:292
+msgid "Go back to the {PRODUCT_NAME} app. It finishes signing in on its own."
+msgstr "Zpět do aplikace {PRODUCT_NAME}. Přihlašování se samo dokončí."
+
+#. Shown after approving, when the browser has already handed the sign-in back to the desktop app. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:288
+msgid "Go back to the {PRODUCT_NAME} app. You can close this tab."
+msgstr "Zpět do aplikace {PRODUCT_NAME}. Tuto kartu můžete zavřít."
 
 #. Accessible label for the community row of an expression info card, which opens a community the viewer is already a member of. {communityName} is the community name.
 #: src/features/expressions/components/ExpressionInfoCard.tsx:89
@@ -17809,7 +17764,7 @@ msgid "Has"
 msgstr "Má"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:176
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:156
 msgid "Has ever purchased"
 msgstr "Má historii nákupů"
 
@@ -17892,7 +17847,7 @@ msgstr "Srdce"
 msgid "Hebrew"
 msgstr "Hebrejština"
 
-#: src/features/messaging/components/modals/ImageCropModal.tsx:958
+#: src/features/messaging/components/modals/ImageCropModal.tsx:959
 msgid "Height"
 msgstr "Výška"
 
@@ -18027,7 +17982,7 @@ msgid "Hide {premiumProductName} purchase date ({dateUtilsGetFormattedShortDateP
 msgstr "Skrýt datum zakoupení {premiumProductName} ({dateUtilsGetFormattedShortDatePremiumSince})"
 
 #. Label of the thread auto archive duration setting.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:206
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:222
 msgid "Hide after inactivity"
 msgstr "Skrýt po nečinnosti"
 
@@ -19223,24 +19178,14 @@ msgid "Install the new app"
 msgstr "Nainstalovat novou aplikaci"
 
 #. Label for the installed desktop version in the Linux update modal.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:136
+#: src/features/updater/commands/UpdaterModalCommands.tsx:119
 msgid "Installed"
 msgstr "Nainstalováno"
 
 #. Desktop updater modal body. The currentVersion placeholder is the installed app version.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:45
+#: src/features/updater/commands/UpdaterModalCommands.tsx:54
 msgid "Installed version: {currentVersion}."
 msgstr "Nainstalovaná verze: {currentVersion}."
-
-#. Tooltip on the channel header updater icon while a Fluxer Desktop update is being installed. version is the target version. Trailing horizontal ellipsis is intentional.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:18
-msgid "Installing desktop update {version}…"
-msgstr "Instaluje se aktualizace desktopové aplikace {version}…"
-
-#. Tooltip on the channel header updater icon while a Fluxer Desktop update is being installed when version is not known. Trailing horizontal ellipsis is intentional.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:23
-msgid "Installing desktop update…"
-msgstr "Instaluje se aktualizace desktopové aplikace…"
 
 #. Label for the server address in the printed or downloaded recovery kit.
 #: src/features/auth/components/modals/RecoveryKitModal.tsx:76
@@ -19369,11 +19314,6 @@ msgstr "Neplatný JSON. Vložte celou odpověď z výše uvedené adresy URL."
 #: src/features/user/components/modals/PasswordChangeModal.tsx:36
 msgid "Invalid or expired code"
 msgstr "Kód je neplatný nebo jeho platnost vypršela"
-
-#. Desktop handoff flow error shown when the entered pairing code is invalid or expired.
-#: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:13
-msgid "Invalid or expired code. Try again."
-msgstr "Kód je neplatný nebo jeho platnost vypršela. Zkuste to znovu."
 
 #. Short label in the authentication authorize flow. Keep the tone plain and specific.
 #: src/features/auth/components/pages/oauth_authorize_page/state/useAuthorizeFlow.ts:82
@@ -19817,7 +19757,7 @@ msgid "Join the call"
 msgstr "Připojit se k hovoru"
 
 #. Notice above the composer when the user is not a member of the thread.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:145
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:161
 msgid "Join this thread to follow it in your channel list and get notifications."
 msgstr "Připojte se k tomuto vláknu, abyste ho mohli sledovat v seznamu kanálů a dostávat oznámení."
 
@@ -19868,7 +19808,7 @@ msgid "Join voice channels and hear others."
 msgstr "Připojovat se k hlasovým kanálům a slyšet ostatní."
 
 #. Section header in the thread browser for threads the user joined.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:169
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:185
 msgid "Joined"
 msgstr "Připojeno"
 
@@ -20255,7 +20195,7 @@ msgstr "Graf latence"
 #. Short label in the desktop settings tab. Keep it concise.
 #. Short label in the theme studio settings section. Keep it concise.
 #: src/features/theme_studio/sections/ThemeStudioSettingsSection.tsx:61
-#: src/features/updater/commands/UpdaterModalCommands.tsx:37
+#: src/features/updater/commands/UpdaterModalCommands.tsx:46
 #: src/features/user/components/modals/tabs/advanced_settings_tab/AdvancedAccessibilityControls.tsx:51
 #: src/features/user/components/modals/tabs/advanced_settings_tab/AdvancedDesktopControls.tsx:74
 #: src/features/user/components/modals/tabs/DesktopSettingsTab.tsx:48
@@ -20329,6 +20269,11 @@ msgstr "Další informace o Visionary"
 msgid "Leave"
 msgstr "Opustit"
 
+#. Confirmation text before leaving a private thread. threadName is the thread name.
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:65
+msgid "Leave {threadName}? It's private, so you can only come back if someone adds you again."
+msgstr "Opustit {threadName}? Je to soukromé, takže se sem budete moci vrátit, jen pokud vás tam někdo znovu přidá."
+
 #. Short label in the authentication auth register form core. Keep the tone plain and specific.
 #: src/features/auth/flow/AuthRegisterFormCore.tsx:62
 msgid "Leave blank for a random username"
@@ -20353,6 +20298,11 @@ msgstr "Chcete-li nechat jeden konec časového okna neomezený, ponechte přís
 #: src/features/channel/utils/ChannelMessageDescriptors.ts:57
 msgid "Leave group"
 msgstr "Opustit skupinu"
+
+#. Title of the confirmation dialog shown before leaving a private thread.
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:61
+msgid "Leave private thread"
+msgstr "Opustit soukromé vlákno"
 
 #. Switch label in the leave-group confirmation modal. Suppresses the system leave notice so other members are not pinged.
 #: src/features/guild/hooks/useLeaveGroup.tsx:34
@@ -20796,7 +20746,7 @@ msgid "Linux default"
 msgstr "Výchozí zařízení v systému Linux"
 
 #. Select label for choosing the Linux desktop package format to download.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:152
+#: src/features/updater/commands/UpdaterModalCommands.tsx:135
 msgid "Linux package"
 msgstr "Balíček pro Linux"
 
@@ -20844,7 +20794,7 @@ msgid "Live region"
 msgstr "Živá oblast"
 
 #. Button that loads the next page of archived threads.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:190
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:206
 msgid "Load more"
 msgstr "Načíst další"
 
@@ -20951,13 +20901,13 @@ msgstr "Formát času podle místního nastavení"
 msgid "Localization"
 msgstr "Lokalizace"
 
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:192
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:109
 #: src/features/user/components/modals/tabs/DevicesTab.tsx:152
 msgid "Location"
 msgstr "Poloha"
 
 #. Moderator action that stops non-moderators from sending messages in a thread.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:73
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:81
 msgid "Lock thread"
 msgstr "Zamknout vlákno"
 
@@ -21109,6 +21059,11 @@ msgstr "Chcete, aby se uživatel {userName} stal vlastníkem skupiny? Ztratíte 
 msgid "Make group owner"
 msgstr "Nastavit jako vlastníka skupiny"
 
+#. Shown above the code on the browser approval page when the app cannot be signed in automatically. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:253
+msgid "Make sure this code matches the one in the {PRODUCT_NAME} app."
+msgstr "Ujistěte se, že se tento kód shoduje s kódem v aplikaci {PRODUCT_NAME}."
+
 #. Setup wizard branding step title.
 #: src/features/app/components/setup/SetupWizardSteps.tsx:166
 msgid "Make the instance yours"
@@ -21147,7 +21102,7 @@ msgid "Manage"
 msgstr "Spravovat"
 
 #. Accessible label for the account switcher surface that lists every saved account.
-#: src/features/app/components/floating/UserAreaAccountSwitchMenu.tsx:257
+#: src/features/app/components/floating/UserAreaAccountSwitchMenu.tsx:289
 #: src/features/auth/components/accounts/AccountSwitcherModal.tsx:35
 msgid "Manage accounts"
 msgstr "Spravovat účty"
@@ -21262,7 +21217,7 @@ msgid "Manage your subscription"
 msgstr "Spravovat předplatné"
 
 #. Modal title when automatic in-app desktop updates cannot be used.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:53
+#: src/features/updater/commands/UpdaterModalCommands.tsx:62
 msgid "Manual desktop update"
 msgstr "Ruční aktualizace desktopové aplikace"
 
@@ -21474,7 +21429,7 @@ msgid "Mature content & content warnings"
 msgstr "Obsah pro dospělé a upozornění na obsah"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:204
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:184
 msgid "Mature content channel gate"
 msgstr "Omezení přístupu ke kanálu pro dospělé"
 
@@ -21500,7 +21455,7 @@ msgid "Mature content checks are currently available only in the UK."
 msgstr "Ověření věku pro obsah pro dospělé je momentálně dostupné pouze ve Spojeném království."
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:208
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:188
 msgid "Mature content media gate"
 msgstr "Omezení přístupu k médiím pro dospělé"
 
@@ -22888,13 +22843,13 @@ msgstr "Ztlumit"
 #. Mute toggle button label in the mobile video viewer (currently unmuted).
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #. Voice menu checkbox label. Locally mutes another participant only for the current user.
-#: src/features/channel/components/embeds/media/EmbedVideo.tsx:73
+#: src/features/channel/components/embeds/media/EmbedVideo.tsx:74
 #: src/features/ui/action_menu/items/voice_participant_menu_data/shared.ts:42
 #: src/features/ui/action_menu/items/VoiceParticipantMenuItems.tsx:74
 #: src/features/user/components/settings_utils/section_registry/NotificationsSections.ts:147
 #: src/features/voice/components/media_player/components/MediaVerticalVolumeControl.tsx:25
 #: src/features/voice/components/media_player/components/MediaVolumeControl.tsx:25
-#: src/features/voice/components/modals/MobileVideoViewer.tsx:45
+#: src/features/voice/components/modals/MobileVideoViewer.tsx:46
 msgctxt "playback-control-action"
 msgid "Mute"
 msgstr "Vypnout zvuk"
@@ -23045,7 +23000,7 @@ msgid "Mute stream audio"
 msgstr "Vypnout zvuk streamu"
 
 #. Action that mutes notifications and unread badges for a thread.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:97
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:105
 msgid "Mute thread"
 msgstr "Ztlumit vlákno"
 
@@ -23316,16 +23271,6 @@ msgstr "Předčítání"
 msgid "Native title bar"
 msgstr "Nativní záhlaví okna"
 
-#. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:84
-msgid "Native update progress"
-msgstr "Průběh nativní aktualizace"
-
-#. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:80
-msgid "Native updater ready"
-msgstr "Nativní aktualizace připravena"
-
 #. Unicode emoji category label.
 #: src/features/expressions/utils/UnicodeEmojis.ts:26
 msgid "Nature"
@@ -23402,7 +23347,7 @@ msgid "Network error"
 msgstr "Chyba sítě"
 
 #. Developer options group for simulated slow or failed operations.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:83
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:79
 msgid "Networking and performance"
 msgstr "Síť a výkon"
 
@@ -23606,7 +23551,7 @@ msgid "New thread"
 msgstr "Nové vlákno"
 
 #. Help text for the default thread auto archive duration setting on a text channel.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:210
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:226
 msgid "New threads will stop showing in the channel list after this period of inactivity."
 msgstr "Nové vlákna se po této době nečinnosti přestanou zobrazovat v seznamu kanálu."
 
@@ -23616,7 +23561,7 @@ msgid "New users can't join right now. You can still create an account or sign i
 msgstr "Noví uživatelé se teď nemůžou připojit. Můžete si ale vytvořit účet nebo se přihlásit a zkusit tento odkaz znovu později."
 
 #. Fallback version label when the available desktop version is unknown.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:148
+#: src/features/updater/commands/UpdaterModalCommands.tsx:131
 msgid "New version"
 msgstr "Nová verze"
 
@@ -23683,12 +23628,12 @@ msgid "No"
 msgstr "Ne"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:228
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:208
 msgid "No {attachFilesPermission} permission"
 msgstr "Chybí oprávnění {attachFilesPermission}"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:224
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:204
 msgid "No {sendMessagesPermission} permission"
 msgstr "Chybí oprávnění {sendMessagesPermission}"
 
@@ -23872,7 +23817,7 @@ msgid "No description."
 msgstr "Bez popisu."
 
 #. Desktop updater modal body when no installed version string is available.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:49
+#: src/features/updater/commands/UpdaterModalCommands.tsx:58
 msgid "No desktop update is available."
 msgstr "Není k dispozici žádná aktualizace desktopové aplikace."
 
@@ -24259,7 +24204,7 @@ msgid "No themes saved yet."
 msgstr "Zatím žádné uložené motivy."
 
 #. Empty state of the thread browser while searching.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:270
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:286
 msgid "No threads match"
 msgstr "Žádná vlákna neodpovídají"
 
@@ -24315,7 +24260,7 @@ msgid "No webhooks"
 msgstr "Žádné webhooky"
 
 #. Developer option label for short-circuiting the in-app reporting (IAR) flow. When enabled, submitting a report skips the network call.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:135
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:131
 msgid "No-op in-app reports"
 msgstr "Nahlášení v aplikaci bez odeslání"
 
@@ -24517,7 +24462,7 @@ msgstr "Poznámka (viditelná jen pro vás)"
 #. Notification level option. Suppresses all pushes for the channel or community. Paired with "All messages" and "Only mentions".
 #. Thread notification option that never notifies.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:362
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:129
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:145
 msgid "Nothing"
 msgstr "Nic"
 
@@ -24567,7 +24512,7 @@ msgstr "Vlastní nastavení oznámení"
 #. Submenu / section header that groups per-channel or per-community notification preferences.
 #. Submenu label for the thread notification options.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:344
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:133
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:149
 msgid "Notification settings"
 msgstr "Nastavení oznámení"
 
@@ -24753,6 +24698,11 @@ msgstr "Dne <0>{listPriceEffectiveDate}</0> se cena vašeho předplatného změn
 msgid "On click"
 msgstr "Při kliknutí"
 
+#. One line explanation in the desktop app above the code. signInAddress is the web address of the sign-in page, such as web.fluxer.app/login?handoff=1.
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:243
+msgid "On your other device, sign in at {signInAddress} and enter this code when asked."
+msgstr "Na jiném zařízení se přihlaste na adrese {signInAddress} a na vyžádání zadejte tento kód."
+
 #: src/features/user/components/modals/tabs/applications_tab/ApplicationDetail.tsx:715
 msgid "Once deleted, the application and its credentials are permanently removed."
 msgstr "Po smazání budou aplikace a její přihlašovací údaje trvale odstraněny."
@@ -24810,13 +24760,18 @@ msgid "Only {count, plural, one {# community} other {# communities}}"
 msgstr "Pouze {count, plural, one {# komunita} few {# komunity} many {# komunity} other {# komunit}}"
 
 #. Thread notification option that notifies only for mentions.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:125
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:141
 msgid "Only @mentions"
 msgstr "Jen zmínky @"
 
 #: src/features/guild/components/modals/guild_tabs/guild_overview_tab/fields/GuildInviteSplashSettingsField.tsx:119
 msgid "Only applies on wide screens."
 msgstr "Platí pouze na dostatečně širokých obrazovkách."
+
+#. Warning under the title of the browser approval page, so people do not approve a sign-in someone else started.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:245
+msgid "Only continue if you started this sign-in on a device you control."
+msgstr "Pokračujte, pouze pokud jste toto přihlášení zahájili na zařízení, které ovládáte."
 
 #. Body copy in the mature content check modal.
 #: src/features/auth/components/modals/MatureContentCheckModal.tsx:32
@@ -25006,6 +24961,11 @@ msgstr "Otevřít {landmarkName}"
 msgid "Open {premiumProductFullName}"
 msgstr "Otevřít {premiumProductFullName}"
 
+#. Button on the browser page after approving that opens the desktop app again if it did not come to the front. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:304
+msgid "Open {PRODUCT_NAME}"
+msgstr "Otevřít {PRODUCT_NAME}"
+
 #. Button label that opens the desktop app. productName is the app name.
 #. Button that hands SSO sign-in back to the mobile app. productName is the app name.
 #: src/features/auth/components/pages/SsoCallbackPage.tsx:47
@@ -25096,11 +25056,14 @@ msgstr "Otevřít možnosti banneru"
 msgid "Open bookmarks"
 msgstr "Otevřít záložky"
 
-#. Button label that opens the browser sign-in handoff page.
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:56
 #: src/features/auth/flow/BrowserLoginHandoffModal.tsx:184
 msgid "Open browser"
 msgstr "Otevřít prohlížeč"
+
+#. Button in the desktop app that reopens the browser sign-in page while the app waits for the browser.
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:53
+msgid "Open browser again"
+msgstr "Otevřít prohlížeč znovu"
 
 #. Primary button in the screen-share picker on web. Hands off to the browser's native getDisplayMedia picker.
 #: src/features/voice/components/modals/ScreenSharePickerModal.tsx:209
@@ -25141,7 +25104,7 @@ msgid "Open community"
 msgstr "Otevřít komunitu"
 
 #. Short label in the app layout guild header. Preserve {guildName}; it is inserted by code.
-#: src/features/app/components/layout/GuildHeader.tsx:33
+#: src/features/app/components/layout/GuildHeader.tsx:34
 msgid "Open community menu for {guildName}"
 msgstr "Otevřít nabídku komunity {guildName}"
 
@@ -25151,7 +25114,7 @@ msgid "Open date picker"
 msgstr "Otevřít výběr data"
 
 #. Button label that opens the Fluxer desktop downloads page in a browser.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:83
+#: src/features/updater/commands/UpdaterModalCommands.tsx:92
 msgid "Open desktop downloads"
 msgstr "Otevřít stránku pro stažení desktopové aplikace"
 
@@ -25348,7 +25311,7 @@ msgid "Open settings"
 msgstr "Otevřít nastavení"
 
 #. Button label that opens the software center via appstream protocol.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:79
+#: src/features/updater/commands/UpdaterModalCommands.tsx:88
 msgid "Open software center"
 msgstr "Otevřít centrum softwaru"
 
@@ -25438,7 +25401,7 @@ msgid "Open thread"
 msgstr "Otevřít vlákno"
 
 #. Action that unarchives an archived thread.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:69
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:77
 msgid "Open thread again"
 msgstr "Znovu otevřít vlákno"
 
@@ -25448,7 +25411,7 @@ msgid "Open user menu for {displayName}"
 msgstr "Otevřít uživatelskou nabídku pro {displayName}"
 
 #. Button or menu action label in the channel and chat embed video. Keep it concise.
-#: src/features/channel/components/embeds/media/EmbedVideo.tsx:51
+#: src/features/channel/components/embeds/media/EmbedVideo.tsx:52
 msgid "Open video"
 msgstr "Otevřít video"
 
@@ -25477,10 +25440,6 @@ msgstr "Otevřít nastavení zvuku a videa"
 msgid "Open with {accountName} on {instanceName}"
 msgstr "Otevřít s {accountName} na {instanceName}"
 
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:414
-msgid "Open your browser to finish signing in."
-msgstr "Otevřete prohlížeč a dokončete přihlášení."
-
 #: src/features/auth/flow/BrowserLoginHandoffModal.tsx:137
 msgid "Open your browser, sign in, then enter the code below to link your account."
 msgstr "Otevřete prohlížeč, přihlaste se a poté zadejte níže uvedený kód pro propojení účtu."
@@ -25506,7 +25465,7 @@ msgstr "Otevře stránku Členové. Stisknutím mezerníku nebo Enter otevřete.
 
 #. Short label in the language tab. Keep it concise.
 #. Spellcheck engine option in the textarea spellcheck submenu. Uses the host operating system spellchecker.
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:182
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:99
 #: src/features/channel/components/textarea/TextareaContextMenu.tsx:79
 #: src/features/user/components/modals/tabs/LanguageTab.tsx:110
 msgid "Operating system"
@@ -25614,7 +25573,7 @@ msgid "Original message was deleted"
 msgstr "Původní zpráva byla smazána"
 
 #. Shown at the top of a thread when the message it was started from was deleted.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:202
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:218
 msgid "Original message was deleted."
 msgstr "Původní zpráva byla smazána."
 
@@ -25643,7 +25602,7 @@ msgid "Other"
 msgstr "Jiné"
 
 #. Section header in the thread browser for active threads the user did not join.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:173
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:189
 msgid "Other active threads"
 msgstr "Ostatní aktivní vlákna"
 
@@ -26524,7 +26483,7 @@ msgstr "Plán"
 msgid "Plans, perks, gifts and your subscription all live on one page."
 msgstr "Plány, výhody, dárky a vaše předplatné – vše najdete na jedné stránce."
 
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:172
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:89
 msgid "Platform"
 msgstr "Platforma"
 
@@ -26558,9 +26517,9 @@ msgstr "Přehrát výběr"
 #. Play-button label on the inline video player thumbnail before playback starts.
 #. Short label in the channel and chat embed video. Keep it concise.
 #. Short label in the channel and chat embed you tube. Keep it concise.
-#: src/features/channel/components/embeds/media/EmbedVideo.tsx:64
+#: src/features/channel/components/embeds/media/EmbedVideo.tsx:65
 #: src/features/channel/components/embeds/media/EmbedYouTube.tsx:29
-#: src/features/voice/components/media_player/components/VideoPlayer.tsx:62
+#: src/features/voice/components/media_player/components/VideoPlayer.tsx:63
 msgid "Play video"
 msgstr "Přehrát video"
 
@@ -26814,7 +26773,7 @@ msgid "Premium perks disabled"
 msgstr "Prémiové výhody vypnuty"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:160
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:140
 msgid "Premium since date"
 msgstr "Datum začátku předplatného"
 
@@ -26824,17 +26783,17 @@ msgid "Premium state reset on the backend."
 msgstr "Stav Premium byl resetován na backendu."
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:152
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:132
 msgid "Premium type"
 msgstr "Typ předplatného"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:164
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:144
 msgid "Premium until date"
 msgstr "Datum konce předplatného"
 
 #. Progress label on the save button while an animated image crop starts. Keep it concise.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:58
+#: src/features/messaging/components/modals/ImageCropModal.tsx:59
 msgid "Preparing"
 msgstr "Připravuji"
 
@@ -27215,7 +27174,7 @@ msgid "Profile customization form"
 msgstr "Formulář pro úpravu profilu"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:124
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:104
 msgid "Profile data warning"
 msgstr "Upozornění na data profilu"
 
@@ -27263,7 +27222,7 @@ msgid "Profile privacy"
 msgstr "Soukromí profilu"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:120
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:100
 msgid "Profile skeletons"
 msgstr "Zástupné náhledy načítání profilů"
 
@@ -28223,18 +28182,13 @@ msgstr "Znovu načíst"
 msgid "Reload {PRODUCT_NAME} to fully apply the engine change. Switching between in-app and system spellcheck requires a renderer reload because Electron can't swap providers while running."
 msgstr "Aby se změna nástroje pro kontrolu pravopisu plně projevila, znovu načtěte aplikaci {PRODUCT_NAME}. Přepínání mezi kontrolou pravopisu v aplikaci a systémovou kontrolou vyžaduje opětovné načtení vykreslovacího procesu, protože Electron nemůže měnit poskytovatele za běhu."
 
-#. Tooltip on the channel header updater icon prompting a reload to apply freshly downloaded desktop modules. productName is the app name.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:77
-msgid "Reload {productName} to use the updated modules"
-msgstr "Znovu načíst {productName} pro použití aktualizovaných modulů"
-
 #. Tooltip on the channel header updater icon prompting a web reload to apply an update of unknown version. productName is the app name.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:87
+#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:34
 msgid "Reload {productName} to use web update"
 msgstr "Znovu načtěte aplikaci {productName}, aby se použila aktualizace webové aplikace"
 
 #. Tooltip on the channel header updater icon prompting a web reload to apply an in-place build update. productName is the app name.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:82
+#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:29
 msgid "Reload {productName} to use web update {version}"
 msgstr "Znovu načtěte aplikaci {productName}, aby se použila aktualizace webové aplikace na verzi {version}"
 
@@ -28429,7 +28383,7 @@ msgid "Remove from group"
 msgstr "Odebrat ze skupiny"
 
 #. Context menu item that removes a self-hosted instance from the authentication instance picker history.
-#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:37
+#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:40
 msgid "Remove from recent instances"
 msgstr "Odebrat z posledních instancí"
 
@@ -28439,7 +28393,7 @@ msgid "Remove from saved media"
 msgstr "Odstranit z uložených médií"
 
 #. Moderation action that removes the selected member from a thread.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:61
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:69
 msgid "Remove from thread"
 msgstr "Odebrat ze vlákna"
 
@@ -29142,7 +29096,7 @@ msgstr "Znovu odesláno"
 #: src/features/app/components/dialogs/shared/UnsavedChangesBannerContent.tsx:51
 #: src/features/app/components/floating/ColorPickerPopover.tsx:190
 #: src/features/input/components/KeybindRecorder.tsx:499
-#: src/features/messaging/components/modals/ImageCropModal.tsx:1022
+#: src/features/messaging/components/modals/ImageCropModal.tsx:1023
 msgid "Reset"
 msgstr "Resetovat"
 
@@ -29475,25 +29429,10 @@ msgstr "Respektovat záměr odesílatele, bez upozornění při přepnutí zmín
 msgid "Restart {appName}"
 msgstr "Restartovat aplikaci {appName}"
 
-#. Button label that restarts the app to apply a desktop update. productName is the app name.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:100
-msgid "Restart {productName}"
-msgstr "Restartovat {productName}"
-
 #. Desktop setting description shown when a tray-icon change on Linux requires restart.
 #: src/features/user/components/modals/tabs/DesktopSettingsTab.tsx:35
 msgid "Restart {productName} for this change to take effect because Linux desktops can't reliably add or remove tray icons at runtime."
 msgstr "Aby se tato změna projevila, restartujte aplikaci {productName}. Desktopová prostředí Linuxu nedokážou za běhu spolehlivě přidávat nebo odebírat ikony v oznamovací oblasti."
-
-#. Tooltip on the channel header updater icon prompting a restart to apply a downloaded update of unknown version. productName is the app name.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:72
-msgid "Restart {productName} to install desktop update"
-msgstr "Restartujte aplikaci {productName}, aby se nainstalovala aktualizace desktopové aplikace"
-
-#. Tooltip on the channel header updater icon prompting a restart to apply a downloaded versioned update. productName is the app name.
-#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:67
-msgid "Restart {productName} to install desktop update {version}"
-msgstr "Restartujte aplikaci {productName}, aby se nainstalovala aktualizace desktopové aplikace na verzi {version}"
 
 #. Confirmation prompt in advanced settings. Preserve {productName}; it is inserted by code.
 #. Confirmation prompt in advanced settings. Preserve {productName}; it is inserted by code.
@@ -29544,7 +29483,7 @@ msgstr "Pozvánky obnoveny"
 #. Button that retries loading forum posts.
 #: src/features/forum/utils/ForumMessageDescriptors.ts:175
 #: src/features/platform/components/loadable/LoadableComponent.tsx:98
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:286
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:302
 msgid "Retry"
 msgstr "Zkusit znovu"
 
@@ -29717,7 +29656,7 @@ msgid "Revoked ban for {0}"
 msgstr "Ban uživatele {0} byl zrušen"
 
 #. Tooltip / aria label on the rewind button in the standalone audio player. {defaultSeekAmount} is an integer second count.
-#: src/features/voice/components/media_player/components/AudioPlayer.tsx:27
+#: src/features/voice/components/media_player/components/AudioPlayer.tsx:28
 msgid "Rewind {defaultSeekAmount} seconds"
 msgstr "Přetočit o {defaultSeekAmount, plural, one {# sekundu} few {# sekundy} many {# sekundy} other {# sekund}} zpět"
 
@@ -29866,7 +29805,7 @@ msgstr "Rumunština"
 
 #. Short label in the image crop modal. Keep it concise.
 #. Tooltip on the media viewer button that rotates the current media item 90 degrees clockwise.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:28
+#: src/features/messaging/components/modals/ImageCropModal.tsx:29
 #: src/features/messaging/components/modals/media_modal/shared.ts:93
 msgid "Rotate clockwise"
 msgstr "Otočit po směru hodinových ručiček"
@@ -29889,7 +29828,7 @@ msgid "Rows per page"
 msgstr "Řádků na stránku"
 
 #. Option in the Linux package format dropdown of the desktop updater modal. Keep the format token "RPM" verbatim and translate only the word "package".
-#: src/features/updater/commands/UpdaterModalCommands.tsx:165
+#: src/features/updater/commands/UpdaterModalCommands.tsx:148
 msgid "RPM package"
 msgstr "Balíček RPM"
 
@@ -29964,7 +29903,7 @@ msgstr "Sytost"
 #: src/features/messaging/components/modals/AttachmentEditModal.tsx:136
 #: src/features/messaging/components/modals/EditAltTextModal.tsx:193
 #: src/features/messaging/components/modals/MessageHistoryThresholdModal.tsx:115
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:246
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:262
 #: src/features/user/components/modals/BaseChangeNicknameModal.tsx:136
 #: src/features/user/components/modals/CustomStatusBottomSheet.tsx:300
 #: src/features/user/components/modals/NoteEditSheet.tsx:48
@@ -30506,7 +30445,7 @@ msgstr "Hledat v"
 #. Notice in a forum channel while the server is still building the post search index.
 #. Shown in the thread browser while the search index is being built.
 #: src/features/forum/utils/ForumMessageDescriptors.ts:167
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:282
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:298
 msgid "Search is getting ready for this community. Trying again shortly..."
 msgstr "Vyhledávání se připravuje pro tuto komunitu. Zkuste to brzy znovu..."
 
@@ -30666,7 +30605,7 @@ msgid "Search themes…"
 msgstr "Hledat motivy…"
 
 #. Placeholder and label of the search box at the top of the thread browser.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:266
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:282
 msgid "Search threads"
 msgstr "Hledat ve vláknech"
 
@@ -30823,7 +30762,7 @@ msgid "Security key PIN form"
 msgstr "Formulář pro zadání PINu bezpečnostního klíče"
 
 #. Link in the thread created system message that opens the thread browser.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:198
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:214
 msgid "See all threads"
 msgstr "Zobrazit všechny vlákna"
 
@@ -31062,12 +31001,12 @@ msgid "Self-host setup"
 msgstr "Nastavení vlastního hostování"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:140
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:120
 msgid "Self-hosted mode"
 msgstr "Režim vlastního hostování"
 
 #. Developer option label for forcing self-hosted client mode.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:67
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:63
 msgid "Self-hosted mode override"
 msgstr "Přepsání režimu s vlastním hostováním"
 
@@ -31964,11 +31903,6 @@ msgstr "Zobrazit chat"
 msgid "Show chat with {count, plural, one {# unread message} other {# unread messages}}"
 msgstr "Zobrazit chat s {count, plural, one {# nepřečtenou zprávou} other {# nepřečtenými zprávami}}"
 
-#. Button label that opens the manual browser handoff code fallback.
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:60
-msgid "Show code"
-msgstr "Zobrazit kód"
-
 #. Developer voice status menu option for displaying the voice connection identifier.
 #: src/features/voice/components/voice_connection_status/VoiceConnectionStatusInner.tsx:76
 msgid "Show connection ID"
@@ -32212,8 +32146,8 @@ msgstr "Zobrazit sdílení mé obrazovky"
 
 #. Developer option label for showing the current user as typing.
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:96
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:63
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:76
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:59
 msgid "Show myself typing"
 msgstr "Zobrazit, že píšu"
 
@@ -32411,7 +32345,9 @@ msgstr "Zobrazí banner v samostatné sekci pod záhlavím komunity."
 msgid "Sidebar"
 msgstr "Postranní panel"
 
+#. Button in the browser that approves signing in to the desktop or mobile app that asked for it.
 #. Generic authentication action label. Use for buttons, links, page titles, and accessible labels.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:33
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:79
 msgid "Sign in"
 msgstr "Přihlásit se"
@@ -32426,9 +32362,34 @@ msgstr "Přihlásit se znovu"
 msgid "Sign in again as {accountLabel}"
 msgstr "Znovu se přihlaste jako {accountLabel}"
 
+#. Shown in the desktop app while it waits for the browser. instanceName is the server name, such as Fluxer.
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:200
+msgid "Sign in to {instanceName} in your browser and confirm. This app finishes signing in on its own."
+msgstr "Přihlaste se do {instanceName} v prohlížeči a potvrďte. Tato aplikace dokončí přihlášení sama."
+
+#. Shown in the desktop app above the code when the browser cannot return the sign-in automatically. instanceName is the server name, such as Fluxer.
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:196
+msgid "Sign in to {instanceName} in your browser, and check that it shows this code:"
+msgstr "Přihlaste se do {instanceName} ve svém prohlížeči a zkontrolujte, zda se zobrazuje tento kód:"
+
 #: src/features/auth/flow/GiftHeader.tsx:33
 msgid "Sign in to claim your gift"
 msgstr "Přihlaste se a převezměte si dárek"
+
+#. Title of the browser page where the user approves signing in to an app that asked for it. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:71
+msgid "Sign in to the {PRODUCT_NAME} app"
+msgstr "Přihlásit se do aplikace {PRODUCT_NAME}"
+
+#. Title of the browser page where the user approves signing in to the desktop app that opened it. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:58
+msgid "Sign in to the {PRODUCT_NAME} desktop app"
+msgstr "Přihlásit se do aplikace {PRODUCT_NAME} pro počítače"
+
+#. Title of the browser page where the user approves signing in to the mobile app that asked for it. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:65
+msgid "Sign in to the {PRODUCT_NAME} mobile app"
+msgstr "Přihlásit se do mobilní aplikace {PRODUCT_NAME}"
 
 #. Action label that starts passkey authentication.
 #: src/features/auth/AuthMessageDescriptors.ts:13
@@ -32508,14 +32469,10 @@ msgstr "Odhlásit ostatní zařízení z vašeho účtu"
 msgid "Sign out?"
 msgstr "Odhlásit se?"
 
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:234
-msgid "Sign-in approved"
-msgstr "Přihlášení schváleno"
-
-#. Short label in the authentication handoff approval flow. Keep the tone plain and specific.
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:26
-msgid "Sign-in code"
-msgstr "Přihlašovací kód"
+#. Title of the browser page after the user cancelled the sign-in request from the app.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:322
+msgid "Sign-in cancelled"
+msgstr "Přihlášení zrušeno"
 
 #. Section title for email address and password controls in the account security tab. Keep it concise.
 #: src/features/user/components/modals/tabs/account_security_tab/AccountSecuritySections.tsx:23
@@ -32538,10 +32495,6 @@ msgstr "Průběh přihlášení"
 msgid "Sign-in method"
 msgstr "Metoda přihlášení"
 
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:84
-msgid "Sign-in request"
-msgstr "Žádost o přihlášení"
-
 #. Aria label on the signal-strength icon shown while the first latency sample is still pending.
 #: src/features/voice/components/SignalStrengthIcon.tsx:16
 msgid "Signal strength loading"
@@ -32557,6 +32510,21 @@ msgstr "Přihlášeno"
 #: src/features/user/components/settings_utils/section_registry/GeneralSettingsSections.ts:34
 msgid "Signed-in devices"
 msgstr "Přihlášená zařízení"
+
+#. Shown on the browser approval page above the buttons. name is the display name of the account that will be signed in to the app.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:137
+msgid "Signing in as {name}"
+msgstr "Přihlášení jako {name}"
+
+#. Text button in the desktop app that shows a code to type into a browser on a different device.
+#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:214
+msgid "Signing in on another device?"
+msgstr "Přihlašujete se na jiném zařízení?"
+
+#. Title while the browser approves the sign-in to the app.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:228
+msgid "Signing in…"
+msgstr "Přihlašování…"
 
 #. Label for Bluesky OAuth signing key ID input.
 #: src/features/app/components/setup/SetupWizardSteps.tsx:1161
@@ -32675,7 +32643,7 @@ msgstr "Přeskočit"
 msgid "Skip \"Mark all as read\" confirmation"
 msgstr "Přeskočit potvrzení \"Označit vše jako přečtené\""
 
-#: src/features/messaging/components/modals/ImageCropModal.tsx:1034
+#: src/features/messaging/components/modals/ImageCropModal.tsx:1035
 msgid "Skip cropping"
 msgstr "Přeskočit oříznutí"
 
@@ -32690,7 +32658,7 @@ msgid "Skip the external link warning for all domains"
 msgstr "Přeskočit upozornění na externí odkaz pro všechny domény"
 
 #. Developer / debug surface — keep terse and technical. Tooltip / description for the no-op in-app reports toggle.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:140
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:136
 msgid "Skip the network call when an in-app report is submitted. The flow still advances to the success screen so you can exercise the UI, but nothing is actually sent to the safety team."
 msgstr "Přeskočit síťový požadavek při odeslání nahlášení v aplikaci. Postup i tak přejde na obrazovku úspěšného odeslání, abyste mohli vyzkoušet uživatelské rozhraní, ale bezpečnostnímu týmu se nic neodešle."
 
@@ -32752,8 +32720,8 @@ msgstr "Slovinsko"
 
 #. Developer option label for simulating slow file uploads.
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:100
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:99
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:80
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:95
 msgid "Slow attachment upload"
 msgstr "Pomalé nahrávání příloh"
 
@@ -32769,29 +32737,29 @@ msgstr "Zpomalte – zkuste to znovu za chvíli."
 
 #. Developer option label for simulating slow message edits.
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:112
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:95
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:92
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:91
 msgid "Slow message edit"
 msgstr "Pomalá úprava zprávy"
 
 #. Developer option label for simulating slow message loading.
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:104
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:87
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:84
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:83
 msgid "Slow message load"
 msgstr "Pomalé načítání zpráv"
 
 #. Developer option label for simulating slow message sending.
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:108
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:91
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:88
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:87
 msgid "Slow message send"
 msgstr "Pomalé odesílání zpráv"
 
 #. Developer option label for simulating slow profile loading.
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:116
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:103
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:96
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:99
 msgid "Slow profile load"
 msgstr "Pomalé načítání profilu"
 
@@ -32807,7 +32775,7 @@ msgstr "Pomalý režim · čekejte {remaining}"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
 #. Short label in the slowmode rate limited modal. Keep it concise.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:232
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:212
 #: src/features/slowmode/components/alerts/SlowmodeRateLimitedModal.tsx:8
 msgid "Slowmode active"
 msgstr "Pomalý režim aktivní"
@@ -32858,7 +32826,7 @@ msgid "Slowmode is set to {durationLabel}. Wait before sending another message."
 msgstr "Pomalý režim je nastaven na {durationLabel}. Před odesláním další zprávy počkejte."
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:236
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:216
 msgid "Slowmode remaining"
 msgstr "Zbývající čas pomalého režimu"
 
@@ -33109,7 +33077,7 @@ msgid "Something went wrong while starting checkout. Please try again in a momen
 msgstr "Při zahájení platby se něco pokazilo. Zkuste to prosím za chvíli znovu."
 
 #. Toast when a thread action failed. detail is the server error message.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:258
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:274
 msgid "Something went wrong: {detail}"
 msgstr "Došlo k chybě: {detail}"
 
@@ -33609,6 +33577,8 @@ msgstr "Spustit test mikrofonu"
 msgid "Start minimized"
 msgstr "Začít minimalizováno"
 
+#. Button on the browser page after cancelling that goes back to choosing an account.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:337
 #: src/features/moderation/components/report/ReportStepDetails.tsx:326
 #: src/features/moderation/components/report/ReportStepEmail.tsx:97
 #: src/features/moderation/components/report/ReportStepVerification.tsx:134
@@ -33650,12 +33620,12 @@ msgid "Start with computer"
 msgstr "Spustit s počítačem"
 
 #. Fragment of the thread created system message. Appears after the author name.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:194
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:210
 msgid "started a thread"
 msgstr "založil vlákno"
 
 #. Subtitle at the top of a thread. name is the display name of the member who started it.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:262
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:278
 msgid "Started by {name}"
 msgstr "Zahájeno uživatelem {name}"
 
@@ -33703,7 +33673,7 @@ msgid "Status:"
 msgstr "Stav:"
 
 #. Empty state explanation in the thread browser.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:186
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:202
 msgid "Stay focused on a conversation with a thread, a temporary text channel."
 msgstr "Zůstaňte soustředění na konverzaci pomocí vlákna, dočasného textového kanálu."
 
@@ -34655,7 +34625,7 @@ msgid "System tray"
 msgstr "Oznamovací oblast"
 
 #. Modal title when the desktop app is installed through a system package manager such as Flatpak.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:61
+#: src/features/updater/commands/UpdaterModalCommands.tsx:70
 msgid "System-managed install"
 msgstr "Instalace spravovaná systémem"
 
@@ -34781,7 +34751,7 @@ msgid "Tap to add a note"
 msgstr "Klepnutím přidáte poznámku"
 
 #. Option in the Linux package format dropdown of the desktop updater modal. Keep the format token "tar.gz" verbatim and translate only the word "archive".
-#: src/features/updater/commands/UpdaterModalCommands.tsx:170
+#: src/features/updater/commands/UpdaterModalCommands.tsx:153
 msgid "tar.gz archive"
 msgstr "Archiv tar.gz"
 
@@ -35015,6 +34985,11 @@ msgstr "Thajština"
 msgid "Thank you for helping keep {productName} safe. We'll review your report as soon as possible."
 msgstr "Děkujeme, že pomáháte udržovat {productName} v bezpečí. Vaše nahlášení posoudíme co nejdříve."
 
+#. Error in the browser when a code typed from the app is not found. instanceHost is the server the browser checked, such as api.fluxer.app. productName is the app name, such as Fluxer.
+#: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:25
+msgid "That code is not valid on {instanceHost}. Check the code in the {productName} app and try again."
+msgstr "Tento kód není platný na adrese {instanceHost}. Zkontrolujte kód v aplikaci {productName} a zkuste to znovu."
+
 #. Body of the passkey page after the passkey prompt failed or was dismissed. Keep plain.
 #: src/features/auth/passkey_migration/PasskeyBridgePage.tsx:36
 msgid "That didn't work. Try again or cancel."
@@ -35058,17 +35033,27 @@ msgstr "Zprávu se nepodařilo smazat"
 msgid "That message is gone, or you lost access to the conversation."
 msgstr "Tato zpráva zmizela, nebo jste ztratili přístup ke konverzaci."
 
-#. Error shown when a browser sign-in handoff code expires before it is approved.
-#: src/features/auth/flow/browser_handoff/BrowserHandoffDescriptors.ts:9
-msgid "That sign-in code expired. Try again."
-msgstr "Platnost přihlašovacího kódu vypršela. Zkuste to znovu."
-
 #. End-of-list line in the saved messages popout after every bookmark has been shown.
 #. End-of-list line on the saved messages page after every bookmark has been shown.
 #: src/features/messaging/components/pages/SavedMessagesPage.tsx:35
 #: src/features/messaging/components/popouts/SavedMessagesContent.tsx:42
 msgid "That's all of them."
 msgstr "To je vše."
+
+#. Warning on the browser approval page when the app asked for a different account than the one chosen. requestedIdentifier is the email or username the app asked for, name is the chosen account's display name.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:131
+msgid "The {PRODUCT_NAME} app asked to sign in as {requestedIdentifier}, but you chose {name}."
+msgstr "Aplikace {PRODUCT_NAME} se pokusila přihlásit jako {requestedIdentifier}, ale vy jste vybrali {name}."
+
+#. Explains where the code comes from, under the title of the browser page where it is typed. Signing in on another device is the label of a button in the app and must match its translation. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:187
+msgid "The {PRODUCT_NAME} app on your other device shows it under Signing in on another device. Only enter a code from a device you control."
+msgstr "Aplikace {PRODUCT_NAME} na vašem druhém zařízení se zobrazí pod možností Přihlášení na jiném zařízení. Zadejte kód pouze ze zařízení, které ovládáte."
+
+#. Shown after the user cancelled the sign-in request in the browser. PRODUCT_NAME is the app name, such as Fluxer.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:327
+msgid "The {PRODUCT_NAME} app was not signed in. You can close this tab."
+msgstr "Aplikace {PRODUCT_NAME} nebyla přihlášena. Tuto kartu můžete zavřít."
 
 #. Description text in the FluxerTag change modal.
 #: src/features/user/components/modals/FluxerTagChangeModal.tsx:70
@@ -35087,10 +35072,6 @@ msgstr "Aplikace spadla"
 #: src/features/app/components/ErrorFallback.tsx:134
 msgid "The app has crashed. Checking for updates that might fix this issue…"
 msgstr "Aplikace spadla. Vyhledávají se aktualizace, které by tento problém mohly vyřešit…"
-
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:237
-msgid "The app should now be signed in to your account."
-msgstr "Aplikace by nyní měla být přihlášena k vašemu účtu."
 
 #. Activity log detail line under a lifted ban, for a temporary ban that had already ended on its own before it was lifted. A ban is the community ban, not the feature that blocks a user. {date} is when the ban ended, shown as a formatted date and time.
 #: src/features/guild/utils/guild_tabs/audit_log/AuditLogMemberMessages.ts:55
@@ -35130,17 +35111,12 @@ msgid "The community you're looking for may have been deleted or you may not hav
 msgstr "Komunita, kterou hledáte, mohla být smazána nebo k ní nemáte přístup."
 
 #. Modal body shown when a desktop update download fails.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:116
+#: src/features/updater/commands/UpdaterModalCommands.tsx:108
 msgid "The desktop update could not be downloaded. Try again from the update button when your connection is stable."
 msgstr "Aktualizaci desktopové aplikace se nepodařilo stáhnout. Až bude připojení stabilní, zkuste to znovu pomocí tlačítka aktualizace."
 
-#. Desktop updater modal body when the downloaded version is unknown. productName is the app name.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:96
-msgid "The desktop update has been downloaded. Restart {productName} to finish installing."
-msgstr "Aktualizace desktopové aplikace byla stažena. Restartujte aplikaci {productName}, aby se dokončila instalace."
-
 #. Help text below the Linux package format selector in the desktop updater modal.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:156
+#: src/features/updater/commands/UpdaterModalCommands.tsx:139
 msgid "The downloaded file is saved to your computer. Install it with your normal package manager."
 msgstr "Stažený soubor je uložen do vašeho počítače. Nainstalujte jej pomocí svého správce balíčků."
 
@@ -35294,6 +35270,16 @@ msgctxt "screen-share"
 msgid "The screen share source stopped sending video, so your screen share was stopped."
 msgstr "Zdroj sdílení obrazovky přestal odesílat video, takže bylo ukončeno sdílení obrazovky."
 
+#. Error shown in the desktop app when a browser sign-in request expires before it is approved in the browser.
+#: src/features/auth/flow/browser_handoff/BrowserHandoffDescriptors.ts:9
+msgid "The sign-in request expired before your browser approved it."
+msgstr "Platnost žádosti o přihlášení vypršela, než ji váš prohlížeč schválil."
+
+#. Error shown in the desktop app when the user pressed Cancel on the browser sign-in page.
+#: src/features/auth/flow/browser_handoff/BrowserHandoffDescriptors.ts:14
+msgid "The sign-in was cancelled in your browser."
+msgstr "Přihlášení bylo zrušeno v prohlížeči."
+
 #. Activity log detail line under a deleted sticker, shown only when someone other than the person who deleted it had uploaded it. {user} is the user who uploaded the sticker, shown as a clickable user chip.
 #: src/features/guild/utils/guild_tabs/audit_log/AuditLogExpressionMessageMessages.ts:100
 msgid "The sticker was uploaded by {user}"
@@ -35433,7 +35419,7 @@ msgid "There are no posts yet"
 msgstr "Zatím tu nejsou žádné příspěvky"
 
 #. Preview text on a thread chip when the thread has no messages yet.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:157
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:173
 msgid "There are no recent messages in this thread."
 msgstr "V tomto vlákně nejsou žádné nedávné zprávy."
 
@@ -35442,7 +35428,7 @@ msgid "There are no roles to assign in this community at this time, but you can 
 msgstr "V této komunitě momentálně nejsou k dispozici žádné role k přiřazení, ale novou roli můžete vytvořit v <0>{rolesSettingsPath}</0>."
 
 #. Empty state of the thread browser.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:182
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:198
 msgid "There are no threads"
 msgstr "Žádná vlákna nejsou"
 
@@ -35518,12 +35504,17 @@ msgstr "Třetí strana"
 msgid "This account can't be blocked."
 msgstr "Tento účet nelze zablokovat."
 
+#. Error in the browser when the chosen account belongs to a different server than the app that asked to sign in. accountHost and requestHost are server addresses. productName is the app name, such as Fluxer.
+#: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:38
+msgid "This account is on {accountHost}, but the {productName} app is signing in to {requestHost}. Choose an account on {requestHost}."
+msgstr "Tento účet je na adrese {accountHost}, ale aplikace {productName} se přihlašuje k adrese {requestHost}. Vyberte účet z adresy {requestHost}."
+
 #: src/features/user/components/modals/tabs/applications_tab/ApplicationDetail.tsx:418
 msgid "This action cannot be undone. All associated data, including the bot user, will be permanently deleted."
 msgstr "Tuto akci nelze vrátit zpět. Všechna související data, včetně uživatele bota, budou trvale smazána."
 
 #. Error modal body shown when an animated image has too many frames or pixels to crop in the browser.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:41
+#: src/features/messaging/components/modals/ImageCropModal.tsx:42
 msgid "This animation is too long or too large to crop. Try a shorter or smaller file."
 msgstr "Tato animace je příliš dlouhá nebo příliš velká na oříznutí. Zkuste kratší nebo menší soubor."
 
@@ -35549,7 +35540,7 @@ msgstr "Tento bot vyžaduje administrátorská oprávnění. Udělte mu je, pouz
 #. Error modal body shown when the browser cannot decode animated AVIF for cropping. {avifFormatLabel} is the AVIF format name.
 #. Modal body shown when an animated AVIF upload is rejected because this browser cannot crop it.
 #: src/features/expressions/utils/AnimatedAvifModalUtils.tsx:14
-#: src/features/messaging/components/modals/ImageCropModal.tsx:49
+#: src/features/messaging/components/modals/ImageCropModal.tsx:50
 msgid "This browser can't crop animated {avifFormatLabel} files. Upload a GIF or WebP instead."
 msgstr "Tento prohlížeč neumí oříznout animované soubory {avifFormatLabel}. Nahrajte místo toho GIF nebo WebP."
 
@@ -35559,7 +35550,7 @@ msgid "This browser console is a developer tool."
 msgstr "Tato konzole prohlížeče je nástroj pro vývojáře."
 
 #. Error modal body shown when WebAssembly is unavailable, which animated image cropping needs.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:54
+#: src/features/messaging/components/modals/ImageCropModal.tsx:55
 msgid "This browser has WebAssembly turned off, so animated images can't be cropped."
 msgstr "Ve vašem prohlížeči je vypnutá technologie WebAssembly, takže nelze oříznout animované obrázky."
 
@@ -35661,11 +35652,6 @@ msgstr "Tím se zcela vymaže váš prémiový stav na backendu, včetně typu p
 msgid "This code doesn't exist."
 msgstr "Tento kód neexistuje."
 
-#. Status shown under the browser sign-in code once its countdown reaches zero.
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:68
-msgid "This code expired."
-msgstr "Tento kód vypršel."
-
 #. Gift redemption error modal body for an invalid or already used code.
 #: src/features/gift/commands/GiftCommands.tsx:37
 msgid "This code is invalid or already used."
@@ -35755,7 +35741,7 @@ msgid "This conversation is no longer available."
 msgstr "Tato konverzace již není k dispozici."
 
 #. Desktop updater modal body for platforms that do not support in-app installation. productName is the app name.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:69
+#: src/features/updater/commands/UpdaterModalCommands.tsx:78
 msgid "This desktop build cannot install updates inside {productName}. Download the latest desktop installer instead."
 msgstr "Tato verze desktopové aplikace neumožňuje instalovat aktualizace přímo v aplikaci {productName}. Stáhněte si nejnovější instalátor desktopové aplikace."
 
@@ -35770,7 +35756,7 @@ msgid "This desktop doesn't offer system-wide shortcuts. Shortcuts still work wh
 msgstr "Toto desktopové prostředí nenabízí zkratky pro celý systém. Klávesové zkratky dál fungují při aktivním okně aplikace {productName}."
 
 #. Desktop updater modal body for development or unpackaged builds.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:65
+#: src/features/updater/commands/UpdaterModalCommands.tsx:74
 msgid "This development build cannot update itself. Download a desktop installer to test the update flow."
 msgstr "Tato vývojová verze se nemůže sama aktualizovat. Stáhněte si desktopový instalátor a otestujte proces aktualizace."
 
@@ -35877,12 +35863,12 @@ msgid "This handoff code has expired. Generate a new one to continue."
 msgstr "Tento kód pro předání vypršel. Vygenerujte si nový, abyste mohli pokračovat."
 
 #. Error modal body shown when an animated image fails to decode during cropping.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:45
+#: src/features/messaging/components/modals/ImageCropModal.tsx:46
 msgid "This image couldn't be read. It may be damaged."
 msgstr "Tento obrázek se nepodařilo přečíst. Může být poškozený."
 
 #. Desktop updater modal body for managed package builds such as Flatpak. productName is the app name.
-#: src/features/updater/commands/UpdaterModalCommands.tsx:75
+#: src/features/updater/commands/UpdaterModalCommands.tsx:84
 msgid "This install is managed by your system. Update {productName} from your software center or package manager."
 msgstr "Tato instalace je spravována vaším systémem. Aktualizujte aplikaci {productName} prostřednictvím vašeho softwarového centra nebo správce balíčků."
 
@@ -36185,6 +36171,11 @@ msgstr "Platnost tohoto odkazu pro obnovení vypršela. Odkazy pro obnovení pla
 msgid "This shows how links appear: {linkPreviewExampleUrl}"
 msgstr "Takto se zobrazují odkazy: {linkPreviewExampleUrl}"
 
+#. Error in the browser when the sign-in request from the desktop app no longer exists, because it expired or the app cancelled it. productName is the app name, such as Fluxer.
+#: src/features/auth/flow/auth_login_core/useDesktopHandoffFlow.ts:20
+msgid "This sign-in request expired or was cancelled in the {productName} app. Start again from the app."
+msgstr "Tato žádost o přihlášení vypršela nebo byla zrušena v aplikaci {productName}. Zkuste to znovu z aplikace."
+
 #. Label above the community a sticker comes from in the sticker info card.
 #: src/features/expressions/components/ExpressionInfoCard.tsx:75
 msgid "This sticker is from"
@@ -36230,12 +36221,12 @@ msgid "This theme may have been removed or the link is invalid."
 msgstr "Tento motiv mohl být odstraněn nebo je odkaz neplatný."
 
 #. Notice above the composer of an archived thread.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:137
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:153
 msgid "This thread is closed. Sending a message will open it again."
 msgstr "Tato konverzace je uzavřená. Odesláním zprávy se znovu otevře."
 
 #. Barrier shown instead of the composer in a locked thread.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:141
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:157
 msgid "This thread is locked. Only moderators can send messages."
 msgstr "Tato konverzace je uzamčena. Zprávy mohou posílat pouze moderátoři."
 
@@ -36383,20 +36374,25 @@ msgstr "Vlákno"
 msgid "Thread created"
 msgstr "Vlákno vytvořeno"
 
+#. Title of the developer-mode thread debug modal.
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:125
+msgid "Thread debug"
+msgstr "Ladění vlákna"
+
 #. Activity log action filter option for threads that were deleted.
 #. Toast after a thread was deleted.
 #: src/features/app/config/AuditLogConstants.ts:383
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:93
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:101
 msgid "Thread deleted"
 msgstr "Vlákno smazáno"
 
 #. Toast after the thread link was copied.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:113
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:129
 msgid "Thread link copied"
 msgstr "Odkaz na vlákno zkopírován"
 
 #. Title of the thread member list.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:149
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:165
 msgid "Thread members"
 msgstr "Členové vlákna"
 
@@ -36406,7 +36402,7 @@ msgid "Thread name"
 msgstr "Název vlákna"
 
 #. Title of the thread settings modal.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:242
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:258
 msgid "Thread settings"
 msgstr "Nastavení vlákna"
 
@@ -36446,7 +36442,7 @@ msgid "Threshold date cannot be in the future"
 msgstr "Datum zpřístupnění historie nemůže být v budoucnosti"
 
 #. Short label in the channel and chat embed video. Keep it concise. Preserve {title}; it is inserted by code.
-#: src/features/channel/components/embeds/media/EmbedVideo.tsx:55
+#: src/features/channel/components/embeds/media/EmbedVideo.tsx:56
 msgid "Thumbnail for {title}"
 msgstr "Miniatura pro {title}"
 
@@ -36559,7 +36555,7 @@ msgid "Title bar"
 msgstr "Lišta s názvem"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:252
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:232
 msgid "Title bar platform"
 msgstr "Platforma záhlaví"
 
@@ -36620,7 +36616,7 @@ msgid "Toggle camera"
 msgstr "Přepnout kameru"
 
 #. Aria label on the tap-to-toggle area of the mobile video viewer. Shows or hides the playback controls.
-#: src/features/voice/components/modals/MobileVideoViewer.tsx:36
+#: src/features/voice/components/modals/MobileVideoViewer.tsx:37
 msgid "Toggle controls"
 msgstr "Přepnout ovládání"
 
@@ -36952,7 +36948,7 @@ msgid "Trusted domains cleared."
 msgstr "Důvěryhodné domény vymazány."
 
 #. Hint under the empty search state in the thread browser.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:274
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:290
 msgid "Try a different name or check the other tab."
 msgstr "Zkuste jiné jméno nebo zkontrolujte druhou kartu."
 
@@ -37358,7 +37354,7 @@ msgstr "Avatary při psaní"
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #. Short label in the channel and chat typing. Keep it concise.
 #: src/features/channel/components/ChannelTyping.tsx:11
-#: src/features/ui/components/BaseAvatar.tsx:22
+#: src/features/ui/components/BaseAvatar.tsx:23
 #: src/features/user/components/settings_utils/section_registry/AppearanceSections.ts:350
 msgid "Typing indicator"
 msgstr "Indikátor psaní"
@@ -37387,12 +37383,12 @@ msgid "Typography"
 msgstr "Typografie"
 
 #. Developer options group for forcing UI component states.
-#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:71
+#: src/features/devtools/components/DeveloperOptionsToggleGroups.ts:67
 msgid "UI components"
 msgstr "Komponenty UI"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:216
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:196
 msgid "UK geo"
 msgstr "Geolokace UK"
 
@@ -37528,7 +37524,7 @@ msgstr "Nekategorizováno"
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
 #: src/features/app/components/dialogs/components/UnclaimedAccountAlert.tsx:15
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:192
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:172
 #: src/features/channel/components/channel_header_components/developer_tools/OptionPresets.ts:37
 msgid "Unclaimed account"
 msgstr "Účet s nedokončenou registrací"
@@ -37689,7 +37685,7 @@ msgstr "Univerzální záložní volba. Nejnižší kvalita, ale funguje všude.
 #: src/features/i18n/utils/CommonMessageDescriptors.ts:770
 #: src/features/invite/components/InviteListItem.tsx:36
 #: src/features/moderation/components/modals/BanDetailsModal.tsx:115
-#: src/features/updater/commands/UpdaterModalCommands.tsx:144
+#: src/features/updater/commands/UpdaterModalCommands.tsx:127
 msgid "Unknown"
 msgstr "Neznámý"
 
@@ -37757,7 +37753,7 @@ msgid "Unknown invite"
 msgstr "Neznámá pozvánka"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:136
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:116
 msgid "Unknown message type"
 msgstr "Neznámý typ zprávy"
 
@@ -37874,7 +37870,7 @@ msgid "Unlock stickers in DMs with {premiumProductName}"
 msgstr "Odemkněte samolepky v soukromých konverzacích s {premiumProductName}"
 
 #. Moderator action that lets everyone send messages in a locked thread again.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:77
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:85
 msgid "Unlock thread"
 msgstr "Odemknout vlákno"
 
@@ -37893,10 +37889,10 @@ msgstr "Zrušit ztlumení"
 #. Mute toggle button label in the media player volume control (currently muted).
 #. Mute toggle button label in the media player volume control (currently muted).
 #. Mute toggle button label in the mobile video viewer (currently muted).
-#: src/features/channel/components/embeds/media/EmbedVideo.tsx:68
+#: src/features/channel/components/embeds/media/EmbedVideo.tsx:69
 #: src/features/voice/components/media_player/components/MediaVerticalVolumeControl.tsx:20
 #: src/features/voice/components/media_player/components/MediaVolumeControl.tsx:20
-#: src/features/voice/components/modals/MobileVideoViewer.tsx:40
+#: src/features/voice/components/modals/MobileVideoViewer.tsx:41
 msgctxt "playback-control-action"
 msgid "Unmute"
 msgstr "Zapnout zvuk"
@@ -37979,7 +37975,7 @@ msgid "Unmute stream audio"
 msgstr "Zapnout zvuk streamu"
 
 #. Action that unmutes a thread.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:101
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:109
 msgid "Unmute thread"
 msgstr "Zrušit ztlumení vlákna"
 
@@ -38077,7 +38073,7 @@ msgstr "Skupinová konverzace odepnuta"
 #. Lowercase state label used inside channel-list accessible text when a channel has unread messages.
 #. Screen-reader fragment announcing that the DM list row has unread messages. Lowercase fragment.
 #: src/features/app/components/layout/ChannelItem.tsx:109
-#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:89
+#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:90
 #: src/features/app/components/layout/sidebar_nav/GuildListDMItem.tsx:58
 #: src/features/app/components/layout/sidebar_nav/UseGuildListItemState.ts:27
 #: src/features/channel/components/direct_message/DMListItem.tsx:71
@@ -38125,12 +38121,12 @@ msgid "Unread DMs only"
 msgstr "Jen nepřečtené soukromé konverzace"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:184
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:164
 msgid "Unread gift count"
 msgstr "Počet nepřečtených dárků"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:180
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:160
 msgid "Unread gift inventory"
 msgstr "Nepřečtené dárky"
 
@@ -38267,9 +38263,19 @@ msgstr "Aktualizujte aplikaci {productName}, abyste si mohli tuto zprávu prohl�
 msgid "Update app"
 msgstr "Aktualizovat aplikaci"
 
+#. Tooltip and accessible label on the channel header updater icon in the desktop app. Clicking it closes the window and opens the updater, which downloads and installs the update.
+#: src/features/channel/components/channel_header_components/UpdaterIcon.tsx:15
+msgid "Update available"
+msgstr "Aktualizace je k dispozici"
+
 #: src/features/user/components/modals/CustomStatusModal.tsx:424
 msgid "Update my status"
 msgstr "Aktualizovat můj stav"
+
+#. Button label that closes the desktop app and opens the updater to install an available update.
+#: src/features/updater/commands/UpdaterModalCommands.tsx:42
+msgid "Update now"
+msgstr "Aktualizovat nyní"
 
 #. Primary button in the modal that saves an updated passkey.
 #: src/features/auth/passkey_migration/PasskeyUpdateModal.tsx:39
@@ -38310,11 +38316,6 @@ msgstr "Aktualizované zásady"
 #: src/features/expressions/commands/FavoriteMemeCommands.tsx:23
 msgid "Updated saved media"
 msgstr "Uložená média aktualizována"
-
-#. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:92
-msgid "Updater state"
-msgstr "Stav aktualizátoru"
 
 #. Heading of the dialog shown after the user follows an announcement channel.
 #: src/features/channel/components/modals/ChannelFollowSuccessModal.tsx:19
@@ -38592,7 +38593,7 @@ msgid "Use {everyoneMention}/{hereMention} and {rolesMention}"
 msgstr "Používat {everyoneMention}/{hereMention} a {rolesMention}"
 
 #. Accessible label for a known authentication instance option. Preserve {name} and {domain}. Code inserts them.
-#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:28
+#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:31
 msgid "Use {name} on {domain}"
 msgstr "Použít {name} na {domain}"
 
@@ -38625,7 +38626,12 @@ msgstr "Použijte {url} tam, kam se má vložit adresa URL obrázku."
 msgid "Use a dedicated modal to set a message history threshold date for members who don't have the {readMessageHistoryPermissionLabel} permission."
 msgstr "Použijte speciální okno k nastavení data, od kterého se bude zobrazovat historie zpráv pro členy, kteří nemají oprávnění {readMessageHistoryPermissionLabel}."
 
-#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:267
+#. Text button on the browser approval page that goes back to choosing which account signs in to the app.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:149
+msgid "Use a different account"
+msgstr "Použít jiný účet"
+
+#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:274
 msgid "Use a self-hosted instance URL"
 msgstr "Použijte adresu URL instance hostované vámi"
 
@@ -38686,7 +38692,7 @@ msgid "Use category default"
 msgstr "Použít výchozí nastavení kategorie"
 
 #. Thread notification option that follows the parent channel setting.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:117
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:133
 msgid "Use channel default"
 msgstr "Použít výchozí nastavení kanálu"
 
@@ -38827,7 +38833,7 @@ msgid "Use system locale for time format"
 msgstr "Použít systémové nastavení pro formát času"
 
 #. Accessible label for the official Fluxer instance option.
-#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:24
+#: src/features/auth/flow/instance_selector/InstancePickerRows.tsx:27
 msgid "Use the official Fluxer instance"
 msgstr "Použít oficiální instanci Fluxeru"
 
@@ -39207,7 +39213,7 @@ msgid "Vanity URL can only contain alphanumeric characters and internal hyphens.
 msgstr "Kód vlastního odkazu na pozvánku může obsahovat pouze písmena, číslice a spojovníky, které nesmějí být na začátku ani na konci."
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:144
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:124
 msgid "Vanity URL disclaimer"
 msgstr "Upozornění k vlastnímu odkazu na pozvánku"
 
@@ -39240,7 +39246,7 @@ msgid "Verification & membership barriers"
 msgstr "Ověření a bariéry členství"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:196
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:176
 msgid "Verification barrier"
 msgstr "Ověřovací bariéra"
 
@@ -39401,10 +39407,6 @@ msgstr "Ověřte svůj e-mail, abyste si mohli zakoupit {premiumProductFullName}
 msgid "Verify your email to start DMs."
 msgstr "Ověřte svůj e-mail, abyste mohli zahajovat soukromé konverzace."
 
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:142
-msgid "Verifying code…"
-msgstr "Ověřování kódu…"
-
 #: src/features/auth/components/pages/ResetPasswordPage.tsx:145
 msgid "Verifying your reset link…"
 msgstr "Ověřujeme váš odkaz pro resetování…"
@@ -39438,7 +39440,7 @@ msgstr "Průsvitný efekt Vibrancy"
 #: src/features/user/components/modals/tabs/VoiceVideoTab.tsx:15
 #: src/features/user/components/settings_utils/search_index/AccessibilityIndex.ts:113
 #: src/features/user/components/settings_utils/section_registry/VoiceVideoSections.ts:170
-#: src/features/voice/components/media_player/components/VideoPlayer.tsx:58
+#: src/features/voice/components/media_player/components/VideoPlayer.tsx:59
 msgid "Video"
 msgstr "Video"
 
@@ -39508,7 +39510,7 @@ msgid "Video preview"
 msgstr "Náhled videa"
 
 #. Aria label on the video scrubber / progress slider in the mobile video viewer.
-#: src/features/voice/components/modals/MobileVideoViewer.tsx:50
+#: src/features/voice/components/modals/MobileVideoViewer.tsx:51
 msgid "Video progress"
 msgstr "Průběh videa"
 
@@ -39540,7 +39542,7 @@ msgid "Video settings"
 msgstr "Nastavení videa"
 
 #. Short label in the channel and chat embed video. Keep it concise.
-#: src/features/channel/components/embeds/media/EmbedVideo.tsx:60
+#: src/features/channel/components/embeds/media/EmbedVideo.tsx:61
 #: src/features/channel/components/embeds/media/EmbedYouTube.tsx:27
 msgid "Video thumbnail"
 msgstr "Miniatura videa"
@@ -39857,7 +39859,7 @@ msgid "Visionary badge"
 msgstr "Odznak Visionary"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:156
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:136
 msgid "Visionary badge ID"
 msgstr "ID odznaku Visionary"
 
@@ -39926,7 +39928,7 @@ msgstr "Hlasová aktivace"
 
 #. Lowercase screen-reader fragment in the sidebar navigation guild folder item.
 #. Lowercase screen-reader fragment in the sidebar navigation guild list item.
-#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:93
+#: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx:94
 #: src/features/app/components/layout/sidebar_nav/UseGuildListItemState.ts:47
 msgid "voice activity"
 msgstr "hlasová aktivita"
@@ -40028,7 +40030,7 @@ msgid "Voice connection confirmation"
 msgstr "Potvrzení hlasového připojení"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:148
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:128
 msgid "Voice connection debug"
 msgstr "Ladění hlasového připojení"
 
@@ -40060,7 +40062,7 @@ msgid "Voice message"
 msgstr "Hlasová zpráva"
 
 #. Short label in the channel and chat voice message player. Keep it concise.
-#: src/features/channel/components/embeds/media/VoiceMessagePlayer.tsx:31
+#: src/features/channel/components/embeds/media/VoiceMessagePlayer.tsx:32
 msgid "Voice message player"
 msgstr "Přehrávač hlasových zpráv"
 
@@ -40178,10 +40180,6 @@ msgstr "Před smazáním dalších zpráv chvíli počkejte."
 msgid "Wait between messages. Members with \"{bypassSlowmodePermissionLabel}\" can bypass this."
 msgstr "Doba čekání mezi zprávami. Členové s oprávněním „{bypassSlowmodePermissionLabel}“ nemusí čekat."
 
-#: src/features/auth/flow/auth_login_core/AuthLoginBrowserStep.tsx:445
-msgid "Waiting for browser approval."
-msgstr "Čekání na schválení prohlížečem."
-
 #. Tooltip explaining that video / screen share controls are gated while the voice connection is not yet ready.
 #: src/features/voice/components/voice_connection_status/LocalParticipantControls.tsx:45
 msgid "Waiting for connection..."
@@ -40222,10 +40220,6 @@ msgstr "Probudit"
 #: src/features/messaging/utils/markdown/Plaintext.ts:64
 msgid "Warning"
 msgstr "Upozornění"
-
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:158
-msgid "Was this you?"
-msgstr "Byl/a jste to vy?"
 
 #. US state name, shown next to the country name in the mature content gate.
 #: src/features/user/utils/UserGeo.ts:243
@@ -40499,11 +40493,6 @@ msgstr "Hledání na webu"
 #: src/features/search/components/modals/SearchProviderPickerModal.tsx:39
 msgid "Web search provider"
 msgstr "Poskytovatel webového vyhledávání"
-
-#. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:88
-msgid "Web updater ready"
-msgstr "Webový aktualizátor připraven"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #: src/features/user/components/settings_utils/section_registry/AccountSecuritySections.ts:92
@@ -40850,7 +40839,7 @@ msgid "Whoa, this is heavy"
 msgstr "Jejda, to je nálož"
 
 #. Developer tools debug menu label. Internal-only surface for developers; translators may keep this terse.
-#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:172
+#: src/features/channel/components/channel_header_components/developer_tools/DeveloperOptionLabels.ts:152
 msgid "Will cancel"
 msgstr "Zruší se"
 
@@ -41069,10 +41058,6 @@ msgstr "Už máte doživotní předplatné {premiumProductName}"
 msgid "You already have this connection."
 msgstr "Toto propojení už máte."
 
-#: src/features/auth/flow/HandoffApprovalFlow.tsx:87
-msgid "You are about to authorize an app to sign in to your account. Only continue if you initiated this request from a device you control."
-msgstr "Chystáte se autorizovat aplikaci k přihlášení k vašemu účtu. Pokračujte pouze v případě, že jste tento požadavek zahájili ze zařízení, které ovládáte."
-
 #. External link warning title. productName is the Fluxer product name.
 #: src/features/messaging/components/modals/ExternalLinkWarningModal.tsx:22
 msgid "You are about to leave {productName}"
@@ -41199,7 +41184,7 @@ msgid "You can sign back in at any time."
 msgstr "Kdykoli se můžete znovu přihlásit."
 
 #. Cooldown notice in the new thread pane when the parent channel has slowmode. seconds is the wait time.
-#: src/features/threads/utils/ThreadMessageDescriptors.ts:250
+#: src/features/threads/utils/ThreadMessageDescriptors.ts:266
 msgid "You can start another thread in {seconds, plural, one {# second} other {# seconds}}."
 msgstr "Další vlákno můžete zahájit za {seconds, plural, one {# sekundu} other {# sekund}}."
 
@@ -41842,6 +41827,11 @@ msgstr "Používáte starší cenu. Aktuální cena tohoto tarifu je {currentSub
 msgid "You're sending messages too quickly"
 msgstr "Posíláte zprávy příliš rychle"
 
+#. Title of the browser page after the user approved signing in to the app.
+#: src/features/auth/flow/HandoffApprovalFlow.tsx:282
+msgid "You're signed in"
+msgstr "Jste přihlášeni"
+
 #. Status text on the screen-share hover popout shown to the local streamer. Lightly playful tone.
 #: src/features/voice/components/StreamWatchHoverPopout.tsx:43
 msgid "You're streaming!"
@@ -42447,7 +42437,7 @@ msgid "YubiKey"
 msgstr "YubiKey"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
-#: src/features/messaging/components/modals/ImageCropModal.tsx:917
+#: src/features/messaging/components/modals/ImageCropModal.tsx:918
 #: src/features/user/components/settings_utils/section_registry/AppearanceSections.ts:182
 msgid "Zoom"
 msgstr "Přiblížení"

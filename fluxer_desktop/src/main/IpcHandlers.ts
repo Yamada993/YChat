@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {DESKTOP_APP_ORIGIN, DESKTOP_PREBOOT_THEME_CHANNEL} from '@electron/common/Constants';
+import {APP_PROTOCOL, DESKTOP_APP_ORIGIN, DESKTOP_PREBOOT_THEME_CHANNEL} from '@electron/common/Constants';
 import {
 	type DesktopTroubleshootingSettings,
 	type DesktopWindowBehaviorSettings,
@@ -16,6 +16,7 @@ import type {
 } from '@electron/common/Types';
 import {DesktopBrowserHandoff} from '@electron/main/BrowserHandoff';
 import {hasEnabledBlinkFeature, MIDDLE_CLICK_AUTOSCROLL_BLINK_FEATURE} from '@electron/main/ChromiumRuntime';
+import {setHandoffReturnLinkSink} from '@electron/main/DeepLinks';
 import {getDesktopAppStorage} from '@electron/main/DesktopAppStorage';
 import {createDesktopAppStorageIpcRoutes} from '@electron/main/DesktopAppStorageIpc';
 import {getLaunchDesktopTroubleshootingSettings} from '@electron/main/DesktopDebugInfo';
@@ -26,6 +27,7 @@ import {
 	hasActiveDesktopTray,
 	updateTrayRuntimeState,
 } from '@electron/main/DesktopTray';
+import {getDesktopUpdateState, observeDesktopUpdateState, startDesktopUpdate} from '@electron/main/DesktopUpdateGate';
 import {DownloadChecksumError, downloadFile} from '@electron/main/FileDownloads';
 import {getGatewayOriginRegistry} from '@electron/main/GatewayOriginRegistry';
 import {retryBlockedGlobalShortcutHooks} from '@electron/main/GlobalShortcutsIpc';
@@ -40,11 +42,6 @@ import {setNativeStrings} from '@electron/main/MainI18n';
 import {copyRemoteFileToClipboard, parseClipboardWriteFileOptions} from '@electron/main/MediaClipboard';
 import {signalRendererLaunchConfirmed} from '@electron/main/ModuleBootHandoff';
 import {ensureDesktopModule} from '@electron/main/ModuleOnDemand';
-import {
-	applyPendingModuleUpdate,
-	getPendingModuleUpdate,
-	observePendingModuleUpdate,
-} from '@electron/main/ModuleUpdateGate';
 import {
 	createDesktopNativeGatewayTransport,
 	type DesktopNativeGatewayTransport,
@@ -101,7 +98,11 @@ import {
 import {flashWindowForAttention, stopFlashingWindow} from '@electron/main/WindowFlash';
 import {setWindowsBadgeOverlay} from '@electron/main/WindowsBadge';
 import {registerWindowsToastIpcHandlers} from '@electron/main/WindowsToast';
-import {DESKTOP_MODULE_CHANNELS, DESKTOP_MODULE_EVENTS} from '@fluxer/desktop_ipc/src/ModuleContract';
+import {
+	DESKTOP_MODULE_CHANNELS,
+	DESKTOP_UPDATE_CHANNELS,
+	DESKTOP_UPDATE_EVENTS,
+} from '@fluxer/desktop_ipc/src/ModuleContract';
 import {app, BrowserWindow, clipboard, dialog, ipcMain, powerMonitor, shell, systemPreferences} from 'electron';
 import log from 'electron-log';
 
@@ -168,13 +169,13 @@ export function registerIpcHandlers(): void {
 		requirePrivilegedRendererDocumentSender(event, DESKTOP_MODULE_CHANNELS.ensure);
 		return ensureDesktopModule(moduleName);
 	});
-	ipcMain.handle(DESKTOP_MODULE_CHANNELS.pendingUpdate, (event) => {
-		requirePrivilegedRendererDocumentSender(event, DESKTOP_MODULE_CHANNELS.pendingUpdate);
-		return getPendingModuleUpdate();
+	ipcMain.handle(DESKTOP_UPDATE_CHANNELS.state, (event) => {
+		requirePrivilegedRendererDocumentSender(event, DESKTOP_UPDATE_CHANNELS.state);
+		return getDesktopUpdateState();
 	});
-	ipcMain.handle(DESKTOP_MODULE_CHANNELS.applyPendingUpdate, (event) => {
-		requirePrivilegedRendererDocumentSender(event, DESKTOP_MODULE_CHANNELS.applyPendingUpdate);
-		return applyPendingModuleUpdate();
+	ipcMain.handle(DESKTOP_UPDATE_CHANNELS.start, (event) => {
+		requirePrivilegedRendererDocumentSender(event, DESKTOP_UPDATE_CHANNELS.start);
+		startDesktopUpdate();
 	});
 	ipcMain.handle(DESKTOP_MODULE_CHANNELS.confirmLaunch, (event) => {
 		requirePrivilegedRendererDocumentSender(event, DESKTOP_MODULE_CHANNELS.confirmLaunch);
@@ -189,12 +190,12 @@ export function registerIpcHandlers(): void {
 		}
 		signalRendererLaunchConfirmed();
 	});
-	observePendingModuleUpdate((pending) => {
+	observeDesktopUpdateState((state) => {
 		const mainWindow = getMainWindow();
 		if (mainWindow == null || mainWindow.isDestroyed()) {
 			return;
 		}
-		mainWindow.webContents.send(DESKTOP_MODULE_EVENTS.pendingUpdateChanged, pending);
+		mainWindow.webContents.send(DESKTOP_UPDATE_EVENTS.stateChanged, state);
 	});
 	ipcMain.handle('get-desktop-info', () => getDesktopInfo());
 	ipcMain.handle('get-gpu-info', () => getGpuInfo());
@@ -611,12 +612,15 @@ function registerBrowserHandoffHandlers(): void {
 	if (browserHandoff !== null) {
 		return;
 	}
-	browserHandoff = new DesktopBrowserHandoff({
+	const handoff = new DesktopBrowserHandoff({
 		logger: log,
 		rendererDocumentOwners: createPrivilegedRendererDocumentOwners('BrowserHandoff'),
 		selectedInstanceClient: getDesktopSelectedInstanceClient(),
+		returnUri: () => (app.isDefaultProtocolClient(APP_PROTOCOL) ? `${APP_PROTOCOL}://handoff` : null),
 	});
-	for (const [channel, handler] of Object.entries(browserHandoff.ipcRoutes())) {
+	browserHandoff = handoff;
+	setHandoffReturnLinkSink((url) => handoff.acceptReturnLink(url));
+	for (const [channel, handler] of Object.entries(handoff.ipcRoutes())) {
 		ipcMain.handle(channel, handler);
 	}
 }
@@ -646,6 +650,7 @@ export function cleanupIpcHandlers(_options: {quitting?: boolean} = {}): void {
 	cleanupDesktopRuntimeConfigHandlers();
 	browserHandoff?.cleanup();
 	browserHandoff = null;
+	setHandoffReturnLinkSink(null);
 	if (linuxAppearanceSubscription) {
 		try {
 			linuxAppearanceSubscription.close();

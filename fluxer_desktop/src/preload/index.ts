@@ -463,8 +463,6 @@ const api: ElectronAPI = {
 		return () => ipcRenderer.removeListener('updater-event', handler);
 	},
 	updaterCheck: (context: UpdaterContext): Promise<void> => ipcRenderer.invoke('updater-check', context),
-	updaterDownload: (context: UpdaterContext): Promise<void> => ipcRenderer.invoke('updater-download', context),
-	updaterInstall: () => ipcRenderer.invoke('updater-install'),
 	windowMinimize: (): void => {
 		ipcRenderer.send('window-minimize');
 	},
@@ -871,16 +869,6 @@ const api: ElectronAPI = {
 		getHardwareEncoderCapabilities: () => ipcRenderer.invoke(VOICE_ENGINE_V2_HARDWARE_ENCODER_IPC_CHANNEL),
 	} satisfies VoiceEngineV2BridgeHardwareEncoderApi,
 };
-
-window.addEventListener(
-	'contextmenu',
-	(event) => {
-		const target = event.target as HTMLElement | null;
-		const isTextarea = Boolean(target?.closest?.('textarea'));
-		ipcRenderer.send('spellcheck-context-target', {isTextarea});
-	},
-	true,
-);
 
 let spellcheckAutodetectTimer: NodeJS.Timeout | null = null;
 let spellcheckAutodetectContextSequence = 0;
