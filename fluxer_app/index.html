@@ -22,11 +22,11 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="display" content="standalone">
 <link rel="license" href="/assets/fonts-NOTICE.txt">
-<link rel="expect" href="#fluxer-boot-end" blocking="render">
+<link rel="expect" href="#ychat-boot-end" blocking="render">
 <script nonce="{{CSP_NONCE_PLACEHOLDER}}">(function(){try{var loc=window.location;if(loc.pathname==='/'){var target='/channels/@me';if(loc.search)target+=loc.search;if(loc.hash)target+=loc.hash;loc.replace(target);}}catch(e){}})();</script>
 <script nonce="{{CSP_NONCE_PLACEHOLDER}}">(function(){try{var t=localStorage.getItem('theme');if(t){document.documentElement.classList.add('theme-'+t)}}catch{}})()</script>
-<script nonce="{{CSP_NONCE_PLACEHOLDER}}">(function(){try{var z=localStorage.getItem('fluxer:accessibility:zoom-preboot');if(z){var p=parseInt(z,10);if(p>=50&&p<=200){document.documentElement.style.setProperty('--custom-zoom',String(p))}}}catch{}})()</script>
-<script nonce="{{CSP_NONCE_PLACEHOLDER}}">(function(){try{if(window.electron||typeof WebSocket!=='function'||typeof fetch!=='function')return;var P=location.pathname;if(P==='/'||P.indexOf('/migrate/')===0||P.indexOf('/oauth2/')===0)return;var LS=localStorage;if(LS.getItem('fluxer:gateway:preboot:session')!=='1')return;var h=JSON.parse(LS.getItem('fluxer:preboot:network')||'null');if(!h||h.v!==1||typeof h.a!=='string'||h.a!==LS.getItem('fluxer:auth:active-account-key'))return;var X={startedAt:Date.now(),discovery:null,gateway:null};window.__FLUXER_PREBOOT_NETWORK__=X;if(typeof h.d==='string'&&/^https?:\/\//.test(h.d)){var r=fetch(h.d,{method:'GET',headers:{Accept:'application/json'},redirect:'error',credentials:'omit',cache:'no-store',referrerPolicy:'no-referrer'});r.catch(function(){});X.discovery={url:h.d,response:r}}if(typeof h.g==='string'&&/^wss?:\/\//.test(h.g)){var u=new URL(h.g);u.searchParams.set('v','1');u.searchParams.set('encoding','json');u.searchParams.set('compress','zstd-stream');u.searchParams.set('stream','1');var ws=new WebSocket(u.toString());ws.binaryType='arraybuffer';var g={url:u.toString(),socket:ws,open:false,messages:[]};ws.onopen=function(){g.open=true};ws.onmessage=function(e){g.messages.push(e)};ws.onclose=ws.onerror=function(){if(X.gateway===g)X.gateway=null};X.gateway=g;setTimeout(function(){if(X.gateway===g){X.gateway=null;try{ws.close(1000,'Preboot gateway unclaimed')}catch(e){}}},30000)}}catch(e){}})()</script>
+<script nonce="{{CSP_NONCE_PLACEHOLDER}}">(function(){try{var z=localStorage.getItem('ychat:accessibility:zoom-preboot');if(z){var p=parseInt(z,10);if(p>=50&&p<=200){document.documentElement.style.setProperty('--custom-zoom',String(p))}}}catch{}})()</script>
+<script nonce="{{CSP_NONCE_PLACEHOLDER}}">(function(){try{if(window.electron||typeof WebSocket!=='function'||typeof fetch!=='function')return;var P=location.pathname;if(P==='/'||P.indexOf('/migrate/')===0||P.indexOf('/oauth2/')===0)return;var LS=localStorage;if(LS.getItem('ychat:gateway:preboot:session')!=='1')return;var h=JSON.parse(LS.getItem('ychat:preboot:network')||'null');if(!h||h.v!==1||typeof h.a!=='string'||h.a!==LS.getItem('ychat:auth:active-account-key'))return;var X={startedAt:Date.now(),discovery:null,gateway:null};window.__YCHAT_PREBOOT_NETWORK__=X;if(typeof h.d==='string'&&/^https?:\/\//.test(h.d)){var r=fetch(h.d,{method:'GET',headers:{Accept:'application/json'},redirect:'error',credentials:'omit',cache:'no-store',referrerPolicy:'no-referrer'});r.catch(function(){});X.discovery={url:h.d,response:r}}if(typeof h.g==='string'&&/^wss?:\/\//.test(h.g)){var u=new URL(h.g);u.searchParams.set('v','1');u.searchParams.set('encoding','json');u.searchParams.set('compress','zstd-stream');u.searchParams.set('stream','1');var ws=new WebSocket(u.toString());ws.binaryType='arraybuffer';var g={url:u.toString(),socket:ws,open:false,messages:[]};ws.onopen=function(){g.open=true};ws.onmessage=function(e){g.messages.push(e)};ws.onclose=ws.onerror=function(){if(X.gateway===g)X.gateway=null};X.gateway=g;setTimeout(function(){if(X.gateway===g){X.gateway=null;try{ws.close(1000,'Preboot gateway unclaimed')}catch(e){}}},30000)}}catch(e){}})()</script>
 </head>
 <body>
 <div id="root"></div>
@@ -50,7 +50,7 @@ var cid=ch0?(seg[3]||''):'';if(cid==='members')cid='';cid=cid.slice(0,32);
 var kind=dmr?2:0,dl=!window.electron&&!PWA(),ri=[],i;for(i=0;i<6;i++)ri.push([0,0]);
 return {v:4,t:now,p:p,a:acct,mo:MO?1:0,ua:UAM?1:0,fs:0,sw:0,sv:(dmr||sp)?'dm':'guild',ck:ck,cb:cb,rf:1,rv:1,ru:[],rti:(dmr||sp)?0:fav?1:-1,ro:0,ri:ri,rgi:-1,rbm:11|(dl?4:0),rbi:-1,rs:0,gb:0,ga:250,gn:0,gd:0,gm:0,sr:0,sam:MO?2:7,ss:1,cid:cid,ch:kind,ct:0,cnw:0,ctw:0,cda:-1,cma:-1,cfv:1,cst:0,cuv:0,ml:(!MO&&FIT()&&cid!==''&&kind===0)?1:0,co:3,com:2,cdv:0,pc:0,pg:16,pf:16,ps:16,pa:0,pt:56,pv:Math.min(20000,Math.max(0,Math.round(window.innerHeight/rem))),nr:[],vh:0,vc:0,mr:(MO&&(p==='/channels/@me'||r3))?1:0,ms:(MO&&(p==='/channels/@me'||r3))?1:0,mn:(MO&&(p==='/channels/@me'||p==='/channels/@favorites'||(r3&&!dmr&&!fav)))?1:0}}
 function HINT(){
-var acct=LS.getItem('fluxer:auth:active-account-key')||'',s=JS('fluxer:ui:shell-hint'),k,i;
+var acct=LS.getItem('ychat:auth:active-account-key')||'',s=JS('ychat:ui:shell-hint'),k,i;
 if(!s||s.v!==4||s.a!==acct||typeof s.t!=='number'||!(s.t>now-2592000000)||!(s.t<now+300000)||(s.sv!=='dm'&&s.sv!=='guild')||(s.ck!=='chat'&&s.ck!=='other')||typeof s.p!=='string'||(s.mo===1)!==(s.ua===1||window.innerWidth<640))s=null;
 var p=P;if(s&&p==='/channels/@me')p=s.p;
 if(s&&s.p===p){s.src='hint';return s}
@@ -72,7 +72,7 @@ var m=/^\/(invite|gift|theme)\/[^/]+(\/login)?\/?$/.exec(p);if(m)return m[1]+(m[
 m=/^\/(forgot|reset|verify|authorize-ip|wasntme)(\/|$)/.exec(p);return m?m[1]:null}
 function AUTH(){
 var c=ACAT(P);if(c==null)return null;
-var a=JS('fluxer:ui:auth-shell-hint'),e=a&&a.v===1&&a.c&&typeof a.c==='object'?a.c[c]:null;
+var a=JS('ychat:ui:auth-shell-hint'),e=a&&a.v===1&&a.c&&typeof a.c==='object'?a.c[c]:null;
 if(e&&(e.mo===1)===MO&&(e.k==='card'||e.k==='full')&&typeof e.h==='number'&&e.h>0)return {c:c,k:e.k,h:n(e.h,48,4000),w:n(e.w,0,1200),r:-1,src:'hint'};
 if(c==='login'&&!MO&&document.documentElement.classList.contains('platform-native'))return {c:c,k:'full',h:0,w:0,r:-1,src:'default'};
 var host=location.hostname||'',pk=c==='login'&&typeof window.PublicKeyCredential==='function'&&host.split('.').length>=2&&!/^[\d.]+$/.test(host)&&host.indexOf(':')<0;
@@ -86,8 +86,8 @@ for(i=0;i<l.length;i++){c=String(l[i]||'').replace(/"/g,'').replace('_','-').toL
 for(k in t)if(k.toLowerCase()===c)return t[k];c=c.split('-')[0];for(k in t)if(k.split('-')[0].toLowerCase()===c)return t[k]}
 return t['en-US']}
 function AUTHM(au){
-var BC='fluxer-boot-',E='</div>',B=function(s,c){return '<div class="'+BC+'block'+(c||'')+'" style="'+s+'"></div>'},i,body='';
-var head='<div id="fluxer-boot-shell" class="'+BC+'auth" aria-hidden="true" data-auth="'+au.k+'" data-mobile="'+(MO?1:0)+'" data-hint="'+au.src+'" data-category="'+au.c+'" data-height="'+au.h+'">';
+var BC='ychat-boot-',E='</div>',B=function(s,c){return '<div class="'+BC+'block'+(c||'')+'" style="'+s+'"></div>'},i,body='';
+var head='<div id="ychat-boot-shell" class="'+BC+'auth" aria-hidden="true" data-auth="'+au.k+'" data-mobile="'+(MO?1:0)+'" data-hint="'+au.src+'" data-category="'+au.c+'" data-height="'+au.h+'">';
 if(au.k==='full'){
 return head+'<div class="'+BC+'auth-full"><div class="'+BC+'auth-word"><div class="'+BC+'auth-wtext">'+WW()+E+E+'<div class="'+BC+'auth-foot">'+B('width:10rem;height:2.25rem;',' '+BC+'rm')+E+E+E}
 var pad=MO?0:Math.max(32*rem,Math.min(0.04*window.innerWidth,44*rem))*2/rem+2,rows=au.r>0?au.r:Math.max(1,Math.min(12,Math.floor((au.h-pad-40)/46)));head=head.slice(0,-1)+' data-rows="'+rows+'">';
@@ -99,14 +99,14 @@ if(MO)return head+'<div class="'+BC+'auth-mobile"><div class="'+BC+'auth-mmain" 
 return head+'<div class="'+BC+'auth-center"><div class="'+BC+'auth-cont"><div class="'+BC+'auth-card" style="'+hs+(au.w>0?'max-width:'+RX(au.w)+';':'')+'"><div class="'+BC+'auth-form">'+body+E+E+E+E+E}
 var h=null,au=null;
 var BS=document.documentElement.getAttribute('data-boot-session');
-var SM=LS.getItem('fluxer:gateway:preboot:session');
+var SM=LS.getItem('ychat:gateway:preboot:session');
 function SV(k){var v=LS.getItem(k);return !!v&&v!=='undefined'&&v!=='null'}
 if(BS!=='0'&&(BS==='1'||SM==='1'||(SM===null&&SV('token')&&SV('userId'))))h=HINT();else au=AUTH();
 if(h==null&&au==null)return;
 function APP(h){
 var mo=h.mo===1;
 function SEED(k){var s=2166136261,i;for(i=0;i<k.length;i++){s^=k.charCodeAt(i);s=Math.imul(s,16777619)}s=s>>>0;var t=s||2654435769;return function(){t^=t<<13;t^=t>>>17;t^=t<<5;return(t>>>0)/4294967296}}
-var E='</div>',BC='fluxer-boot-';
+var E='</div>',BC='ychat-boot-';
 function B(s,c){return '<div class="'+BC+'block'+(c||'')+'" style="'+s+'"></div>'}
 function V(c,i,s){return '<div class="'+BC+c+'"'+(s?' style="'+s+'"':'')+'>'+i+E}
 function PZ(w,g){return 'width:'+w+';height:'+g+';'}
@@ -142,8 +142,8 @@ var rs=n(h.rs,0,20000)*rem,cap=(vrows*3.375+0.8125)*rem-document.documentElement
 rs=rs>0?Math.min(rs,Math.max(0,cap)):0;
 function ITEM(sel,inner){return '<div class="'+BC+'item"'+selAttr(sel)+'>'+(sel?IND(true):'')+inner+E}
 var top='';
-if(rf)top+=ITEM(rti===0,V('fluxer-icon',SVG('c','lg')));
-if(rv)top+=ITEM(rti===(rf?1:0),V('fluxer-icon',SVG('s','lg')));
+if(rf)top+=ITEM(rti===0,V('ychat-icon',SVG('c','lg')));
+if(rv)top+=ITEM(rti===(rf?1:0),V('ychat-icon',SVG('s','lg')));
 for(i=0;i<idm;i++){var di=(rf?1:0)+(rv?1:0)+i,dsel=rti===di,dun=ru[i]===1;
 top+='<div class="'+BC+'item"'+selAttr(dsel)+'>'+((dsel||dun)?IND(dsel):'')+B(PZ('var(--guild-icon-size)','var(--guild-icon-size)'),RC+CI)+E}
 var items='';
@@ -305,18 +305,18 @@ if(ua)m+=V('user-area',V('user-panel',(vh>0?V('voice-panel','','height:'+vp):'')
 if(bn){var nav2=[['b','2.25rem']];if(h.vc===1)nav2.push(['b','2.5rem']);nav2.push(['b','4rem'],['a','1.5rem']);var nvi='';
 for(i=0;i<nav2.length;i++)nvi+=V('nav-item',B(PZ('1.5rem','1.5rem'),nav2[i][0]==='a'?RC:RS)+V('nav-label',B(PZ(nav2[i][1],'0.5rem'),RP+M)));
 m+=V('bottom-nav',nvi)}
-return '<div id="fluxer-boot-shell" aria-hidden="true" data-mobile="'+(mo?1:0)+'" data-rail="'+(rail?1:0)+'" data-user-area="'+(ua?1:0)+'" data-bottom-nav="'+(bn?1:0)+'" data-hint="'+h.src+'"><div class="'+BC+'app" style="'+sty+'">'+m+E+E}
+return '<div id="ychat-boot-shell" aria-hidden="true" data-mobile="'+(mo?1:0)+'" data-rail="'+(rail?1:0)+'" data-user-area="'+(ua?1:0)+'" data-bottom-nav="'+(bn?1:0)+'" data-hint="'+h.src+'"><div class="'+BC+'app" style="'+sty+'">'+m+E+E}
 var tpl=document.createElement('template');tpl.innerHTML=h!=null?APP(h):AUTHM(au);root.appendChild(tpl.content);
 var shell=root.firstChild,timer=0,obs=null,parsed=false;
 var stop=function(){window.removeEventListener('error',onError,true);document.removeEventListener('DOMContentLoaded',onParsed,true);if(timer){clearTimeout(timer);timer=0}if(obs){obs.disconnect();obs=null}};
-var drop=function(){var el=document.getElementById('fluxer-boot-shell');if(el&&el.parentNode)el.parentNode.removeChild(el);stop()};
+var drop=function(){var el=document.getElementById('ychat-boot-shell');if(el&&el.parentNode)el.parentNode.removeChild(el);stop()};
 var onParsed=function(){parsed=true};
 var onError=function(ev){var t=ev&&ev.target;if(parsed||!t)return;if(t.tagName!=='SCRIPT'&&!(t.tagName==='LINK'&&t.rel==='stylesheet'))return;drop()};
 window.addEventListener('error',onError,true);document.addEventListener('DOMContentLoaded',onParsed,true);timer=setTimeout(drop,60000);
 if(window.MutationObserver){obs=new MutationObserver(function(){if(!root.contains(shell))stop()});obs.observe(root,{childList:true})}
 if(window.electron&&window.electron.notifyFirstContentPainted)window.electron.notifyFirstContentPainted();
 }catch(e){}})();</script>
-<div id="fluxer-boot-end" hidden></div>
+<div id="ychat-boot-end" hidden></div>
 <noscript>JavaScript is required to use this application.</noscript>
 </body>
 </html>
