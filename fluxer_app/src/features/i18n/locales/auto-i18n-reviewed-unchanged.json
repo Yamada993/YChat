@@ -48,6 +48,9 @@
         "msgid": "Searching..."
       },
       {
+        "msgid": "Segoe UI"
+      },
+      {
         "msgid": "Shift"
       },
       {
@@ -126,6 +129,9 @@
       },
       {
         "msgid": "Searching..."
+      },
+      {
+        "msgid": "Segoe UI"
       },
       {
         "msgid": "Shift"
@@ -299,6 +305,9 @@
       },
       {
         "msgid": "Searching..."
+      },
+      {
+        "msgid": "Segoe UI"
       },
       {
         "msgid": "Shift"
@@ -809,6 +818,9 @@
       },
       {
         "msgid": "Searching..."
+      },
+      {
+        "msgid": "Segoe UI"
       },
       {
         "msgid": "Send"
@@ -1464,6 +1476,9 @@
         "msgid": "Searching..."
       },
       {
+        "msgid": "Segoe UI"
+      },
+      {
         "msgid": "Smileys"
       },
       {
@@ -1926,6 +1941,9 @@
       },
       {
         "msgid": "Searching..."
+      },
+      {
+        "msgid": "Segoe UI"
       },
       {
         "msgid": "Shift"
@@ -4160,6 +4178,9 @@
         "msgid": "See this channel. Denying it for {everyoneMention} makes the channel private."
       },
       {
+        "msgid": "Segoe UI"
+      },
+      {
         "msgid": "Select the account you want to sign in with on your new device."
       },
       {
@@ -4275,6 +4296,9 @@
       },
       {
         "msgid": "Show store folder"
+      },
+      {
+        "msgid": "Show text in Fluxer Sans, the previous default font, instead of the Windows system font"
       },
       {
         "msgid": "Showed media download options"
@@ -4463,6 +4487,9 @@
         "msgid": "Subscriber badge on your profile"
       },
       {
+        "msgid": "Switch back to Fluxer Sans"
+      },
+      {
         "msgid": "Switch price"
       },
       {
@@ -4500,6 +4527,9 @@
       },
       {
         "msgid": "Tap Share, then Add to Home Screen."
+      },
+      {
+        "msgid": "Text on Windows now uses the system font. You can switch back to Fluxer Sans in settings."
       },
       {
         "msgid": "Thanks for flagging this"
@@ -4806,6 +4836,9 @@
       },
       {
         "msgid": "Upload files and media in this channel."
+      },
+      {
+        "msgid": "Use Fluxer Sans on Windows"
       },
       {
         "msgid": "Use a different account"
@@ -5590,6 +5623,9 @@
         "msgid": "Searching..."
       },
       {
+        "msgid": "Segoe UI"
+      },
+      {
         "msgid": "Social"
       },
       {
@@ -5979,6 +6015,9 @@
         "msgid": "Searching..."
       },
       {
+        "msgid": "Segoe UI"
+      },
+      {
         "msgid": "Social"
       },
       {
@@ -6311,6 +6350,9 @@
       },
       {
         "msgid": "Searching..."
+      },
+      {
+        "msgid": "Segoe UI"
       },
       {
         "msgid": "Slovakia"
@@ -6818,6 +6860,9 @@
         "msgid": "Secret"
       },
       {
+        "msgid": "Segoe UI"
+      },
+      {
         "msgid": "Session"
       },
       {
@@ -7200,6 +7245,9 @@
         "msgid": "Searching..."
       },
       {
+        "msgid": "Segoe UI"
+      },
+      {
         "msgid": "Shift"
       },
       {
@@ -7454,6 +7502,9 @@
       },
       {
         "msgid": "Searching..."
+      },
+      {
+        "msgid": "Segoe UI"
       },
       {
         "msgid": "Shift"
@@ -7806,6 +7857,9 @@
       },
       {
         "msgid": "Searching..."
+      },
+      {
+        "msgid": "Segoe UI"
       },
       {
         "msgid": "Shift"
@@ -8313,6 +8367,9 @@
       },
       {
         "msgid": "Searching..."
+      },
+      {
+        "msgid": "Segoe UI"
       },
       {
         "msgid": "Shift"
@@ -8875,6 +8932,9 @@
         "msgid": "Searching..."
       },
       {
+        "msgid": "Segoe UI"
+      },
+      {
         "msgid": "Slovenia"
       },
       {
@@ -9258,6 +9318,9 @@
         "msgid": "Searching..."
       },
       {
+        "msgid": "Segoe UI"
+      },
+      {
         "msgid": "Shift"
       },
       {
@@ -9365,6 +9428,9 @@
       },
       {
         "msgid": "Searching..."
+      },
+      {
+        "msgid": "Segoe UI"
       },
       {
         "msgid": "Shift"
@@ -9498,6 +9564,9 @@
       },
       {
         "msgid": "Searching..."
+      },
+      {
+        "msgid": "Segoe UI"
       },
       {
         "msgid": "Shift"
@@ -9905,6 +9974,9 @@
       },
       {
         "msgid": "Searching..."
+      },
+      {
+        "msgid": "Segoe UI"
       },
       {
         "msgid": "Shift"
@@ -10475,6 +10547,9 @@
         "msgid": "Searching..."
       },
       {
+        "msgid": "Segoe UI"
+      },
+      {
         "msgid": "Send"
       },
       {
@@ -10904,6 +10979,9 @@
         "msgid": "Searching..."
       },
       {
+        "msgid": "Segoe UI"
+      },
+      {
         "msgid": "Shift"
       },
       {
@@ -11278,6 +11356,9 @@
       },
       {
         "msgid": "Searching..."
+      },
+      {
+        "msgid": "Segoe UI"
       },
       {
         "msgid": "Shift"
@@ -11780,6 +11861,9 @@
         "msgid": "Secret"
       },
       {
+        "msgid": "Segoe UI"
+      },
+      {
         "msgid": "Shift"
       },
       {
@@ -12176,6 +12260,9 @@
         "msgid": "Searching..."
       },
       {
+        "msgid": "Segoe UI"
+      },
+      {
         "msgid": "Shift"
       },
       {
@@ -12376,6 +12463,9 @@
       },
       {
         "msgid": "Searching..."
+      },
+      {
+        "msgid": "Segoe UI"
       },
       {
         "msgid": "Session"
@@ -12774,6 +12864,9 @@
         "msgid": "Searching..."
       },
       {
+        "msgid": "Segoe UI"
+      },
+      {
         "msgid": "Shift"
       },
       {
@@ -12953,6 +13046,9 @@
       },
       {
         "msgid": "Searching..."
+      },
+      {
+        "msgid": "Segoe UI"
       },
       {
         "msgid": "Shift"
@@ -13264,6 +13360,9 @@
         "msgid": "Searching..."
       },
       {
+        "msgid": "Segoe UI"
+      },
+      {
         "msgid": "Shift"
       },
       {
@@ -13434,6 +13533,9 @@
       },
       {
         "msgid": "Searching..."
+      },
+      {
+        "msgid": "Segoe UI"
       },
       {
         "msgid": "Shift"
@@ -13755,6 +13857,9 @@
         "msgid": "Searching..."
       },
       {
+        "msgid": "Segoe UI"
+      },
+      {
         "msgid": "Shift"
       },
       {
@@ -13873,6 +13978,9 @@
       },
       {
         "msgid": "Searching..."
+      },
+      {
+        "msgid": "Segoe UI"
       },
       {
         "msgid": "Shift"
