@@ -31,10 +31,10 @@ function resolveStaticCdnEndpoint(staticCdnEndpoint) {
 function generateManifest(staticCdnEndpoint) {
 	const cdn = resolveStaticCdnEndpoint(staticCdnEndpoint);
 	const manifest = {
-		name: 'Fluxer',
-		short_name: 'Fluxer',
+		name: 'YChat',
+		short_name: 'YChat',
 		description:
-			'Fluxer is a free and open source instant messaging and VoIP platform built for friends, groups, and communities.',
+			'YChat is a free and open source instant messaging and VoIP platform built for friends, groups, and communities.',
 		id: '/',
 		start_url: '/app',
 		display: 'standalone',
