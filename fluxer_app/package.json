@@ -2,9 +2,9 @@
 	"name": "fluxer_app",
 	"version": "0.0.0",
 	"private": true,
-	"description": "Fluxer is a free and open source instant messaging and VoIP chat app built for friends, groups, and communities.",
-	"homepage": "https://fluxer.app",
-	"author": "Fluxer Platform AB <support@fluxer.com>",
+	"description": "YChat is a free and open source instant messaging and VoIP chat app built for friends, groups, and communities.",
+	"homepage": "https://chat.yamada.top:8443",
+	"author": "YChat Platform AB <support@yamada.top>",
 	"sideEffects": [
 		"*.css",
 		"**/*.css"
