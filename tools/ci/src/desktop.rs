@@ -6458,7 +6458,7 @@ mod tests {
         }
 
         let entries =
-            velopack_path_lengths(&archive_path, Path::new(r"C:\Users\a\AppData\Local\Fluxer"))
+            velopack_path_lengths(&archive_path, Path::new(r"C:\Users\a\AppData\Local\YChat"))
                 .unwrap();
 
         assert_eq!(entries[0].name, "deep/path/with/long/file.txt");
@@ -6468,21 +6468,21 @@ mod tests {
     #[test]
     fn windows_package_config_tracks_channel_and_arch() {
         let stable = windows_package_config("stable", "x64").unwrap();
-        assert_eq!(stable.pack_id, "fluxer_desktop");
+        assert_eq!(stable.pack_id, "ychat_desktop");
         assert_eq!(stable.runtime, "win-x64");
-        assert_eq!(stable.main_exe, "Fluxer.exe");
+        assert_eq!(stable.main_exe, "YChat.exe");
 
         let canary = windows_package_config("canary", "arm64").unwrap();
-        assert_eq!(canary.pack_id, "fluxer_desktop_canary");
+        assert_eq!(canary.pack_id, "ychat_desktop_canary");
         assert_eq!(canary.runtime, "win-arm64");
-        assert_eq!(canary.main_exe, "Fluxer Canary.exe");
+        assert_eq!(canary.main_exe, "YChat Canary.exe");
 
         let development = windows_package_config("development", "x64").unwrap();
-        assert_eq!(development.pack_id, "fluxer_desktop_development");
-        assert_eq!(development.pack_title, "Fluxer Development");
-        assert_eq!(development.artifact_prefix, "Fluxer-Development");
+        assert_eq!(development.pack_id, "ychat_desktop_development");
+        assert_eq!(development.pack_title, "YChat Development");
+        assert_eq!(development.artifact_prefix, "YChat-Development");
         assert_eq!(development.icon_dir, "icons-development");
-        assert_eq!(development.main_exe, "Fluxer Development.exe");
+        assert_eq!(development.main_exe, "YChat Development.exe");
 
         assert!(windows_package_config("nightly", "x64").is_err());
     }
@@ -6490,7 +6490,7 @@ mod tests {
     #[test]
     fn shipped_account_switching_addons_are_required_windows_binaries() {
         for arch in ["x64", "arm64"] {
-            let inventory = expected_windows_pe_inventory(arch, "Fluxer.exe");
+            let inventory = expected_windows_pe_inventory(arch, "YChat.exe");
             for stem in ["app-store", "gateway-socket"] {
                 let expected = format!("{stem}.win32-{arch}-msvc.node");
                 assert!(
@@ -6531,7 +6531,7 @@ mod tests {
         write_file(&root.join("canary/darwin/arm64/manifest.json"), "{}");
         write_file(&root.join("canary/darwin/x64/manifest.json"), "{}");
         write_file(&root.join("canary/win32/x64/manifest.json"), "{}");
-        write_file(&root.join("canary/win32/arm64/Fluxer.exe"), "exe");
+        write_file(&root.join("canary/win32/arm64/YChat.exe"), "exe");
         write_file(
             &root.join("canary/modules/fluxer_renderer/5c1e/package.br"),
             "package",
