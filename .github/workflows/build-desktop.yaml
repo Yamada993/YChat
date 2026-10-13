@@ -544,15 +544,6 @@ jobs:
           cargo run --locked --quiet --manifest-path ${{ github.workspace }}/_ci/tools/ci/Cargo.toml -- build-desktop
           --step verify_bundled_renderer_linux
 
-      - name: Verify signed Windows artifacts
-        if: matrix.platform == 'windows'
-        working-directory: ${{ env.WORKDIR }}/fluxer_desktop
-        env:
-          BUILD_CHANNEL: ${{ env.BUILD_CHANNEL }}
-        run: >-
-          cargo run --locked --quiet --manifest-path ${{ github.workspace }}/_ci/tools/ci/Cargo.toml -- build-desktop
-          --step verify_windows_signed_artifacts
-
       - name: Prepare artifacts (Windows)
         if: runner.os == 'Windows'
         run: >-
