@@ -2944,17 +2944,17 @@ struct VelopackAssetIndexEntry {
 
 fn windows_package_config(build_channel: &str, arch: &str) -> Result<WindowsPackageConfig> {
     let (pack_id, pack_title, artifact_prefix, icon_dir) = match build_channel {
-        "stable" => ("fluxer_desktop", "Fluxer", "Fluxer", "icons-stable"),
+        "stable" => ("ychat_desktop", "YChat", "YChat", "icons-stable"),
         "canary" => (
-            "fluxer_desktop_canary",
-            "Fluxer Canary",
-            "Fluxer-Canary",
+            "ychat_desktop_canary",
+            "YChat Canary",
+            "YChat-Canary",
             "icons-canary",
         ),
         "development" => (
-            "fluxer_desktop_development",
-            "Fluxer Development",
-            "Fluxer-Development",
+            "ychat_desktop_development",
+            "YChat Development",
+            "YChat-Development",
             "icons-development",
         ),
         other => bail!(
@@ -3046,7 +3046,7 @@ fn pack_and_validate_windows_velopack(
             "--packTitle",
             config.pack_title,
             "--packAuthors",
-            "Fluxer Platform AB",
+            "YChat Platform AB",
             "--shortcuts",
             "Desktop,StartMenu",
             "--runtime",
@@ -3095,7 +3095,7 @@ fn remove_velopack_portable_archives(output_dir: &Path) -> Result<()> {
         }
         fs::remove_file(&path).with_context(|| format!("Failed to remove {}", path.display()))?;
         println!(
-            "Removed Velopack portable archive {}. Fluxer publishes its own portable ZIP built from the signed application tree.",
+            "Removed Velopack portable archive {}. YChat publishes its own portable ZIP built from the signed application tree.",
             path.display()
         );
     }
@@ -3435,7 +3435,7 @@ fn create_portable_zip_windows_step() -> Result<()> {
     Ok(())
 }
 
-const FLUXER_WINDOWS_SIGNER_COMMON_NAME: &str = "Fluxer Platform AB";
+const FLUXER_WINDOWS_SIGNER_COMMON_NAME: &str = "YChat Platform AB";
 const THIRD_PARTY_WINDOWS_SIGNATURE_ALLOWLIST: &[(&str, &str)] = &[
     (
         "d3dcompiler_47.dll",
@@ -6312,12 +6312,12 @@ mod tests {
     fn desktop_manifest_uses_checksum_detail_when_present() {
         let temp = tempfile::tempdir().unwrap();
         let root = temp.path();
-        write_file(&root.join("Fluxer-2026.520.1-x64.AppImage"), "app");
+        write_file(&root.join("YChat-2026.520.1-x64.AppImage"), "app");
         write_file(
-            &root.join("Fluxer-2026.520.1-x64.AppImage.sha256"),
+            &root.join("YChat-2026.520.1-x64.AppImage.sha256"),
             "abc123\n",
         );
-        write_file(&root.join("Fluxer-2026.520.1-x64.deb"), "deb");
+        write_file(&root.join("YChat-2026.520.1-x64.deb"), "deb");
 
         let manifest = build_desktop_manifest(
             root,
@@ -6334,14 +6334,14 @@ mod tests {
         assert_eq!(
             manifest.files.get("appimage"),
             Some(&DesktopManifestFile::Detail {
-                filename: "Fluxer-2026.520.1-x64.AppImage".to_string(),
+                filename: "YChat-2026.520.1-x64.AppImage".to_string(),
                 sha256: "abc123".to_string(),
             })
         );
         assert_eq!(
             manifest.files.get("deb"),
             Some(&DesktopManifestFile::Name(
-                "Fluxer-2026.520.1-x64.deb".to_string()
+                "YChat-2026.520.1-x64.deb".to_string()
             ))
         );
     }
@@ -6358,7 +6358,7 @@ mod tests {
             minimum_system_version: Some(MACOS_MINIMUM_SYSTEM_VERSION.to_string()),
             files: BTreeMap::from([(
                 "zip".to_string(),
-                DesktopManifestFile::Name("Fluxer-2026.520.1-arm64.zip".to_string()),
+                DesktopManifestFile::Name("YChat-2026.520.1-arm64.zip".to_string()),
             )]),
         };
 
@@ -6369,7 +6369,7 @@ mod tests {
 
         assert_eq!(
             releases["releases"][0]["updateTo"]["url"],
-            "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/Fluxer-2026.520.1-arm64.zip"
+            "https://pkgs.fluxer.com/desktop/canary/darwin/arm64/YChat-2026.520.1-arm64.zip"
         );
         assert!(temp.path().join("releases.json").exists());
     }
@@ -6379,7 +6379,7 @@ mod tests {
         let temp = tempfile::tempdir().unwrap();
 
         let darwin_root = temp.path().join("darwin");
-        write_file(&darwin_root.join("Fluxer-2026.520.1-arm64.zip"), "zip");
+        write_file(&darwin_root.join("YChat-2026.520.1-arm64.zip"), "zip");
         let darwin_manifest = build_desktop_manifest(
             &darwin_root,
             &PayloadManifestInput {
@@ -6397,7 +6397,7 @@ mod tests {
         );
 
         let linux_root = temp.path().join("linux");
-        write_file(&linux_root.join("Fluxer-2026.520.1-x64.deb"), "deb");
+        write_file(&linux_root.join("YChat-2026.520.1-x64.deb"), "deb");
         let linux_manifest = build_desktop_manifest(
             &linux_root,
             &PayloadManifestInput {
@@ -6412,7 +6412,7 @@ mod tests {
         assert_eq!(linux_manifest.minimum_system_version, None);
 
         let windows_root = temp.path().join("win32");
-        write_file(&windows_root.join("Fluxer-Setup-2026.520.1-x64.exe"), "exe");
+        write_file(&windows_root.join("YChat-Setup-2026.520.1-x64.exe"), "exe");
         let windows_manifest = build_desktop_manifest(
             &windows_root,
             &PayloadManifestInput {
@@ -6648,7 +6648,7 @@ mod tests {
         let mut builder = DesktopReleaseAssetBuilder::new(
             "canary",
             LAYOUT_VERSION,
-            "Fluxer-Canary",
+            "YChat-Canary",
             &release_assets,
         );
         add_desktop_module_release_assets(&mut builder, &payload_root.join("canary")).unwrap();
@@ -6664,7 +6664,7 @@ mod tests {
                 };
                 (
                     format!("desktop/canary/{platform}/{arch}/modules.json"),
-                    format!("Fluxer-Canary-{LAYOUT_VERSION}-{token}-{arch}-modules.json"),
+                    format!("YChat-Canary-{LAYOUT_VERSION}-{token}-{arch}-modules.json"),
                 )
             })
             .collect::<Vec<_>>();
@@ -6675,7 +6675,7 @@ mod tests {
                     module.module, module.sha256
                 ),
                 format!(
-                    "Fluxer-Canary-{LAYOUT_VERSION}-module-{}-{}.br",
+                    "YChat-Canary-{LAYOUT_VERSION}-module-{}-{}.br",
                     module.module, module.sha256
                 ),
             ));
@@ -6728,7 +6728,7 @@ mod tests {
         let mut builder = DesktopReleaseAssetBuilder::new(
             "canary",
             LAYOUT_VERSION,
-            "Fluxer-Canary",
+            "YChat-Canary",
             &release_assets,
         );
         assert!(
@@ -6753,7 +6753,7 @@ mod tests {
         let mut builder = DesktopReleaseAssetBuilder::new(
             "canary",
             LAYOUT_VERSION,
-            "Fluxer-Canary",
+            "YChat-Canary",
             &release_assets,
         );
         assert!(
