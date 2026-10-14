@@ -635,8 +635,8 @@ jobs:
           if ($null -eq $zip) { Write-Host 'This build has no windows arm64 portable zip'; exit 0 }
           $app = Join-Path $env:RUNNER_TEMP 'app'
           Expand-Archive -Path $zip.FullName -DestinationPath $app
-          $exe = Get-ChildItem -Path $app -Recurse -Filter 'Fluxer*.exe' | Where-Object { $_.Name -notlike '*_ExecutionStub.exe' } | Select-Object -First 1
-          if ($null -eq $exe) { throw "$($zip.Name) holds no Fluxer executable" }
+          $exe = Get-ChildItem -Path $app -Recurse -Filter 'YChat*.exe' | Where-Object { $_.Name -notlike '*_ExecutionStub.exe' } | Select-Object -First 1
+          if ($null -eq $exe) { throw "$($zip.Name) holds no YChat executable" }
           node fluxer_desktop/scripts/release-check.mjs --app $exe.DirectoryName --channel $env:CHANNEL --expect-renderer $env:VERSION --expect-source bundled --package-origin http://127.0.0.1:9 --app-arg=--disable-gpu --workdir (Join-Path $env:RUNNER_TEMP 'runs') --timeout-seconds 240
           if ($LASTEXITCODE -ne 0) { throw "The windows arm64 build fails its release check" }
 
