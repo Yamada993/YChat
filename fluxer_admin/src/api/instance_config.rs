@@ -15,12 +15,12 @@ impl AdminApiClient {
     }
 
     pub async fn get_instance_premium_discovery(&self) -> ApiResult<InstancePremiumDiscovery> {
-        self.get("/.well-known/fluxer", None).await
+        self.get("/.well-known/ychat", None).await
     }
 
     pub async fn get_instance_account_identity(&self) -> ApiResult<AccountIdentitySettings> {
         let discovery: InstanceAccountIdentityDiscovery =
-            self.get("/.well-known/fluxer", None).await?;
+            self.get("/.well-known/ychat", None).await?;
         let mode = discovery.features.account_identity;
         Ok(AccountIdentitySettings {
             mode,

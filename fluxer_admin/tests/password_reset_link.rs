@@ -270,7 +270,7 @@ async fn mock_api(State(mock): State<MockApi>, method: Method, uri: Uri) -> Resp
             "user": user(ADMIN_ID, "AdminUser", &mock.admin_acls)
         }))
         .into_response(),
-        (Method::GET, "/.well-known/fluxer") => Json(json!({
+        (Method::GET, "/.well-known/ychat") => Json(json!({
             "features": {
                 "premium_enabled": false,
                 "account_identity": mock.account_identity
