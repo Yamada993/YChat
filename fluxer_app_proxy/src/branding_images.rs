@@ -287,7 +287,7 @@ mod tests {
         tokio::spawn(async move {
             axum::serve(listener, router).await.unwrap();
         });
-        format!("http://{addr}/.well-known/fluxer")
+        format!("http://{addr}/.well-known/ychat")
     }
 
     fn discovery_with_branding(branding: serde_json::Value) -> String {
@@ -531,7 +531,7 @@ mod tests {
         let origins = seeded();
         assert!(
             origins
-                .refresh(&fast_client(), "http://127.0.0.1:1/.well-known/fluxer")
+                .refresh(&fast_client(), "http://127.0.0.1:1/.well-known/ychat")
                 .await
                 .is_err()
         );
