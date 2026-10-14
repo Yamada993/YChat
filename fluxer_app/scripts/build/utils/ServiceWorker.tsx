@@ -33,7 +33,7 @@ export async function buildServiceWorker(production: boolean): Promise<void> {
 		format: 'iife',
 		outfile: path.join(DIST_DIR, 'sw.js'),
 		minify: production,
-		sourcemap: true,
+		sourcemap: false,
 		target: 'esnext',
 		define: {
 			__WB_MANIFEST: '[]',
