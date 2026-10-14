@@ -88,7 +88,7 @@ export class DomainConnectionVerifier implements IConnectionVerifier {
 	}
 
 	private async checkWellKnown(domain: string, token: string): Promise<boolean> {
-		const verificationPath = '/.well-known/fluxer-verification';
+		const verificationPath = '/.well-known/ychat-verification';
 		let url: URL;
 		try {
 			url = new URL(verificationPath, `https://${domain}`);

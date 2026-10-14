@@ -103,7 +103,7 @@ function buildDiscoveryStaticInput(
 
 export function InstanceController(app: Hono<HonoEnv>) {
 	app.get(
-		'/.well-known/fluxer',
+		'/.well-known/ychat',
 		RateLimitMiddleware(RateLimitConfigs.INSTANCE_INFO),
 		OpenAPI({
 			operationId: 'get_well_known_fluxer',

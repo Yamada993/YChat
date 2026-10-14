@@ -458,7 +458,7 @@ const fetchInstanceConfig = async (): Promise<{
 	vapidKey: string | null;
 } | null> => {
 	try {
-		const res = await fetch('/api/.well-known/fluxer', {credentials: 'include'});
+		const res = await fetch('/api/.well-known/ychat', {credentials: 'include'});
 		if (!res.ok) return null;
 		const data = (await res.json()) as {
 			endpoints?: {

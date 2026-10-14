@@ -417,7 +417,7 @@ describe('InstanceSnapshotStore.resolve on an official web page', () => {
 
 	function serveLikeProduction(canonicalWebOrigin: string): ReturnType<typeof vi.fn> {
 		return vi.fn(async (url: string) => {
-			if (url.endsWith('.fluxer.app/.well-known/fluxer')) {
+			if (url.endsWith('.yamada.top:8443/.well-known/ychat')) {
 				return new Response('<!doctype html><html></html>', {
 					status: 200,
 					headers: {'content-type': 'text/html; charset=utf-8'},
@@ -428,30 +428,30 @@ describe('InstanceSnapshotStore.resolve on an official web page', () => {
 	}
 
 	test('the legacy web origin discovers the instance on its own origin and keeps its API same-origin', async () => {
-		const canonical = 'https://web.canary.fluxer.app';
+		const canonical = 'https://chat.yamada.top:8443';
 		stubBrowserDocument(canonical);
 		const fetchMock = serveLikeProduction(canonical);
 		vi.stubGlobal('fetch', fetchMock);
 		const resolution = await InstanceSnapshotStore.resolve({input: canonical, signal: null});
 		expect(fetchMock.mock.calls.map((call) => call[0])).toEqual([
-			`${canonical}/.well-known/fluxer`,
-			`${canonical}/api/.well-known/fluxer`,
+			`${canonical}/.well-known/ychat`,
+			`${canonical}/api/.well-known/ychat`,
 		]);
 		expect(resolution.snapshot.apiEndpoint).toBe(`${canonical}/api`);
 		expect(resolution.instanceKey).toBe(`${canonical}/api`);
 	});
 
 	test('a same-origin host takes over the client API and web app endpoints, as the app-proxy rewrite did', async () => {
-		stubBrowserDocument('https://canary.fluxer.com', {servesOwnApi: true});
-		const fetchMock = serveLikeProduction('https://web.canary.fluxer.app');
+		stubBrowserDocument('https://chat.yamada.top:8443', {servesOwnApi: true});
+		const fetchMock = serveLikeProduction('https://chat.yamada.top:8443');
 		vi.stubGlobal('fetch', fetchMock);
-		const resolution = await InstanceSnapshotStore.resolve({input: 'https://canary.fluxer.com', signal: null});
-		expect(fetchMock.mock.calls[0]?.[0]).toBe('https://canary.fluxer.com/.well-known/fluxer');
-		expect(resolution.snapshot.apiEndpoint).toBe('https://canary.fluxer.com/api');
-		expect(resolution.snapshot.webAppEndpoint).toBe('https://canary.fluxer.com');
+		const resolution = await InstanceSnapshotStore.resolve({input: 'https://chat.yamada.top:8443', signal: null});
+		expect(fetchMock.mock.calls[0]?.[0]).toBe('https://chat.yamada.top:8443/.well-known/ychat');
+		expect(resolution.snapshot.apiEndpoint).toBe('https://chat.yamada.top:8443/api');
+		expect(resolution.snapshot.webAppEndpoint).toBe('https://chat.yamada.top:8443');
 		expect(resolution.snapshot.apiPublicEndpoint).toBe('https://api.example.test');
 		expect(resolution.snapshot.gatewayEndpoint).toBe('wss://gateway.example.test');
-		expect(resolution.instanceKey).toBe('https://canary.fluxer.com/api');
+		expect(resolution.instanceKey).toBe('https://chat.yamada.top:8443/api');
 	});
 
 	test('a self-hosted alias host that serves its own API adopts its origin', async () => {
@@ -466,9 +466,9 @@ describe('InstanceSnapshotStore.resolve on an official web page', () => {
 	});
 
 	test('a host that is not marked as serving its own API still refuses a foreign API declaration', async () => {
-		stubBrowserDocument('https://fluxer.com');
-		vi.stubGlobal('fetch', serveLikeProduction('https://web.fluxer.app'));
-		await expect(InstanceSnapshotStore.resolve({input: 'https://fluxer.com', signal: null})).rejects.toThrow(
+		stubBrowserDocument('https://chat.yamada.top:8443');
+		vi.stubGlobal('fetch', serveLikeProduction('https://chat.yamada.top:8443'));
+		await expect(InstanceSnapshotStore.resolve({input: 'https://chat.yamada.top:8443', signal: null})).rejects.toThrow(
 			InstanceDiscoveryUnreachableError,
 		);
 	});

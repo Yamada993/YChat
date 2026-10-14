@@ -5,7 +5,7 @@ import {InstanceDiscoveryUnreachableError} from '@fluxer/instance_bootstrap/src/
 import {expect, test} from 'vitest';
 
 const DESKTOP_UNREACHABLE = new Error(
-	"Error invoking remote method 'desktop-runtime-config:resolve': DesktopRuntimeDiscoveryUnreachableError: No usable instance discovery document was served for https://web.canary.fluxer.app/api: https://web.canary.fluxer.app/.well-known/fluxer (connect ECONNREFUSED 127.0.0.1:9)",
+	"Error invoking remote method 'desktop-runtime-config:resolve': DesktopRuntimeDiscoveryUnreachableError: No usable instance discovery document was served for https://chat.yamada.top:8443/api: https://chat.yamada.top:8443/.well-known/ychat (connect ECONNREFUSED 127.0.0.1:9)",
 );
 
 test('a desktop discovery that could not reach the instance is a connection failure', () => {
@@ -32,7 +32,7 @@ test('any failure while the device is offline is a connection failure', () => {
 
 test('an instance that answered without a usable document, or a local failure, is not a connection failure', () => {
 	const refused = new Error(
-		"Error invoking remote method 'desktop-runtime-config:resolve': DesktopRuntimeDiscoveryFailedError: No usable instance discovery document was served for https://one.example/api: https://one.example/.well-known/fluxer (responded HTTP 404)",
+		"Error invoking remote method 'desktop-runtime-config:resolve': DesktopRuntimeDiscoveryFailedError: No usable instance discovery document was served for https://one.example/api: https://one.example/.well-known/ychat (responded HTTP 404)",
 	);
 
 	expect(classifyBootstrapError(refused, true)).toBe(BootstrapErrorKind.FAILED);

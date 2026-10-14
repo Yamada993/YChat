@@ -5,7 +5,7 @@ use reqwest::Url;
 use std::env;
 use std::fmt;
 
-const DEFAULT_DISCOVERY_UPSTREAM_URL: &str = "http://localhost:8088/api/.well-known/fluxer";
+const DEFAULT_DISCOVERY_UPSTREAM_URL: &str = "http://localhost:8088/api/.well-known/ychat";
 
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub enum InvalidAppProxyEnvironmentError {
