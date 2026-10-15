@@ -29,7 +29,7 @@ function loadAppLoadRetry() {
 	return module.exports;
 }
 
-const APP_URL = 'fluxer-app://app/channels/@me';
+const APP_URL = 'ychat-app://app/channels/@me';
 const silentLogger = {info() {}, warn() {}, error() {}};
 
 function createHarness() {

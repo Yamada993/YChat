@@ -57,7 +57,7 @@ describe('DesktopRuntimeSecurity', () => {
 			requestHeaders: {Accept: '*/*'},
 		});
 
-		assert.deepEqual({...settlement.requestHeaders}, {Accept: '*/*', Referer: 'https://web.fluxer.app/'});
+		assert.deepEqual({...settlement.requestHeaders}, {Accept: '*/*', Referer: 'https://chat.yamada.top:8443/'});
 	});
 
 	test('never invents a referrer for anything but the YouTube embed frame', () => {
@@ -83,10 +83,10 @@ describe('DesktopRuntimeSecurity', () => {
 		const settlement = settleRequest(session, {
 			resourceType: 'subFrame',
 			url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-			requestHeaders: {Accept: '*/*', referer: 'fluxer-app://app/'},
+			requestHeaders: {Accept: '*/*', referer: 'ychat-app://app/'},
 		});
 
-		assert.deepEqual({...settlement.requestHeaders}, {Accept: '*/*', Referer: 'https://web.fluxer.app/'});
+		assert.deepEqual({...settlement.requestHeaders}, {Accept: '*/*', Referer: 'https://chat.yamada.top:8443/'});
 	});
 
 	test('emits request header values Electron will actually send rather than response-shaped arrays', () => {
@@ -111,7 +111,7 @@ describe('DesktopRuntimeSecurity', () => {
 				applyRequestHeaders: (_details, headers) => {
 					const next = {};
 					for (const [name, value] of Object.entries(headers)) {
-						if (name.toLowerCase() !== 'x-fluxer-desktop-protocol-authorization') {
+						if (name.toLowerCase() !== 'x-ychat-desktop-protocol-authorization') {
 							next[name] = value;
 						}
 					}
@@ -124,10 +124,10 @@ describe('DesktopRuntimeSecurity', () => {
 		const settlement = settleRequest(session, {
 			resourceType: 'subFrame',
 			url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-			requestHeaders: {Accept: '*/*', 'X-Fluxer-Desktop-Protocol-Authorization': 'secret'},
+			requestHeaders: {Accept: '*/*', 'X-YChat-Desktop-Protocol-Authorization': 'secret'},
 		});
 
-		assert.deepEqual({...settlement.requestHeaders}, {Accept: '*/*', Referer: 'https://web.fluxer.app/'});
+		assert.deepEqual({...settlement.requestHeaders}, {Accept: '*/*', Referer: 'https://chat.yamada.top:8443/'});
 	});
 
 	test('leaves a request it has no reason to touch alone', () => {
@@ -136,7 +136,7 @@ describe('DesktopRuntimeSecurity', () => {
 		assert.deepEqual(
 			settleRequest(session, {
 				resourceType: 'mainFrame',
-				url: 'https://web.fluxer.app/channels/@me',
+				url: 'https://chat.yamada.top:8443/channels/@me',
 				requestHeaders: {Accept: '*/*'},
 			}),
 			{},
@@ -146,7 +146,7 @@ describe('DesktopRuntimeSecurity', () => {
 	test('only intercepts local app requests and the YouTube embed frame', () => {
 		const {session} = createInstalled();
 
-		assert.deepEqual(session.requestFilter, {urls: ['fluxer-app://*/*', 'https://www.youtube.com/embed/*']});
+		assert.deepEqual(session.requestFilter, {urls: ['ychat-app://*/*', 'https://www.youtube.com/embed/*']});
 	});
 
 	test('installs once per session and stops listening after cleanup', () => {

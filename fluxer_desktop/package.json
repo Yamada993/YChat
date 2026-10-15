@@ -1,9 +1,9 @@
 {
-	"name": "fluxer_desktop",
+	"name": "ychat_desktop",
 	"version": "0.0.0",
 	"description": "Instant messaging and VoIP application",
-	"homepage": "https://fluxer.app",
-	"author": "Fluxer Platform AB <support@fluxer.com>",
+	"homepage": "https://chat.yamada.top:8443/",
+	"author": "YChat Platform AB <support@yamada.top>",
 	"license": "AGPL-3.0-or-later",
 	"private": true,
 	"type": "module",

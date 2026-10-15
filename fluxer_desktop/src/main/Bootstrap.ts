@@ -68,7 +68,7 @@ const CAN_TURN_MODULE_SYSTEM_OFF = HAS_OFFLINE_RENDERER && BUILD_CHANNEL === 'de
 
 const MODULE_SYSTEM_LAUNCH = resolveModuleSystemLaunch({hasOfflineRenderer: CAN_TURN_MODULE_SYSTEM_OFF});
 
-const MODULE_LAUNCH_PERMIT = Symbol('fluxer.desktop.moduleLaunchPermit');
+const MODULE_LAUNCH_PERMIT = Symbol('ychat.desktop.moduleLaunchPermit');
 
 const PENDING_UPDATE_MARKER_NAME = 'update-pending';
 const IN_PLACE_RELOAD_CONFIRM_TIMEOUT_MS = 45_000;
@@ -76,7 +76,7 @@ const UPDATE_TAKEOVER_SPLASH_WAIT_MS = 250;
 const UPDATE_SPLASH_PRELOAD_DELAY_MS = 5000;
 
 const UPDATE_SERVER_UNREACHABLE_MESSAGE =
-	"Fluxer couldn't reach its update server to download app files. Check your internet connection, proxy or firewall. Fluxer keeps retrying.";
+	"YChat couldn't reach its update server to download app files. Check your internet connection, proxy or firewall. YChat keeps retrying.";
 
 interface ModuleLaunchPermit {
 	readonly [MODULE_LAUNCH_PERMIT]: true;
@@ -185,7 +185,7 @@ async function refuseUnsupportedBuild(reason: string): Promise<never> {
 	const {onSplashQuit, openSplashWindow, setSplashState, SplashAction} = await import('@electron/main/SplashWindow');
 	const logger = createChildLogger('Bootstrap');
 	logger.error('This build cannot start a renderer, refusing to launch', {reason});
-	process.stderr.write(`Fluxer cannot start: ${reason}\n`);
+	process.stderr.write(`YChat cannot start: ${reason}\n`);
 	await app.whenReady();
 	openSplashWindow();
 	setSplashState({status: 'blocked-unsupported-build', action: SplashAction.QUIT});
@@ -249,7 +249,7 @@ async function runModuleBootstrap(): Promise<void> {
 	const logger = createChildLogger('Bootstrap');
 	if (MODULE_SYSTEM_LAUNCH.kind === ModuleSystemLaunchDecision.ENABLED_WITH_IGNORED_DISABLE_REQUEST) {
 		logger.warn(
-			'Ignoring the --fluxer-no-module-system override, only a development build with a bundled renderer may turn the module system off',
+			'Ignoring the --ychat-no-module-system override, only a development build with a bundled renderer may turn the module system off',
 		);
 	}
 	const userDataConfig = configureUserDataPath();

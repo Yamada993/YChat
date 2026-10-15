@@ -269,8 +269,8 @@ describe('DesktopOutboundHTTP origin anchoring', () => {
 					body += chunk;
 				});
 				request.on('end', () => {
-					received.push({body, method: request.method, sudo: request.headers['x-fluxer-sudo-mode-jwt'] ?? null});
-					response.writeHead(204, {'x-fluxer-sudo-mode-jwt': 'granted'});
+					received.push({body, method: request.method, sudo: request.headers['x-ychat-sudo-mode-jwt'] ?? null});
+					response.writeHead(204, {'x-ychat-sudo-mode-jwt': 'granted'});
 					response.end();
 				});
 			},
@@ -285,7 +285,7 @@ describe('DesktopOutboundHTTP origin anchoring', () => {
 				const message = await outboundHTTP.request({
 					body: Readable.toWeb(Readable.from([Buffer.from(payload)])),
 					expectedOrigin: `http://lan.example:${port}`,
-					headers: {'content-type': 'application/json', 'x-fluxer-sudo-mode-jwt': 'previous'},
+					headers: {'content-type': 'application/json', 'x-ychat-sudo-mode-jwt': 'previous'},
 					method,
 					originTrust: DesktopOriginTrust.REGISTERED,
 					signal: null,
@@ -293,7 +293,7 @@ describe('DesktopOutboundHTTP origin anchoring', () => {
 					url: `http://lan.example:${port}/api/v1/oauth2/applications/1`,
 				});
 				assert.equal(message.status, 204);
-				assert.equal(message.headers['x-fluxer-sudo-mode-jwt'], 'granted');
+				assert.equal(message.headers['x-ychat-sudo-mode-jwt'], 'granted');
 				message.message.resume();
 			}
 			assert.deepEqual(
@@ -1026,29 +1026,29 @@ describe('DesktopOutboundHTTP system proxy routes', () => {
 });
 
 describe('desktop instance launch surfaces', () => {
-	test('--fluxer-instance is a development-only API endpoint flag', () => {
+	test('--ychat-instance is a development-only API endpoint flag', () => {
 		const originalDefaultApp = process.defaultApp;
 		try {
 			process.defaultApp = undefined;
 			assert.equal(getLaunchInstanceEndpointOverride(['electron', '.']), null);
 			assert.throws(
-				() => getLaunchInstanceEndpointOverride(['--fluxer-instance', 'https://self.example/api']),
+				() => getLaunchInstanceEndpointOverride(['--ychat-instance', 'https://self.example/api']),
 				/only accepted in a development build/,
 			);
 			process.defaultApp = true;
 			assert.equal(
-				getLaunchInstanceEndpointOverride(['--fluxer-instance', 'https://self.example/api/']),
+				getLaunchInstanceEndpointOverride(['--ychat-instance', 'https://self.example/api/']),
 				'https://self.example/api',
 			);
 			assert.equal(
-				getLaunchInstanceEndpointOverride(['--fluxer-instance=https://self.example:8443/api']),
+				getLaunchInstanceEndpointOverride(['--ychat-instance=https://self.example:8443/api']),
 				'https://self.example:8443/api',
 			);
 			assert.throws(
-				() => getLaunchInstanceEndpointOverride(['--fluxer-instance', '/api']),
+				() => getLaunchInstanceEndpointOverride(['--ychat-instance', '/api']),
 				/absolute http\(s\) API endpoint/,
 			);
-			assert.throws(() => getLaunchInstanceEndpointOverride(['--fluxer-instance']), /absolute http\(s\) API endpoint/);
+			assert.throws(() => getLaunchInstanceEndpointOverride(['--ychat-instance']), /absolute http\(s\) API endpoint/);
 		} finally {
 			process.defaultApp = originalDefaultApp;
 		}

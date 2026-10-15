@@ -17,10 +17,10 @@ const {
 } = await import('./DesktopLastRoute.ts');
 const {isRestorableDesktopRoutePath} = await import('@fluxer/desktop_ipc/src/LastRouteContract');
 
-const DEFAULT_LANDING = 'fluxer-app://app/channels/@me';
+const DEFAULT_LANDING = 'ychat-app://app/channels/@me';
 
 function withTempUserData(run) {
-	const dir = mkdtempSync(nodePath.join(tmpdir(), 'fluxer-last-route-'));
+	const dir = mkdtempSync(nodePath.join(tmpdir(), 'ychat-last-route-'));
 	try {
 		run(dir);
 	} finally {
@@ -38,7 +38,7 @@ describe('DesktopLastRoute', () => {
 	test('round-trips a recorded route into a same-origin landing url', () => {
 		withTempUserData((dir) => {
 			recordDesktopLastRoute(dir, '/channels/123/456');
-			assert.equal(resolveDesktopLandingUrl(dir), 'fluxer-app://app/channels/123/456');
+			assert.equal(resolveDesktopLandingUrl(dir), 'ychat-app://app/channels/123/456');
 		});
 	});
 
@@ -77,7 +77,7 @@ describe('seedDesktopLastRouteFromLegacyStorage', () => {
 				...LEGACY_SESSION,
 				Location: legacyLocation('/channels/@me/1555292173950255104'),
 			});
-			assert.equal(resolveDesktopLandingUrl(dir), 'fluxer-app://app/channels/@me/1555292173950255104');
+			assert.equal(resolveDesktopLandingUrl(dir), 'ychat-app://app/channels/@me/1555292173950255104');
 		});
 	});
 
@@ -85,7 +85,7 @@ describe('seedDesktopLastRouteFromLegacyStorage', () => {
 		withTempUserData((dir) => {
 			recordDesktopLastRoute(dir, '/channels/123/456');
 			seedDesktopLastRouteFromLegacyStorage(dir, {...LEGACY_SESSION, Location: legacyLocation('/channels/@me/789')});
-			assert.equal(resolveDesktopLandingUrl(dir), 'fluxer-app://app/channels/123/456');
+			assert.equal(resolveDesktopLandingUrl(dir), 'ychat-app://app/channels/123/456');
 		});
 	});
 

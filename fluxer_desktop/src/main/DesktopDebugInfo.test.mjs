@@ -31,7 +31,7 @@ function loadDesktopDebugInfo(options = {}) {
 			return {info() {}, transports: {file: {getFile: () => null}}};
 		}
 		if (specifier === '@electron/common/Constants') {
-			return {DESKTOP_APP_URL: 'fluxer-app://app/'};
+			return {DESKTOP_APP_URL: 'ychat-app://app/'};
 		}
 		if (specifier === '@electron/common/DesktopConfig') {
 			return {
@@ -81,7 +81,7 @@ describe('DesktopDebugInfo effective troubleshooting settings', () => {
 	test('reports hardware acceleration disabled when a launch flag disabled it', () => {
 		const {resolveEffectiveDesktopTroubleshootingSettings} = loadDesktopDebugInfo();
 
-		for (const flag of ['--fluxer-disable-gpu', '--fluxer-disable-hardware-acceleration', '--fluxer-safe-mode']) {
+		for (const flag of ['--ychat-disable-gpu', '--ychat-disable-hardware-acceleration', '--ychat-safe-mode']) {
 			assert.equal(
 				resolveEffectiveDesktopTroubleshootingSettings({disableHardwareAcceleration: false}, [flag], 'win32')
 					.disableHardwareAcceleration,
@@ -108,7 +108,7 @@ describe('DesktopDebugInfo effective troubleshooting settings', () => {
 		assert.equal(
 			resolveEffectiveDesktopTroubleshootingSettings(
 				{disableHardwareAcceleration: false},
-				['--fluxer-devtools'],
+				['--ychat-devtools'],
 				'linux',
 			).disableHardwareAcceleration,
 			false,
@@ -121,7 +121,7 @@ describe('DesktopDebugInfo effective troubleshooting settings', () => {
 		assert.equal(
 			resolveEffectiveDesktopTroubleshootingSettings(
 				{disableHardwareAcceleration: true},
-				['--fluxer-safe-mode'],
+				['--ychat-safe-mode'],
 				'darwin',
 			).disableHardwareAcceleration,
 			false,
@@ -143,7 +143,7 @@ describe('DesktopDebugInfo effective troubleshooting settings', () => {
 
 	test('answers the launch flag when nothing is persisted', () => {
 		const {getLaunchDesktopTroubleshootingSettings} = loadDesktopDebugInfo({
-			argv: ['--fluxer-disable-hardware-acceleration'],
+			argv: ['--ychat-disable-hardware-acceleration'],
 			platform: 'linux',
 		});
 

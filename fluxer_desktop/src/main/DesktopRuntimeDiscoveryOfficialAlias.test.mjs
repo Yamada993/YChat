@@ -17,7 +17,7 @@ installTestModuleStub(
 			async fetch({url, expectedOrigin}) {
 				network.fetched.push({url, expectedOrigin});
 				const document = network.served.get(new URL(url).origin);
-				if (document === undefined || !url.endsWith('/.well-known/fluxer')) {
+				if (document === undefined || !url.endsWith('/.well-known/ychat')) {
 					return {ok: false, status: 404, headers: {}, body: null};
 				}
 				return {
@@ -62,8 +62,8 @@ function officialDocument(clientOrigin) {
 }
 
 const CHANNELS = Object.freeze([
-	{migrated: 'https://fluxer.com', official: 'https://web.fluxer.app'},
-	{migrated: 'https://canary.fluxer.com', official: 'https://web.canary.fluxer.app'},
+	{migrated: 'https://chat.yamada.top:8443', official: 'https://chat.yamada.top:8443'},
+	{migrated: 'https://chat.yamada.top:8443', official: 'https://chat.yamada.top:8443'},
 ]);
 
 describe('desktop discovery for an account stored on the migrated official domain', () => {
@@ -104,7 +104,7 @@ describe('desktop discovery for an account stored on the migrated official domai
 	}
 
 	test('another instance that serves a foreign API is still refused', async () => {
-		network.served.set('https://chat.example.test', officialDocument('https://web.fluxer.app'));
+		network.served.set('https://chat.example.test', officialDocument('https://chat.yamada.top:8443'));
 
 		await assert.rejects(resolveDesktopRuntimePlan({input: 'https://chat.example.test/api', signal: null}), {
 			name: 'DesktopRuntimeDiscoveryFailedError',

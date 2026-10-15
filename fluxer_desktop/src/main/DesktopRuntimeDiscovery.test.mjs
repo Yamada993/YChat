@@ -11,10 +11,10 @@ const {DEPLOYED_OFFICIAL_DOCUMENT} = await import('@fluxer/instance_bootstrap/sr
 describe('runtime plans from a served discovery document', () => {
 	test('a document served by its own API origin builds a plan keyed on that origin', () => {
 		const built = runtimePlanFromServedDiscovery(
-			'https://api.fluxer.app/.well-known/fluxer',
+			'https://chat.yamada.top:8443/api/.well-known/ychat',
 			DEPLOYED_OFFICIAL_DOCUMENT,
 		);
-		assert.equal(built.instanceKey, 'https://api.fluxer.app');
+		assert.equal(built.instanceKey, 'https://chat.yamada.top:8443');
 		assert.equal(built.document, DEPLOYED_OFFICIAL_DOCUMENT);
 	});
 
@@ -29,7 +29,7 @@ describe('runtime plans from a served discovery document', () => {
 				upload_relay: 'https://evil.example/upload',
 			},
 		};
-		assert.throws(() => runtimePlanFromServedDiscovery('https://evil.example/.well-known/fluxer', spoofed), {
+		assert.throws(() => runtimePlanFromServedDiscovery('https://evil.example/.well-known/ychat', spoofed), {
 			name: 'InstanceDiscoveryOriginMismatchError',
 		});
 	});
@@ -40,10 +40,10 @@ describe('runtime plans from a served discovery document', () => {
 			endpoints: {
 				...DEPLOYED_OFFICIAL_DOCUMENT.endpoints,
 				api: 'https://evil.example',
-				api_client: 'https://api.fluxer.app',
+				api_client: 'https://chat.yamada.top:8443',
 			},
 		};
-		assert.throws(() => runtimePlanFromServedDiscovery('https://evil.example/.well-known/fluxer', spoofed), {
+		assert.throws(() => runtimePlanFromServedDiscovery('https://evil.example/.well-known/ychat', spoofed), {
 			name: 'InstanceDiscoveryOriginMismatchError',
 		});
 	});

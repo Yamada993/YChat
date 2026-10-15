@@ -34,7 +34,7 @@ export async function loadDesktopStorageIpcBundle() {
 		write: false,
 		tsconfig: 'tsconfig.json',
 	});
-	const directory = mkdtempSync(nodePath.join(tmpdir(), 'fluxer-app-store-bundle-'));
+	const directory = mkdtempSync(nodePath.join(tmpdir(), 'ychat-app-store-bundle-'));
 	const file = nodePath.join(directory, 'DesktopStorageIpcBundle.mjs');
 	writeFileSync(file, bundle.outputFiles[0].text, 'utf8');
 	loaded = await import(pathToFileURL(file).href);
@@ -366,7 +366,7 @@ export function createFakeAppStoreBinding({delays = new Map(), maxValueBytes = 8
 }
 
 export function createTemporaryUserData() {
-	return mkdtempSync(nodePath.join(tmpdir(), 'fluxer-user-data-'));
+	return mkdtempSync(nodePath.join(tmpdir(), 'ychat-user-data-'));
 }
 
 export function createInvoker(routes) {

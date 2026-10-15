@@ -53,7 +53,7 @@ function loadAppImageUpdate(env = {}, overrides = {}, requireImpl = require) {
 	return module.exports;
 }
 
-const INSTALLED_NAME = 'My Fluxer.AppImage';
+const INSTALLED_NAME = 'My YChat.AppImage';
 const OLD_BYTES = Buffer.from('old-appimage-payload');
 const NEW_BYTES = Buffer.alloc(400_000, 7);
 const NEW_SHA256 = createHash('sha256').update(NEW_BYTES).digest('hex');
@@ -89,7 +89,7 @@ after(async () => {
 });
 
 function createInstall() {
-	const root = mkdtempSync(join(tmpdir(), 'fluxer-appimage-test-'));
+	const root = mkdtempSync(join(tmpdir(), 'ychat-appimage-test-'));
 	const applications = join(root, 'Applications');
 	mkdirSync(applications);
 	const installedPath = join(applications, INSTALLED_NAME);
@@ -98,7 +98,7 @@ function createInstall() {
 }
 
 function stagingLeftovers(directory) {
-	return readdirSync(directory).filter((entry) => entry.startsWith('.fluxer-update-'));
+	return readdirSync(directory).filter((entry) => entry.startsWith('.ychat-update-'));
 }
 
 function assertUnavailable(result, reason) {
@@ -107,17 +107,17 @@ function assertUnavailable(result, reason) {
 }
 
 function createAppDir(name) {
-	const root = mkdtempSync(join(tmpdir(), 'fluxer-appdir-test-'));
+	const root = mkdtempSync(join(tmpdir(), 'ychat-appdir-test-'));
 	const dir = join(root, name);
 	mkdirSync(dir);
 	writeFileSync(join(dir, 'AppRun'), '#!/usr/bin/env bash\n', {mode: 0o755});
-	const binary = join(dir, 'fluxer-canary');
+	const binary = join(dir, 'ychat-canary');
 	writeFileSync(binary, 'elf', {mode: 0o755});
 	return {dir, binary};
 }
 
 function stagingPrefixFor(installedPath) {
-	return `.fluxer-update-${createHash('sha256').update(installedPath).digest('hex').slice(0, 8)}-`;
+	return `.ychat-update-${createHash('sha256').update(installedPath).digest('hex').slice(0, 8)}-`;
 }
 
 describe('AppImageUpdate process provenance', () => {
@@ -127,7 +127,7 @@ describe('AppImageUpdate process provenance', () => {
 
 		assert.equal(isRunningFromAppImage({APPDIR: mounted.dir}, mounted.binary), true);
 		assert.equal(isRunningFromAppImage({APPDIR: `${mounted.dir}/`}, mounted.binary), true);
-		assert.equal(isRunningFromAppImage({APPDIR: mounted.dir}, join(mounted.dir, 'usr', 'bin', 'fluxer-canary')), true);
+		assert.equal(isRunningFromAppImage({APPDIR: mounted.dir}, join(mounted.dir, 'usr', 'bin', 'ychat-canary')), true);
 	});
 
 	test('refuses an extracted AppDir, whose APPIMAGE belongs to whatever launched it', () => {
@@ -147,22 +147,22 @@ describe('AppImageUpdate process provenance', () => {
 		const {isRunningFromAppImage} = loadAppImageUpdate({});
 		const terminal = createAppDir('.mount_Alacritty7fJk2L');
 
-		assert.equal(isRunningFromAppImage({}, '/opt/Fluxer/fluxer'), false);
-		assert.equal(isRunningFromAppImage({APPDIR: ''}, '/opt/Fluxer/fluxer'), false);
-		assert.equal(isRunningFromAppImage({APPDIR: terminal.dir}, '/opt/Fluxer/fluxer'), false);
+		assert.equal(isRunningFromAppImage({}, '/opt/YChat/ychat'), false);
+		assert.equal(isRunningFromAppImage({APPDIR: ''}, '/opt/YChat/ychat'), false);
+		assert.equal(isRunningFromAppImage({APPDIR: terminal.dir}, '/opt/YChat/ychat'), false);
 	});
 
 	test('refuses a mount path that only prefixes this executable', () => {
 		const {isRunningFromAppImage} = loadAppImageUpdate({});
 		const mounted = createAppDir('.mount_My FluAKcenK');
 
-		assert.equal(isRunningFromAppImage({APPDIR: mounted.dir}, `${mounted.dir}-other/fluxer-canary`), false);
+		assert.equal(isRunningFromAppImage({APPDIR: mounted.dir}, `${mounted.dir}-other/ychat-canary`), false);
 	});
 
 	test('refuses an APPDIR the runtime cannot have mounted', () => {
 		const {isRunningFromAppImage} = loadAppImageUpdate({});
-		const installDir = mkdtempSync(join(tmpdir(), 'fluxer-opt-test-'));
-		const binary = join(installDir, 'fluxer-canary');
+		const installDir = mkdtempSync(join(tmpdir(), 'ychat-opt-test-'));
+		const binary = join(installDir, 'ychat-canary');
 		writeFileSync(binary, 'elf', {mode: 0o755});
 
 		assert.equal(isRunningFromAppImage({APPDIR: installDir}, binary), false);
@@ -259,7 +259,7 @@ describe('AppImageUpdate in-place replacement', () => {
 			expectedSha256: NEW_SHA256,
 		});
 
-		assert.equal(staged.stagingDirectory.startsWith(join(install.applications, '.fluxer-update-')), true);
+		assert.equal(staged.stagingDirectory.startsWith(join(install.applications, '.ychat-update-')), true);
 		appImageUpdate.discardStagedAppImageUpdate(staged);
 		assert.deepEqual(stagingLeftovers(install.applications), []);
 	});
@@ -672,7 +672,7 @@ describe('AppImageUpdate abandoned staging cleanup', () => {
 
 	test('leaves a staged update belonging to another AppImage in the same directory alone', async () => {
 		const install = createInstall();
-		const siblingPath = join(install.applications, 'Fluxer Canary.AppImage');
+		const siblingPath = join(install.applications, 'YChat Canary.AppImage');
 		writeFileSync(siblingPath, OLD_BYTES, {mode: 0o755});
 		const appImageUpdate = loadAppImageUpdate({APPIMAGE: install.installedPath});
 		const resolved = appImageUpdate.resolveAppImageTarget();
@@ -694,7 +694,7 @@ describe('AppImageUpdate abandoned staging cleanup', () => {
 
 	test('unlinks a staging-named symlink instead of following it out of the install directory', () => {
 		const install = createInstall();
-		const outside = mkdtempSync(join(tmpdir(), 'fluxer-outside-test-'));
+		const outside = mkdtempSync(join(tmpdir(), 'ychat-outside-test-'));
 		writeFileSync(join(outside, 'keep-me'), 'not ours to delete');
 		const planted = join(install.applications, `${stagingPrefixFor(install.installedPath)}link`);
 		symlinkSync(outside, planted);
@@ -710,7 +710,7 @@ describe('AppImageUpdate abandoned staging cleanup', () => {
 
 	test('leaves everything that is not one of this AppImage staging directories alone', () => {
 		const install = createInstall();
-		const neighbours = ['Fluxer Canary.AppImage', '.fluxer-update-notes.txt', '.fluxer-update-'];
+		const neighbours = ['YChat Canary.AppImage', '.ychat-update-notes.txt', '.ychat-update-'];
 		for (const name of neighbours) {
 			writeFileSync(join(install.applications, name), 'keep');
 		}

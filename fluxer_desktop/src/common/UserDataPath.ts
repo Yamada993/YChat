@@ -15,9 +15,9 @@ interface UserDataPaths {
 type ChannelStorageDirectoryMap = Record<BuildChannel, string>;
 
 const channelStorageDirectoryMap: ChannelStorageDirectoryMap = {
-	stable: 'fluxer',
-	canary: 'fluxercanary',
-	development: 'fluxerdevelopment',
+	stable: 'ychat',
+	canary: 'ychatcanary',
+	development: 'ychatdevelopment',
 };
 
 class UserDataPathConflictError extends Error {
@@ -44,7 +44,7 @@ function getPortableBasePath(): string {
 }
 
 function detectPortableMode(): boolean {
-	if (process.argv.includes('--fluxer-portable')) return true;
+	if (process.argv.includes('--ychat-portable')) return true;
 	const envValue = process.env.FLUXER_PORTABLE;
 	if (envValue && ['1', 'true', 'yes', 'on'].includes(envValue.trim().toLowerCase())) return true;
 	const markerLocations = [path.join(path.dirname(process.execPath), '.portable')];

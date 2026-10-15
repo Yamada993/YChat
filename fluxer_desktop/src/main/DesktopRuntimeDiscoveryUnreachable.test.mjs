@@ -61,7 +61,7 @@ const {DESKTOP_RUNTIME_DISCOVERY_UNREACHABLE_ERROR_NAME} = await import(
 	'@fluxer/desktop_ipc/src/LocalAppRuntimeContract'
 );
 
-const API_ENDPOINT = 'https://api.fluxer.app';
+const API_ENDPOINT = 'https://chat.yamada.top:8443';
 const MARKER_KEY = `runtime_discovery.v1:${API_ENDPOINT}`;
 
 function served(document) {
@@ -174,7 +174,7 @@ describe('desktop discovery while the instance is unreachable', () => {
 	});
 
 	test('a remembered document that no longer validates is ignored', async () => {
-		markers.set(MARKER_KEY, JSON.stringify({url: 'https://evil.example/.well-known/fluxer', document: {}}));
+		markers.set(MARKER_KEY, JSON.stringify({url: 'https://evil.example/.well-known/ychat', document: {}}));
 		network.respond = refused();
 		await assert.rejects(resolve(), {name: DESKTOP_RUNTIME_DISCOVERY_UNREACHABLE_ERROR_NAME});
 	});

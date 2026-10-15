@@ -22,12 +22,12 @@ import {
 import {app} from 'electron';
 import log from 'electron-log';
 
-const DEBUG_INFO_ARGS = new Set(['--fluxer-debug-info', '--fluxer-client-info', '--client-info']);
-const DISABLE_HARDWARE_ACCELERATION_ARGS = new Set(['--fluxer-disable-gpu', '--fluxer-disable-hardware-acceleration']);
-const OPEN_DEVTOOLS_ARGS = new Set(['--fluxer-devtools', '--fluxer-open-devtools']);
-const RESET_WINDOW_STATE_ARGS = new Set(['--fluxer-reset-window-state']);
-const RENDERER_CONSOLE_LOG_ARGS = new Set(['--fluxer-log-renderer-console']);
-const NET_LOG_ARGS = new Set(['--fluxer-net-log']);
+const DEBUG_INFO_ARGS = new Set(['--ychat-debug-info', '--ychat-client-info', '--client-info']);
+const DISABLE_HARDWARE_ACCELERATION_ARGS = new Set(['--ychat-disable-gpu', '--ychat-disable-hardware-acceleration']);
+const OPEN_DEVTOOLS_ARGS = new Set(['--ychat-devtools', '--ychat-open-devtools']);
+const RESET_WINDOW_STATE_ARGS = new Set(['--ychat-reset-window-state']);
+const RENDERER_CONSOLE_LOG_ARGS = new Set(['--ychat-log-renderer-console']);
+const NET_LOG_ARGS = new Set(['--ychat-net-log']);
 
 interface DesktopDebugInfo {
 	clientInfo: string;
@@ -256,7 +256,7 @@ function formatAccountStoreState(state: DesktopAppStoreState | null): string {
 
 export function formatDesktopDebugInfo(info: DesktopDebugInfo): string {
 	return [
-		'Fluxer desktop debug info',
+		'YChat desktop debug info',
 		info.clientInfo,
 		`App URL: ${info.appUrl}`,
 		`User data: ${info.userDataPath}`,
