@@ -874,9 +874,9 @@ describe('GatewayOriginRegistry', () => {
 describe('native gateway kill switches', () => {
 	test('names the launch flag, the environment variable and safe mode as disable reasons', () => {
 		assert.equal(getNativeGatewayDisableReason([]), null);
-		assert.equal(getNativeGatewayDisableReason(['--fluxer-disable-native-gateway']), '--fluxer-disable-native-gateway');
-		assert.equal(getNativeGatewayDisableReason(['--fluxer-safe-mode']), '--fluxer-safe-mode');
-		process.env.FLUXER_DISABLE_NATIVE_GATEWAY = '1';
+		assert.equal(getNativeGatewayDisableReason(['--ychat-disable-native-gateway']), '--ychat-disable-native-gateway');
+		assert.equal(getNativeGatewayDisableReason(['--ychat-safe-mode']), '--ychat-safe-mode');
+		process.env.YCHAT_DISABLE_NATIVE_GATEWAY = '1';
 		try {
 			assert.equal(getNativeGatewayDisableReason([]), 'FLUXER_DISABLE_NATIVE_GATEWAY');
 		} finally {

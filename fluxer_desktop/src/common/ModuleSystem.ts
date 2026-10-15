@@ -12,7 +12,7 @@ const OFFLINE_RENDERER_VERSION_NAME = 'version.json';
 const OFFLINE_RENDERER_VERSION_MAX_BYTES = 4096;
 
 const MODULE_SYSTEM_ENV = 'FLUXER_MODULE_SYSTEM';
-const MODULE_SYSTEM_DISABLE_ARGUMENT = '--fluxer-no-module-system';
+const MODULE_SYSTEM_DISABLE_ARGUMENT = '--ychat-no-module-system';
 const FALSY_VALUES: ReadonlySet<string> = new Set(['0', 'false', 'no', 'off']);
 
 export function readModuleSystemDisableRequest(

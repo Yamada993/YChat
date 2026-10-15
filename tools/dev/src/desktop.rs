@@ -954,7 +954,7 @@ pub fn run_desktop(
         ensure_desktop_dependencies()?;
     }
     patch_macos_dev_electron_info_plist()?;
-    let mut args = vec!["--fluxer-log-renderer-console".to_owned()];
+    let mut args = vec!["--ychat-log-renderer-console".to_owned()];
     args.extend(extra_args.iter().cloned());
     let command = electron_command(&args);
     let refs: Vec<_> = command.iter().map(String::as_str).collect();

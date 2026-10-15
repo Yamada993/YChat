@@ -467,7 +467,7 @@ function quoteDesktopExecArg(value) {
 }
 
 function buildLinuxDesktopTaskExec(taskId) {
-	return `${linuxInstalledExecPath} --fluxer-task=${taskId} %U`;
+	return `${linuxInstalledExecPath} --ychat-task=${taskId} %U`;
 }
 
 function normalizeArch(arch) {

@@ -251,7 +251,7 @@ export const FROZEN_STORAGE_REGISTRY: ReadonlyArray<FrozenStorageEntry> = Object
 		deletableAt: FrozenStorageDeletableAt.NEVER,
 		writers: [{module: 'fluxer_desktop/src/main/Window.ts', marker: "'window-state.json'"}],
 		clearableBy: [],
-		note: 'Window geometry. --fluxer-reset-window-state ignores it for one launch. Nothing deletes it.',
+		note: 'Window geometry. --ychat-reset-window-state ignores it for one launch. Nothing deletes it.',
 	},
 	{
 		id: 'desktop.native-strings-json',

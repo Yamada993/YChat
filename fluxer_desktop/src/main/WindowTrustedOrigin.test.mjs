@@ -116,7 +116,7 @@ const HOSTILE_ARGV = [
 	'https://evil.example',
 	'--url',
 	'https://evil.example/channels/@me',
-	'--fluxer-instance=https://api.evil.example',
+	'--ycaht-instance=https://api.evil.example',
 	'https://evil.example/',
 	'file:///etc/passwd',
 ];
@@ -124,19 +124,19 @@ const HOSTILE_ARGV = [
 describe('the window trust boundary is exactly the local app document origin', () => {
 	test('the local app origin and its routes are trusted', () => {
 		assert.equal(isTrustedOrigin(DESKTOP_APP_URL), true);
-		assert.equal(isTrustedOrigin('fluxer-app://app/channels/@me'), true);
-		assert.equal(isTrustedOrigin('fluxer-app://app/settings/user?tab=1#x'), true);
+		assert.equal(isTrustedOrigin('ychat-app://app/channels/@me'), true);
+		assert.equal(isTrustedOrigin('ychat-app://app/settings/user?tab=1#x'), true);
 	});
 
 	test('the reserved proxy routes are never trusted documents', () => {
-		assert.equal(isTrustedOrigin('fluxer-app://app/api/k/v1/users/@me'), false);
-		assert.equal(isTrustedOrigin('fluxer-app://app/proxy/k?url=https://evil.example'), false);
+		assert.equal(isTrustedOrigin('ychat-app://app/api/k/v1/users/@me'), false);
+		assert.equal(isTrustedOrigin('ychat-app://app/proxy/k?url=https://evil.example'), false);
 	});
 
 	test('the credential, port and host bypasses are rejected', () => {
-		assert.equal(isTrustedOrigin('fluxer-app://evil.example/x'), false);
-		assert.equal(isTrustedOrigin('fluxer-app://u:p@app/'), false);
-		assert.equal(isTrustedOrigin('fluxer-app://app:8080/'), false);
+		assert.equal(isTrustedOrigin('ychat-app://evil.example/x'), false);
+		assert.equal(isTrustedOrigin('ychat-app://u:p@app/'), false);
+		assert.equal(isTrustedOrigin('ychat-app://app:8080/'), false);
 	});
 
 	test('an opaque origin is rejected, which is what protects the data: voice-debug window', () => {
@@ -152,7 +152,7 @@ describe('the window trust boundary is exactly the local app document origin', (
 	});
 
 	test('the OS deep link scheme is not a document origin', () => {
-		assert.equal(isTrustedOrigin('fluxer://guild/channel'), false);
+		assert.equal(isTrustedOrigin('ychat://guild/channel'), false);
 	});
 
 	test('an empty or absent URL is rejected', () => {
@@ -189,7 +189,7 @@ describe('the main window only ever loads the local app document', () => {
 
 	test('a deep link reaches the renderer as an in-app path, never as a document to load', async () => {
 		assert.doesNotMatch(readMainSource('DeepLinks.ts'), /\.loadURL\(|\.loadFile\(/);
-		for (const deepLink of ['fluxer://channels/@me', 'fluxer://evil.example/https://evil.example', 'fluxer://-/x']) {
+		for (const deepLink of ['ychat://channels/@me', 'ychat://evil.example/https://evil.example', 'ychat://-/x']) {
 			ipcHandlers.delete('get-initial-deep-link');
 			withArgv([...HOSTILE_ARGV, deepLink], () => initializeDeepLinks());
 			const payload = await ipcHandlers.get('get-initial-deep-link')();

@@ -59,7 +59,7 @@ describe('the launch decision on a build with the module system flag off', () =>
 
 	test('a flag-off build with no offline renderer is left alone, the disable override was never in play', () => {
 		assert.deepEqual(
-			resolveModuleSystemLaunch({argv: ['--fluxer-no-module-system'], env: {}, hasOfflineRenderer: false}),
+			resolveModuleSystemLaunch({argv: ['--ychat-no-module-system'], env: {}, hasOfflineRenderer: false}),
 			{kind: 'disabled-by-build'},
 		);
 	});
@@ -84,7 +84,7 @@ describe('the launch decision on a modules build, given an offline renderer no s
 	});
 
 	test('the disable argument would turn the module system off', () => {
-		assert.equal(launch(modulesBuild, ['fluxer', '--fluxer-no-module-system'], {}, true).kind, 'disabled-by-request');
+		assert.equal(launch(modulesBuild, ['fluxer', '--ychat-no-module-system'], {}, true).kind, 'disabled-by-request');
 	});
 
 	test('the environment variable accepts the documented falsy spellings', () => {
@@ -99,7 +99,7 @@ describe('the launch decision on a modules build, given an offline renderer no s
 
 describe('the disable override on a modules build, the only shape that ships', () => {
 	test('the disable argument is ignored instead of bricking the install', () => {
-		assert.deepEqual(launch(modulesBuild, ['fluxer', '--fluxer-no-module-system'], {}, false), {
+		assert.deepEqual(launch(modulesBuild, ['fluxer', '--ychat-no-module-system'], {}, false), {
 			kind: 'enabled-with-ignored-disable-request',
 		});
 	});

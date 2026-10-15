@@ -71,7 +71,7 @@ interface PersistedDesktopTroubleshootingSettings {
 	disableHardwareAcceleration?: boolean;
 }
 
-const INSTANCE_ENDPOINT_ARGS = ['--fluxer-instance'];
+const INSTANCE_ENDPOINT_ARGS = ['--ychat-instance'];
 
 const PREBOOT_THEME_PATTERN = /^[a-z0-9][a-z0-9_-]{0,63}$/u;
 

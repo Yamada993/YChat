@@ -94,11 +94,11 @@ package() {
 
 		[Desktop Action open-settings]
 		Name=Open Settings
-		Exec=/opt/$pkgname/$pkgname --fluxer-task=open-settings %U
+		Exec=/opt/$pkgname/$pkgname --ychat-task=open-settings %U
 
 		[Desktop Action new-dm]
 		Name=New Direct Message
-		Exec=/opt/$pkgname/$pkgname --fluxer-task=new-dm %U
+		Exec=/opt/$pkgname/$pkgname --ychat-task=new-dm %U
 	EOF
 	chmod 644 "$pkgdir/usr/share/applications/$_desktopid.desktop"
 
