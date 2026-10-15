@@ -446,7 +446,7 @@ export default () => {
 			webAssemblyModuleFilename: isProduction ? 'assets/[contenthash:16].wasm' : 'assets/[name].[hash].wasm',
 			clean: true,
 		},
-		devtool: 'source-map',
+		devtool: '',
 		target: ['web', 'browserslist'],
 		lazyCompilation: false,
 		performance: false,
