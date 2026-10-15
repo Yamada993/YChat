@@ -2,7 +2,7 @@
 
 const APP_SHELL_CACHE_KEY = '/app-shell';
 const APP_SHELL_SEED_PATH = '/app';
-const APP_SHELL_MARKER_HEADER = 'x-fluxer-app-shell';
+const APP_SHELL_MARKER_HEADER = 'x-ychat-app-shell';
 
 export interface PrecacheEntry {
 	readonly url: string;

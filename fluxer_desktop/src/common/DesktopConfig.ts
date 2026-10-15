@@ -479,11 +479,11 @@ export function getLaunchInstanceEndpointOverride(argv: ReadonlyArray<string> = 
 		return null;
 	}
 	if (process.defaultApp !== true) {
-		throw new Error('--fluxer-instance is only accepted in a development build');
+		throw new Error('--ychat-instance is only accepted in a development build');
 	}
 	const endpoint = normalizeInstanceEndpoint(raw.trim(), InstanceEndpointKind.API);
 	if (endpoint == null || !endpoint.includes('://')) {
-		throw new Error('--fluxer-instance requires an absolute http(s) API endpoint');
+		throw new Error('--ychat-instance requires an absolute http(s) API endpoint');
 	}
 	return endpoint;
 }

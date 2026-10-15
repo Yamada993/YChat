@@ -209,6 +209,14 @@ async function evaluateInPage(debugPort, expression) {
 	let targets;
 	try {
 		targets = await (await fetch(`http://127.0.0.1:${debugPort}/json/list`)).json();
+		console.error(
+		'[release-check] DevTools targets:',
+		JSON.stringify(
+			targets.map(({type, url, title}) => ({type, url, title})),
+			null,
+			2
+		)
+		);
 	} catch {
 		return null;
 	}
