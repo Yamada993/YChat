@@ -8,9 +8,9 @@ import * as path from 'node:path';
 import {parseArgs} from 'node:util';
 
 const CHANNEL_DATA_DIRECTORIES = Object.freeze({
-	stable: 'fluxer',
-	canary: 'fluxercanary',
-	development: 'fluxerdevelopment',
+	stable: 'ychat',
+	canary: 'ychatcanary',
+	development: 'ychatdevelopment',
 });
 const SERVED_RENDERER_PATTERN = /Serving the renderer: source=(\S+) version=(\S+) bundled=(\S+)/gu;
 const REPORTED_BUILD_PATTERN = /The renderer reported its build: (.+)$/gmu;
@@ -151,7 +151,7 @@ function stageApp(options, sandbox) {
 				if (process.platform === 'win32') return /\.exe$/iu.test(name) && !/_ExecutionStub\.exe$/iu.test(name);
 				return (stats.mode & 0o111) !== 0;
 			});
-		if (executable == null) fail(`${options.app} holds no fluxer executable`);
+		if (executable == null) fail(`${options.app} holds no ychat executable`);
 		return {executable, portableRoot: path.join(staged, 'data')};
 	}
 	const staged = path.join(sandbox, path.basename(options.app));
@@ -212,7 +212,7 @@ async function evaluateInPage(debugPort, expression) {
 	} catch {
 		return null;
 	}
-	const page = targets.find((target) => target.type === 'page' && String(target.url).startsWith('fluxer-app://app'));
+	const page = targets.find((target) => target.type === 'page' && String(target.url).startsWith('ychat-app://app'));
 	if (page == null) return null;
 	return await new Promise((resolve) => {
 		const socket = new WebSocket(page.webSocketDebuggerUrl);
@@ -355,7 +355,7 @@ async function stop(child, executable) {
 async function run() {
 	const options = readOptions();
 	fs.mkdirSync(options.workdir, {recursive: true});
-	const sandbox = fs.mkdtempSync(path.join(options.workdir, 'fluxer-release-check-'));
+	const sandbox = fs.mkdtempSync(path.join(options.workdir, 'ychat-release-check-'));
 	const {executable, portableRoot} = stageApp(options, sandbox);
 	const profile = path.join(portableRoot, CHANNEL_DATA_DIRECTORIES[options.channel]);
 	if (options.seedProfile != null) {
@@ -369,7 +369,7 @@ async function run() {
 	fs.mkdirSync(profile, {recursive: true});
 	const logPath = path.join(profile, 'logs', 'main.log');
 	const debugPort = await freePort();
-	const launchArguments = ['--fluxer-portable', `--remote-debugging-port=${debugPort}`, ...options.appArgs];
+	const launchArguments = ['--ychat-portable', `--remote-debugging-port=${debugPort}`, ...options.appArgs];
 	const environment = {...process.env};
 	if (options.packageOrigin != null) {
 		environment.FLUXER_DESKTOP_PACKAGE_ORIGIN = options.packageOrigin;
@@ -402,7 +402,7 @@ async function run() {
 			if (options.updateFromRenderer) {
 				await startUpdateFromRenderer(debugPort, options.timeoutMs);
 			} else {
-				execFileSync(executable, ['--fluxer-portable', '--fluxer-update'], {env: environment, stdio: 'ignore'});
+				execFileSync(executable, ['--ychat-portable', '--ychat-update'], {env: environment, stdio: 'ignore'});
 			}
 			final = await waitForRenderer({
 				logPath,
