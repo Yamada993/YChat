@@ -10,42 +10,36 @@ const FRAME_SOURCES: ReadonlyArray<string> = Object.freeze([
 ]);
 
 const IMAGE_SOURCES: ReadonlyArray<string> = Object.freeze([
-	'https://*.fluxer.app',
+	'https://*.yamada.top',
 	'https://i.ytimg.com',
 	'https://*.youtube.com',
-	'https://*.fluxer.media',
-	'https://fluxer.media',
+	'https://yamada.top',
 ]);
 
 const MEDIA_SOURCES: ReadonlyArray<string> = Object.freeze([
-	'https://*.fluxer.app',
+	'https://*.yamada.top',
 	'https://*.youtube.com',
-	'https://*.fluxer.media',
-	'https://fluxer.media',
+	'https://yamada.top',
 ]);
 
-const SCRIPT_SOURCES: ReadonlyArray<string> = Object.freeze(['https://*.fluxer.app']);
+const SCRIPT_SOURCES: ReadonlyArray<string> = Object.freeze(['https://*.yamada.top']);
 
 const STYLE_SOURCES: ReadonlyArray<string> = Object.freeze([
-	'https://*.fluxer.app',
+	'https://*.yamada.top',
 	'https://fonts.googleapis.com',
 	'https://api.fonts.coollabs.io',
 ]);
 
 const FONT_SOURCES: ReadonlyArray<string> = Object.freeze([
-	'https://*.fluxer.app',
+	'https://*.yamada.top',
 	'https://fonts.gstatic.com',
 	'https://api.fonts.coollabs.io',
 ]);
 
 const CONNECT_SOURCES: ReadonlyArray<string> = Object.freeze([
-	'https://*.fluxer.app',
-	'wss://*.fluxer.app',
-	'https://*.fluxer.media',
-	'wss://*.fluxer.media',
-	'https://fluxer-uploads.ewr1.vultrobjects.com',
-	'https://fluxerstatus.com',
-	'https://fluxer.media',
+	'https://*.yamada.top',
+	'wss://*.yamada.top',
+	'https://yamada.top',
 ]);
 
 const LOOPBACK_HTTP_SOURCES: ReadonlyArray<string> = Object.freeze([
@@ -54,9 +48,9 @@ const LOOPBACK_HTTP_SOURCES: ReadonlyArray<string> = Object.freeze([
 	'http://127.0.0.1:*',
 ]);
 
-const WORKER_SOURCES: ReadonlyArray<string> = Object.freeze(['https://*.fluxer.app', 'blob:']);
+const WORKER_SOURCES: ReadonlyArray<string> = Object.freeze(['https://*.yamada.top', 'blob:']);
 
-const MANIFEST_SOURCES: ReadonlyArray<string> = Object.freeze(['https://*.fluxer.app']);
+const MANIFEST_SOURCES: ReadonlyArray<string> = Object.freeze(['https://*.yamada.top']);
 
 const SELF_SOURCE = "'self'";
 const NONE_SOURCE = "'none'";

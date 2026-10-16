@@ -24,11 +24,7 @@ let cachedConfig: MasterConfig | null = null;
 const MAX_REPORT_RETENTION_DAYS = 36_500;
 
 const DEFAULT_PASSKEY_ORIGINS = [
-	'https://fluxer.app',
-	'https://web.fluxer.app',
-	'https://web.canary.fluxer.app',
-	'https://fluxer.com',
-	'https://canary.fluxer.com',
+	'https://chat.yamada.top:8443',
 	'android:apk-key-hash:keSY4bimyLqZQV7bKXgpa2xYuqXi0qZJzsYtp6gpx7w',
 ];
 

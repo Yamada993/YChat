@@ -29,7 +29,7 @@ import {
 import type {LimitConfigSnapshot, LimitConfigWireFormat, LimitFilter, LimitRule} from '@fluxer/limits/src/LimitTypes';
 import {EXPERIMENT_BUCKET_RESOLUTION} from '@fluxer/schema/src/domains/experiment/ExperimentBucket';
 
-export const INSTANCE_DISCOVERY_PATH = '/.well-known/fluxer';
+export const INSTANCE_DISCOVERY_PATH = '/.well-known/ychat';
 const INSTANCE_DISCOVERY_CONVENTIONAL_ENDPOINT_PATH = '/api';
 export const INSTANCE_DISCOVERY_MAX_BYTES = 1024 * 1024;
 export const INSTANCE_DISCOVERY_MAX_CHUNKS = 1024;
