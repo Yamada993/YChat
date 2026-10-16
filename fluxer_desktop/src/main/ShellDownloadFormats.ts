@@ -11,8 +11,8 @@ export function getDesktopDownloadArch(arch: NodeJS.Architecture): DesktopDownlo
 export const DESKTOP_DOWNLOAD_ARCH = getDesktopDownloadArch(process.arch);
 const PACKAGE_ORIGIN_ENV = 'FLUXER_DESKTOP_PACKAGE_ORIGIN';
 const CHANNEL_PACKAGE_ORIGINS: Record<BuildChannel, string> = {
-	stable: 'https://pkgs.fluxer.com',
-	canary: 'https://pkgs.fluxer.com',
+	stable: 'https://cloud.yamada.top:8443',
+	canary: 'https://cloud.yamada.top:8443',
 	development: 'http://localhost:48780',
 };
 
