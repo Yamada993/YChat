@@ -213,20 +213,20 @@ function buildTemplate(): Array<MenuItemConstructorOptions> {
 			{
 				label: t('desktop.appMenu.website'),
 				click: async () => {
-					await openExternalDeduped('https://fluxer.app');
+					await openExternalDeduped('https://chat.yamada.top:8443');
 				},
 			},
 			{
 				label: t('desktop.appMenu.github'),
 				click: async () => {
-					await openExternalDeduped('https://github.com/fluxerapp/fluxer');
+					await openExternalDeduped('https://chat.yamada.top:8443');
 				},
 			},
 			{type: 'separator'},
 			{
 				label: t('desktop.appMenu.reportIssue'),
 				click: async () => {
-					await openExternalDeduped('https://feedback.fluxer.com');
+					await openExternalDeduped('https://chat.yamada.top:8443');
 				},
 			},
 			{type: 'separator'},
