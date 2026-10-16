@@ -15,7 +15,7 @@ const BUILD_IN_PROGRESS_FILE = path.join(DIST_DIR, BUILD_IN_PROGRESS_FILE_NAME);
 let compiledBuildChannel = '';
 const NATIVE_DIR = path.join(ROOT_DIR, 'native');
 const MONOREPO_ROOT = path.join(ROOT_DIR, '..');
-const APP_DIST_DIR = path.join(MONOREPO_ROOT, 'ychat_app', 'dist');
+const APP_DIST_DIR = path.join(MONOREPO_ROOT, 'fluxer_app', 'dist');
 const RENDERER_DIST_ENTRY_NAME = 'renderer';
 const RENDERER_DIST_DIR = path.join(DIST_DIR, RENDERER_DIST_ENTRY_NAME);
 const SPLASH_SRC_DIR = path.join(SRC_DIR, 'splash');
@@ -85,7 +85,7 @@ class SharedRendererConsumerConflictError extends Error {
 class RendererOutputIncompleteError extends Error {
 	constructor(location, missing) {
 		super(
-			`Renderer output at ${location} is missing ${missing.join(', ')}. Run \`pnpm --filter ychat_app build:desktop\`.`,
+			`Renderer output at ${location} is missing ${missing.join(', ')}. Run \`pnpm --filter fluxer_app build:desktop\`.`,
 		);
 		this.name = 'RendererOutputIncompleteError';
 	}
