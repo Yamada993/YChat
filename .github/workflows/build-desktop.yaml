@@ -81,7 +81,7 @@ jobs:
 
       - name: Check which shells run these modules
         env:
-          GH_TOKEN: ${{ steps.create-token.outputs.token }}
+          GH_TOKEN: ${{ github.token }}
           CHANNEL: ${{ steps.meta.outputs.build_channel }}
           SOURCE_SHA: ${{ steps.meta.outputs.source_sha }}
           VERSION: ${{ steps.meta.outputs.version }}
