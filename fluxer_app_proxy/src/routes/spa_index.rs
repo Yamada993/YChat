@@ -1436,7 +1436,7 @@ mod tests {
         assert_eq!(
             response
                 .headers()
-                .get("x-fluxer-app-shell")
+                .get("x-ychat-app-shell")
                 .and_then(|value| value.to_str().ok()),
             Some("1")
         );
