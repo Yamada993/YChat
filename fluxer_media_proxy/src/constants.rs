@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 pub const MAX_MEDIA_PROXY_BYTES: usize = 500 * 1024 * 1024;
-pub const DESKTOP_APP_ORIGIN: &str = "fluxer-app://app";
+pub const DESKTOP_APP_ORIGIN: &str = "ychat-app://app";
 
 pub const OUTBOUND_USER_AGENT: &str =
-    "Mozilla/5.0 (compatible; Fluxerbot/1.0; +https://fluxer.app)";
+    "Mozilla/5.0 (compatible; Fluxerbot/1.0; +//https://chat.yamada.top:8443)";
 pub const MAX_MEDIA_IMAGE_DIMENSION_DEFAULT: u32 = 16_384;
 pub const MAX_MEDIA_IMAGE_PIXELS_DEFAULT: usize =
     MAX_MEDIA_IMAGE_DIMENSION_DEFAULT as usize * MAX_MEDIA_IMAGE_DIMENSION_DEFAULT as usize;

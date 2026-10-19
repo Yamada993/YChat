@@ -569,7 +569,7 @@ fn build_spa_response(html: Box<str>, csp: &CspHeaderValues, dev_no_store: bool)
     }
     super::set_security_headers(headers);
     headers.insert(
-        HeaderName::from_static("x-fluxer-app-shell"),
+        HeaderName::from_static("x-ychat-app-shell"),
         HeaderValue::from_static("1"),
     );
     headers.insert(

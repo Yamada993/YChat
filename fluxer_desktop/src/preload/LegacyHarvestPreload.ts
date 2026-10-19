@@ -10,7 +10,7 @@ import {
 import {ipcRenderer} from 'electron';
 
 const LEGACY_HARVEST_LOOPBACK_HOSTS: ReadonlySet<string> = new Set(['127.0.0.1', '[::1]', 'localhost']);
-const LEGACY_CACHE_NAME_PREFIX = 'fluxer-';
+const LEGACY_CACHE_NAME_PREFIX = 'ychat-';
 const DATABASE_OPEN_TIMEOUT_MS = 15_000;
 const MEDIA_DEVICE_TIMEOUT_MS = 5_000;
 const MAX_BLOB_BYTES = 32 * 1024 * 1024;
@@ -21,7 +21,7 @@ const LEGACY_DATABASE_NAMES: ReadonlyArray<string> = [
 	'FluxerCustomSounds',
 	'FluxerVoiceStats',
 	'fluxer-theme-library',
-	'fluxer-app-storage',
+	'ychat-app-storage',
 ];
 
 const CRITICAL_LEGACY_DATABASE_NAMES: ReadonlySet<string> = new Set(['FluxerAccounts']);
