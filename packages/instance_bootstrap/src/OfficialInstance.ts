@@ -8,20 +8,20 @@ import {
 
 export const OFFICIAL_INSTANCE_NAME = 'YChat';
 
-export const OFFICIAL_INSTANCE_DISPLAY_HOST = 'cloud.yamada.top:8443';
+export const OFFICIAL_INSTANCE_DISPLAY_HOST = 'chat.yamada.top:8443';
 
 export const OFFICIAL_STABLE_MARKETING_ORIGIN = `https://${OFFICIAL_INSTANCE_DISPLAY_HOST}`;
 
 export const OFFICIAL_CLIENT_API_ENDPOINTS = Object.freeze({
-	stable: 'https://cloud.yamada.top:8443/api',
-	canary: 'https://cloud.yamada.top:8443/api',
+	stable: 'https://chat.yamada.top:8443/api',
+	canary: 'https://chat.yamada.top:8443/api',
 } as const);
 
 export type OfficialReleaseChannel = keyof typeof OFFICIAL_CLIENT_API_ENDPOINTS;
 
 export const OFFICIAL_MARKETING_ORIGINS = Object.freeze({
 	stable: OFFICIAL_STABLE_MARKETING_ORIGIN,
-	canary: 'https://cloud.yamada.top:8443',
+	canary: 'https://chat.yamada.top:8443',
 } as const) satisfies Record<OfficialReleaseChannel, string>;
 
 export function officialMarketingOrigin(releaseChannel: string | null | undefined): string {
@@ -29,8 +29,8 @@ export function officialMarketingOrigin(releaseChannel: string | null | undefine
 }
 
 const OFFICIAL_MIGRATED_WEB_APP_HOSTS = Object.freeze({
-	stable: 'cloud.yamada.top:8443',
-	canary: 'cloud.yamada.top:8443',
+	stable: 'chat.yamada.top:8443',
+	canary: 'chat.yamada.top:8443',
 } as const) satisfies Record<OfficialReleaseChannel, string>;
 
 const OFFICIAL_CLIENT_API_PATH = '/api';
@@ -65,7 +65,7 @@ export function officialClientApiEndpointForAlias(apiEndpoint: string): string |
 
 export const OFFICIAL_INSTANCE_HOSTS: ReadonlyArray<string> = Object.freeze([
 	OFFICIAL_INSTANCE_DISPLAY_HOST,
-	'cloud.yamada.top:8443',
+	'chat.yamada.top:8443',
 ]);
 
 const OFFICIAL_HOST_LOOKUP_RULE: CanonicalNetworkEndpointRule = Object.freeze({
