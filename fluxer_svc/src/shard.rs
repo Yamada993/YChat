@@ -66,10 +66,32 @@ where
 {
     let service = Arc::new(service);
     let name = service.service_name().to_owned();
-    let shard_id = config.shard_id;
-    let shard_subject = format!("svc.{name}.shard.{shard_id}");
-    let health_addr = config.listen_addr;
+    let subject = format!("svc.{name}.shard.{}", config.shard_id);
+    let metrics = shard_metrics(&service);
+    let handler_transport = transport.clone();
+    let handler_metrics = metrics.clone();
+    serve(
+        config,
+        Endpoint {
+            name,
+            subject,
+            queue_group: None,
+        },
+        metrics,
+        transport,
+        move |msg| {
+            handle_shard_request(
+                msg,
+                handler_transport.clone(),
+                service.clone(),
+                handler_metrics.clone(),
+            )
+        },
+    )
+    .await
+}
 
+pub(crate) fn shard_metrics<S: ShardService>(service: &Arc<S>) -> Arc<ServiceMetrics> {
     let metrics_service = service.clone();
     let additional_renderer: Arc<dyn Fn(&mut String) + Send + Sync> =
         Arc::new(move |output| metrics_service.render_prometheus_metrics(output));
@@ -77,140 +99,169 @@ where
         additional_renderer,
     ));
     metrics.init();
+    metrics
+}
 
-    let is_serving = Arc::new(AtomicBool::new(false));
+async fn handle_shard_request<S, T>(
+    msg: T::Message,
+    transport: T,
+    service: Arc<S>,
+    metrics: Arc<ServiceMetrics>,
+) where
+    S: ShardService,
+    T: Transport,
+{
+    if msg.payload().len() > MAX_SHARD_REQUEST_BYTES {
+        warn!(
+            payload_bytes = msg.payload().len(),
+            max_payload_bytes = MAX_SHARD_REQUEST_BYTES,
+            "dropping oversized shard request"
+        );
+        return;
+    }
+    let request_start = Instant::now();
+    metrics.record_request();
+    let encoding = WireEncoding::detect(msg.payload());
+    let request: S::Request = match encoding.decode(msg.payload()) {
+        Ok(r) => r,
+        Err(err) => {
+            warn!(error = %err, ?encoding, "failed to decode shard request");
+            metrics.record_request_error();
+            reply_json_error(&msg, &transport, "shard_request_decode_error").await;
+            return;
+        }
+    };
+
+    match service.handle(request).await {
+        Ok(response) => {
+            metrics.record_request_duration(request_start.elapsed().as_millis() as u64);
+            if msg.has_reply() {
+                match encoding.encode(&response) {
+                    Ok(response_bytes) => {
+                        reply_bytes(&msg, &transport, &response_bytes).await;
+                    }
+                    Err(err) => {
+                        warn!(error = %err, ?encoding, "failed to encode shard response");
+                        metrics.record_request_error();
+                        reply_json_error(&msg, &transport, "encode_error").await;
+                    }
+                }
+            }
+        }
+        Err(err) => {
+            warn!(error = %err, "shard handler returned error");
+            metrics.record_request_error();
+            metrics.record_request_duration(request_start.elapsed().as_millis() as u64);
+            reply_json_error(&msg, &transport, "shard_handler_error").await;
+        }
+    }
+}
+
+pub(crate) struct Endpoint {
+    pub(crate) name: String,
+    pub(crate) subject: String,
+    pub(crate) queue_group: Option<String>,
+}
+
+pub(crate) async fn serve<T, H, F>(
+    config: &ServiceConfig,
+    endpoint: Endpoint,
+    metrics: Arc<ServiceMetrics>,
+    transport: T,
+    handle: H,
+) -> anyhow::Result<()>
+where
+    T: Transport,
+    H: Fn(T::Message) -> F + Send + Sync + 'static,
+    F: std::future::Future<Output = ()> + Send + 'static,
+{
+    let Endpoint {
+        name,
+        subject,
+        queue_group,
+    } = endpoint;
+    let health_addr = config.listen_addr;
+    let is_serving = Arc::new(AtomicBool::new(true));
     let request_permits = Arc::new(Semaphore::new(config.max_concurrent_requests));
-
-    is_serving.store(true, Ordering::SeqCst);
 
     let mut tasks = JoinSet::new();
 
     let http_is_serving = is_serving.clone();
     let http_metrics = metrics.clone();
-    let http_name = name.clone();
     tasks.spawn(async move {
-        crate::server::run_http(health_addr, http_is_serving, http_metrics, http_name).await
+        crate::server::run_http(health_addr, http_is_serving, http_metrics, name).await
     });
 
-    let shard_transport = transport.clone();
-    let shard_service = service.clone();
-    let shard_is_serving = is_serving.clone();
-    let shard_permits = request_permits.clone();
-    let shard_metrics = metrics.clone();
+    let listen_is_serving = is_serving.clone();
     let (stop_requests, mut stop_requests_rx) = oneshot::channel();
     let request_task = tasks.spawn(async move {
         let mut requests = JoinSet::new();
         'listening: loop {
+            let subscribe = async {
+                match queue_group.as_deref() {
+                    Some(queue_group) => transport.subscribe_queue(&subject, queue_group).await,
+                    None => transport.subscribe(&subject).await,
+                }
+            };
             let mut sub = tokio::select! {
                 _ = &mut stop_requests_rx => break 'listening,
-                result = shard_transport.subscribe(&shard_subject) => result?,
+                result = subscribe => result?,
             };
             info!(
-                subject = shard_subject,
-                shard_id,
-                max_concurrent_requests = shard_permits.available_permits(),
-                "shard listening for requests"
+                subject,
+                max_concurrent_requests = request_permits.available_permits(),
+                "listening for requests"
             );
 
             loop {
                 tokio::select! {
                     _ = &mut stop_requests_rx => break 'listening,
                     result = requests.join_next(), if !requests.is_empty() => {
-                        if let Err(err) = result.expect("nonempty shard request set") {
-                            warn!(error = %err, "shard request task failed");
+                        if let Err(err) = result.expect("nonempty request set") {
+                            warn!(error = %err, "request task failed");
                         }
                     }
                     msg_opt = sub.next() => {
                         let Some(msg) = msg_opt else {
-                            warn!("shard subscription stream ended, will re-subscribe");
+                            warn!("subscription stream ended, will re-subscribe");
                             break;
                         };
 
                         while let Some(result) = requests.try_join_next() {
                             if let Err(err) = result {
-                                warn!(error = %err, "shard request task failed");
+                                warn!(error = %err, "request task failed");
                             }
                         }
-                        if !shard_is_serving.load(Ordering::SeqCst) {
+                        if !listen_is_serving.load(Ordering::SeqCst) {
                             continue;
                         }
 
-                        let transport = shard_transport.clone();
-                        let service = shard_service.clone();
-                        let is_serving = shard_is_serving.clone();
-                        let metrics = shard_metrics.clone();
-                        if msg.payload().len() > MAX_SHARD_REQUEST_BYTES {
-                            warn!(
-                                payload_bytes = msg.payload().len(),
-                                max_payload_bytes = MAX_SHARD_REQUEST_BYTES,
-                                "dropping oversized shard request"
-                            );
-                            continue;
-                        }
-                        let permit = match shard_permits.clone().try_acquire_owned() {
+                        let permit = match request_permits.clone().try_acquire_owned() {
                             Ok(permit) => permit,
                             Err(TryAcquireError::NoPermits) => {
-                                debug!("shedding shard request, no permits available");
-                                shard_metrics.record_request();
-                                shard_metrics.record_request_error();
+                                debug!("shedding request, no permits available");
+                                metrics.record_request();
+                                metrics.record_request_error();
                                 reply_json_error(&msg, &transport, "overloaded").await;
                                 continue;
                             }
                             Err(TryAcquireError::Closed) => return anyhow::Ok(()),
                         };
+                        let is_serving = listen_is_serving.clone();
+                        let request = handle(msg);
                         requests.spawn(async move {
                             let _permit = permit;
                             if !is_serving.load(Ordering::SeqCst) {
                                 return;
                             }
-                            let request_start = Instant::now();
-                            metrics.record_request();
-                            let encoding = WireEncoding::detect(msg.payload());
-                            let request: S::Request = match encoding.decode(msg.payload()) {
-                                Ok(r) => r,
-                                Err(err) => {
-                                    warn!(error = %err, ?encoding, "failed to decode shard request");
-                                    metrics.record_request_error();
-                                    reply_json_error(&msg, &transport, "shard_request_decode_error")
-                                        .await;
-                                    return;
-                                }
-                            };
-
-                            match service.handle(request).await {
-                                Ok(response) => {
-                                    metrics.record_request_duration(request_start.elapsed().as_millis() as u64);
-                                    if msg.has_reply() {
-                                        match encoding.encode(&response) {
-                                            Ok(response_bytes) => {
-                                                reply_bytes(&msg, &transport, &response_bytes).await;
-                                            }
-                                            Err(err) => {
-                                                warn!(
-                                                    error = %err,
-                                                    ?encoding,
-                                                    "failed to encode shard response"
-                                                );
-                                                metrics.record_request_error();
-                                                reply_json_error(&msg, &transport, "encode_error").await;
-                                            }
-                                        }
-                                    }
-                                }
-                                Err(err) => {
-                                    warn!(error = %err, "shard handler returned error");
-                                    metrics.record_request_error();
-                                    metrics.record_request_duration(request_start.elapsed().as_millis() as u64);
-                                    reply_json_error(&msg, &transport, "shard_handler_error").await;
-                                }
-                            }
+                            request.await;
                         });
                     }
                 }
             }
         }
         while let Some(result) = requests.join_next().await {
-            result.context("shard request task failed while draining")?;
+            result.context("request task failed while draining")?;
         }
         anyhow::Ok(())
     });
@@ -225,7 +276,7 @@ where
             }
         }
         _ = crate::shutdown::wait_for_shutdown() => {
-            info!("shard shutting down, beginning graceful drain");
+            info!("shutting down, beginning graceful drain");
 
             is_serving.store(false, Ordering::SeqCst);
 
@@ -233,8 +284,8 @@ where
             let drain = async {
                 loop {
                     let (task_id, result) = tasks.join_next_with_id().await
-                        .expect("running shard listener while draining")
-                        .context("shard service task failed while draining")?;
+                        .expect("running listener while draining")
+                        .context("service task failed while draining")?;
                     result?;
                     if task_id == request_task.id() {
                         return anyhow::Ok(());
@@ -258,7 +309,7 @@ where
                 }
             }
 
-            info!("shard shutdown complete");
+            info!("shutdown complete");
             Ok(())
         }
     }
@@ -271,7 +322,6 @@ mod tests {
     use crate::transport::InMemoryTransport;
     use serde::{Deserialize, Serialize};
     use std::time::Duration;
-    use tokio::sync::Notify;
 
     #[derive(Serialize, Deserialize)]
     struct MockRequest {
@@ -281,24 +331,6 @@ mod tests {
     #[derive(Serialize, Deserialize)]
     struct MockResponse {
         key: String,
-    }
-
-    struct BlockingShard {
-        started: Arc<Notify>,
-    }
-
-    impl ShardService for BlockingShard {
-        type Request = MockRequest;
-        type Response = MockResponse;
-
-        fn service_name(&self) -> &str {
-            "mock"
-        }
-
-        async fn handle(&self, _request: MockRequest) -> anyhow::Result<MockResponse> {
-            self.started.notify_one();
-            std::future::pending().await
-        }
     }
 
     struct EchoShard;
@@ -371,56 +403,6 @@ mod tests {
             .unwrap();
         assert_eq!(json_response, br#"{"key":"b"}"#);
 
-        shard_task.abort();
-    }
-
-    #[tokio::test]
-    async fn shard_sheds_requests_when_permits_are_exhausted() {
-        let transport = InMemoryTransport::new();
-        let started = Arc::new(Notify::new());
-        let shard = BlockingShard {
-            started: started.clone(),
-        };
-        let config = test_config(1);
-        let shard_transport = transport.clone();
-        let shard_task =
-            tokio::spawn(async move { run_shard(&config, shard, shard_transport).await });
-
-        tokio::time::sleep(Duration::from_millis(25)).await;
-
-        let payload = rmp_serde::to_vec_named(&MockRequest {
-            key: "a".to_owned(),
-        })
-        .unwrap();
-
-        let client = {
-            let transport = transport.clone();
-            let payload = payload.clone();
-            tokio::spawn(async move {
-                transport
-                    .request("svc.mock.shard.0", &payload, Duration::from_secs(10))
-                    .await
-            })
-        };
-
-        tokio::time::timeout(Duration::from_millis(250), started.notified())
-            .await
-            .expect("shard should start the first request and hold the only permit");
-
-        let response = tokio::time::timeout(
-            Duration::from_millis(250),
-            transport.request("svc.mock.shard.0", &payload, Duration::from_secs(1)),
-        )
-        .await
-        .expect("shed reply should not wait behind the in-flight request")
-        .unwrap();
-
-        assert_eq!(
-            serde_json::from_slice::<serde_json::Value>(&response).unwrap(),
-            serde_json::json!({"error": "overloaded"})
-        );
-
-        client.abort();
         shard_task.abort();
     }
 

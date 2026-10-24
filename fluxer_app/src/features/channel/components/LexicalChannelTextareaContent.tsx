@@ -164,6 +164,7 @@ export const LexicalChannelTextareaContent = observer(
 		enableReply = true,
 		enableEditLast = true,
 		enableSlashCommands = true,
+		submitOnEnter = true,
 		draftChannelId,
 		placeholder,
 		bare = false,
@@ -181,6 +182,7 @@ export const LexicalChannelTextareaContent = observer(
 		enableReply?: boolean;
 		enableEditLast?: boolean;
 		enableSlashCommands?: boolean;
+		submitOnEnter?: boolean;
 		draftChannelId?: string;
 		placeholder?: string;
 		bare?: boolean;
@@ -983,15 +985,18 @@ export const LexicalChannelTextareaContent = observer(
 			isFocused,
 			handleArrowUpEmpty,
 		});
-		const placeholderText = placeholder
-			? placeholder
-			: disabled
-				? i18n._(YOU_DO_NOT_HAVE_PERMISSION_TO_SEND_MESSAGES_DESCRIPTOR)
-				: channel.guildId != null
-					? i18n._(MESSAGE_CHANNEL_DESCRIPTOR, {channelName: channel.name || i18n._(CHANNEL_DESCRIPTOR)})
-					: channel.isDM()
-						? i18n._(MESSAGE_USER_DESCRIPTOR, {userName: ChannelDisplayUtils.getDMDisplayName(channel)})
-						: i18n._(MESSAGE_GROUP_DESCRIPTOR, {groupName: ChannelDisplayUtils.getDMDisplayName(channel)});
+		let placeholderText: string;
+		if (placeholder) {
+			placeholderText = placeholder;
+		} else if (disabled) {
+			placeholderText = i18n._(YOU_DO_NOT_HAVE_PERMISSION_TO_SEND_MESSAGES_DESCRIPTOR);
+		} else if (channel.guildId != null) {
+			placeholderText = i18n._(MESSAGE_CHANNEL_DESCRIPTOR, {channelName: channel.name || i18n._(CHANNEL_DESCRIPTOR)});
+		} else if (channel.isDM()) {
+			placeholderText = i18n._(MESSAGE_USER_DESCRIPTOR, {userName: ChannelDisplayUtils.getDMDisplayName(channel)});
+		} else {
+			placeholderText = i18n._(MESSAGE_GROUP_DESCRIPTOR, {groupName: ChannelDisplayUtils.getDMDisplayName(channel)});
+		}
 		useEffect(() => ActiveComposer.register(draftChannelId ?? channel.id), [channel.id, draftChannelId]);
 		useEffect(() => {
 			const unsubscribe = ComponentBus.subscribe('FOCUS_TEXTAREA', (payload?: unknown) => {
@@ -1396,7 +1401,7 @@ export const LexicalChannelTextareaContent = observer(
 										specialMentionsAllowed={specialMentionsAllowed}
 										channelId={channel.id}
 										guildId={channel.guildId}
-										submitOnEnter={!mobileLayout.enabled}
+										submitOnEnter={submitOnEnter && !mobileLayout.enabled}
 										maxWireLength={maxMessageLength}
 										silentMessagePrefix={!isEditingMessageOnMobile}
 										focusRingTarget={containerRef}

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {existsSync, mkdirSync, readdirSync, writeFileSync} from 'node:fs';
+import {existsSync, readdirSync} from 'node:fs';
 import path, {dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {
@@ -250,6 +250,21 @@ function authEntryDocumentPlugin() {
 						compilation.emitAsset(AUTH_ENTRY_DOCUMENT, new sources.RawSource(document));
 					},
 				);
+			});
+		},
+	};
+}
+
+function rocketLoaderOptOutPlugin() {
+	return {
+		apply(compiler) {
+			compiler.hooks.thisCompilation.tap('RocketLoaderOptOutPlugin', (compilation) => {
+				HtmlRspackPlugin.getCompilationHooks(compilation).alterAssetTags.tap('RocketLoaderOptOutPlugin', (data) => {
+					for (const tag of data.assetTags.scripts) {
+						tag.attributes = {'data-cfasync': 'false', ...tag.attributes};
+					}
+					return data;
+				});
 			});
 		},
 	};
@@ -646,6 +661,7 @@ export default () => {
 		plugins: [
 			nodeAssertStrictSchemePlugin(),
 			fontPreloadPlugin(),
+			rocketLoaderOptOutPlugin(),
 			...(isProduction ? [bootPreloadPlugin()] : []),
 			...(isProduction && !isDesktopRenderer ? [authEntryDocumentPlugin()] : []),
 			new HtmlRspackPlugin({
@@ -692,12 +708,19 @@ export default () => {
 			}),
 			{
 				apply(compiler) {
-					compiler.hooks.afterEmit.tap('VersionJsonPlugin', () => {
-						const versionData = {
-							version: publicValues.PUBLIC_BUILD_VERSION,
-						};
-						mkdirSync(DIST_DIR, {recursive: true});
-						writeFileSync(path.join(DIST_DIR, 'version.json'), JSON.stringify(versionData));
+					compiler.hooks.thisCompilation.tap('VersionJsonPlugin', (compilation) => {
+						const {Compilation} = compiler.rspack;
+						compilation.hooks.processAssets.tap(
+							{name: 'VersionJsonPlugin', stage: Compilation.PROCESS_ASSETS_STAGE_ADDITIONAL},
+							() => {
+								const {RawSource} = compiler.rspack.sources;
+								const versionData = {
+									version: publicValues.PUBLIC_BUILD_VERSION,
+								};
+								const source = new RawSource(JSON.stringify(versionData));
+								compilation.emitAsset('version.json', source);
+							},
+						);
 					});
 				},
 			},
@@ -729,6 +752,15 @@ export default () => {
 								priority: 54,
 								reuseExistingChunk: true,
 								enforce: true,
+								chunks: (chunk) => !chunk.canBeInitial() && !isWorkerPath({chunk}),
+							},
+							plutoniumAtom: {
+								test: /[\\/]node_modules[\\/]three[\\/]/,
+								name: 'plutonium-atom',
+								priority: 54,
+								reuseExistingChunk: true,
+								enforce: true,
+								maxAsyncSize: Number.POSITIVE_INFINITY,
 								chunks: (chunk) => !chunk.canBeInitial() && !isWorkerPath({chunk}),
 							},
 							editor: {

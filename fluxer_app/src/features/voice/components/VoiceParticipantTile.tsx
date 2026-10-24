@@ -288,11 +288,14 @@ const VoiceParticipantTileInner = observer(function VoiceParticipantTileInner({
 	const isModeratorMuted = displayState.guildMute;
 	const isModeratorDeafened = displayState.guildDeaf;
 	const isMuteStatusVisible = isModeratorMuted || isSelfMuted;
-	const muteStatusLabel = isModeratorMuted
-		? i18n._(VOICE_MUTED_BY_MODERATORS_DESCRIPTOR)
-		: isPermissionMuted
-			? getVoiceNoSpeakPermissionLabel(i18n, isCurrentUser)
-			: i18n._(MUTED_DESCRIPTOR);
+	let muteStatusLabel: string;
+	if (isModeratorMuted) {
+		muteStatusLabel = i18n._(VOICE_MUTED_BY_MODERATORS_DESCRIPTOR);
+	} else if (isPermissionMuted) {
+		muteStatusLabel = getVoiceNoSpeakPermissionLabel(i18n, isCurrentUser);
+	} else {
+		muteStatusLabel = i18n._(MUTED_DESCRIPTOR);
+	}
 	const muteStatusClassName =
 		isModeratorMuted || isPermissionMuted ? styles.participantIconRed : styles.participantIconMuted;
 	const isDeafenStatusVisible = isModeratorDeafened || isSelfDeafened;
@@ -350,6 +353,7 @@ const VoiceParticipantTileInner = observer(function VoiceParticipantTileInner({
 	const {viewerIds, viewerUsers, spectatorEntries} = useStreamSpectators(isScreenShare ? streamKey : '', userId);
 	const hasSpectatorDemand = viewerIds.length > 0;
 	const isCameraTile = isCameraSource(trackRef.source);
+	const isMirroredOwnCamera = isCameraTile && isLocalParticipant && VoiceSettings.mirrorCamera;
 	const cameraLocallyDisabled = callId !== '' && isCameraTile && CallMediaPrefs.isVideoDisabled(callId, identity);
 	const screenSharePublicationMigrationVersion = ScreenSharePublicationMigration.version;
 	const publication = useMemo(() => {
@@ -920,6 +924,7 @@ const VoiceParticipantTileInner = observer(function VoiceParticipantTileInner({
 					ref={videoRef}
 					trackRef={trackRef}
 					manageSubscription={false}
+					className={clsx(isMirroredOwnCamera && styles.mirroredVideo)}
 					data-flx="voice.voice-participant-tile.media-node.video-track"
 				/>
 			);
@@ -1000,6 +1005,7 @@ const VoiceParticipantTileInner = observer(function VoiceParticipantTileInner({
 		hasVideo,
 		isActuallySpeaking,
 		isFocusedPlaceholderTile,
+		isMirroredOwnCamera,
 		isOwnScreenShare,
 		isScreenShare,
 		participantUser,
@@ -1494,7 +1500,7 @@ const VoiceParticipantTileInner = observer(function VoiceParticipantTileInner({
 											{participantDisplayName}
 										</span>
 									</Tooltip>
-									{connectionId && (
+									{connectionId && VoiceSettings.showVoiceConnectionId && (
 										<Tooltip
 											text={i18n._(CONNECTION_DESCRIPTOR, {connectionId})}
 											position="top"
