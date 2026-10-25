@@ -7,7 +7,7 @@ use std::fs::{self, File, OpenOptions};
 use std::io::{Read, Seek, SeekFrom, Write};
 use std::path::{Path, PathBuf};
 
-const PKGS_BASE_URL: &str = "https://pkgs.fluxer.com";
+const PKGS_BASE_URL: &str = "https://pkgs.yamada.top:8443/buckets/releases";
 const PKGS_DESKTOP_PREFIX: &str = "desktop";
 const APPIMAGE_PLATFORM: &str = "linux";
 const APPIMAGE_FORMAT: &str = "appimage";
