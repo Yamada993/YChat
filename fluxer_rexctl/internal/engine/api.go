@@ -110,6 +110,7 @@ type HelperOptions struct {
 
 type Mount struct {
 	Volume   string
+	Bind     string
 	Target   string
 	ReadOnly bool
 }
@@ -142,9 +143,11 @@ type Container struct {
 }
 
 type Volume struct {
-	Name    string
-	Project string
-	Labels  map[string]string
+	Name       string
+	Project    string
+	Labels     map[string]string
+	Mountpoint string
+	Device     string
 }
 
 type ProjectInfo struct {

@@ -6,7 +6,10 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"io"
 	"net"
+	"net/http"
+	"strings"
 	"time"
 )
 
@@ -48,6 +51,9 @@ func runDNS(ctx context.Context, e *Env) Result {
 		}
 		return pass(fmt.Sprintf("%s points to this machine (%s).", e.Domain, shown))
 	}
+	if e.forwardsHere(ctx) {
+		return pass(fmt.Sprintf("%s points to %s, which forwards to this machine.", e.Domain, addrs[0].IP))
+	}
 	if perr != nil {
 		return skip(fmt.Sprintf("Couldn't find this machine's public IP address to compare with %s.", e.Domain))
 	}
@@ -74,4 +80,31 @@ func pointsHere(addrs []net.IPAddr, public string) bool {
 		}
 	}
 	return false
+}
+
+func (e *Env) forwardsHere(ctx context.Context) bool {
+	if e.Instance == nil || !e.running(ctx, "edge") {
+		return false
+	}
+	local, err := e.exec(ctx, "edge", "", "wget", "-q", "-O", "-", "http://127.0.0.1:8088/_edge")
+	if err != nil || local == "" {
+		return false
+	}
+	return servesEdge(ctx, e.Domain, local)
+}
+
+func servesEdge(ctx context.Context, domain, local string) bool {
+	ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
+	defer cancel()
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, "https://"+domain+"/_edge", nil)
+	if err != nil {
+		return false
+	}
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return false
+	}
+	defer resp.Body.Close()
+	remote, err := io.ReadAll(io.LimitReader(resp.Body, 1<<10))
+	return err == nil && resp.StatusCode == http.StatusOK && strings.TrimSpace(string(remote)) == local
 }

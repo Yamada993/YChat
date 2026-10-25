@@ -15872,7 +15872,8 @@
 									"premium_info_url": {"nullable": true, "type": "string"},
 									"sign_in_backdrop_url": {"nullable": true, "type": "string"},
 									"custom_css": {"nullable": true, "type": "string"},
-									"upload_limit_message": {"nullable": true, "type": "string"}
+									"upload_limit_message": {"nullable": true, "type": "string"},
+									"trusted_domains": {"type": "array", "items": {"type": "string"}}
 								},
 								"required": [
 									"product_name",
@@ -15889,7 +15890,8 @@
 									"premium_info_url",
 									"sign_in_backdrop_url",
 									"custom_css",
-									"upload_limit_message"
+									"upload_limit_message",
+									"trusted_domains"
 								],
 								"additionalProperties": false
 							},
@@ -16532,7 +16534,13 @@
 									"premium_info_url": {"nullable": true, "type": "string", "maxLength": 2048},
 									"sign_in_backdrop_url": {"nullable": true, "type": "string", "maxLength": 2048},
 									"custom_css": {"nullable": true, "type": "string", "maxLength": 32768},
-									"upload_limit_message": {"nullable": true, "type": "string", "maxLength": 500}
+									"upload_limit_message": {"nullable": true, "type": "string", "maxLength": 500},
+									"trusted_domains": {
+										"nullable": true,
+										"maxItems": 50,
+										"type": "array",
+										"items": {"type": "string", "maxLength": 255}
+									}
 								}
 							},
 							"setup": {"nullable": true, "type": "object", "properties": {"configured": {"type": "boolean"}}},
@@ -24294,6 +24302,8 @@
 					"GIFT_CODE_ALREADY_REDEEMED",
 					"GUILD_TEMPLATE_INVALID",
 					"GUILD_VERIFICATION_REQUIRED",
+					"HANDOFF_ATTEMPTS_EXCEEDED",
+					"HANDOFF_CODE_ALREADY_USED",
 					"HANDOFF_CODE_EXPIRED",
 					"HARVEST_EXPIRED",
 					"HARVEST_FAILED",
@@ -24654,6 +24664,8 @@
 					"Gift code is already redeemed.",
 					"The community template data is invalid or malformed.",
 					"{reason, select, membership_age {You can talk here once you've been a member for 10 minutes.} other {Claim your account to talk in this community.}}",
+					"Too many sign-in attempts from your network. Try again in {minutes, plural, one {# minute} other {# minutes}}.",
+					"This code was already used. Start a new sign-in from the app.",
 					"Handoff code expired.",
 					"Your data export request has expired. Please request a new export.",
 					"Your data export request failed. Please try again.",
