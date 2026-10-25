@@ -270,8 +270,8 @@ pub(crate) fn desktop_module_package_release_asset_name(
 
 pub(crate) fn desktop_release_product(channel: &str) -> Result<&'static str> {
     match channel {
-        "stable" => Ok("Fluxer"),
-        "canary" => Ok("Fluxer-Canary"),
+        "stable" => Ok("YChat"),
+        "canary" => Ok("YChat-Canary"),
         other => bail!("Unsupported desktop release channel {other:?}"),
     }
 }
@@ -1762,8 +1762,8 @@ mod tests {
             asset_for("darwin/x64/releases.json")
         );
         assert_eq!(
-            asset_for("darwin/x64/Fluxer-Canary-2026.913.210037-mac-universal.dmg"),
-            asset_for("darwin/arm64/Fluxer-Canary-2026.913.210037-mac-universal.dmg")
+            asset_for("darwin/x64/YChat-Canary-2026.913.210037-mac-universal.dmg"),
+            asset_for("darwin/arm64/YChat-Canary-2026.913.210037-mac-universal.dmg")
         );
         assert_ne!(
             asset_for("darwin/x64/RELEASES.json"),
@@ -1801,12 +1801,12 @@ mod tests {
         assert_eq!(
             desktop_module_manifest_release_asset_name("canary", SAMPLE_VERSION, "win32", "x64")
                 .unwrap(),
-            "Fluxer-Canary-2026.913.210037-win-x64-modules.json"
+            "YChat-Canary-2026.913.210037-win-x64-modules.json"
         );
         assert_eq!(
             desktop_module_manifest_release_asset_name("stable", SAMPLE_VERSION, "darwin", "arm64")
                 .unwrap(),
-            "Fluxer-2026.913.210037-mac-arm64-modules.json"
+            "YChat-2026.913.210037-mac-arm64-modules.json"
         );
         assert_eq!(
             desktop_module_manifest_storage_key("canary", "linux", "arm64"),
@@ -1820,7 +1820,7 @@ mod tests {
                 &sha256
             )
             .unwrap(),
-            format!("Fluxer-Canary-2026.913.210037-module-ychat_renderer-{sha256}.br")
+            format!("YChat-Canary-2026.913.210037-module-ychat_renderer-{sha256}.br")
         );
         assert_eq!(
             desktop_module_package_storage_key("stable", "ychat_renderer", &sha256),
@@ -1930,7 +1930,7 @@ mod tests {
         );
 
         let mut descriptor = sample_descriptor();
-        descriptor.modules[0].release_asset = "Fluxer-Canary-2026.913.210037-modules.json".into();
+        descriptor.modules[0].release_asset = "YChat-Canary-2026.913.210037-modules.json".into();
         assert!(
             validate_sample(&descriptor)
                 .unwrap_err()

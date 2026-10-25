@@ -63,8 +63,8 @@ const DESKTOP_MODULE_FILE_LIST_NAME: &str = "module.json";
 const DESKTOP_MODULE_CLASSIFICATION_NAME: &str = "classification.json";
 pub(crate) const DESKTOP_MODULE_PACKAGE_NAME: &str = "package.br";
 const DESKTOP_MODULE_PACKAGE_CHECKSUM_NAME: &str = "package.br.sha256";
-pub(crate) const DESKTOP_RENDERER_MODULE: &str = "fluxer_renderer";
-const DESKTOP_SOURCEMAP_MODULE: &str = "fluxer_sourcemaps";
+pub(crate) const DESKTOP_RENDERER_MODULE: &str = "ychat_renderer";
+const DESKTOP_SOURCEMAP_MODULE: &str = "ychat_sourcemaps";
 const DESKTOP_SOURCEMAP_EXTENSION: &str = "map";
 const DESKTOP_MODULE_ASSETS_DIR_NAME: &str = "assets";
 const DESKTOP_MODULE_NAME_MAX_LENGTH: usize = 64;
@@ -87,7 +87,7 @@ const DESKTOP_MODULE_ASSET_SEGMENT_RULE: &str = "module_asset_segment";
 const DESKTOP_RENDERER_REMAINDER_RULE: &str = "renderer_remainder";
 const DESKTOP_SOURCEMAP_RULE: &str = "source_map";
 const DESKTOP_SPELLCHECK_DICTIONARY_RULE: &str = "spellcheck_dictionary";
-const DESKTOP_DICTIONARY_MODULE_PREFIX: &str = "fluxer_dict_";
+const DESKTOP_DICTIONARY_MODULE_PREFIX: &str = "ychat_dict_";
 const DESKTOP_DICTIONARY_PACKAGE_PREFIX: &str = "dictionary-";
 const DESKTOP_DICTIONARY_FILE_NAMES: &[&str] = &["index.aff", "index.dic"];
 const DESKTOP_MODULE_MINIMUM_SHELL_VERSION: &str = "0.0.0";
@@ -315,14 +315,14 @@ fn set_build_channel_step() -> Result<()> {
 
 fn resolve_desktop_dir() -> Result<PathBuf> {
     let cwd = env::current_dir().context("Failed to resolve current directory")?;
-    if cwd.file_name().and_then(|value| value.to_str()) == Some("fluxer_desktop") {
+    if cwd.file_name().and_then(|value| value.to_str()) == Some("ychat_desktop") {
         return Ok(cwd);
     }
-    if cwd.join("fluxer_desktop").is_dir() {
-        return Ok(cwd.join("fluxer_desktop"));
+    if cwd.join("ychat_desktop").is_dir() {
+        return Ok(cwd.join("ychat_desktop"));
     }
     Err(anyhow!(
-        "Could not resolve fluxer_desktop directory from {}",
+        "Could not resolve ychat_desktop directory from {}",
         cwd.display()
     ))
 }
@@ -469,7 +469,7 @@ fn workdir_path(value: &str) -> PathBuf {
 }
 
 fn desktop_dist_dir() -> PathBuf {
-    workdir().join("fluxer_desktop").join("dist-electron")
+    workdir().join("ychat_desktop").join("dist-electron")
 }
 
 async fn windows_paths_step() -> Result<()> {
@@ -721,7 +721,7 @@ fn install_setuptools_macos_step() -> Result<()> {
 }
 
 async fn install_linux_deps_step() -> Result<()> {
-    let apt_conf = runner_temp().join("99fluxer-ci-network");
+    let apt_conf = runner_temp().join("99ychat-ci-network");
     fs::write(
         &apt_conf,
         r#"Acquire::Retries "6";
@@ -735,7 +735,7 @@ DPkg::Lock::Timeout "120";
     run_command(CommandSpec::new("sudo").args([
         "cp",
         apt_conf.to_string_lossy().as_ref(),
-        "/etc/apt/apt.conf.d/99fluxer-ci-network",
+        "/etc/apt/apt.conf.d/99ychat-ci-network",
     ]))?;
 
     rewrite_ubuntu_ports_sources()?;
@@ -1431,7 +1431,7 @@ struct DesktopSharedAssetManifest {
 
 fn desktop_renderer_dir() -> PathBuf {
     workdir()
-        .join("fluxer_desktop")
+        .join("ychat_desktop")
         .join("dist")
         .join("renderer")
 }
@@ -2092,7 +2092,7 @@ fn desktop_dictionary_module_name(directory_name: &str) -> Option<String> {
 
 fn desktop_dictionary_source_root() -> PathBuf {
     workdir()
-        .join("fluxer_static")
+        .join("ychat_static")
         .join("desktop")
         .join("spellcheck")
         .join("dictionaries")
@@ -2102,7 +2102,7 @@ fn desktop_dictionary_sources() -> Result<Vec<(String, PathBuf)>> {
     run_command(
         CommandSpec::new("sh").arg(
             workdir()
-                .join("fluxer_static")
+                .join("ychat_static")
                 .join("fetch-spellcheck-dictionaries.sh"),
         ),
     )?;
@@ -2591,7 +2591,7 @@ fn validate_macos_signing_env() -> Result<PathBuf> {
         missing.join(" ")
     );
 
-    let keychain = require_home()?.join("Library/Keychains/fluxer-build.keychain-db");
+    let keychain = require_home()?.join("Library/Keychains/ychat-build.keychain-db");
     ensure!(
         keychain.exists(),
         "Signing keychain {} not found on runner host. Run the runner's keychain bootstrap to import the Developer ID cert.",
@@ -2699,14 +2699,14 @@ fn verify_bundle_id_step() -> Result<()> {
     ]))?;
 
     let expected = if build_channel == "canary" {
-        "app.fluxer.canary"
+        "app.ychat.canary"
     } else {
-        "app.fluxer"
+        "app.ychat"
     };
     let expected_profile = if build_channel == "canary" {
-        "3G5837T29K.app.fluxer.canary"
+        "3G5837T29K.app.ychat.canary"
     } else {
-        "3G5837T29K.app.fluxer"
+        "3G5837T29K.app.ychat"
     };
     println!("Bundle id in zip: {bid} (expected: {expected})");
     ensure!(bid == expected, "Unexpected bundle id: {bid}");
@@ -3448,12 +3448,12 @@ const THIRD_PARTY_WINDOWS_SIGNATURE_ALLOWLIST: &[(&str, &str)] = &[
 ];
 const KNOWN_OPTIONAL_WINDOWS_PE_INVENTORY: &[&str] = &[];
 const FORBIDDEN_WINDOWS_GAME_CAPTURE_ARTIFACT_PREFIXES: &[&str] = &[
-    "fluxer-game-hook.",
-    "fluxer-inject-helper.",
-    "fluxer-vulkan-layer.",
-    "fluxer_game_hook.",
-    "fluxer_inject_helper.",
-    "fluxer_vulkan_layer.",
+    "ychat-game-hook.",
+    "ychat-inject-helper.",
+    "ychat-vulkan-layer.",
+    "ychat_game_hook.",
+    "ychat_inject_helper.",
+    "ychat_vulkan_layer.",
 ];
 const WINDOWS_NATIVE_ADDON_STEMS: &[&str] = &[
     "app-store",
@@ -4098,8 +4098,8 @@ fn assert_third_party_signed(row: &SignatureRow, relative: &str) -> Result<()> {
 fn assert_signed_by_known_publisher(row: &SignatureRow, relative: &str) -> Result<()> {
     match assert_fluxer_signed(row) {
         Ok(()) => Ok(()),
-        Err(fluxer_error) => assert_third_party_signed(row, relative)
-            .map_err(|third_party_error| anyhow!("{fluxer_error}; {third_party_error}")),
+        Err(ychat_error) => assert_third_party_signed(row, relative)
+            .map_err(|third_party_error| anyhow!("{ychat_error}; {third_party_error}")),
     }
 }
 
@@ -4609,7 +4609,7 @@ fn handoff_artifact_name(
     } else {
         ""
     };
-    format!("fluxer-desktop-{build_channel}-{platform}-{arch}{signed_suffix}")
+    format!("ychat-desktop-{build_channel}-{platform}-{arch}{signed_suffix}")
 }
 
 fn build_payload_step() -> Result<()> {
@@ -4732,7 +4732,7 @@ fn prepare_release_assets_step() -> Result<()> {
         kind: DesktopReleaseKind::Full,
         channel: channel.clone(),
         version: version.clone(),
-        release_tag: format!("fluxer-desktop-{channel}@{version}"),
+        release_tag: format!("ychat-desktop-{channel}@{version}"),
         source_sha,
         assets: descriptor_assets,
         modules: descriptor_modules,
@@ -4981,7 +4981,7 @@ struct ArtifactIdentity {
 }
 
 fn parse_artifact_dir_name(base: &str, channel: &str) -> Option<ArtifactIdentity> {
-    let prefix = format!("fluxer-desktop-{channel}-");
+    let prefix = format!("ychat-desktop-{channel}-");
     let rest = base.strip_prefix(&prefix)?;
     let (rest, signed) = rest
         .strip_suffix("-signed")
@@ -8378,7 +8378,7 @@ mod tests {
             kind: DesktopReleaseKind::Full,
             channel: "canary".to_string(),
             version: LAYOUT_VERSION.to_string(),
-            release_tag: format!("fluxer-desktop-canary@{LAYOUT_VERSION}"),
+            release_tag: format!("ychat-desktop-canary@{LAYOUT_VERSION}"),
             source_sha: "0".repeat(40),
             assets,
             modules,
@@ -8421,7 +8421,7 @@ mod tests {
         let path = payload_root.join("canary/linux/arm64/modules.json");
         let mut manifest: DesktopChannelManifest =
             serde_json::from_slice(&fs::read(&path).unwrap()).unwrap();
-        manifest.modules.get_mut("fluxer_renderer").unwrap().sha256 = "f".repeat(64);
+        manifest.modules.get_mut("ychat_renderer").unwrap().sha256 = "f".repeat(64);
         fs::write(&path, serde_json::to_vec(&manifest).unwrap()).unwrap();
         let release_assets = temp.path().join("release_assets");
         fs::create_dir_all(&release_assets).unwrap();
@@ -8447,42 +8447,42 @@ mod tests {
         write_file(&root.join("version.json"), "{\"version\":\"2026.1009.1\"}");
         write_file(&root.join("assets/main.js"), "main");
         write_file(&root.join("assets/main.js.map"), "{}");
-        write_file(&root.join("assets/fluxer_fonts_jp/a.woff2"), "font");
-        write_file(&root.join("assets/fluxer_grammar_rust/b.wasm"), "wasm");
+        write_file(&root.join("assets/ychat_fonts_jp/a.woff2"), "font");
+        write_file(&root.join("assets/ychat_grammar_rust/b.wasm"), "wasm");
 
         let removed = prune_on_demand_modules_from_renderer_tree(&root).unwrap();
 
         assert_eq!(
             removed.keys().map(String::as_str).collect::<Vec<_>>(),
             vec![
-                "fluxer_fonts_jp",
-                "fluxer_grammar_rust",
-                "fluxer_sourcemaps"
+                "ychat_fonts_jp",
+                "ychat_grammar_rust",
+                "ychat_sourcemaps"
             ]
         );
         assert!(root.join("index.html").is_file());
         assert!(root.join("assets/main.js").is_file());
         assert!(!root.join("assets/main.js.map").exists());
-        assert!(!root.join("assets/fluxer_fonts_jp").exists());
+        assert!(!root.join("assets/ychat_fonts_jp").exists());
         assert_eq!(read_bundled_renderer_version(&root).unwrap(), "2026.1009.1");
     }
 
     #[test]
     fn on_demand_module_manifests_do_not_change_between_builds() {
         let files = vec![DesktopSharedAssetFile {
-            path: "assets/fluxer_fonts_jp/a.woff2".to_string(),
+            path: "assets/ychat_fonts_jp/a.woff2".to_string(),
             sha256: "a".repeat(64),
             bytes: 4,
         }];
         let first = desktop_module_manifest(
-            "fluxer_fonts_jp",
+            "ychat_fonts_jp",
             "2026.1009.1",
             "canary",
             &"1".repeat(40),
             files.clone(),
         );
         let second = desktop_module_manifest(
-            "fluxer_fonts_jp",
+            "ychat_fonts_jp",
             "2026.1010.7",
             "canary",
             &"2".repeat(40),
@@ -8510,7 +8510,7 @@ mod tests {
         write_file(&root.join("index.html"), "<html></html>");
         write_file(&root.join("assets/app.js"), "app");
         write_file(&root.join("assets/app.js.map"), "{}");
-        write_file(&root.join("assets/fluxer_grammars/en.json"), "{}");
+        write_file(&root.join("assets/ychat_grammars/en.json"), "{}");
 
         let classified = classify_renderer_files(&root)
             .unwrap()
@@ -8520,19 +8520,19 @@ mod tests {
         assert_eq!(
             classified,
             vec![
-                ("assets/app.js".to_string(), "fluxer_renderer".to_string()),
+                ("assets/app.js".to_string(), "ychat_renderer".to_string()),
                 (
                     "assets/app.js.map".to_string(),
-                    "fluxer_sourcemaps".to_string()
+                    "ychat_sourcemaps".to_string()
                 ),
                 (
-                    "assets/fluxer_grammars/en.json".to_string(),
-                    "fluxer_grammars".to_string()
+                    "assets/ychat_grammars/en.json".to_string(),
+                    "ychat_grammars".to_string()
                 ),
-                ("index.html".to_string(), "fluxer_renderer".to_string()),
+                ("index.html".to_string(), "ychat_renderer".to_string()),
             ]
         );
-        assert!(desktop_module_for_relative_path("assets/fluxer_renderer/app.js").is_err());
+        assert!(desktop_module_for_relative_path("assets/ychat_renderer/app.js").is_err());
         assert!(desktop_module_for_relative_path("assets/Bad/app.js").is_err());
         assert!(desktop_module_for_relative_path("assets/a/b/c.js").is_err());
     }
@@ -8540,7 +8540,7 @@ mod tests {
     #[test]
     fn packed_modules_round_trip_through_brotli_tar() {
         let temp = tempfile::tempdir().unwrap();
-        let module_dir = temp.path().join("fluxer_renderer");
+        let module_dir = temp.path().join("ychat_renderer");
         write_file(&module_dir.join("files/assets/app.js"), "console.log(1)");
         write_file(&module_dir.join("files/index.html"), "<html></html>");
         let files = ["assets/app.js", "index.html"]
@@ -8555,7 +8555,7 @@ mod tests {
             })
             .collect::<Vec<_>>();
         let manifest = DesktopModuleManifest {
-            module: "fluxer_renderer".to_string(),
+            module: "ychat_renderer".to_string(),
             build_version: "2026.820.1".to_string(),
             release_channel: "canary".to_string(),
             source_sha: "0".repeat(40),
