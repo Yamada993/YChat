@@ -5,7 +5,7 @@ import {onLocaleChange, t} from '@electron/main/MainI18n';
 import {app} from 'electron';
 
 const logger = createChildLogger('JumpList');
-export const TASK_ARG_PREFIX = '--fluxer-task=';
+export const TASK_ARG_PREFIX = '--ychat-task=';
 
 export type JumpListTaskId = 'open-settings' | 'new-dm' | 'open-account-switcher';
 

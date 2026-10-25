@@ -81,7 +81,7 @@ interface PersistedDesktopTroubleshootingSettings {
 	disableModuleUpdates?: boolean;
 }
 
-const INSTANCE_ENDPOINT_ARGS = ['--fluxer-instance'];
+const INSTANCE_ENDPOINT_ARGS = ['--ychat-instance'];
 
 const PREBOOT_THEME_PATTERN = /^[a-z0-9][a-z0-9_-]{0,63}$/u;
 const INSTANCE_PRODUCT_NAMES_MAX_ENTRIES = 32;
@@ -504,11 +504,11 @@ export function getLaunchInstanceEndpointOverride(argv: ReadonlyArray<string> = 
 		return null;
 	}
 	if (process.defaultApp !== true) {
-		throw new Error('--fluxer-instance is only accepted in a development build');
+		throw new Error('--ychat-instance is only accepted in a development build');
 	}
 	const endpoint = normalizeInstanceEndpoint(raw.trim(), InstanceEndpointKind.API);
 	if (endpoint == null || !endpoint.includes('://')) {
-		throw new Error('--fluxer-instance requires an absolute http(s) API endpoint');
+		throw new Error('--ychat-instance requires an absolute http(s) API endpoint');
 	}
 	return endpoint;
 }

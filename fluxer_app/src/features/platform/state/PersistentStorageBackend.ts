@@ -39,7 +39,7 @@ export interface PersistentStorageBackend {
 	setMany(writes: ReadonlyArray<AppStorageWrite>): Promise<void>;
 }
 
-export const APP_STORAGE_INDEXED_DB_NAME = 'fluxer-app-storage';
+export const APP_STORAGE_INDEXED_DB_NAME = 'ychat-app-storage';
 export const APP_STORAGE_INDEXED_DB_VERSION = 1;
 export const APP_STORAGE_OBJECT_STORE = 'entries';
 export const APP_STORAGE_SCOPE_INDEX = 'scope';

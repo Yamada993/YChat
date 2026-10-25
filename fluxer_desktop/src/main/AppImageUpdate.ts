@@ -41,7 +41,7 @@ type AppImageDownloadProgress = {
 	total: number;
 };
 
-const STAGING_DIRECTORY_PREFIX = '.fluxer-update-';
+const STAGING_DIRECTORY_PREFIX = '.ychat-update-';
 const APPDIR_ENTRYPOINT = 'AppRun';
 const APPIMAGE_MODE = 0o755;
 const SHA256_PATTERN = /^[0-9a-f]{64}$/;

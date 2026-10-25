@@ -5,26 +5,26 @@ type LaunchToggleMode = 'auto' | 'off';
 type NativeNotificationsMode = 'auto' | 'off' | 'native' | 'electron';
 export type SpellcheckLaunchMode = 'default' | 'off' | 'auto' | 'hunspell' | 'system';
 
-const PORTABLE_MODE_ARGS = new Set(['--fluxer-portable']);
-const SAFE_MODE_ARGS = new Set(['--fluxer-safe-mode']);
+const PORTABLE_MODE_ARGS = new Set(['--ychat-portable']);
+const SAFE_MODE_ARGS = new Set(['--ychat-safe-mode']);
 const DISABLE_INPUT_HOOK_ARGS = new Set([
-	'--fluxer-disable-native-input',
-	'--fluxer-disable-input-hooks',
-	'--fluxer-disable-global-key-hook',
+	'--ychat-disable-native-input',
+	'--ychat-disable-input-hooks',
+	'--ychat-disable-global-key-hook',
 ]);
-const INPUT_HOOK_MODE_ARGS = new Set(['--fluxer-input-hook', '--fluxer-native-input']);
-const DISABLE_LINUX_PORTALS_ARGS = new Set(['--fluxer-disable-linux-portals']);
-const LINUX_PORTALS_MODE_ARGS = new Set(['--fluxer-linux-portals', '--fluxer-portals']);
-const DISABLE_NATIVE_NOTIFICATIONS_ARGS = new Set(['--fluxer-disable-native-notifications']);
-const NATIVE_NOTIFICATIONS_MODE_ARGS = new Set(['--fluxer-native-notifications', '--fluxer-notifications']);
-const DISABLE_NATIVE_AUDIO_ARGS = new Set(['--fluxer-disable-native-audio']);
-const NATIVE_AUDIO_MODE_ARGS = new Set(['--fluxer-native-audio']);
-const DISABLE_SPELLCHECK_ARGS = new Set(['--fluxer-disable-spellcheck', '--fluxer-disable-linux-spellcheck']);
-const SPELLCHECK_MODE_ARGS = new Set(['--fluxer-spellcheck']);
-const DISABLE_V8_CODE_CACHE_ARGS = new Set(['--fluxer-disable-v8-code-cache']);
-const DISABLE_NATIVE_GATEWAY_ARGS = new Set(['--fluxer-disable-native-gateway']);
-const DESKTOP_UPDATE_ARGS = new Set(['--fluxer-update']);
-const DISABLE_MODULE_UPDATES_ARGS = new Set(['--fluxer-disable-module-updates', '--disable-module-updates']);
+const INPUT_HOOK_MODE_ARGS = new Set(['--ychat-input-hook', '--ychat-native-input']);
+const DISABLE_LINUX_PORTALS_ARGS = new Set(['--ychat-disable-linux-portals']);
+const LINUX_PORTALS_MODE_ARGS = new Set(['--ychat-linux-portals', '--ychat-portals']);
+const DISABLE_NATIVE_NOTIFICATIONS_ARGS = new Set(['--ychat-disable-native-notifications']);
+const NATIVE_NOTIFICATIONS_MODE_ARGS = new Set(['--ychat-native-notifications', '--ychat-notifications']);
+const DISABLE_NATIVE_AUDIO_ARGS = new Set(['--ychat-disable-native-audio']);
+const NATIVE_AUDIO_MODE_ARGS = new Set(['--ychat-native-audio']);
+const DISABLE_SPELLCHECK_ARGS = new Set(['--ychat-disable-spellcheck', '--ychat-disable-linux-spellcheck']);
+const SPELLCHECK_MODE_ARGS = new Set(['--ychat-spellcheck']);
+const DISABLE_V8_CODE_CACHE_ARGS = new Set(['--ychat-disable-v8-code-cache']);
+const DISABLE_NATIVE_GATEWAY_ARGS = new Set(['--ychat-disable-native-gateway']);
+const DESKTOP_UPDATE_ARGS = new Set(['--ychat-update']);
+const DISABLE_MODULE_UPDATES_ARGS = new Set(['--ychat-disable-module-updates', '--disable-module-updates']);
 
 export function hasFlag(argv: ReadonlyArray<string>, flags: ReadonlySet<string>): boolean {
 	return argv.some((arg) => flags.has(arg) || [...flags].some((flag) => arg.startsWith(`${flag}=`)));
@@ -79,7 +79,7 @@ export function getLinuxInputHookMode(argv: ReadonlyArray<string> = process.argv
 	const argMode = normalizeMode(
 		getArgValue(argv, INPUT_HOOK_MODE_ARGS),
 		['auto', 'off', 'evdev', 'native'],
-		'--fluxer-input-hook',
+		'--ychat-input-hook',
 	);
 	return argMode ?? envMode('FLUXER_INPUT_HOOK', ['auto', 'off', 'evdev', 'native']) ?? 'auto';
 }
@@ -92,7 +92,7 @@ export function getLinuxPortalsMode(argv: ReadonlyArray<string> = process.argv):
 	) {
 		return 'off';
 	}
-	const argMode = normalizeMode(getArgValue(argv, LINUX_PORTALS_MODE_ARGS), ['auto', 'off'], '--fluxer-linux-portals');
+	const argMode = normalizeMode(getArgValue(argv, LINUX_PORTALS_MODE_ARGS), ['auto', 'off'], '--ychat-linux-portals');
 	return argMode ?? envMode('FLUXER_LINUX_PORTALS', ['auto', 'off']) ?? 'auto';
 }
 
@@ -107,7 +107,7 @@ export function getNativeNotificationsMode(argv: ReadonlyArray<string> = process
 	const argMode = normalizeMode(
 		getArgValue(argv, NATIVE_NOTIFICATIONS_MODE_ARGS),
 		['auto', 'off', 'native', 'electron'],
-		'--fluxer-native-notifications',
+		'--ychat-native-notifications',
 	);
 	return argMode ?? envMode('FLUXER_NATIVE_NOTIFICATIONS', ['auto', 'off', 'native', 'electron']) ?? 'auto';
 }
@@ -116,7 +116,7 @@ export function getNativeAudioMode(argv: ReadonlyArray<string> = process.argv): 
 	if (isSafeModeLaunch(argv) || hasFlag(argv, DISABLE_NATIVE_AUDIO_ARGS) || truthyEnv('FLUXER_DISABLE_NATIVE_AUDIO')) {
 		return 'off';
 	}
-	const argMode = normalizeMode(getArgValue(argv, NATIVE_AUDIO_MODE_ARGS), ['auto', 'off'], '--fluxer-native-audio');
+	const argMode = normalizeMode(getArgValue(argv, NATIVE_AUDIO_MODE_ARGS), ['auto', 'off'], '--ychat-native-audio');
 	return argMode ?? envMode('FLUXER_NATIVE_AUDIO', ['auto', 'off']) ?? 'auto';
 }
 
@@ -127,7 +127,7 @@ export function getSpellcheckLaunchMode(argv: ReadonlyArray<string> = process.ar
 	const argMode = normalizeMode(
 		getArgValue(argv, SPELLCHECK_MODE_ARGS),
 		['off', 'auto', 'hunspell', 'system'],
-		'--fluxer-spellcheck',
+		'--ychat-spellcheck',
 	);
 	return argMode ?? envMode('FLUXER_SPELLCHECK', ['off', 'auto', 'hunspell', 'system']) ?? 'default';
 }
@@ -139,8 +139,8 @@ export function shouldDisableV8CodeCache(argv: ReadonlyArray<string> = process.a
 }
 
 export function getNativeGatewayDisableReason(argv: ReadonlyArray<string> = process.argv): string | null {
-	if (isSafeModeLaunch(argv)) return '--fluxer-safe-mode';
-	if (hasFlag(argv, DISABLE_NATIVE_GATEWAY_ARGS)) return '--fluxer-disable-native-gateway';
+	if (isSafeModeLaunch(argv)) return '--ychat-safe-mode';
+	if (hasFlag(argv, DISABLE_NATIVE_GATEWAY_ARGS)) return '--ychat-disable-native-gateway';
 	if (truthyEnv('FLUXER_DISABLE_NATIVE_GATEWAY')) return 'FLUXER_DISABLE_NATIVE_GATEWAY';
 	return null;
 }

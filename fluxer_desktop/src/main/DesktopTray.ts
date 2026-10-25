@@ -277,7 +277,7 @@ function createTrayIcon(): Electron.NativeImage | null {
 	}
 	if (process.platform === 'darwin') {
 		return (
-			createTrayImage(['FluxerTrayTemplate.png'], {
+			createTrayImage(['YChatTrayTemplate.png'], {
 				resize: {width: 16, height: 16},
 				template: true,
 			}) ??

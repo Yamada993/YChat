@@ -9,46 +9,46 @@ const {promisify} = require('node:util');
 const execFileAsync = promisify(execFile);
 const CHANNELS = {
 	stable: {
-		productName: 'Fluxer',
-		linuxOptDirName: 'Fluxer',
-		artifactProductName: 'Fluxer',
-		appId: 'app.fluxer',
+		productName: 'YChat',
+		linuxOptDirName: 'YChat',
+		artifactProductName: 'YChat',
+		appId: 'app.ychat',
 		iconDirectory: 'icons-stable',
-		packageName: 'fluxer_desktop',
-		linuxPackageName: 'fluxer',
-		linuxDesktopId: 'app.fluxer.FluxerDesktop',
+		packageName: 'ychat_desktop',
+		linuxPackageName: 'ychat',
+		linuxDesktopId: 'app.ychat.YChat',
 		linuxComment: 'Instant messaging and VoIP',
-		protocolScheme: 'fluxer',
+		protocolScheme: 'ychat',
 		macEntitlements: 'build_resources/entitlements.mac.stable.plist',
 		notarize: true,
-		provisioningProfile: 'build_resources/profiles/Fluxer.provisionprofile',
+		provisioningProfile: 'build_resources/profiles/YChat.provisionprofile',
 	},
 	canary: {
-		productName: 'Fluxer Canary',
-		linuxOptDirName: 'fluxer-canary',
-		artifactProductName: 'Fluxer-Canary',
-		appId: 'app.fluxer.canary',
+		productName: 'YChat Canary',
+		linuxOptDirName: 'ychat-canary',
+		artifactProductName: 'YChat-Canary',
+		appId: 'app.ychat.canary',
 		iconDirectory: 'icons-canary',
-		packageName: 'fluxer_desktop_canary',
-		linuxPackageName: 'fluxer-canary',
-		linuxDesktopId: 'app.fluxer.FluxerDesktopCanary',
-		linuxComment: 'Canary build of Fluxer',
-		protocolScheme: 'fluxer',
+		packageName: 'ychat_desktop_canary',
+		linuxPackageName: 'ychat-canary',
+		linuxDesktopId: 'app.ychat.YChatDesktopCanary',
+		linuxComment: 'Canary build of YChat',
+		protocolScheme: 'ychat',
 		macEntitlements: 'build_resources/entitlements.mac.canary.plist',
 		notarize: true,
-		provisioningProfile: 'build_resources/profiles/Fluxer_Canary.provisionprofile',
+		provisioningProfile: 'build_resources/profiles/YChat_Canary.provisionprofile',
 	},
 	development: {
-		productName: 'Fluxer Development',
-		linuxOptDirName: 'fluxer-development',
-		artifactProductName: 'Fluxer-Development',
-		appId: 'app.fluxer.development',
+		productName: 'YChat Development',
+		linuxOptDirName: 'ychat-development',
+		artifactProductName: 'YChat-Development',
+		appId: 'app.ychat.development',
 		iconDirectory: 'icons-development',
-		packageName: 'fluxer_desktop_development',
-		linuxPackageName: 'fluxer-development',
-		linuxDesktopId: 'app.fluxer.FluxerDesktopDevelopment',
-		linuxComment: 'Development build of Fluxer',
-		protocolScheme: 'fluxer-development',
+		packageName: 'ychat_desktop_development',
+		linuxPackageName: 'ychat-development',
+		linuxDesktopId: 'app.ychat.YChatDesktopDevelopment',
+		linuxComment: 'Development build of YChat',
+		protocolScheme: 'ychat-development',
 		macEntitlements: 'build_resources/entitlements.mac.development.plist',
 		notarize: false,
 		provisioningProfile: null,
@@ -101,8 +101,8 @@ const rpmBuildIdLinkFpmArgs = [
 	'--rpm-rpmbuild-define',
 	'_missing_build_ids_terminate_build 0',
 ];
-const legacyLinuxStableDebPackageName = 'fluxer-app';
-const legacyLinuxStableRpmPackageName = 'fluxer_app';
+const legacyLinuxStableDebPackageName = 'ychat-app';
+const legacyLinuxStableRpmPackageName = 'ychat_app';
 const legacyLinuxStablePackageNames = {
 	'.deb': legacyLinuxStableDebPackageName,
 	'.rpm': legacyLinuxStableRpmPackageName,
@@ -113,7 +113,7 @@ const legacyLinuxStableDebFpmArgs = isStable
 const legacyLinuxStableRpmFpmArgs = isStable
 	? ['--replaces', legacyLinuxStableRpmPackageName, '--conflicts', legacyLinuxStableRpmPackageName]
 	: [];
-const legacyLinuxCanaryOptDir = '/opt/Fluxer Canary';
+const legacyLinuxCanaryOptDir = '/opt/YChat Canary';
 const legacyLinuxOptDirSweepScript = path.resolve(__dirname, 'packaging/linux/rpm-post-transaction.sh');
 const legacyLinuxOptDirRpmFpmArgs = isCanary ? ['--rpm-posttrans', legacyLinuxOptDirSweepScript] : [];
 const macOSMinimumSystemVersion = '13.0';
@@ -484,7 +484,7 @@ function quoteDesktopExecArg(value) {
 }
 
 function buildLinuxDesktopTaskExec(taskId) {
-	return `${linuxInstalledExecPath} --fluxer-task=${taskId} %U`;
+	return `${linuxInstalledExecPath} --ychat-task=${taskId} %U`;
 }
 
 function normalizeArch(arch) {
@@ -1405,7 +1405,7 @@ async function findExtractedFiles(rootDir, predicate) {
 }
 
 async function inspectAppImageLauncher(artifactPath) {
-	const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'fluxer-appimage-'));
+	const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'ychat-appimage-'));
 	try {
 		await extractAppImagePattern(artifactPath, 'AppRun', tempDir);
 		await extractAppImagePattern(artifactPath, '*.desktop', tempDir);
@@ -1671,7 +1671,7 @@ module.exports = {
 		: {}),
 	appId,
 	productName: installedProductName,
-	copyright: 'Copyright © 2026 Fluxer Platform AB',
+	copyright: 'Copyright © 2026 YChat Platform AB',
 	artifactName: `${artifactProductName}-\${version}-\${os}-\${arch}.\${ext}`,
 	directories: {
 		buildResources: 'build_resources',
@@ -1706,8 +1706,8 @@ module.exports = {
 				'128x128.png',
 				'256x256.png',
 				'512x512.png',
-				'FluxerTrayTemplate.png',
-				'FluxerTrayTemplate@2x.png',
+				'YChatTrayTemplate.png',
+				'YChatTrayTemplate@2x.png',
 				'icon.ico',
 				'icon.png',
 			],
@@ -1820,14 +1820,14 @@ module.exports = {
 			},
 		],
 		extendInfo: {
-			NSMicrophoneUsageDescription: 'Fluxer needs access to your microphone to enable voice chat features.',
-			NSCameraUsageDescription: 'Fluxer needs access to your camera to enable video chat features.',
-			NSAppleEventsUsageDescription: 'Fluxer needs access to Apple Events for automation features.',
-			NSAudioCaptureUsageDescription: 'Fluxer captures audio from the screen or window you choose to share.',
-			NSScreenCaptureUsageDescription: 'Fluxer captures the screen or window you choose to share.',
+			NSMicrophoneUsageDescription: 'YChat needs access to your microphone to enable voice chat features.',
+			NSCameraUsageDescription: 'YChat needs access to your camera to enable video chat features.',
+			NSAppleEventsUsageDescription: 'YChat needs access to Apple Events for automation features.',
+			NSAudioCaptureUsageDescription: 'YChat captures audio from the screen or window you choose to share.',
+			NSScreenCaptureUsageDescription: 'YChat captures the screen or window you choose to share.',
 			...(buildChannel === 'development' ? {CFBundleIconName: 'AppIcon'} : {}),
 			NSLocalNetworkUsageDescription:
-				'Fluxer needs local network access to reach a Fluxer instance you host on your own network. It never scans your network or connects to devices you have not pointed it at.',
+				'YChat needs local network access to reach a YChat instance you host on your own network. It never scans your network or connects to devices you have not pointed it at.',
 		},
 	},
 	dmg: {

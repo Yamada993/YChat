@@ -62,13 +62,13 @@ const THEME_WINDOW_BACKGROUND_COLORS: Readonly<Record<string, string>> = Object.
 const DEFAULT_WINDOW_BACKGROUND_COLOR = '#1a181e';
 const TRANSPARENT_WINDOW_BACKGROUND_COLOR = '#00000000';
 const MEDIA_DEVICE_BLINK_FEATURES = 'EnumerateDevices,AudioOutputDevices';
-const ACTIVE_ALLOW_TRANSPARENCY_RENDERER_ARG = '--fluxer-active-allow-transparency=1';
-const ACTIVE_USE_NATIVE_TITLEBAR_RENDERER_ARG = '--fluxer-active-use-native-titlebar=1';
-export const QUICK_CSS_EDITOR_WINDOW_KEY = 'fluxer_quick_css_editor';
-const QUICK_CSS_EDITOR_WINDOW_TITLE = 'Fluxer | Quick CSS';
+const ACTIVE_ALLOW_TRANSPARENCY_RENDERER_ARG = '--ychat-active-allow-transparency=1';
+const ACTIVE_USE_NATIVE_TITLEBAR_RENDERER_ARG = '--ychat-active-use-native-titlebar=1';
+export const QUICK_CSS_EDITOR_WINDOW_KEY = 'ychat_quick_css_editor';
+const QUICK_CSS_EDITOR_WINDOW_TITLE = 'YChat | Quick CSS';
 const QUICK_CSS_EDITOR_MIN_WIDTH = 900;
 const QUICK_CSS_EDITOR_MIN_HEIGHT = 620;
-const VOICE_POPOUT_WINDOW_NAME_PREFIX = 'fluxer-voice-popout:';
+const VOICE_POPOUT_WINDOW_NAME_PREFIX = 'ychat-voice-popout:';
 const VOICE_POPOUT_WINDOW_NAME_LENGTH_MAX = 256;
 const VOICE_POPOUT_MIN_WIDTH = 360;
 const VOICE_POPOUT_MIN_HEIGHT = 240;
