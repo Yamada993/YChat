@@ -315,14 +315,14 @@ fn set_build_channel_step() -> Result<()> {
 
 fn resolve_desktop_dir() -> Result<PathBuf> {
     let cwd = env::current_dir().context("Failed to resolve current directory")?;
-    if cwd.file_name().and_then(|value| value.to_str()) == Some("ychat_desktop") {
+    if cwd.file_name().and_then(|value| value.to_str()) == Some("fluxer_desktop") {
         return Ok(cwd);
     }
-    if cwd.join("ychat_desktop").is_dir() {
-        return Ok(cwd.join("ychat_desktop"));
+    if cwd.join("fluxer_desktop").is_dir() {
+        return Ok(cwd.join("fluxer_desktop"));
     }
     Err(anyhow!(
-        "Could not resolve ychat_desktop directory from {}",
+        "Could not resolve fluxer_desktop directory from {}",
         cwd.display()
     ))
 }
@@ -469,7 +469,7 @@ fn workdir_path(value: &str) -> PathBuf {
 }
 
 fn desktop_dist_dir() -> PathBuf {
-    workdir().join("ychat_desktop").join("dist-electron")
+    workdir().join("fluxer_desktop").join("dist-electron")
 }
 
 async fn windows_paths_step() -> Result<()> {
@@ -1431,7 +1431,7 @@ struct DesktopSharedAssetManifest {
 
 fn desktop_renderer_dir() -> PathBuf {
     workdir()
-        .join("ychat_desktop")
+        .join("fluxer_desktop")
         .join("dist")
         .join("renderer")
 }
