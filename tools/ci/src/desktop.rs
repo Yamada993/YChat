@@ -2092,7 +2092,7 @@ fn desktop_dictionary_module_name(directory_name: &str) -> Option<String> {
 
 fn desktop_dictionary_source_root() -> PathBuf {
     workdir()
-        .join("ychat_static")
+        .join("fluxer_static")
         .join("desktop")
         .join("spellcheck")
         .join("dictionaries")
@@ -2102,7 +2102,7 @@ fn desktop_dictionary_sources() -> Result<Vec<(String, PathBuf)>> {
     run_command(
         CommandSpec::new("sh").arg(
             workdir()
-                .join("ychat_static")
+                .join("fluxer_static")
                 .join("fetch-spellcheck-dictionaries.sh"),
         ),
     )?;
