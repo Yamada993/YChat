@@ -7622,7 +7622,7 @@ mod tests {
     fn published(version: &str, coordinates: &[(&str, &str)]) -> DesktopPublishedRelease {
         DesktopPublishedRelease {
             version: version.to_string(),
-            tag: format!("fluxer-desktop-canary@{version}"),
+            tag: format!("ychat-desktop-canary@{version}"),
             assets: coordinates
                 .iter()
                 .map(|(platform, arch)| {
