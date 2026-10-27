@@ -666,7 +666,7 @@ jobs:
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           path: artifacts
-          pattern: fluxer-desktop-${{ needs.meta.outputs.build_channel }}-windows-arm64*
+          pattern: ychat-desktop-${{ needs.meta.outputs.build_channel }}-windows-arm64*
 
       - name: Verify the packaged shell starts and boots its bundled renderer
         shell: pwsh
@@ -721,7 +721,7 @@ jobs:
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           path: artifacts
-          pattern: fluxer-desktop-${{ needs.meta.outputs.build_channel }}-*
+          pattern: ychat-desktop-${{ needs.meta.outputs.build_channel }}-*
 
       - name: Build payload layout (+ manifest.json)
         env:
@@ -759,7 +759,7 @@ jobs:
       - name: Upload GitHub release assets
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: fluxer-desktop-release-assets
+          name: ychat-desktop-release-assets
           path: release_assets
           if-no-files-found: error
           retention-days: 1
@@ -798,7 +798,7 @@ jobs:
       - name: Download GitHub release assets
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
-          name: fluxer-desktop-release-assets
+          name: ychat-desktop-release-assets
           path: release_assets
 
       - name: Publish GitHub desktop release
@@ -812,7 +812,7 @@ jobs:
           set -euo pipefail
           release_args=(
             release publish
-            --component "fluxer-desktop-${CHANNEL}"
+            --component "ychat-desktop-${CHANNEL}"
             --build-version "${VERSION}"
             --source-sha "${SOURCE_SHA}"
             --previous-sha "${RELEASE_BASELINE_SHA}"
