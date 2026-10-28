@@ -2514,9 +2514,18 @@ impl DesktopBuildPlatform {
     }
 }
 
+
 fn build_app_step(platform: DesktopBuildPlatform) -> Result<()> {
     let macos_keychain = if matches!(platform, DesktopBuildPlatform::Macos) {
-        Some(validate_macos_signing_env()?)
+        match validate_macos_signing_env() {
+            Ok(keychain) => Some(keychain),
+            Err(error) => {
+                println!(
+                    "macOS signing is unavailable; building without the configured signing keychain: {error:#}"
+                );
+                None
+            }
+        }
     } else {
         None
     };
@@ -2526,6 +2535,8 @@ fn build_app_step(platform: DesktopBuildPlatform) -> Result<()> {
             "Using macOS signing keychain for electron-builder: {}",
             keychain.display()
         );
+    } else if matches!(platform, DesktopBuildPlatform::Macos) {
+        println!("Building macOS application without the configured signing keychain.");
     }
 
     let electron_arch = require_env("ELECTRON_ARCH")?;
