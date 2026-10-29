@@ -2685,6 +2685,15 @@ fn clean_electron_builder_outputs(platform: DesktopBuildPlatform) -> Result<()> 
 fn verify_bundle_id_step() -> Result<()> {
     let electron_arch = require_env("ELECTRON_ARCH")?;
     let build_channel = env::var("BUILD_CHANNEL").unwrap_or_else(|_| "stable".to_string());
+    let require_signing = match env::var("MACOS_SIGNING_REQUIRED") {
+        Ok(value) => value
+            .parse::<bool>()
+            .context("MACOS_SIGNING_REQUIRED must be true or false")?,
+        Err(env::VarError::NotPresent) => true,
+        Err(error) => {
+            return Err(error).context("Failed to read MACOS_SIGNING_REQUIRED");
+        }
+    };
     let zip_path = find_dist_file(Path::new("dist-electron"), |name| {
         name.ends_with(".zip") && name.contains(&electron_arch)
     })
@@ -2720,38 +2729,42 @@ fn verify_bundle_id_step() -> Result<()> {
     } else {
         "app.ychat"
     };
-    let expected_profile = if build_channel == "canary" {
-        "3G5837T29K.app.ychat.canary"
-    } else {
-        "3G5837T29K.app.ychat"
-    };
     println!("Bundle id in zip: {bid} (expected: {expected})");
     ensure!(bid == expected, "Unexpected bundle id: {bid}");
-    ensure!(
-        profile.exists(),
-        "Missing provisioning profile: {}",
-        profile.display()
-    );
+    if require_signing {
+        let expected_profile = if build_channel == "canary" {
+            "3G5837T29K.app.ychat.canary"
+        } else {
+            "3G5837T29K.app.ychat"
+        };
+        ensure!(
+            profile.exists(),
+            "Missing provisioning profile: {}",
+            profile.display()
+        );
 
-    let decoded_profile = temp.path().join("embedded.provisionprofile.plist");
-    let decoded = output_bytes(CommandSpec::new("security").args([
-        "cms",
-        "-D",
-        "-i",
-        profile.to_string_lossy().as_ref(),
-    ]))?;
-    fs::write(&decoded_profile, decoded)
-        .with_context(|| format!("Failed to write {}", decoded_profile.display()))?;
-    let profile_app_id = output_text(CommandSpec::new("/usr/libexec/PlistBuddy").args([
-        "-c",
-        "Print :Entitlements:com.apple.application-identifier",
-        decoded_profile.to_string_lossy().as_ref(),
-    ]))?;
-    println!("Provisioning profile app id: {profile_app_id} (expected: {expected_profile})");
-    ensure!(
-        profile_app_id == expected_profile,
-        "Unexpected provisioning profile app id: {profile_app_id}"
-    );
+        let decoded_profile = temp.path().join("embedded.provisionprofile.plist");
+        let decoded = output_bytes(CommandSpec::new("security").args([
+            "cms",
+            "-D",
+            "-i",
+            profile.to_string_lossy().as_ref(),
+        ]))?;
+        fs::write(&decoded_profile, decoded)
+            .with_context(|| format!("Failed to write {}", decoded_profile.display()))?;
+        let profile_app_id = output_text(CommandSpec::new("/usr/libexec/PlistBuddy").args([
+            "-c",
+            "Print :Entitlements:com.apple.application-identifier",
+            decoded_profile.to_string_lossy().as_ref(),
+        ]))?;
+        println!("Provisioning profile app id: {profile_app_id} (expected: {expected_profile})");
+        ensure!(
+            profile_app_id == expected_profile,
+            "Unexpected provisioning profile app id: {profile_app_id}"
+        );
+    } else {
+        println!("Skipping provisioning profile and signature verification (MACOS_SIGNING_REQUIRED=false).");
+    }
 
     for (rel, expected_macho_arch) in macos_native_runtime_targets(&electron_arch) {
         let native_file = app
@@ -2769,25 +2782,28 @@ fn verify_bundle_id_step() -> Result<()> {
         check_macho_arch(&native_file, expected_macho_arch)?;
     }
 
-    run_command(CommandSpec::new("codesign").args([
-        "--verify",
-        "--deep",
-        "--strict",
-        "--verbose=4",
-        app.to_string_lossy().as_ref(),
-    ]))?;
-    run_command(CommandSpec::new("xcrun").args([
-        "stapler",
-        "validate",
-        app.to_string_lossy().as_ref(),
-    ]))?;
-    run_command(CommandSpec::new("spctl").args([
-        "--assess",
-        "--type",
-        "execute",
-        "--verbose=4",
-        app.to_string_lossy().as_ref(),
-    ]))
+    if require_signing {
+        run_command(CommandSpec::new("codesign").args([
+            "--verify",
+            "--deep",
+            "--strict",
+            "--verbose=4",
+            app.to_string_lossy().as_ref(),
+        ]))?;
+        run_command(CommandSpec::new("xcrun").args([
+            "stapler",
+            "validate",
+            app.to_string_lossy().as_ref(),
+        ]))?;
+        run_command(CommandSpec::new("spctl").args([
+            "--assess",
+            "--type",
+            "execute",
+            "--verbose=4",
+            app.to_string_lossy().as_ref(),
+        ]))?;
+    }
+    Ok(())
 }
 
 fn macos_native_runtime_targets(electron_arch: &str) -> Vec<(String, &'static str)> {

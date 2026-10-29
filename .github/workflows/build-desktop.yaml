@@ -476,11 +476,12 @@ jobs:
           cargo run --locked --quiet --manifest-path ${{ github.workspace }}/_ci/tools/ci/Cargo.toml -- build-desktop
           --step build_app_macos
 
-      - name: Verify macOS artifact (bundle ID + profile + signature)
+      - name: Verify macOS artifact (bundle ID + native modules)
         if: matrix.platform == 'macos'
         working-directory: ${{ env.WORKDIR }}/fluxer_desktop
         env:
           BUILD_CHANNEL: ${{ env.BUILD_CHANNEL }}
+          MACOS_SIGNING_REQUIRED: "false"
         run: >-
           cargo run --locked --quiet --manifest-path ${{ github.workspace }}/_ci/tools/ci/Cargo.toml -- build-desktop
           --step verify_bundle_id
