@@ -187,7 +187,7 @@ const PLATFORMS: &[Platform] = &[
     Platform {
         platform: "macos",
         arch: MACOS_UNIVERSAL_ARCH,
-        os: "macos-latest",
+        os: "macos-15-intel",
         electron_arch: MACOS_UNIVERSAL_ARCH,
     },
     Platform {
