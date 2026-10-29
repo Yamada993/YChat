@@ -2560,6 +2560,12 @@ fn build_app_step(platform: DesktopBuildPlatform) -> Result<()> {
                 .env("CSC_KEYCHAIN", keychain.as_os_str())
                 .env_remove("CSC_LINK")
                 .env_remove("CSC_KEY_PASSWORD");
+        } else if matches!(platform, DesktopBuildPlatform::Macos) {
+            command = command
+                .env_remove("CSC_LINK")
+                .env_remove("CSC_KEY_PASSWORD")
+                .env_remove("CSC_KEYCHAIN")
+                .env("CSC_IDENTITY_AUTO_DISCOVERY", "false");
         }
         let result = capture(command);
         println!("::endgroup::");
