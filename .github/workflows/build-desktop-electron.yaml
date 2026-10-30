@@ -13,7 +13,7 @@ concurrency:
 jobs:
   build:
     name: Build patched Electron (linux-${{ matrix.arch }})
-    runs-on: blacksmith-16vcpu-ubuntu-2404
+    runs-on: [self-hosted, Linux, X64, fluxer-electron-build]
     timeout-minutes: 1440
     strategy:
       fail-fast: false
