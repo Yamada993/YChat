@@ -46,11 +46,49 @@ rexctl admins remove <user>
 
 ### rexctl admins sign-in-link
 
-Print a link that signs an admin in once.
+Print a link that signs an admin in once. Use it to get in when Require SSO is on and your sign-in provider is down or set up wrong. See https://docs.fluxer.app/operator/sign-in/#single-sign-on.
 
 ```sh
 rexctl admins sign-in-link <user>
 ```
+
+## rexctl auto-upgrade
+
+Show whether rexctl upgrades Fluxer by itself every day, when it runs next and how the last run went. The daily run is rexctl upgrade --yes, so it works like an upgrade you run yourself.
+
+```sh
+rexctl auto-upgrade [flags]
+```
+
+- `--json`
+
+  Print JSON.
+
+### rexctl auto-upgrade off
+
+Stop upgrading Fluxer by itself.
+
+```sh
+rexctl auto-upgrade off
+```
+
+### rexctl auto-upgrade on
+
+Run rexctl upgrade --yes every day with a systemd timer, or with cron on machines without systemd. Each run backs up your instance first, goes back to the release you had if the new one doesn't start, and waits for the next day if another rexctl command is changing the instance. Run it again to change the time or the address, and leave out --notify to stop the notifications.
+
+With --notify, rexctl posts JSON to the address when an upgrade installs a new release or fails: instance, status (upgraded or failed), release, and the message as both text and content, which Slack and Discord webhooks show as they are. For ntfy, add ?tpl=1&m=\{\{.text\}\} to the topic address.
+
+```sh
+rexctl auto-upgrade on [flags]
+```
+
+- `--at string`
+
+  Time of day to upgrade, as HH:MM in this machine's time zone. The default is `04:00`.
+
+- `--notify string`
+
+  Web address rexctl posts to when an upgrade installs a new release or fails.
 
 ## rexctl backup
 
@@ -136,6 +174,14 @@ rexctl branding set [flags]
 
 Read and change Fluxer's settings.
 
+### rexctl config edit
+
+Opens custom.compose.yml in $VISUAL or $EDITOR. rexctl checks the file, says which services restart and applies it once you agree. Your file stays as it was until it passes the check.
+
+```sh
+rexctl config edit
+```
+
 ### rexctl config get
 
 Show one setting.
@@ -160,10 +206,6 @@ List every setting with its value and help.
 rexctl config list [flags]
 ```
 
-- `--all`
-
-  Also list every raw setting and the secrets rexctl generated.
-
 - `--json`
 
   Print JSON.
@@ -173,8 +215,16 @@ rexctl config list [flags]
 Change one or more settings.
 
 ```sh
-rexctl config set <key> <value> | <key>=<value>...
+rexctl config set <key> <value> | <key>=<value>... [flags]
 ```
+
+- `--migrate-identities`
+
+  When sso.issuer changes, move SSO links to the new issuer.
+
+- `--no-migrate-identities`
+
+  When sso.issuer changes, leave SSO links on the old issuer.
 
 ### rexctl config unset
 
@@ -328,6 +378,10 @@ rexctl install [flags]
 
   Open the ports Fluxer needs in ufw or firewalld. The default is `true`.
 
+- `--project string`
+
+  Name for this instance's containers and volumes, for running more than one instance on a host. The default is `fluxer`.
+
 - `--registration string`
 
   Who can create an account (invite, approval, open or closed).
@@ -407,6 +461,14 @@ rexctl install [flags]
 - `--voice-ip string`
 
   Public IP address for voice and video (found automatically).
+
+- `--voice-tcp-port int`
+
+  TCP port for voice and video, for running more than one instance on a host.
+
+- `--voice-udp-port int`
+
+  UDP port for voice and video, for running more than one instance on a host.
 
 ## rexctl invites
 
@@ -579,6 +641,22 @@ rexctl rollback [flags]
 
   Also restore the database from the backup taken before the upgrade.
 
+## rexctl search
+
+Manage search on your instance.
+
+### rexctl search reindex
+
+Rebuild every search index from your data, with the messages in every channel and DM. Search shows partial results until it finishes. If a rebuild is already running, rexctl follows that one, and stopping rexctl doesn't stop the rebuild.
+
+```sh
+rexctl search reindex [flags]
+```
+
+- `--no-wait`
+
+  Start the rebuild and return without waiting for it.
+
 ## rexctl setup
 
 Create the admin account and finish setup in the terminal.
@@ -734,6 +812,14 @@ rexctl upgrade [flags]
 - `--to string`
 
   Upgrade to this version, not the latest.
+
+## rexctl use
+
+Show which instance rexctl uses when you don't pass --dir and aren't in an instance folder, or pass a folder to use that instance from now on. rexctl remembers each instance it installs, so you only need this with more than one instance or one installed by an older rexctl. Each account has its own choice. Root's choice also applies to accounts that have no instance of their own. The services rexctl sets up for starting and upgrading Fluxer always name their folder, so this doesn't change them.
+
+```sh
+rexctl use [folder]
+```
 
 ## rexctl users
 

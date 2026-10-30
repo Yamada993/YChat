@@ -172,7 +172,12 @@ pub fn instance_config_page(
                             &instance_config.registration,
                             instance_config.account_identity.mode,
                         ))
-                        (sso_config_section(base, config_form, &instance_config.sso))
+                        (sso_config_section(
+                            base,
+                            config_form,
+                            &instance_config.sso,
+                            instance_config.account_identity.mode,
+                        ))
                         (accounts_section(
                             base,
                             config_form,
@@ -184,6 +189,8 @@ pub fn instance_config_page(
                                     tag_style: instance_config.account_identity.tag_style,
                                     emails_enabled: instance_config.integrations.email.delivery_state
                                         == EmailDeliveryState::On,
+                                    username_from_provider: instance_config.sso.enabled
+                                        && instance_config.sso.username_from_provider,
                                 },
                                 delivery_state: instance_config.integrations.email.delivery_state,
                                 captcha_provider: instance_config.captcha.provider,
@@ -388,7 +395,7 @@ fn app_public_config_section(
         "The name, color and images people see on the sign-in page, in the apps and in the browser. The preview shows each place they are used.",
         html! {
             div class="space-y-8" {
-                (branding_section(base, config_form, app_public, &host))
+                (branding_section(config, config_form, app_public, &host))
                 div class="space-y-4 border-t border-neutral-200 pt-6" {
                     h3 class="text-sm font-semibold text-neutral-900" { "Legal Documents" }
                     form method="post" action={(base) "/instance-config?action=update_app_legal"} {

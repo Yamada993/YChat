@@ -16,9 +16,11 @@ import {DefaultUserOnly, LoginRequired} from '@app/api/middleware/AuthMiddleware
 import {LocalAuthMiddleware} from '@app/api/middleware/LocalAuthMiddleware';
 import {requireOAuth2ScopeForBearer} from '@app/api/middleware/OAuth2ScopeMiddleware';
 import {RateLimitMiddleware} from '@app/api/middleware/RateLimitMiddleware';
+import {jsonAssetBodyLimit, RequestBodyLimit} from '@app/api/middleware/RequestBodyLimitMiddleware';
 import {OpenAPI} from '@app/api/middleware/ResponseTypeMiddleware';
 import {
 	assertCredentialsNotSsoManaged,
+	assertUsernameNotSsoManaged,
 	SsoManagedCredentialsMiddleware,
 } from '@app/api/middleware/SsoManagedCredentialsMiddleware';
 import {SudoModeMiddleware} from '@app/api/middleware/SudoModeMiddleware';
@@ -131,6 +133,7 @@ export function UserAccountController(app: HonoApp) {
 	);
 	app.patch(
 		'/users/@me',
+		RequestBodyLimit(jsonAssetBodyLimit({avatar: 1, banner: 1})),
 		RateLimitMiddleware(RateLimitConfigs.USER_UPDATE_SELF),
 		LoginRequired,
 		DefaultUserOnly,
@@ -153,6 +156,7 @@ export function UserAccountController(app: HonoApp) {
 			if (rawBody.new_password !== undefined || rawBody.email_token !== undefined) {
 				await assertCredentialsNotSsoManaged(ctx.get('ssoService'), user);
 			}
+			await assertUsernameNotSsoManaged(ctx.get('ssoService'), user, rawBody);
 			return ctx.json(
 				await userAccountRequestService.updateCurrentUser({
 					ctx,

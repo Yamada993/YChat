@@ -13,8 +13,6 @@ export const ERROR_I18N_MESSAGES = {
 	'account.unclaimed_cannot_join_calls': 'Claim your account to start or join calls.',
 	'account.unclaimed_cannot_join_group_dms': 'Claim your account to join group chats.',
 	'account.unclaimed_cannot_join_voice': 'Claim your account to join voice channels.',
-	'account.purchase_receipt_email_required':
-		"Purchases need an email address to send receipts to, and this account doesn't have one.",
 	'account.unclaimed_cannot_make_purchases': 'Claim your account to make purchases.',
 	'account.unclaimed_cannot_send_direct_messages': 'Claim your account to send direct messages.',
 	'account.unclaimed_cannot_send_friend_requests': 'Claim your account to send friend requests.',
@@ -193,17 +191,28 @@ export const ERROR_I18N_MESSAGES = {
 	'auth_and_oauth.registration_url_invalid': 'This registration link is invalid or has expired.',
 	'auth_and_oauth.sso_account_linked_to_another_identity':
 		'This account is already linked to a different SSO identity.',
+	'auth_and_oauth.sso_account_link_requires_sign_in':
+		"An account with this email already exists. Sign in to it another way, then connect single sign-on from your account settings in the web app. If you can't, ask an admin of this instance.",
+	'auth_and_oauth.sso_discovery_failed':
+		"Couldn't connect to the sign-in provider at its issuer URL. Check the issuer URL, or wait until the provider is back before you turn on Require SSO.",
 	'auth_and_oauth.sso_email_not_verified': 'Your SSO provider has not verified your email address.',
 	'auth_and_oauth.sso_identity_linked_to_another_account':
 		'This SSO identity is already linked to a different account.',
 	'auth_and_oauth.sso_identity_mismatch': 'SSO identity mismatch between id_token and userinfo.',
+	'auth_and_oauth.sso_issuer_change_has_identities':
+		'{count, plural, =1 {# account is} other {# accounts are}} linked to the old issuer. Choose whether to move those links to the new issuer or leave them behind.',
+	'auth_and_oauth.sso_issuer_required':
+		'Enter the issuer URL of your sign-in provider. SSO needs it to check who signed in.',
 	'auth_and_oauth.sso_misconfigured': 'SSO is misconfigured. Please contact your administrator.',
 	'auth_and_oauth.sso_provider_did_not_return_email': "Your SSO provider didn't return an email address.",
+	'auth_and_oauth.sso_provider_unavailable': "Your sign-in provider didn't answer. Try again in a moment.",
 	'auth_and_oauth.sso_required':
-		"{reason, select, managed_credentials {This instance requires single sign-on, so your SSO provider manages your email and password.} no_account {This instance only lets existing accounts sign in with SSO, and there's no account for you yet. Ask an admin of this instance for access.} other {This instance requires single sign-on. Sign in with the SSO button on the sign-in page.}}",
+		"{reason, select, managed_credentials {This instance requires single sign-on, so your SSO provider manages your email and password.} no_account {This instance only lets existing accounts sign in with SSO, and there's no account for you yet. Ask an admin of this instance for access.} managed_username {This instance requires single sign-on, so your username comes from your SSO provider.} other {This instance requires single sign-on. Sign in with the SSO button on the sign-in page.}}",
 	'auth_and_oauth.sso_test_code_missing_email': 'SSO test code is missing the email payload.',
 	'auth_and_oauth.sso_unable_to_allocate_discriminator':
 		"We couldn't allocate a discriminator for your SSO account. Please try again.",
+	'auth_and_oauth.sso_user_info_signed_response_unsupported':
+		"Your sign-in provider sent your profile in a signed format that Fluxer can't use. Ask an admin of this instance to turn off signed userinfo responses at the provider.",
 	'auth_and_oauth.sudo_mode_required': 'Sudo mode is required.',
 	'auth_and_oauth.unknown_application': 'Unknown application.',
 	'auth_and_oauth.unknown_origin_handoff': 'This sign-in transfer has expired or was already used.',
@@ -445,6 +454,7 @@ export const ERROR_I18N_MESSAGES = {
 	'friends_and_dms.already_friends': "You're already friends with this user.",
 	'friends_and_dms.direct_messages_disabled': 'Direct messages are disabled on this instance.',
 	'friends_and_dms.friends_disabled': 'Friend requests are disabled on this instance.',
+	'friends_and_dms.personal_notes_disabled': 'Personal notes are turned off on this instance.',
 	'friends_and_dms.new_conversations_limited': "You can't start new conversations right now. Please try again later.",
 	'friends_and_dms.bots_cannot_send_friend_requests': "Bots can't send friend requests.",
 	'friends_and_dms.cannot_add_yourself_to_group_dm': "You can't add yourself to a group DM.",
@@ -544,6 +554,8 @@ export const ERROR_I18N_MESSAGES = {
 	'misc.invalid_snowflake': 'Invalid snowflake.',
 	'misc_limits.max_applications_reached':
 		"You've reached the maximum of {limit, plural, one {# application} other {# applications}}.",
+	'misc_limits.max_badges_reached':
+		"You've reached the maximum of {count, plural, one {# badge} other {# badges}} for this type.",
 	'misc_limits.max_bookmarks_reached':
 		"You've reached the maximum of {count, plural, one {# bookmark} other {# bookmarks}}.",
 	'misc_limits.max_category_channels_reached':
@@ -677,6 +689,7 @@ export const ERROR_I18N_MESSAGES = {
 	'tos_and_age.must_agree_to_tos_and_privacy': 'You need to accept the terms of service to create an account.',
 	'tos_and_age.must_be_minimum_age':
 		'You must be at least {minAge, plural, one {# year} other {# years}} old to create an account.',
+	'unknown_entities.unknown_badge': "Badge wasn't found.",
 	'unknown_entities.unknown_channel': "Channel wasn't found.",
 	'unknown_entities.unknown_forum_tag': "Tag wasn't found.",
 	'unknown_entities.unknown_guild': "Community wasn't found.",
@@ -689,6 +702,8 @@ export const ERROR_I18N_MESSAGES = {
 	'unknown_entities.unknown_user_flag': "The specified user flag isn't recognized.",
 	'urls.invalid_url_format': 'Invalid URL format.',
 	'urls.invalid_url_or_attachment_reference': 'Invalid URL format or attachment reference.',
+	'urls.url_hostname_not_resolvable':
+		"Fluxer couldn't look up the hostname in this URL. Check it's spelled right and resolves from the Fluxer server.",
 	'urls.url_length_invalid': 'URL must be between {min} and {max} characters.',
 	'urls.url_must_use_https': 'URL must start with https://.',
 	'urls.url_not_publicly_routable': 'URL must resolve to a publicly routable address.',

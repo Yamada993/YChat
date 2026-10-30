@@ -39,6 +39,11 @@ const (
 
 var fatalChecks = map[string]bool{"services": true, "health": true}
 
+var (
+	selfUpdate = release.SelfUpdate
+	reexec     = release.Reexec
+)
+
 type upgradeFlags struct {
 	Check    bool
 	To       string
@@ -64,7 +69,11 @@ func newUpgradeCmd(app *App) *cobra.Command {
 		Short: "Upgrade rexctl and Fluxer to the latest release",
 		Args:  noArgs,
 		RunE: func(c *cobra.Command, _ []string) error {
-			return runUpgrade(c.Context(), app, &f)
+			err := runUpgrade(c.Context(), app, &f)
+			if !f.Check && !f.DryRun {
+				notifyUpgrade(c.Context(), app, err)
+			}
+			return err
 		},
 	}
 	fl := c.Flags()
@@ -92,15 +101,21 @@ func runUpgrade(ctx context.Context, app *App, f *upgradeFlags) error {
 	if f.Prefetch && f.NoBackup {
 		return ui.Usage("Use --no-backup when you upgrade, not with --prefetch.")
 	}
-	if f.Resume != "" {
+	if f.Resume != "" && f.Resume != release.ResumeRecovery {
 		return resumeUpgrade(ctx, app, f)
 	}
+	app.keepLayout = true
 	inst, tookOver, err := upgradeInstance(ctx, app, f.DryRun)
 	if err != nil || inst == nil {
 		return err
 	}
 	if err := managed(inst); err != nil {
 		return err
+	}
+	if !f.DryRun && inst.State.Upgrade != nil {
+		if handedOver, err := updateBeforeRecovery(ctx, app, f.Resume, f.To, "rexctl upgrade"); err != nil || handedOver {
+			return err
+		}
 	}
 	var e *engine.Engine
 	if !f.DryRun {
@@ -132,10 +147,8 @@ func runUpgrade(ctx context.Context, app *App, f *upgradeFlags) error {
 	case cmp < 0:
 		return ui.Refused(fmt.Sprintf("Fluxer %s is older than the release you run, %s.", to, from), "Run rexctl rollback to go back to the release you ran before.")
 	}
-	if e != nil {
-		if err := release.CheckTarget(e, rel); err != nil {
-			return floorRefusal(err, to)
-		}
+	if err := release.CheckTarget(e, rel, inst.State.Schema); err != nil {
+		return floorRefusal(err, to)
 	}
 	if release.Valid(cur) {
 		app.UI.Info("Fluxer %s is available. You're on %s.", to, from)
@@ -143,11 +156,12 @@ func runUpgrade(ctx context.Context, app *App, f *upgradeFlags) error {
 		app.UI.Info("Fluxer %s is available.", to)
 	}
 	needSelf := release.Compare(rel.Version, app.Version) != 0
+	app.keepLayout = needSelf && rel.StateSchema > 0 && rel.StateSchema < instance.StateSchema
 	if f.DryRun {
 		for _, k := range keptCopies(inst) {
 			warnKeptCopy(app.UI, k.Name, k.Copy, true)
 		}
-		printUpgradePlan(app, f, needSelf, to)
+		printUpgradePlan(ctx, app, inst, f, needSelf, to)
 		return nil
 	}
 	if f.Prefetch {
@@ -195,7 +209,7 @@ func runUpgrade(ctx context.Context, app *App, f *upgradeFlags) error {
 			} else {
 				s.Done("Updated rexctl to %s.", to)
 			}
-			return release.SelfUpdate(ctx, asset)
+			return selfUpdate(ctx, asset)
 		})
 		if err != nil {
 			clearUpgrade(inst)
@@ -206,9 +220,47 @@ func runUpgrade(ctx context.Context, app *App, f *upgradeFlags) error {
 	if err != nil {
 		return err
 	}
-	if err := release.Reexec(resumeArgs(os.Args[1:], release.PhaseSelfUpdated)); err != nil {
+	if err := reexec(resumeArgs(os.Args[1:], release.PhaseSelfUpdated, app.pickedDir())); err != nil {
 		return ui.Wrap(err, "Updated rexctl but couldn't start it again.", "Run rexctl upgrade again.")
 	}
+	return nil
+}
+
+func updateBeforeRecovery(ctx context.Context, app *App, resume, to, command string) (bool, error) {
+	if resume == release.ResumeRecovery || !release.Valid(app.Version) {
+		return false, nil
+	}
+	rel, err := release.Resolve(ctx, to)
+	if err != nil {
+		return false, keepRexctl(ctx, app, "Couldn't check for a newer rexctl.", err)
+	}
+	if release.Compare(rel.Version, app.Version) <= 0 {
+		return false, nil
+	}
+	_, next := versionPair(app.Version, rel.Version)
+	asset, err := rel.AssetFor(runtime.GOOS, runtime.GOARCH)
+	if err != nil {
+		return false, keepRexctl(ctx, app, fmt.Sprintf("There's no rexctl %s for this machine.", next), err)
+	}
+	err = app.UI.Step(ctx, "Updating rexctl", func(ctx context.Context, s *ui.Step) error {
+		s.Done("Updated rexctl to %s.", next)
+		return selfUpdate(ctx, asset)
+	})
+	if err != nil {
+		return false, keepRexctl(ctx, app, fmt.Sprintf("Couldn't update rexctl to %s.", next), err)
+	}
+	if err := reexec(resumeArgs(os.Args[1:], release.ResumeRecovery, app.pickedDir())); err != nil {
+		return true, ui.Wrap(err, "Updated rexctl but couldn't start it again.", fmt.Sprintf("Run %s again.", command))
+	}
+	return true, nil
+}
+
+func keepRexctl(ctx context.Context, app *App, msg string, err error) error {
+	if ctx.Err() != nil {
+		return ctx.Err()
+	}
+	app.UI.Info("%s Continuing with rexctl %s.", msg, app.Version)
+	app.UI.Detail("%v", err)
 	return nil
 }
 
@@ -344,11 +396,18 @@ func resumeUpgrade(ctx context.Context, app *App, f *upgradeFlags) error {
 	})
 }
 
-func printUpgradePlan(app *App, f *upgradeFlags, needSelf bool, to string) {
+func printUpgradePlan(ctx context.Context, app *App, inst *instance.Instance, f *upgradeFlags, needSelf bool, to string) {
 	if needSelf {
 		app.UI.Info("rexctl updates itself to %s.", to)
 	}
 	app.UI.Info("Fluxer %s downloads while your instance keeps running.", to)
+	if e, err := app.Engine(ctx, inst); err != nil {
+		app.UI.Detail("%v", err)
+	} else if needSelf {
+		printSpace(ctx, app, inst, e, nil, f, to)
+	} else {
+		printSpace(ctx, app, inst, e, embeddedRefs(), f, to)
+	}
 	if f.Prefetch {
 		app.UI.Info("Dry run. Nothing changed.")
 		return
@@ -363,6 +422,50 @@ func printUpgradePlan(app *App, f *upgradeFlags, needSelf bool, to string) {
 	app.UI.Info("Dry run. Nothing changed.")
 }
 
+func printSpace(ctx context.Context, app *App, inst *instance.Instance, e *engine.Engine, next map[string]string, f *upgradeFlags, to string) {
+	for _, sp := range upgradeSpace(ctx, app, inst, e, next, f) {
+		if sp.Short() {
+			app.UI.Warn(spaceLine(sp, to), spaceFix(e, sp))
+		} else {
+			app.UI.Info("%s", spaceLine(sp, to))
+		}
+	}
+}
+
+func embeddedRefs() map[string]string {
+	images, err := stack.EmbeddedImages()
+	if err != nil {
+		return nil
+	}
+	return images.Images
+}
+
+func upgradeSpace(ctx context.Context, app *App, inst *instance.Instance, e *engine.Engine, next map[string]string, f *upgradeFlags) []checks.Space {
+	old := e.Named(inst.Project(), inst.Dir)
+	pull, err := checks.PullNeed(ctx, e, inst.State.Images.Refs, next)
+	if err != nil {
+		app.UI.Detail("%v", err)
+	}
+	var saved uint64
+	if !f.Prefetch && !f.NoBackup {
+		if saved, err = backup.Estimate(ctx, inst, old); err != nil {
+			app.UI.Detail("%v", err)
+		}
+	}
+	return checkEnv(ctx, inst, e, old).Space(pull, saved)
+}
+
+func spaceLine(sp checks.Space, to string) string {
+	return fmt.Sprintf("Fluxer %s needs about %s of free disk space in %s, and %s is free.", to, ui.Bytes(int64(sp.Need)), sp.Path, ui.Bytes(int64(sp.Free)))
+}
+
+func spaceFix(e *engine.Engine, sp checks.Space) string {
+	if sp.Images {
+		return fmt.Sprintf("Free up space there, for example with %s image prune -a, which removes the images no container uses. Then run rexctl upgrade again.", strings.ToLower(e.Kind.Name()))
+	}
+	return "Free up space there, then run rexctl upgrade again."
+}
+
 func upgradeStack(ctx context.Context, app *App, inst *instance.Instance, e *engine.Engine, f *upgradeFlags) error {
 	pend := inst.State.Upgrade
 	from, to := pend.From, pend.To
@@ -372,6 +475,18 @@ func upgradeStack(ctx context.Context, app *App, inst *instance.Instance, e *eng
 	if err != nil {
 		clearUpgrade(inst)
 		return ui.Wrap(err, "This rexctl has no Fluxer release built in.", "Download rexctl again, then run rexctl upgrade.")
+	}
+	merged, err := instance.DropMergedShards(inst.Dir)
+	if err != nil {
+		clearUpgrade(inst)
+		return ui.Wrap(err, fmt.Sprintf("Couldn't update %s.", instance.CustomCompose), "Check that you can write to it, then run rexctl upgrade again.")
+	}
+	if len(merged) > 0 {
+		bases := make([]string, len(merged))
+		for i, name := range merged {
+			bases[i] = strings.TrimSuffix(name, "-shard")
+		}
+		app.UI.Info("Removed %s from %s. Fluxer %s runs them inside %s, which already have the same changes.", ui.JoinAnd(merged), instance.CustomCompose, toShort, ui.JoinAnd(bases))
 	}
 	if retired := instance.RetiredService(inst.Dir); retired != "" {
 		clearUpgrade(inst)
@@ -403,10 +518,10 @@ func upgradeStack(ctx context.Context, app *App, inst *instance.Instance, e *eng
 		return ui.Wrap(err, fmt.Sprintf("Couldn't save the settings for Fluxer %s.", toShort), "Check that the disk isn't full, then run rexctl upgrade again.")
 	}
 	old := e.Named(inst.Project(), inst.Dir)
-	if c, ok := checks.Get("disk"); ok && c.Run != nil {
-		if r := checks.RunIn(ctx, checkEnv(ctx, inst, e, old), checks.Installed, c); r.Status == checks.Fail || r.Status == checks.Warn {
+	for _, sp := range upgradeSpace(ctx, app, inst, e, next.Images.Refs, f) {
+		if sp.Short() {
 			clearUpgrade(inst)
-			return ui.Refused(r.Message, r.Fix)
+			return ui.Refused(spaceLine(sp, toShort)+" "+capitalise(fluxerName(fromShort))+" is still running.", spaceFix(e, sp))
 		}
 	}
 	if err := pullRelease(ctx, app, inst, e, set, next, toShort); err != nil {
@@ -466,7 +581,7 @@ func upgradeStack(ctx context.Context, app *App, inst *instance.Instance, e *eng
 	if err := setPhase(inst, from, to, release.PhaseMigrated); err != nil {
 		return abortUpgrade(ctx, app, inst, e, err, ui.Wrap(err, "Couldn't save your settings.", "Run rexctl upgrade --verbose to see why."))
 	}
-	r, err := stack.Render(set, stack.OverlaysFor(next.Settings), next.Images.Refs, inst.Project(), inst.Dir)
+	r, err := inst.Render(set, stack.OverlaysFor(next.Settings), next.Images.Refs)
 	if err != nil {
 		return abortUpgrade(ctx, app, inst, e, err, ui.Wrap(err, fmt.Sprintf("Couldn't write the files for Fluxer %s.", toShort), "Run rexctl upgrade --verbose to see why."))
 	}
@@ -486,6 +601,9 @@ func upgradeStack(ctx context.Context, app *App, inst *instance.Instance, e *eng
 			return failedStart(ctx, app, inst, e, p, waiting, err)
 		}
 		return abortUpgrade(ctx, app, inst, e, err, ctx.Err())
+	}
+	if err := inst.DropRootCopies(ctx, true); err != nil {
+		app.UI.Detail("%v", err)
 	}
 	if err := setPhase(inst, from, to, release.PhaseVerified); err != nil {
 		return err
@@ -540,7 +658,7 @@ func retryUpgrade(ctx context.Context, app *App, inst *instance.Instance, e *eng
 	if err != nil {
 		return ui.Wrap(err, fmt.Sprintf("Couldn't read the files for Fluxer %s.", toShort), "Run rexctl doctor to see what's wrong.")
 	}
-	r, err := stack.Render(set, stack.OverlaysFor(next.Settings), next.Images.Refs, inst.Project(), inst.Dir)
+	r, err := inst.Render(set, stack.OverlaysFor(next.Settings), next.Images.Refs)
 	if err != nil {
 		return ui.Wrap(err, fmt.Sprintf("Couldn't write the files for Fluxer %s.", toShort), "Run rexctl upgrade --verbose to see why.")
 	}
@@ -567,6 +685,9 @@ func retryUpgrade(ctx context.Context, app *App, inst *instance.Instance, e *eng
 			fix = fmt.Sprintf("Read %s to see why. %s", logPath, fix)
 		}
 		return ui.Wrap(err, fmt.Sprintf("Fluxer %s didn't start either.", toShort), fix)
+	}
+	if err := inst.DropRootCopies(ctx, true); err != nil {
+		app.UI.Detail("%v", err)
 	}
 	if err := setPhase(inst, pend.From, pend.To, release.PhaseVerified); err != nil {
 		return err
@@ -663,7 +784,7 @@ func refList(refs map[string]string) []string {
 func pullRelease(ctx context.Context, app *App, inst *instance.Instance, e *engine.Engine, set *stack.Set, next *instance.State, toShort string) error {
 	scratch := filepath.Join(release.Dir(inst, next.Release), scratchDir)
 	defer os.RemoveAll(scratch)
-	r, err := stack.Render(set, stack.OverlaysFor(next.Settings), next.Images.Refs, inst.Project(), scratch)
+	r, err := stack.RenderAt(set, stack.OverlaysFor(next.Settings), next.Images.Refs, inst.Project(), scratch, inst.OldLayout())
 	if err != nil {
 		return ui.Wrap(err, fmt.Sprintf("Couldn't prepare the files for Fluxer %s.", toShort), "Run rexctl upgrade --verbose to see why.")
 	}
@@ -746,7 +867,7 @@ func composeProblem(err error) string {
 }
 
 func upAll(ctx context.Context, p *engine.Project, onEvent func(engine.Event)) error {
-	err := p.Up(context.WithoutCancel(ctx), engine.UpOptions{RemoveOrphans: true, OnEvent: onEvent})
+	err := p.Up(ctx, engine.UpOptions{RemoveOrphans: true, WaitTimeout: readyTimeout, OnEvent: onEvent})
 	if engine.ClassOf(err) != engine.ClassDependencyFailed {
 		return err
 	}
@@ -760,7 +881,7 @@ func startEach(ctx context.Context, p *engine.Project, stopOnCrash bool) error {
 				return err
 			}
 		}
-		if err := p.Up(context.WithoutCancel(ctx), engine.UpOptions{Services: []string{s}, NoDeps: true}); err != nil {
+		if err := p.Up(ctx, engine.UpOptions{Services: []string{s}, NoDeps: true}); err != nil {
 			return err
 		}
 	}
@@ -770,14 +891,22 @@ func startEach(ctx context.Context, p *engine.Project, stopOnCrash bool) error {
 func failedStart(ctx context.Context, app *App, inst *instance.Instance, e *engine.Engine, p *engine.Project, waiting []string, cause error) error {
 	pend := inst.State.Upgrade
 	fromShort, toShort := versionPair(pend.From, pend.To)
-	app.UI.Fail(fmt.Sprintf("Fluxer %s didn't start.", toShort), "")
+	if len(waiting) == 0 {
+		waiting = notRunning(context.WithoutCancel(ctx), p)
+	}
+	msg := fmt.Sprintf("Fluxer %s didn't start.", toShort)
+	if len(waiting) > 0 {
+		msg = fmt.Sprintf("Fluxer %s didn't start because %s", toShort, checks.Services(waiting, "isn't ready.", "aren't ready."))
+	}
+	app.UI.Fail(msg, "")
 	app.UI.Detail("%v", cause)
 	logPath := writeFailureLog(ctx, inst, p, "upgrade-"+release.DirName(pend.To)+".log", cause, waiting)
-	if err := goBack(ctx, inst, e, pend.From); err != nil {
+	if err := goBack(ctx, app, inst, e, pend.From); err != nil {
 		return err
 	}
 	inst.State.FailedRelease = pend.To
 	_ = inst.Save()
+	app.outcome = fmt.Sprintf("%s Went back to %s.", msg, fluxerName(fromShort))
 	app.UI.OK("Went back to %s. Your instance is running.", fluxerName(fromShort))
 	if logPath != "" {
 		fixLine(app, fmt.Sprintf("Read %s to see why.", logPath))
@@ -843,7 +972,7 @@ func notRunning(ctx context.Context, p *engine.Project) []string {
 func abortUpgrade(ctx context.Context, app *App, inst *instance.Instance, e *engine.Engine, cause, report error) error {
 	pend := inst.State.Upgrade
 	app.UI.Detail("%v", cause)
-	if err := goBack(ctx, inst, e, pend.From); err != nil {
+	if err := goBack(ctx, app, inst, e, pend.From); err != nil {
 		var ee *ui.ExitError
 		if errors.As(report, &ee) && ee.Msg != "" {
 			msg, _, _ := strings.Cut(ee.Msg, ". ")
@@ -859,11 +988,11 @@ func abortUpgrade(ctx context.Context, app *App, inst *instance.Instance, e *eng
 	return report
 }
 
-func goBack(ctx context.Context, inst *instance.Instance, e *engine.Engine, version string) error {
+func goBack(ctx context.Context, app *App, inst *instance.Instance, e *engine.Engine, version string) error {
 	pend := inst.State.Upgrade
 	cctx, cancel := context.WithTimeout(context.WithoutCancel(ctx), recoveryTimeout)
 	defer cancel()
-	if _, err := restoreRelease(cctx, inst, e, version); err != nil {
+	if _, err := restoreRelease(cctx, app, inst, e, version); err != nil {
 		logPath := writeFailureLog(cctx, inst, e.Named(inst.Project(), inst.Dir), "go-back-"+release.DirName(version)+".log", err, nil)
 		fix := "Run rexctl doctor to see what's wrong."
 		if logPath != "" {
@@ -894,8 +1023,9 @@ func goBack(ctx context.Context, inst *instance.Instance, e *engine.Engine, vers
 	return nil
 }
 
-func restoreRelease(ctx context.Context, inst *instance.Instance, e *engine.Engine, version string) ([]string, error) {
+func restoreRelease(ctx context.Context, app *App, inst *instance.Instance, e *engine.Engine, version string) ([]string, error) {
 	var put []string
+	search := runningImage(ctx, e.Named(inst.Project(), inst.Dir), searchService)
 	if version != inst.State.Release {
 		restored, err := release.Restore(inst, version)
 		if err != nil {
@@ -923,6 +1053,9 @@ func restoreRelease(ctx context.Context, inst *instance.Instance, e *engine.Engi
 	p, lerr := deploy.Load(ctx, inst, e)
 	if lerr != nil {
 		return put, lerr
+	}
+	if serr := keepSearchReadable(ctx, app, inst, p, search, version); serr != nil {
+		return put, serr
 	}
 	if err != nil {
 		if err := startEach(ctx, p, false); err != nil {
@@ -977,6 +1110,7 @@ func finishUpgrade(ctx context.Context, app *App, inst *instance.Instance, e *en
 		app.UI.Detail("%v", err)
 	}
 	_, toShort := versionPair(pend.From, pend.To)
+	app.outcome = fmt.Sprintf("Upgraded to Fluxer %s.", toShort)
 	app.UI.OK("Your instance is on Fluxer %s.", toShort)
 	return nil
 }
@@ -1011,7 +1145,7 @@ func recoverUpgrade(ctx context.Context, app *App, inst *instance.Instance, forw
 		app.UI.Warn(fmt.Sprintf("The upgrade to Fluxer %s didn't finish.", toShort), "")
 		err = app.UI.Step(ctx, "Going back to "+fluxerName(fromShort), func(ctx context.Context, s *ui.Step) error {
 			s.Done("Went back to %s. Your instance is running.", fluxerName(fromShort))
-			return goBack(ctx, inst, e, pend.From)
+			return goBack(ctx, app, inst, e, pend.From)
 		})
 		if err == nil || !forward || !forwardable(inst) || ctx.Err() != nil {
 			return err
@@ -1110,8 +1244,8 @@ func phaseIndex(phase string) int {
 	return -1
 }
 
-func resumeArgs(args []string, phase string) []string {
-	out := make([]string, 0, len(args)+2)
+func resumeArgs(args []string, phase, dir string) []string {
+	out := make([]string, 0, len(args)+4)
 	flag := "--" + release.ResumeFlag
 	for i := 0; i < len(args); i++ {
 		a := args[i]
@@ -1123,6 +1257,9 @@ func resumeArgs(args []string, phase string) []string {
 			continue
 		}
 		out = append(out, a)
+	}
+	if dir != "" {
+		out = append(out, "--dir", dir)
 	}
 	return append(out, flag, phase)
 }

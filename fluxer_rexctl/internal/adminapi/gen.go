@@ -113,6 +113,10 @@ const (
 	AssetPurge                    AdminAclType = "asset:purge"
 	Asterisk                      AdminAclType = "*"
 	AuditLogView                  AdminAclType = "audit_log:view"
+	BadgeCreate                   AdminAclType = "badge:create"
+	BadgeDelete                   AdminAclType = "badge:delete"
+	BadgeList                     AdminAclType = "badge:list"
+	BadgeUpdate                   AdminAclType = "badge:update"
 	BanAvatarHashAdd              AdminAclType = "ban:avatar_hash:add"
 	BanAvatarHashCheck            AdminAclType = "ban:avatar_hash:check"
 	BanAvatarHashRemove           AdminAclType = "ban:avatar_hash:remove"
@@ -159,6 +163,7 @@ const (
 	GuildReload                   AdminAclType = "guild:reload"
 	GuildShutdown                 AdminAclType = "guild:shutdown"
 	GuildTransferOwnership        AdminAclType = "guild:transfer_ownership"
+	GuildUpdateBadges             AdminAclType = "guild:update:badges"
 	GuildUpdateFeatures           AdminAclType = "guild:update:features"
 	GuildUpdateName               AdminAclType = "guild:update:name"
 	GuildUpdateSettings           AdminAclType = "guild:update:settings"
@@ -191,6 +196,7 @@ const (
 	UserLookup                    AdminAclType = "user:lookup"
 	UserRemoveRelationship        AdminAclType = "user:remove:relationship"
 	UserTempBan                   AdminAclType = "user:temp_ban"
+	UserUpdateBadges              AdminAclType = "user:update:badges"
 	UserUpdateBotStatus           AdminAclType = "user:update:bot_status"
 	UserUpdateDob                 AdminAclType = "user:update:dob"
 	UserUpdateEmail               AdminAclType = "user:update:email"
@@ -239,6 +245,14 @@ func (e AdminAclType) Valid() bool {
 	case Asterisk:
 		return true
 	case AuditLogView:
+		return true
+	case BadgeCreate:
+		return true
+	case BadgeDelete:
+		return true
+	case BadgeList:
+		return true
+	case BadgeUpdate:
 		return true
 	case BanAvatarHashAdd:
 		return true
@@ -332,6 +346,8 @@ func (e AdminAclType) Valid() bool {
 		return true
 	case GuildTransferOwnership:
 		return true
+	case GuildUpdateBadges:
+		return true
 	case GuildUpdateFeatures:
 		return true
 	case GuildUpdateName:
@@ -395,6 +411,8 @@ func (e AdminAclType) Valid() bool {
 	case UserRemoveRelationship:
 		return true
 	case UserTempBan:
+		return true
+	case UserUpdateBadges:
 		return true
 	case UserUpdateBotStatus:
 		return true
@@ -1501,8 +1519,11 @@ type AdminProfileBadgeResponse struct {
 	// AspectRatio Image width divided by its height. Render the image at the badge height and this many times as wide. Null for square badges
 	AspectRatio *float32 `json:"aspect_ratio"`
 
-	// Asset Badge image hash. The image is served at {static_cdn}/badges/{asset}.webp. Null for text badges
+	// Asset Badge image hash. The image is served at {static_cdn}/badges/{asset}.webp. Null for text badges and for badges with asset_url
 	Asset *HexString16Type `json:"asset"`
+
+	// AssetUrl Absolute image URL for a badge whose image is not a static badge hash, such as a custom badge. Null otherwise
+	AssetUrl *string `json:"asset_url"`
 
 	// Caption Short text for the badge, such as #42. A badge with an image uses it as alt text, and a badge without one shows it as text. Null when the label covers it
 	Caption *string `json:"caption"`
@@ -1522,7 +1543,10 @@ type AdminProfileBadgeResponse struct {
 	// Href Absolute URL to open when the badge is clicked, or null
 	Href *string `json:"href"`
 
-	// Kind Stable badge key. Known values: staff, partner, bug_hunter, operator_pass, visionary, visionary_number, plutonium, and premium on self-hosted instances. Clients must render unknown values from the other fields.
+	// Key Stable identity of the badge. It equals kind for built-in badges and is custom:{id} for custom badges, so use it as the list key
+	Key string `json:"key"`
+
+	// Kind Badge type. Known values: staff, partner, bug_hunter, operator_pass, visionary, visionary_number, plutonium, custom, and premium on self-hosted instances. Clients must render unknown values from the other fields.
 	Kind string `json:"kind"`
 
 	// Label Full badge description, localized for the viewer. Use it as the tooltip, and as alt text when there is no caption
@@ -1720,6 +1744,9 @@ type CreateRegistrationUrlResponse struct {
 	} `json:"registration_url"`
 	Url string `json:"url"`
 }
+
+// CustomBadgeIdListResponse IDs of the custom badges assigned to it
+type CustomBadgeIdListResponse = []SnowflakeStringType
 
 // DateOfBirthPolicySchema Whether the instance asks for a date of birth, and who must enter one
 type DateOfBirthPolicySchema string
@@ -1944,10 +1971,12 @@ type IdentifierFirstModeSchema string
 type InstanceBillingResponse struct {
 	AutomaticTax                  *bool                               `json:"automatic_tax"`
 	BillingActive                 bool                                `json:"billing_active"`
+	BillingEmails                 *bool                               `json:"billing_emails"`
 	CatalogMode                   BillingCatalogModeSchema            `json:"catalog_mode"`
 	CountryCurrencies             *map[string]string                  `json:"country_currencies"`
 	DefaultCurrency               *PremiumCurrency                    `json:"default_currency"`
 	EffectiveAutomaticTax         bool                                `json:"effective_automatic_tax"`
+	EffectiveBillingEmails        bool                                `json:"effective_billing_emails"`
 	EffectiveEnabled              bool                                `json:"effective_enabled"`
 	EffectiveTaxIdCollection      bool                                `json:"effective_tax_id_collection"`
 	EffectiveTermsConsentRequired bool                                `json:"effective_terms_consent_required"`
@@ -1967,6 +1996,7 @@ type InstanceBillingResponse struct {
 // InstanceBillingUpdateRequest defines model for InstanceBillingUpdateRequest.
 type InstanceBillingUpdateRequest struct {
 	AutomaticTax         *bool                                    `json:"automatic_tax,omitempty"`
+	BillingEmails        *bool                                    `json:"billing_emails,omitempty"`
 	CountryCurrencies    *BillingCountryCurrenciesSchema          `json:"country_currencies,omitempty"`
 	DefaultCurrency      *PremiumCurrency                         `json:"default_currency,omitempty"`
 	Enabled              *bool                                    `json:"enabled,omitempty"`
@@ -2128,10 +2158,13 @@ type InstanceConfigResponse struct {
 		DirectMessagesLocked   bool `json:"direct_messages_locked"`
 
 		// FriendsDisabled Whether friend requests are disabled instance-wide
-		FriendsDisabled   bool                                    `json:"friends_disabled"`
-		GuildCreateAccess bool                                    `json:"guild_create_access"`
-		PremiumMode       InstanceConfigResponsePolicyPremiumMode `json:"premium_mode"`
-		Services          struct {
+		FriendsDisabled   bool `json:"friends_disabled"`
+		GuildCreateAccess bool `json:"guild_create_access"`
+
+		// PersonalNotesEnabled Whether people can use personal notes
+		PersonalNotesEnabled bool                                    `json:"personal_notes_enabled"`
+		PremiumMode          InstanceConfigResponsePolicyPremiumMode `json:"premium_mode"`
+		Services             struct {
 			BlueskyEnabled *bool `json:"bluesky_enabled"`
 			GifEnabled     *bool `json:"gif_enabled"`
 			YoutubeEnabled *bool `json:"youtube_enabled"`
@@ -2202,8 +2235,14 @@ type InstanceConfigResponse struct {
 		Scope       *string `json:"scope"`
 		TokenUrl    *string `json:"token_url"`
 		UserinfoUrl *string `json:"userinfo_url"`
+
+		// UsernameFromProvider Each SSO sign-in sets the username from the provider, and people can't change it in Fluxer. Only on username instances
+		UsernameFromProvider bool `json:"username_from_provider"`
 	} `json:"sso"`
 	VoiceP2p VoiceP2pConfigResponse `json:"voice_p2p"`
+
+	// Warnings Problems the save found that did not stop it. Always empty outside a save response
+	Warnings []string `json:"warnings"`
 }
 
 // InstanceConfigResponseIntegrationsEmailEffectiveProvider Deprecated, use delivery
@@ -2341,10 +2380,13 @@ type InstanceConfigUpdateRequest struct {
 		DirectMessagesLocked   *InstanceConfigUpdateRequestPolicyDirectMessagesLocked `json:"direct_messages_locked,omitempty"`
 
 		// FriendsDisabled Whether friend requests are disabled instance-wide. Left out while direct_messages_disabled changes, it takes the same value
-		FriendsDisabled   *bool                                         `json:"friends_disabled,omitempty"`
-		GuildCreateAccess *bool                                         `json:"guild_create_access,omitempty"`
-		PremiumMode       *InstanceConfigUpdateRequestPolicyPremiumMode `json:"premium_mode,omitempty"`
-		Services          *struct {
+		FriendsDisabled   *bool `json:"friends_disabled,omitempty"`
+		GuildCreateAccess *bool `json:"guild_create_access,omitempty"`
+
+		// PersonalNotesEnabled Whether people can use personal notes. Off by default on self-hosted instances
+		PersonalNotesEnabled *bool                                         `json:"personal_notes_enabled,omitempty"`
+		PremiumMode          *InstanceConfigUpdateRequestPolicyPremiumMode `json:"premium_mode,omitempty"`
+		Services             *struct {
 			BlueskyEnabled *bool `json:"bluesky_enabled,omitempty"`
 			GifEnabled     *bool `json:"gif_enabled,omitempty"`
 			YoutubeEnabled *bool `json:"youtube_enabled,omitempty"`
@@ -2390,9 +2432,15 @@ type InstanceConfigUpdateRequest struct {
 		GroupsClaim *string `json:"groups_claim,omitempty"`
 		Issuer      *string `json:"issuer,omitempty"`
 		JwksUrl     *string `json:"jwks_url,omitempty"`
-		Scope       *string `json:"scope,omitempty"`
-		TokenUrl    *string `json:"token_url,omitempty"`
-		UserinfoUrl *string `json:"userinfo_url,omitempty"`
+
+		// MigrateIdentities Only for a save that changes the issuer while accounts are linked to the old one. True moves those links to the new issuer, false leaves them on the old one. Applies to this save only and is never stored
+		MigrateIdentities *bool   `json:"migrate_identities,omitempty"`
+		Scope             *string `json:"scope,omitempty"`
+		TokenUrl          *string `json:"token_url,omitempty"`
+		UserinfoUrl       *string `json:"userinfo_url,omitempty"`
+
+		// UsernameFromProvider Each SSO sign-in sets the username from the provider, and people can't change it in Fluxer. Only on username instances
+		UsernameFromProvider *bool `json:"username_from_provider,omitempty"`
 	} `json:"sso,omitempty"`
 	VoiceP2p *VoiceP2pConfigUpdateRequest `json:"voice_p2p,omitempty"`
 }
@@ -2476,6 +2524,21 @@ type LastSessionCleanupModeSchema string
 // ListUserSessionsResponse defines model for ListUserSessionsResponse.
 type ListUserSessionsResponse struct {
 	Sessions []struct {
+		// AppBetaNumber Beta number the native app last reported, for beta builds only
+		AppBetaNumber *Int32Type `json:"app_beta_number"`
+
+		// AppBuildNumber Platform build number the native app last reported for this session
+		AppBuildNumber *Int32Type `json:"app_build_number"`
+
+		// AppPlatform Platform the native app last reported for this session
+		AppPlatform *string `json:"app_platform"`
+
+		// AppReleaseChannel Release channel the native app last reported for this session
+		AppReleaseChannel *string `json:"app_release_channel"`
+
+		// AppVersion App version the native app last reported for this session
+		AppVersion *string `json:"app_version"`
+
 		// ApproxLastUsedAt ISO timestamp of the session last usage (approximate)
 		ApproxLastUsedAt string `json:"approx_last_used_at"`
 
@@ -2666,14 +2729,15 @@ type ThrottledError struct {
 
 // UserAdminResponseSchema defines model for UserAdminResponseSchema.
 type UserAdminResponseSchema struct {
-	AccentColor        *Int32Type        `json:"accent_color"`
-	AccountTier        AccountTierSchema `json:"account_tier"`
-	Acls               []string          `json:"acls"`
-	AuthenticatorTypes []Int32Type       `json:"authenticator_types"`
-	Avatar             *string           `json:"avatar"`
-	Banner             *string           `json:"banner"`
-	Bio                *string           `json:"bio"`
-	Bot                bool              `json:"bot"`
+	AccentColor        *Int32Type                `json:"accent_color"`
+	AccountTier        AccountTierSchema         `json:"account_tier"`
+	Acls               []string                  `json:"acls"`
+	AuthenticatorTypes []Int32Type               `json:"authenticator_types"`
+	Avatar             *string                   `json:"avatar"`
+	BadgeIds           CustomBadgeIdListResponse `json:"badge_ids"`
+	Banner             *string                   `json:"banner"`
+	Bio                *string                   `json:"bio"`
+	Bot                bool                      `json:"bot"`
 
 	// Claimed Whether the account can be signed in to from another device
 	Claimed     bool    `json:"claimed"`

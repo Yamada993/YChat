@@ -144,7 +144,7 @@ func Restore(ctx context.Context, path, dir string, e *engine.Engine, opts Resto
 	if err != nil {
 		return nil, err
 	}
-	image, err := helperImage(ctx, inst, p)
+	image, err := helperImage(ctx, inst, p, p.Model)
 	if err != nil {
 		return nil, err
 	}
@@ -159,7 +159,7 @@ func Restore(ctx context.Context, path, dir string, e *engine.Engine, opts Resto
 			return nil, err
 		}
 	}
-	if err := restoreData(ctx, path, p, image, m, vols, progress); err != nil {
+	if err := restoreData(ctx, path, p, image, m, vols, "", progress); err != nil {
 		return nil, err
 	}
 
@@ -199,7 +199,7 @@ func renderRestored(inst *instance.Instance) (map[string]string, error) {
 	st := inst.State
 	if st.Release != stack.LegacyRelease {
 		if set, err := release.LoadSet(inst, st.Release); err == nil {
-			r, err := stack.Render(set, stack.OverlaysFor(st.Settings), st.Images.Refs, inst.Project(), inst.Dir)
+			r, err := inst.Render(set, stack.OverlaysFor(st.Settings), st.Images.Refs)
 			if err != nil {
 				return nil, err
 			}
@@ -208,7 +208,7 @@ func renderRestored(inst *instance.Instance) (map[string]string, error) {
 	}
 	out := map[string]string{}
 	for name := range st.Rendered {
-		data, err := os.ReadFile(filepath.Join(inst.Dir, filepath.FromSlash(name)))
+		data, err := os.ReadFile(inst.Generated(name))
 		if err != nil {
 			continue
 		}
@@ -263,7 +263,7 @@ func checkProjectFree(ctx context.Context, e *engine.Engine, project, dir string
 			continue
 		}
 		first, _, _ := strings.Cut(pr.ConfigFiles, ",")
-		other := filepath.Dir(strings.TrimSpace(first))
+		other := stack.ProjectDir(strings.TrimSpace(first))
 		if !samePath(other, dir) {
 			return &ProjectInUseError{Project: project, Dir: other}
 		}
@@ -293,6 +293,7 @@ func clearInstanceFiles(dir string) error {
 	for _, p := range []string{
 		filepath.Join(dir, instance.CertsDir),
 		filepath.Join(dir, instance.CaddyDropInDir),
+		stack.GeneratedPath(dir),
 		filepath.Join(dir, instance.StateDirName, instance.ReleasesDir),
 		filepath.Join(dir, instance.StateDirName, instance.StateFileName),
 	} {
@@ -394,7 +395,42 @@ type volumeSink struct {
 	out  *bytes.Buffer
 }
 
-func restoreData(ctx context.Context, path string, p *engine.Project, image string, m *Manifest, vols []engine.Volume, progress func(string)) error {
+func RestoreVolume(ctx context.Context, path string, inst *instance.Instance, p *engine.Project, short string) error {
+	m, err := ReadManifest(path)
+	if err != nil {
+		return err
+	}
+	if !slices.Contains(m.Volumes, short) {
+		return fmt.Errorf("backup: %s isn't in the backup", short)
+	}
+	vols, err := p.Engine.Volumes(ctx, p.Name)
+	if err != nil {
+		return err
+	}
+	image, err := helperImage(ctx, inst, p, p.Model)
+	if err != nil {
+		return err
+	}
+	return restoreData(ctx, path, p, image, m, vols, short, func(string) {})
+}
+
+func ClearVolume(ctx context.Context, inst *instance.Instance, p *engine.Project, short string) error {
+	vols, err := p.Engine.Volumes(ctx, p.Name)
+	if err != nil {
+		return err
+	}
+	v, ok := dataVolume(p.Model, p.Name, vols, short)
+	if !ok {
+		return nil
+	}
+	image, err := helperImage(ctx, inst, p, p.Model)
+	if err != nil {
+		return err
+	}
+	return helper(ctx, p, image, []engine.Mount{v.mount("/data", false)}, nil, io.Discard, "find", "/data", "-mindepth", "1", "-delete")
+}
+
+func restoreData(ctx context.Context, path string, p *engine.Project, image string, m *Manifest, vols []engine.Volume, only string, progress func(string)) error {
 	ctx, cancel := context.WithCancel(ctx)
 	defer cancel()
 	var sink *volumeSink
@@ -451,10 +487,13 @@ func restoreData(ctx context.Context, path string, p *engine.Project, image stri
 			if err := closeSink(nil); err != nil {
 				return err
 			}
+			if only != "" {
+				return nil
+			}
 			return restoreDump(ctx, p, r)
 		}
 		short, inner, ok := volumeOf(hdr.Name)
-		if !ok {
+		if !ok || only != "" && short != only {
 			return closeSink(nil)
 		}
 		if !slices.Contains(m.Volumes, short) {
