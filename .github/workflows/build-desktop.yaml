@@ -527,7 +527,7 @@ jobs:
           set -euo pipefail
           release_tag=$(jq -er .releaseTag electron/runtime.json)
           version=$(jq -er .electronVersion electron/runtime.json)
-          gh release download "$release_tag" --repo "$GITHUB_REPOSITORY" \
+          gh release download "$release_tag" --repo fluxerapp/fluxer \
             --pattern "electron-v$version-linux-$ELECTRON_ARCH.zip" \
             --pattern "electron-v$version-linux-$ELECTRON_ARCH.fluxer.json" \
             --dir "$FLUXER_ELECTRON_DIST"
