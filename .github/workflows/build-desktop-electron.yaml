@@ -27,8 +27,8 @@ jobs:
       - name: Build patched Electron distribution
         env:
           CONTAINER_ENGINE: podman
-          CONTAINER_CPUS: "8"
-          CONTAINER_MEMORY: 48g
+          CONTAINER_CPUS: "2"
+          CONTAINER_MEMORY: 8g
           BUILD_JOBS: "8"
         run: >-
           bash fluxer_desktop/electron/build-linux.sh
