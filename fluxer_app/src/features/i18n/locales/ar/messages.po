@@ -1166,6 +1166,11 @@ msgstr "{count, plural, zero {# اشتراك نشط} one {اشتراك نشط و
 msgid "{count, plural, one {# attachment} other {# attachments}}"
 msgstr "{count, plural, zero {# مرفق} one {مرفق واحد} two {مرفقان} few {# مرفقات} many {# مرفقًا} other {# مرفق}}"
 
+#. Read out by screen readers while typing in the badge filter of the "Badges" profile settings, with the number of badges that match.
+#: src/features/user/components/modals/tabs/my_profile_tab/ProfileBadgeSettings.tsx
+msgid "{count, plural, one {# badge matches} other {# badges match}}"
+msgstr "{count, plural, zero {لا توجد شارات مطابقة} one {شارة واحدة مطابقة} two {شارتان مطابقتان} few {# شارات مطابقة} many {# شارة مطابقة} other {# شارة مطابقة}}"
+
 #. Label on the collapsed block in the message list that hides messages from blocked users. count is how many messages are hidden; clicking the label reveals them.
 #: src/features/channel/components/BlockedMessageGroups.tsx
 msgid "{count, plural, one {# blocked message} other {# blocked messages}}"
@@ -1351,6 +1356,11 @@ msgstr "{count, plural, zero {# أ} one {# أ} two {# أ} few {# أ} many {# أ}
 msgctxt "short-relative-time"
 msgid "{count, plural, one {#y} other {#y}}"
 msgstr "{count, plural, zero {# سنة} one {# سنة} two {# سنة} few {# سنة} many {# سنة} other {# سنة}}"
+
+#. Screen reader label for the +3 style button that opens the full list of badges. It starts with the same +3 text that is shown on the button, so voice control users can say it.
+#: src/features/user/utils/UserMessageDescriptors.ts
+msgid "{count, plural, one {+# more badge, show all} other {+# more badges, show all}}"
+msgstr "{count, plural, zero {+# شارة إضافية، عرض الكل} one {+# شارة إضافية، عرض الكل} two {+# شارتان إضافيتان، عرض الكل} few {+# شارات إضافية، عرض الكل} many {+# شارة إضافية، عرض الكل} other {+# شارة إضافية، عرض الكل}}"
 
 #: src/features/channel/components/embeds/attachments/TextualAttachmentPreviewFooter.tsx
 msgid "{count, plural, one {Collapse (# line)} other {Collapse (# lines)}}"
@@ -1580,6 +1590,11 @@ msgstr "{fifteenMinutes} دقيقة"
 #: src/features/app/components/layout/sidebar_nav/GuildFolderItem.tsx
 msgid "{folderName} folder"
 msgstr "مجلد {folderName}"
+
+#. Helper line under the role icon buttons in the community role editor. formats is a list of image types such as PNG, JPEG, WebP. minimumSize is an image size such as 32×32px. maxSize is a file size such as 256 KB.
+#: src/features/guild/components/modals/guild_tabs/guild_roles_tab/RoleIconField.tsx
+msgid "{formats}. At least {minimumSize}, up to {maxSize}."
+msgstr "{formats}. بحجم {minimumSize} على الأقل، وحتى {maxSize}."
 
 #. Helper text in an asset upload source modal. formats is a formatted list of accepted file types; maxSize is a formatted file size; minimumSize is a minimum image size; aspectRatio is a formatted aspect ratio.
 #: src/features/expressions/utils/AssetUploadHintCopy.ts
@@ -2454,7 +2469,9 @@ msgid "/tts"
 msgstr "/tts"
 
 #. Badge on the forward modal preview thumbnail. count is the number of other attachments that the thumbnail does not show.
+#. Short count of badges that are not shown next to a name or on a profile, such as +3. Pressing it opens the full list. Keep it as short as possible.
 #: src/features/messaging/components/modals/ForwardMessagePreview.tsx
+#: src/features/user/utils/UserMessageDescriptors.ts
 msgid "+{count}"
 msgstr "+{count}"
 
@@ -2863,6 +2880,11 @@ msgstr "دقيقة واحدة"
 #: src/features/updater/commands/UpdaterModalCommands.tsx
 msgid "A new desktop version is available. Download the installer, then run it to update {productName}."
 msgstr "يتوفر إصدار جديد لسطح المكتب. نزّل برنامج التثبيت، ثم شغّله لتحديث {productName}."
+
+#. Hint under the username field at sign-up on instances where usernames get a number tag. example is the username the person typed followed by a sample tag, such as anna#1234.
+#: src/features/auth/flow/identifier_first/AuthIdentifierProfileStep.tsx
+msgid "A number is added after your username, like {example}. You can change both later."
+msgstr "يُضاف رقم بعد اسم المستخدم، مثل {example}. يمكنك تغيير الاثنين لاحقًا."
 
 #. Description for has:poll. Sentence case, no trailing punctuation.
 #: src/features/search/utils/SearchUtils.ts
@@ -4776,7 +4798,9 @@ msgid "Animated icons are not supported when creating a new community. Use a sta
 msgstr "الأيقونات المتحركة غير مدعومة عند إنشاء مجتمع جديد. استخدم صورة ثابتة."
 
 #. Description text in the edit group modal.
+#. Error under the role icon buttons when the picked image is animated.
 #: src/features/channel/components/modals/EditGroupModal.tsx
+#: src/features/guild/components/modals/guild_tabs/guild_roles_tab/RoleIconField.tsx
 msgid "Animated icons are not supported. Use a static image."
 msgstr "الأيقونات المتحركة غير مدعومة. استخدم صورة ثابتة."
 
@@ -6108,6 +6132,8 @@ msgid "Badge and wall count: {count}"
 msgstr "العدد للشارة والجدار: {count}"
 
 #. Title of the profile settings section that lists the badges you hold and lets you hide each one.
+#. Title of the window that lists every badge of a person or community.
+#: src/features/user/components/modals/BadgeListModal.tsx
 #: src/features/user/utils/UserMessageDescriptors.ts
 msgid "Badges"
 msgstr "الشارات"
@@ -8375,6 +8401,11 @@ msgstr "اختيار الخلفية"
 msgid "Choose either guild_id or channel_id, not both."
 msgstr "اختر guild_id أو channel_id، وليس كليهما."
 
+#. Button in the role icon field that opens the emoji picker. Keep it short.
+#: src/features/guild/components/modals/guild_tabs/guild_roles_tab/RoleIconField.tsx
+msgid "Choose emoji"
+msgstr "اختيار رمز تعبيري"
+
 #. Second install step on a Mac. File and Add to Dock are the names of the Safari menu items, use the names macOS shows in this language.
 #: src/features/app/domain_migration/DomainMovedStepsModal.tsx
 msgid "Choose File, then Add to Dock."
@@ -10146,6 +10177,7 @@ msgstr "قوائم السياق"
 msgid "Context menus can be opened with left-click (on buttons) or right-click (on other elements). This demonstrates various menu items including checkboxes, radio buttons, sliders, and submenus."
 msgstr "يمكن فتح قوائم السياق بالنقر بزر الفأرة الأيسر (على الأزرار) أو النقر بزر الفأرة الأيمن (على العناصر الأخرى). يوضح هذا عناصر قائمة متنوعة بما في ذلك مربعات الاختيار وأزرار الاختيار وأشرطة التمرير والقوائم الفرعية."
 
+#. Button on the sign-up profile step that goes on to the email code.
 #. Button that confirms regenerating account recovery backup codes.
 #. Button that confirms signing out selected saved devices.
 #. Generic primary button label that advances a multi-step flow.
@@ -10155,6 +10187,7 @@ msgstr "يمكن فتح قوائم السياق بالنقر بزر الفأرة
 #: src/features/auth/components/modals/DeviceRevokeModal.tsx
 #: src/features/auth/components/modals/PasskeyPinModal.tsx
 #: src/features/auth/components/pages/oauth_authorize_page/OAuthAccountStep.tsx
+#: src/features/auth/flow/identifier_first/AuthIdentifierProfileStep.tsx
 #: src/features/connection/components/modals/AddConnectionModal.tsx
 #: src/features/i18n/utils/CommonMessageDescriptors.ts
 #: src/features/user/components/modals/FluxerTagChangeModal.tsx
@@ -11789,6 +11822,11 @@ msgstr "معاينة القص"
 msgid "Crop profile banner"
 msgstr "قص لافتة الملف الشخصي"
 
+#. Modal title for cropping a role icon before upload.
+#: src/features/expressions/components/modals/AssetCropModal.tsx
+msgid "Crop role icon"
+msgstr "قص أيقونة الدور"
+
 #. Error modal body shown when a cropped community image still exceeds the size limit. {maxSizeLabel} is a formatted file size.
 #. Error modal body shown when a cropped image still exceeds the size limit. {maxSizeLabel} is a formatted file size.
 #: src/features/guild/components/modals/guild_tabs/guild_overview_tab/hooks/useGuildImageAssetField.tsx
@@ -11872,6 +11910,16 @@ msgstr "المطابقة الحالية"
 #: src/features/voice/components/voice_connection_status/shared.ts
 msgid "Current ping:"
 msgstr "زمن الاستجابة الحالي:"
+
+#. Accessible label of the role icon tile in the community role editor when the icon is an emoji, also read out after an emoji is picked. emojiName is the emoji short name such as :shield:. Clicking the tile opens the file picker.
+#: src/features/guild/components/modals/guild_tabs/guild_roles_tab/RoleIconField.tsx
+msgid "Current role icon, {emojiName}"
+msgstr "أيقونة الدور الحالية، {emojiName}"
+
+#. Accessible label of the role icon tile in the community role editor when the icon is an uploaded image, also read out after an image is added. Clicking the tile opens the file picker.
+#: src/features/guild/components/modals/guild_tabs/guild_roles_tab/RoleIconField.tsx
+msgid "Current role icon, uploaded image"
+msgstr "أيقونة الدور الحالية، صورة مرفوعة"
 
 #: src/features/user/components/modals/tabs/DevicesTab.tsx
 msgid "Current session"
@@ -14191,6 +14239,11 @@ msgstr "اسحب لتغيير موضع أيقونة مجموعتك واستخد�
 #: src/features/expressions/components/modals/AssetCropModal.tsx
 msgid "Drag to reposition your invite background and use the scroll wheel or pinch to zoom. The recommended minimum size is {minimumWidth}×{minimumHeight} pixels (16:9)."
 msgstr "اسحب لتغيير موضع خلفية دعوتك واستخدم عجلة التمرير أو إصبعين للتكبير والتصغير. الحد الأدنى الموصى به للحجم هو {minimumWidth}×{minimumHeight} بكسل (16:9)."
+
+#. Description in the role icon crop modal. minimumWidth and minimumHeight are pixel dimensions for the recommended image size.
+#: src/features/expressions/components/modals/AssetCropModal.tsx
+msgid "Drag to reposition your role icon and use the scroll wheel or pinch to zoom. The recommended minimum size is {minimumWidth}×{minimumHeight} pixels."
+msgstr "اسحب لتغيير موضع أيقونة الدور واستخدم عجلة التمرير أو إصبعين للتكبير والتصغير. الحد الأدنى الموصى به للحجم هو {minimumWidth}×{minimumHeight} بكسل."
 
 #. Desktop setting description under the dark taskbar badge toggle on Windows.
 #: src/features/user/components/modals/tabs/DesktopSettingsTab.tsx
@@ -16535,6 +16588,11 @@ msgstr "تملأ صفحة تسجيل الدخول خلف النموذج، مع �
 #: src/features/user/components/settings_utils/section_registry/PrivacySafetySections.ts
 msgid "Filter"
 msgstr "تصفية"
+
+#. Placeholder and screen reader label of the text field above a long list of badges in the "Badges" profile settings. Typing in it shows only the badges whose name holds the text.
+#: src/features/user/components/modals/tabs/my_profile_tab/ProfileBadgeSettings.tsx
+msgid "Filter badges"
+msgstr "تصفية الشارات"
 
 #. Accessible label for the account-age filter chip on the community members page.
 #: src/features/channel/components/guild_members_page/MembersTableHeaderRow.tsx
@@ -23708,6 +23766,11 @@ msgstr "المترجم الخاص بي"
 msgid "Nagbar overrides"
 msgstr "تجاوزات شريط التنبيه"
 
+#. Placeholder username used in the tag example on the sign-up profile step before the person types one.
+#: src/features/auth/flow/identifier_first/AuthIdentifierProfileStep.tsx
+msgid "name"
+msgstr "name"
+
 #. Column header for custom emoji names.
 #. Field label in the theme details modal in Settings > Themes.
 #. Form field label for the name of the item being edited.
@@ -24229,6 +24292,11 @@ msgstr "لا توجد اقتراحات إكمال تلقائي"
 #: src/features/theme/components/modals/BackgroundImageGalleryModal.tsx
 msgid "No background"
 msgstr "بلا خلفية"
+
+#. Shown under the badge filter in the "Badges" profile settings when the typed text matches none of your badges.
+#: src/features/user/components/modals/tabs/my_profile_tab/ProfileBadgeSettings.tsx
+msgid "No badges match."
+msgstr "لا توجد شارات مطابقة."
 
 #: src/features/guild/components/modals/guild_tabs/GuildBansTab.tsx
 msgid "No banned users"
@@ -27159,6 +27227,11 @@ msgstr "اختر مزود البحث العكسي عن الصور"
 msgid "Pick a translation provider"
 msgstr "اختر مزود الترجمة"
 
+#. Hint under the username field at sign-up on instances where every username is unique.
+#: src/features/auth/flow/identifier_first/AuthIdentifierProfileStep.tsx
+msgid "Pick a username nobody else has. You can change it later."
+msgstr "اختر اسم مستخدم لا يستخدمه أحد غيرك. يمكنك تغييره لاحقًا."
+
 #. Title of the picker modal when choosing a web search provider.
 #: src/features/search/components/modals/SearchProviderPickerModal.tsx
 msgid "Pick a web search provider"
@@ -29240,6 +29313,7 @@ msgstr "إزالة من صور GIF المفضلة (بالرابط فقط)"
 
 #: src/features/channel/components/modals/EditGroupModal.tsx
 #: src/features/guild/components/modals/add_guild_modal/GuildCreateShared.tsx
+#: src/features/guild/components/modals/guild_tabs/guild_roles_tab/RoleIconField.tsx
 msgid "Remove icon"
 msgstr "إزالة الأيقونة"
 
@@ -30576,6 +30650,16 @@ msgstr "تم حذف الدور"
 #: src/features/guild/components/modals/guild_tabs/GuildRolesTab.tsx
 msgid "Role deleted successfully"
 msgstr "تم حذف الدور بنجاح"
+
+#. Label of the role icon field in the community role editor.
+#: src/features/guild/components/modals/guild_tabs/guild_roles_tab/RoleIconField.tsx
+msgid "Role icon"
+msgstr "أيقونة الدور"
+
+#. Accessible label read by screen readers for the small icon next to a member name. roleName is the name of the community role the icon belongs to.
+#: src/features/guild/components/RoleIcon.tsx
+msgid "Role icon, {roleName}"
+msgstr "أيقونة الدور، {roleName}"
 
 #. Label of the role name input in the community role editor.
 #: src/features/guild/components/modals/guild_tabs/guild_roles_tab/RoleEditor.tsx
@@ -32931,6 +33015,11 @@ msgstr "اعرض «نشط الآن» على الشاشة الرئيسية لإب
 msgid "Show activity on other accounts"
 msgstr "عرض النشاط على الحسابات الأخرى"
 
+#. Tooltip for the +3 style button that opens the full list of badges.
+#: src/features/user/utils/UserMessageDescriptors.ts
+msgid "Show all badges"
+msgstr "عرض كل الشارات"
+
 #. Short label for an advanced media button preference.
 #: src/features/user/components/modals/tabs/advanced_settings_tab/AdvancedChatControls.tsx
 msgid "Show attachment expiration indicator"
@@ -33421,10 +33510,10 @@ msgstr "يظهر فقط عندما تكون شارة Visionary ظاهرة وغي
 msgid "Shows the banner in its own section below the community header."
 msgstr "يعرض اللافتة في قسم خاص بها أسفل رأس المجتمع."
 
-#. Help under the YouTube Data API key field in the setup wizard.
+#. Help under the YouTube Data API key field in the setup wizard. YouTube Data API v3 is a product name. Website restrictions means the Websites application restriction in the Google Cloud console.
 #: src/features/app/components/setup/SetupServicesStep.tsx
-msgid "Shows the title and thumbnail when someone posts a YouTube link."
-msgstr "يعرض العنوان والصورة المصغرة عندما ينشر أحدهم رابط YouTube."
+msgid "Shows the title and thumbnail when someone posts a YouTube link. Enable YouTube Data API v3 with a daily quota above 0. Restrict the key by IP address or not at all. Website restrictions block it."
+msgstr "يعرض العنوان والصورة المصغرة عندما ينشر أحدهم رابط YouTube. فعّل YouTube Data API v3 بحصة يومية أكبر من 0. قيّد المفتاح حسب عنوان IP أو اتركه دون قيود. قيود المواقع الإلكترونية تحظره."
 
 #. Where the app icon branding image appears and the recommended format, in the setup wizard. size is a file size such as 10 MB.
 #: src/features/app/components/setup/SetupBrandingAssetField.tsx
@@ -36881,6 +36970,11 @@ msgstr "يطلب هذا البوت إذن المسؤول. لا تمنحه هذا
 msgid "This browser can't crop animated {avifFormatLabel} files. Upload a GIF or WebP instead."
 msgstr "لا يمكن لهذا المتصفح قص ملفات {avifFormatLabel} المتحركة. قم بتحميل ملف GIF أو WebP بدلاً من ذلك."
 
+#. Notice shown when the browser refuses to store app data and the app keeps it in memory for this tab.
+#: src/features/platform/hooks/useAppStorageDegradedNotice.ts
+msgid "This browser can't save Fluxer's data. You'll need to sign in again after you close it."
+msgstr "لا يستطيع هذا المتصفح حفظ بيانات Fluxer. ستحتاج إلى تسجيل الدخول مرة أخرى بعد إغلاقه."
+
 #. Console warning line explaining that the browser console is meant for developers.
 #: src/features/devtools/utils/SelfXssNotice.ts
 msgid "This browser console is a developer tool."
@@ -37218,8 +37312,10 @@ msgstr "حجم هذا الملف هو {fileSize}، وهو يتجاوز الحد 
 msgid "This file is larger than {size}. Choose a smaller one."
 msgstr "حجم هذا الملف أكبر من {size}. اختر ملفًا أصغر."
 
+#. Error under the role icon buttons when the picked file has an unsupported type. formats is a list such as PNG, JPEG, WebP.
 #. Error when a branding image has an unsupported file type in the setup wizard. formats is a list such as PNG, JPEG, WebP.
 #: src/features/app/components/setup/SetupBrandingAssetField.tsx
+#: src/features/guild/components/modals/guild_tabs/guild_roles_tab/RoleIconField.tsx
 msgid "This file type is not supported. Supported types are {formats}."
 msgstr "نوع هذا الملف غير مدعوم. الأنواع المدعومة هي {formats}."
 
@@ -37280,6 +37376,11 @@ msgstr "انتهت صلاحية رمز التسليم هذا. أنشئ رمزً�
 #: src/features/app/components/setup/SetupBrandingAssetField.tsx
 msgid "This image could not be loaded after saving. Press \"Continue\" to try again, or choose a different file."
 msgstr "تعذّر تحميل هذه الصورة بعد الحفظ. اضغط على \"متابعة\" للمحاولة مرة أخرى، أو اختر ملفًا آخر."
+
+#. Error under the role icon buttons when the picked image or emoji could not be used.
+#: src/features/guild/components/modals/guild_tabs/guild_roles_tab/RoleIconField.tsx
+msgid "This image could not be loaded. Try another one."
+msgstr "تعذّر تحميل هذه الصورة. جرّب صورة أخرى."
 
 #. Error modal body shown when an animated image fails to decode during cropping.
 #: src/features/messaging/components/modals/ImageCropModal.tsx
@@ -37380,9 +37481,16 @@ msgid "This is disabled"
 msgstr "هذا معطّل"
 
 #. Label in the messages tab.
+#. Sample message text in the role icon preview of the community role editor.
+#: src/features/guild/components/modals/guild_tabs/guild_roles_tab/RoleIconField.tsx
 #: src/features/user/components/modals/tabs/appearance_tab/MessagesTab.tsx
 msgid "This is how messages appear"
 msgstr "هكذا تظهر الرسائل"
+
+#. Text under the heading of the sign-up step where a new person picks their display name and username.
+#: src/features/auth/flow/identifier_first/AuthIdentifierProfileStep.tsx
+msgid "This is how other people will see you."
+msgstr "هكذا سيراك الآخرون."
 
 #: src/features/channel/components/ChannelLayout.tsx
 msgid "This is not the channel you're looking for."
@@ -39917,6 +40025,11 @@ msgstr "حمّل صوتًا مخصصًا يُشغَّل تلقائيًا عند 
 msgid "Upload a file"
 msgstr "تحميل ملف"
 
+#. Helper text under the role icon label in the community role editor.
+#: src/features/guild/components/modals/guild_tabs/guild_roles_tab/RoleIconField.tsx
+msgid "Upload an image or pick an emoji. Members get the icon of their highest role that has one."
+msgstr "حمّل صورة أو اختر رمزًا تعبيريًا. يظهر بجانب اسم كل عضو أيقونة أعلى دور لديه يحمل أيقونة."
+
 #: src/features/theme_settings/components/AssetsSection.tsx
 msgid "Upload assets"
 msgstr "تحميل الأصول"
@@ -39978,6 +40091,7 @@ msgid "Upload icon"
 msgstr "تحميل أيقونة"
 
 #. Button label for uploading a webhook avatar image.
+#: src/features/guild/components/modals/guild_tabs/guild_roles_tab/RoleIconField.tsx
 #: src/features/webhook/components/WebhookListItem.tsx
 msgid "Upload image"
 msgstr "تحميل صورة"
@@ -40001,6 +40115,11 @@ msgstr "تحميل رموز تعبيرية وملصقات جديدة، وإدا�
 #: src/features/voice/components/modals/ScreenSharePickerModal.tsx
 msgid "Upload preview frames for screen shares."
 msgstr "تحميل إطارات معاينة لمشاركة الشاشة."
+
+#. Accessible label of the empty role icon tile in the community role editor. Clicking it opens the file picker.
+#: src/features/guild/components/modals/guild_tabs/guild_roles_tab/RoleIconField.tsx
+msgid "Upload role icon"
+msgstr "تحميل أيقونة الدور"
 
 #. Settings search synonym. Used to match this term when the user types it in the settings search bar.
 #: src/features/user/components/settings_utils/section_registry/NotificationsSections.ts
@@ -42097,6 +42216,11 @@ msgstr "مرحباً بك، {username}! محادثتك التالية تبدأ �
 msgid "Welcome, {username}. We're happy to have you here."
 msgstr "مرحباً بك يا {username}. يسعدنا وجودك معنا."
 
+#. Heading of the sign-up step where a new person picks their display name and username, before their account is created.
+#: src/features/auth/flow/identifier_first/AuthIdentifierProfileStep.tsx
+msgid "Welcome! Let's set up your profile"
+msgstr "مرحبًا! لنُعدّ ملفك الشخصي"
+
 #. US state name, shown next to the country name in the mature content gate.
 #: src/features/user/utils/UserGeo.ts
 msgctxt "us-state"
@@ -43225,6 +43349,11 @@ msgstr "حفظت مجموعة استرداد."
 #: src/features/user/components/modals/tabs/account_security_tab/AccountTab.tsx
 msgid "You sign in with a code sent to your email. A password is optional."
 msgstr "تسجل الدخول باستخدام رمز يتم إرساله إلى بريدك الإلكتروني. كلمة المرور اختيارية."
+
+#. Note at the bottom of the sign-up profile step. Tells a new person how they sign in next time and where to add a password. email is their address.
+#: src/features/auth/flow/identifier_first/AuthIdentifierProfileStep.tsx
+msgid "You sign in with a code we email to {email}. You can set a password later in Settings, under Account."
+msgstr "تسجّل الدخول برمز نرسله إلى {email}. يمكنك تعيين كلمة مرور لاحقًا في الإعدادات، ضمن الحساب."
 
 #. Helper text under the required username field when the instance uses usernames to sign in.
 #: src/features/auth/flow/AuthRegisterFormCore.tsx

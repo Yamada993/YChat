@@ -235,7 +235,7 @@ These are the values of the top-level `code`, and the [OpenAPI document](/http-a
 | `IP_BAN_LINKED_TO_DECISION` | This network block belongs to an enforcement decision |
 | `MAX_ACTIVE_THREADS` | This community has reached its active thread limit of {count} |
 | `MAX_APPLICATIONS` | You've reached the maximum of {limit} applications |
-| `MAX_BADGES` | You've reached the maximum of {count} badges for this type |
+| `MAX_BADGES` | The limit is {count} badges |
 | `MAX_BOOKMARKS` | You've reached the maximum of {count} bookmarks |
 | `MAX_CATEGORY_CHANNELS` | You've reached the maximum of {count} category channels |
 | `MAX_EMOJIS` | You've reached the maximum of {count} emojis |
@@ -389,6 +389,16 @@ These are the values of the top-level `code`, and the [OpenAPI document](/http-a
 | `USE_CLAIM_ROUTE` | Add an email address to your account first |
 | `VALIDATION_ERROR` | Validation failed |
 | `VOICE_CHANNEL_FULL` | Voice channel is full |
+| `VOICE_JOIN_ENDPOINT_INVALID` | The voice server endpoint isn't allowed |
+| `VOICE_JOIN_ENDPOINT_UNREACHABLE` | Fluxer couldn't connect to the voice server endpoint |
+| `VOICE_JOIN_KEY_MISMATCH` | The voice server rejected its API key and secret |
+| `VOICE_JOIN_TOKEN_BUSY` | Another voice server is joining with this token right now |
+| `VOICE_JOIN_TOKEN_INVALID` | The voice join token is not valid |
+| `VOICE_NODE_SIGNATURE_INVALID` | The voice server's signature doesn't match its secret |
+| `VOICE_NODE_TOKEN_EXPIRED` | The voice server's request is expired or not valid yet. Check the clock on that machine |
+| `VOICE_NODE_UNKNOWN` | No voice server has this API key |
+| `VOICE_SERVER_API_KEY_IN_USE` | Another voice server already uses this API key |
+| `VOICE_SERVER_ID_IN_USE` | Another voice server already uses this ID |
 | `WEBAUTHN_CREDENTIAL_LIMIT_REACHED` | You've reached the maximum of {count} WebAuthn credentials |
 | `WEBHOOK_FORUM_TARGET_CONFLICT` | You can't specify both `thread_id` and `thread_name` |
 | `WEBHOOK_FORUM_TARGET_REQUIRED` | Webhooks posting to this channel need a `thread_id` or a `thread_name` |
@@ -429,6 +439,7 @@ These are the values of `code` inside `errors`.
 | `CANNOT_REORDER_EVERYONE_ROLE` | You can't reorder the @everyone role |
 | `CANNOT_REPLY_TO_SYSTEM_MESSAGE` | You can't reply to a system message |
 | `CANNOT_SET_HOIST_FOR_EVERYONE_ROLE` | You can't set hoist position for the @everyone role |
+| `CANNOT_SET_ICON_ON_EVERYONE_ROLE` | The @everyone role can't have an icon |
 | `CANNOT_SPECIFY_BOTH_BEFORE_AND_AFTER` | You can't specify both `before` and `after` |
 | `CAPTCHA_REQUIRED_BY_INSTANT_ACCOUNTS` | Turn off instant accounts before turning off the captcha |
 | `CATEGORIES_CANNOT_HAVE_PARENTS` | Categories can't have parents |
@@ -514,6 +525,7 @@ These are the values of `code` inside `errors`.
 | `GUILD_ID_MUST_MATCH_REFERENCED_MESSAGE` | Community ID must match the community containing the channel the referenced message was fetched from |
 | `GUILD_ID_REQUIRED_FOR_SEARCH_INDEX` | Community ID is required for channel message and member search indexes |
 | `IDENTIFIER_FIRST_REQUIRES_EMAIL_IDENTITY` | Email-first sign-in only works when people sign in with an email |
+| `IMAGE_DIMENSIONS_OUT_OF_RANGE` | Image width and height must each be between {min} and {max} pixels |
 | `IMAGE_SIZE_EXCEEDS_LIMIT` | Image size exceeds {maxSize} bytes |
 | `INSTANCE_ADDRESS_REQUIRED` | This instance uses usernames |
 | `INSTANT_ACCOUNTS_REQUIRE_CAPTCHA` | Turn on the captcha before allowing instant accounts |
@@ -570,6 +582,7 @@ These are the values of `code` inside `errors`.
 | `MESSAGE_HISTORY_CUTOFF_BEFORE_GUILD_CREATION` | Message history cutoff can't be before the community was created |
 | `MESSAGE_HISTORY_CUTOFF_IN_FUTURE` | Message history cutoff can't be in the future |
 | `MESSAGE_IDS_CANNOT_BE_EMPTY` | `message_ids` can't be empty |
+| `MESSAGE_SHRED_PREVIEW_CHANGED` | These messages changed after the preview. Preview them again |
 | `MODERATION_BASIS_REQUIRED` | Give a basis to delete the messages |
 | `MULTIPLE_FILES_FOR_INDEX_NOT_ALLOWED` | Multiple files for index {index} aren't allowed |
 | `MUST_AGREE_TO_TOS_AND_PRIVACY_POLICY` | You need to accept the terms of service to create an account |
@@ -601,6 +614,8 @@ These are the values of `code` inside `errors`.
 | `RECIPIENT_IDS_CANNOT_BE_EMPTY` | Recipient IDs can't be empty |
 | `REFERENCED_ATTACHMENT_NOT_FOUND` | Referenced attachment "{filename}" wasn't found in message attachments |
 | `REPORT_OUTCOME_INVALID` | An actioned resolution needs an outcome other than no violation |
+| `ROLE_ICON_AND_EMOJI_EXCLUSIVE` | A role can have an image icon or an emoji, not both |
+| `ROLE_ICON_SOURCE_AND_ICON_EXCLUSIVE` | Set a role icon or copy one from another role, not both |
 | `SEARCH_FILTER_NEEDS_MEMBERSHIP` | Join this community to search by person or mention |
 | `SESSION_TIMEOUT` | Session timed out |
 | `SETUP_TOKEN_INVALID` | That setup token is not correct |
